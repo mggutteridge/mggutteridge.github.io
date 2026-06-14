@@ -1,0 +1,3418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home Office PO World Cup 2026 sweepstake</title>
+
+<style>
+:root {
+  --oit-teal:#0EA88C;
+  --oit-dark-teal:#732282;
+  --oit-purple:#501649;
+  --oit-yellow:#FFCF00;
+  --oit-blue:#00B0F0;
+  --oit-orange:#E97132;
+  --oit-greige:#F7F3F1;
+  --white:#FFFFFF;
+  --black:#111111;
+  --text:#151515;
+  --muted:#5f5f5f;
+  --line:#d9d1cd;
+  --panel:#FFFFFF;
+  --panel-soft:#fbf8f6;
+  --shadow:0 10px 26px rgba(7,84,70,.10);
+  --title-font:"Amasis MT Pro", Georgia, "Times New Roman", serif;
+  --body-font:"Arial Nova", Arial, Helvetica, sans-serif;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  font-family:var(--body-font);
+  background:var(--oit-greige);
+  color:var(--text);
+  letter-spacing:-0.005em;
+}
+
+header {
+  padding:24px 28px 18px;
+  border-bottom:8px solid var(--oit-yellow);
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:var(--oit-dark-teal);
+  color:var(--white);
+  box-shadow:0 4px 18px rgba(0,0,0,.12);
+}
+
+.headerTop {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.oitLogo {
+  width:min(245px,34vw);
+  height:auto;
+  background:transparent;
+  border-radius:0;
+  padding:0;
+  box-shadow:none;
+  flex:0 0 auto;
+}
+
+h1 {
+  margin:0 0 8px;
+  font-family:var(--title-font);
+  font-weight:400;
+  font-size:clamp(32px,5vw,58px);
+  line-height:.95;
+  letter-spacing:-.035em;
+  color:var(--white);
+}
+
+.sub {
+  color:rgba(255,255,255,.86);
+  max-width:1020px;
+  line-height:1.45;
+  font-size:15px;
+  margin-left:0;
+}
+
+.controls {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:18px;
+  align-items:center;
+}
+
+button, input, select {
+  border:1px solid rgba(255,255,255,.34);
+  background:var(--white);
+  color:var(--black);
+  border-radius:2px;
+  padding:9px 12px;
+  font:inherit;
+  font-size:13px;
+}
+
+button {
+  cursor:pointer;
+  font-weight:700;
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+
+button:hover {
+  transform:translateY(-1px);
+  box-shadow:0 4px 10px rgba(0,0,0,.12);
+}
+
+button.primary {
+  background:var(--oit-teal);
+  color:var(--white);
+  border-color:var(--oit-teal);
+}
+
+button.secondary {
+  background:var(--white);
+  color:var(--oit-dark-teal);
+  border-color:rgba(255,255,255,.68);
+}
+
+button.warn {
+  background:var(--oit-yellow);
+  color:var(--black);
+  border-color:var(--oit-yellow);
+}
+
+input {
+  min-width:260px;
+  border-color:rgba(255,255,255,.55);
+  background:rgba(255,255,255,.96);
+}
+
+main {
+  padding:26px;
+  max-width:1600px;
+  margin:auto;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:18px;
+}
+
+.card, .ownerBlock {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-top:7px solid var(--oit-teal);
+  border-radius:0;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+
+.card:nth-child(4n+2) { border-top-color:var(--oit-purple); }
+.card:nth-child(4n+3) { border-top-color:var(--oit-blue); }
+.card:nth-child(4n+4) { border-top-color:var(--oit-orange); }
+
+.card h2, .card h3 {
+  margin:0 0 13px;
+  font-family:var(--title-font);
+  font-weight:400;
+  color:var(--black);
+  letter-spacing:-.02em;
+}
+
+.card h2 { font-size:28px; }
+.card h3 { font-size:23px; }
+
+.tabs {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:16px;
+}
+
+.tab {
+  padding:8px 12px;
+  border-radius:0;
+  background:var(--white);
+  border:1px solid var(--line);
+  cursor:pointer;
+  color:var(--muted);
+}
+
+.tab.active {
+  color:var(--white);
+  background:var(--oit-dark-teal);
+  border-color:var(--oit-dark-teal);
+  font-weight:800;
+}
+
+.team {
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px;
+  align-items:center;
+  padding:10px 11px;
+  border-radius:0;
+  background:var(--panel-soft);
+  margin:7px 0;
+  border-left:4px solid var(--oit-teal);
+  border-top:0;
+  border-right:0;
+  border-bottom:1px solid #eee7e3;
+}
+
+.team .owner, .ownerSmall {
+  color:var(--oit-dark-teal);
+  font-size:12.5px;
+  font-weight:700;
+}
+
+.team .owner {
+  text-align:right;
+}
+
+.team .record {
+  color:var(--muted);
+  font-size:12px;
+  text-align:right;
+}
+
+.ownerBlock {
+  border-top-color:var(--oit-purple);
+}
+
+.ownerBlock b {
+  color:var(--oit-purple);
+}
+
+.ownerTeams {
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:9px;
+}
+.ownerTeamLabel {
+  font-size:18px;
+  font-family:var(--title-font);
+  margin-bottom:3px;
+}
+.ownerName {
+  font-weight:700;
+  font-size:13px;
+}
+.ownerRecord {
+  color:#888;
+  margin-top:2px;
+  font-size:12px;
+}
+
+.pill {
+  display:inline-block;
+  padding:5px 8px;
+  border-radius:0;
+  background:var(--oit-greige);
+  color:var(--black);
+  font-size:12px;
+  border:1px solid var(--line);
+}
+
+.flagTeam {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+
+.flagIcon {
+  width:18px;
+  height:13.5px;
+  object-fit:cover;
+  border-radius:0;
+  box-shadow:none;
+  border:0;
+  background:transparent;
+  flex:0 0 auto;
+}
+
+.pill .flagIcon {
+  width:16px;
+  height:12px;
+}
+
+.match {
+  display:grid;
+  grid-template-columns:82px 1fr auto 1fr;
+  gap:12px;
+  align-items:center;
+  padding:11px 0;
+  border-bottom:1px solid #e8dfda;
+}
+
+.match:last-child {
+  border-bottom:0;
+}
+
+.meta {
+  color:var(--muted);
+  font-size:12px;
+}
+
+.score {
+  font-family:var(--title-font);
+  font-weight:400;
+  font-size:24px;
+  background:var(--oit-greige);
+  border:1px solid var(--line);
+  padding:5px 10px;
+  border-radius:0;
+  min-width:62px;
+  text-align:center;
+  color:var(--black);
+}
+
+.teamName {
+  font-weight:800;
+  color:var(--black);
+}
+
+.status {
+  font-size:11px;
+  padding:3px 7px;
+  border-radius:0;
+  display:inline-block;
+  border:1px solid var(--line);
+  color:var(--muted);
+  margin-top:4px;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+}
+
+.live {
+  color:var(--white);
+  background:var(--oit-teal);
+  border-color:var(--oit-teal);
+  font-weight:800;
+}
+
+.finished {
+  color:var(--black);
+  background:var(--oit-yellow);
+  border-color:var(--oit-yellow);
+  font-weight:800;
+}
+
+.table {
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+}
+
+.table th, .table td {
+  padding:7px 6px;
+  border-bottom:1px solid #e8dfda;
+  text-align:right;
+}
+
+.table th:first-child, .table td:first-child {
+  text-align:left;
+}
+
+.table th {
+  color:var(--oit-dark-teal);
+  font-weight:700;
+  border-bottom:2px solid var(--oit-teal);
+}
+
+.small {
+  color:var(--muted);
+  font-size:12.5px;
+  line-height:1.45;
+}
+
+.hidden {
+  display:none !important;
+}
+
+textarea {
+  width:100%;
+  min-height:120px;
+  background:var(--white);
+  color:var(--text);
+  border:1px solid var(--line);
+  border-radius:0;
+  padding:10px;
+  font-family:ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.dialog {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:50;
+  padding:20px;
+}
+
+.dialog .box {
+  background:var(--white);
+  border:1px solid var(--line);
+  border-top:8px solid var(--oit-teal);
+  max-width:760px;
+  width:100%;
+  border-radius:0;
+  padding:18px;
+  box-shadow:0 14px 36px rgba(0,0,0,.22);
+}
+
+.notice {
+  border:1px solid var(--line);
+  border-left:8px solid var(--oit-teal);
+  background:var(--white);
+  padding:13px 14px;
+  border-radius:0;
+  margin:0 0 18px;
+  box-shadow:var(--shadow);
+}
+
+.disciplineScore {
+  font-family:var(--title-font);
+  font-size:30px;
+  font-weight:400;
+  color:var(--oit-purple);
+  text-align:right;
+}
+
+.rankRow {
+  display:grid;
+  grid-template-columns:48px 1.3fr 1fr 100px;
+  gap:12px;
+  align-items:center;
+  padding:10px 0;
+  border-bottom:1px solid #e8dfda;
+}
+
+.rankRow:last-child {
+  border-bottom:0;
+}
+
+.rankNum {
+  color:var(--oit-teal);
+  font-weight:900;
+}
+
+.cardCounts {
+  color:var(--muted);
+  font-size:12px;
+}
+
+footer {
+  color:var(--muted);
+  padding:24px;
+  text-align:center;
+  font-size:12px;
+  border-top:1px solid var(--line);
+  background:var(--white);
+}
+
+code {
+  background:var(--oit-greige);
+  border:1px solid var(--line);
+  padding:1px 4px;
+}
+
+::selection {
+  background:var(--oit-yellow);
+  color:var(--black);
+}
+
+@media (max-width:700px) {
+  header {
+    padding:18px 16px 14px;
+  }
+
+  .headerTop {
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .oitLogo {
+    width:190px;
+    padding:0;
+  }
+
+  h1 {
+    font-size:36px;
+  }
+
+  main {
+    padding:16px;
+  }
+
+  .match {
+    grid-template-columns:1fr;
+    gap:5px;
+  }
+
+  .score {
+    width:max-content;
+  }
+
+  .rankRow {
+    grid-template-columns:36px 1fr;
+  }
+
+  .disciplineScore {
+    text-align:left;
+    font-size:24px;
+  }
+
+  input {
+    min-width:100%;
+  }
+}
+
+
+
+
+
+/* Prize probability dashboard */
+.dashboardHero {
+  border-top-color:var(--oit-yellow);
+}
+
+.prizeGrid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:12px;
+  margin-top:14px;
+}
+
+.prizeGrid > div {
+  background:var(--oit-greige);
+  border-left:5px solid var(--oit-teal);
+  padding:12px;
+}
+
+.prizeGrid b {
+  display:block;
+  font-size:15px;
+}
+
+.prizeGrid span {
+  display:block;
+  color:var(--muted);
+  font-size:12.5px;
+  margin-top:3px;
+}
+
+.probTableWrap {
+  overflow:auto;
+}
+
+.probTable {
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+}
+
+.probTable th,
+.probTable td {
+  border-bottom:1px solid #e8dfda;
+  padding:9px 8px;
+  vertical-align:top;
+  text-align:right;
+}
+
+.probTable th:first-child,
+.probTable td:first-child,
+.probTable th:nth-child(2),
+.probTable td:nth-child(2) {
+  text-align:left;
+}
+
+.probTable th {
+  color:var(--oit-dark-teal);
+  border-bottom:2px solid var(--oit-teal);
+  white-space:nowrap;
+}
+
+.miniTeam {
+  display:inline-block;
+  margin:0 8px 4px 0;
+  white-space:nowrap;
+}
+
+.prizeListHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.prizeListHeader > div:first-child h2 { margin-bottom: 2px; }
+
+.prizeToggle {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.prizeToggle .tab {
+  padding: 5px 11px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.probRow {
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr) auto;
+  gap:10px;
+  align-items:start;
+  padding:9px 0;
+  border-bottom:1px solid #e8dfda;
+}
+
+.probRow:last-child {
+  border-bottom:0;
+}
+
+.probPct {
+  font-family:var(--title-font);
+  color:var(--oit-purple);
+  font-size:24px;
+  text-align:right;
+  line-height:1;
+}
+
+.dashboardLists .small .flagTeam {
+  margin-right:2px;
+}
+
+/* Group card left alignment */
+.groupTeamCard {
+  grid-template-columns:minmax(0,1fr) 92px;
+  align-items:center;
+}
+
+.groupTeamCard .teamIdentity {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  text-align:left;
+  min-width:0;
+}
+
+.groupTeamCard .teamName {
+  display:block;
+  text-align:left;
+  width:100%;
+}
+
+.groupTeamCard .teamName .flagTeam {
+  justify-content:flex-start;
+}
+
+.groupTeamCard .owner {
+  text-align:left;
+  width:100%;
+  margin-top:4px;
+  line-height:1.15;
+  padding-left:24px;
+}
+
+.groupTeamCard .teamRecord {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+@media (max-width:700px) {
+  .groupTeamCard {
+    grid-template-columns:1fr;
+  }
+
+  .groupTeamCard .teamRecord {
+    align-items:flex-start;
+    margin-top:6px;
+    padding-left:24px;
+  }
+
+  .groupTeamCard .record {
+    text-align:left;
+  }
+}
+
+/* Alignment polish */
+.controls {
+  align-items:center;
+}
+
+.card h2, .card h3 {
+  text-wrap:balance;
+}
+
+.team {
+  grid-template-columns:minmax(0,1fr) auto;
+}
+
+.teamName, .flagTeam {
+  line-height:1.18;
+}
+
+.team .owner,
+.team .record {
+  min-width:72px;
+}
+
+.match {
+  display:grid;
+  grid-template-columns:110px minmax(160px,1fr) 92px minmax(160px,1fr);
+  grid-template-areas:
+    "meta home score away"
+    "venue venue venue venue";
+  gap:10px 14px;
+  align-items:center;
+  padding:13px 0;
+}
+
+.matchMeta {
+  grid-area:meta;
+  text-align:left;
+}
+
+.fixtureTeam {
+  text-align:center;
+  min-width:0;
+}
+
+.fixtureTeam .flagTeam {
+  justify-content:center;
+}
+
+.fixtureScore {
+  grid-area:score;
+  text-align:center;
+}
+
+.fixtureScore .meta {
+  margin-top:4px;
+}
+
+.fixtureVenue {
+  grid-area:venue;
+  text-align:center;
+  padding-top:2px;
+}
+
+.homeTeam {
+  grid-area:home;
+}
+
+.awayTeam {
+  grid-area:away;
+}
+
+.score {
+  margin:0 auto;
+  display:inline-block;
+}
+
+.rankRow {
+  grid-template-columns:48px minmax(160px,1.2fr) minmax(210px,1fr) 80px;
+}
+
+.disciplineScore {
+  justify-self:end;
+}
+
+.ownerBlock {
+  text-align:left;
+}
+
+.pill .flagTeam {
+  vertical-align:middle;
+}
+
+@media (max-width:850px) {
+  .match {
+    grid-template-columns:1fr 76px 1fr;
+    grid-template-areas:
+      "meta meta meta"
+      "home score away"
+      "venue venue venue";
+  }
+
+  .matchMeta,
+  .fixtureVenue {
+    text-align:center;
+  }
+}
+
+@media (max-width:700px) {
+  .match {
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "meta"
+      "home"
+      "score"
+      "away"
+      "venue";
+    gap:8px;
+  }
+
+  .fixtureTeam,
+  .fixtureScore,
+  .matchMeta,
+  .fixtureVenue {
+    text-align:center;
+  }
+
+  .score {
+    width:auto;
+  }
+}
+
+
+
+.refreshNotice {
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  align-items:baseline;
+}
+
+/* Live API diagnostics */
+#lastUpdate {
+  display:block;
+  margin-top:6px;
+}
+
+@media print {
+  header {
+    position:static;
+    background:white;
+    color:black;
+    border-bottom:2px solid var(--oit-teal);
+    box-shadow:none;
+  }
+
+  header .controls, .tabs, .noPrint {
+    display:none !important;
+  }
+
+  h1 {
+    color:black;
+  }
+
+  .sub {
+    color:#555;
+  }
+
+  body {
+    background:white;
+    color:black;
+  }
+
+  .card, .ownerBlock, .notice {
+    background:white;
+    color:black;
+    box-shadow:none;
+    page-break-inside:avoid;
+  }
+
+  .oitLogo {
+    background:transparent !important;
+    box-shadow:none;
+    border:0;
+  }
+
+  .owner, .ownerSmall, .team .owner {
+    color:var(--oit-dark-teal) !important;
+  }
+}
+</style>
+
+</head>
+<body>
+<header>
+  <div class="headerTop"><h1>Home Office PO World Cup 2026 sweepstake</h1><img class="oitLogo" src="https://upload.wikimedia.org/wikipedia/en/8/87/Home_Office.svg" alt="Home Office crest"></div>
+  <div class="sub">One team per person &mdash; 48 participants. The wall chart refreshes automatically.</div>
+  <div class="controls">
+    <button class="secondary" onclick="showView('dashboard')">Prize probabilities</button>
+    <button class="secondary" onclick="showView('groups')">Groups</button>
+    <button class="secondary" onclick="showView('fixtures')">Fixtures</button>
+    <button class="secondary" onclick="showView('owners')">Participants</button>
+    <button class="secondary" onclick="showView('cards')">Cards leaderboard</button>
+    <button class="secondary" onclick="showView('knockout')">Knockout</button>
+    <input id="search" oninput="render()" placeholder="Filter by team, participant, group or venue">
+  </div>
+</header>
+
+<main>
+  <section class="notice refreshNotice"><b>Last live refresh:</b> <span id="lastUpdate" class="small">Waiting for automatic update...</span></section>
+
+  <section id="dashboardView"></section>
+  <section id="groupsView" class="hidden"></section>
+  <section id="fixturesView" class="hidden"></section>
+  <section id="ownersView" class="hidden"></section>
+  <section id="cardsView" class="hidden"></section>
+  <section id="knockoutView" class="hidden"></section>
+</main>
+
+<footer>
+  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team
+</footer>
+
+  </div>
+</div>
+
+<script>
+const DATA = {
+  "participants": [
+    "John O'Sullivan",
+    "David Mathie",
+    "Matt Gutteridge",
+    "Ella Flynn",
+    "Zulfi Heydon",
+    "Nina Byrd",
+    "Conor McMahon",
+    "Mike Tapp",
+    "Jake Fraser",
+    "Katja Stein",
+    "Navya Lobo",
+    "Daniel Hughes",
+    "Morgan Hicks",
+    "Tom Mills",
+    "Ursula McNicol",
+    "John Latham",
+    "Amanda Meyer",
+    "Joey Fitzmaurice",
+    "Saty Kaur",
+    "Stephen Frank",
+    "Natasha Lovel",
+    "Anand Knox",
+    "Daisy O'Connell",
+    "Jonathan Allinson",
+    "Sophie Thornton",
+    "Alex Jessop-Emmins",
+    "Callum Owen",
+    "Bhavini Bhagvan",
+    "Joe Kelly",
+    "Alex Osborne",
+    "Hannah Ruschen",
+    "Catherine Glover",
+    "Jennifer Gunning",
+    "Jonny Heywood",
+    "Josh Williams",
+    "Keir Cozens",
+    "Phoebe Bluestone",
+    "Charlotte Mulhern",
+    "Elliott Mansfield",
+    "Michael Headley",
+    "Jacob McAllister",
+    "Marta Torch",
+    "Edward Crowson",
+    "Lara Jarrett",
+    "Libby Russell",
+    "Ben Moorman",
+    "Carys Eaton",
+    "Barney May"
+  ],
+  "groups": {
+    "A": [
+      "Mexico",
+      "South Africa",
+      "Korea Republic",
+      "Czechia"
+    ],
+    "B": [
+      "Canada",
+      "Bosnia and Herzegovina",
+      "Qatar",
+      "Switzerland"
+    ],
+    "C": [
+      "Brazil",
+      "Morocco",
+      "Haiti",
+      "Scotland"
+    ],
+    "D": [
+      "USA",
+      "Paraguay",
+      "Australia",
+      "Türkiye"
+    ],
+    "E": [
+      "Germany",
+      "Curaçao",
+      "Côte d'Ivoire",
+      "Ecuador"
+    ],
+    "F": [
+      "Netherlands",
+      "Japan",
+      "Sweden",
+      "Tunisia"
+    ],
+    "G": [
+      "Belgium",
+      "Egypt",
+      "IR Iran",
+      "New Zealand"
+    ],
+    "H": [
+      "Spain",
+      "Cabo Verde",
+      "Saudi Arabia",
+      "Uruguay"
+    ],
+    "I": [
+      "France",
+      "Senegal",
+      "Iraq",
+      "Norway"
+    ],
+    "J": [
+      "Argentina",
+      "Algeria",
+      "Austria",
+      "Jordan"
+    ],
+    "K": [
+      "Portugal",
+      "Colombia",
+      "Uzbekistan",
+      "Congo DR"
+    ],
+    "L": [
+      "England",
+      "Croatia",
+      "Ghana",
+      "Panama"
+    ]
+  },
+  "assignments": {
+    "John O'Sullivan": ["Egypt"],
+    "David Mathie": ["Ecuador"],
+    "Matt Gutteridge": ["Germany"],
+    "Ella Flynn": ["Panama"],
+    "Zulfi Heydon": ["Saudi Arabia"],
+    "Nina Byrd": ["Senegal"],
+    "Conor McMahon": ["Morocco"],
+    "Mike Tapp": ["Türkiye"],
+    "Jake Fraser": ["Netherlands"],
+    "Katja Stein": ["Portugal"],
+    "Navya Lobo": ["Tunisia"],
+    "Daniel Hughes": ["Czechia"],
+    "Morgan Hicks": ["Paraguay"],
+    "Tom Mills": ["Colombia"],
+    "Ursula McNicol": ["England"],
+    "John Latham": ["Norway"],
+    "Amanda Meyer": ["Qatar"],
+    "Joey Fitzmaurice": ["South Africa"],
+    "Saty Kaur": ["IR Iran"],
+    "Stephen Frank": ["Congo DR"],
+    "Natasha Lovel": ["Curaçao"],
+    "Anand Knox": ["Canada"],
+    "Daisy O'Connell": ["Ghana"],
+    "Jonathan Allinson": ["Brazil"],
+    "Sophie Thornton": ["Scotland"],
+    "Alex Jessop-Emmins": ["Sweden"],
+    "Callum Owen": ["Côte d'Ivoire"],
+    "Bhavini Bhagvan": ["Jordan"],
+    "Joe Kelly": ["Austria"],
+    "Alex Osborne": ["Korea Republic"],
+    "Hannah Ruschen": ["Belgium"],
+    "Catherine Glover": ["Bosnia and Herzegovina"],
+    "Jennifer Gunning": ["Japan"],
+    "Jonny Heywood": ["USA"],
+    "Josh Williams": ["Switzerland"],
+    "Keir Cozens": ["Argentina"],
+    "Phoebe Bluestone": ["France"],
+    "Charlotte Mulhern": ["Mexico"],
+    "Elliott Mansfield": ["New Zealand"],
+    "Michael Headley": ["Uzbekistan"],
+    "Jacob McAllister": ["Uruguay"],
+    "Marta Torch": ["Algeria"],
+    "Edward Crowson": ["Haiti"],
+    "Lara Jarrett": ["Croatia"],
+    "Libby Russell": ["Iraq"],
+    "Ben Moorman": ["Cabo Verde"],
+    "Carys Eaton": ["Australia"],
+    "Barney May": ["Spain"]
+  },
+  "teamOwner": {
+    "Egypt": "John O'Sullivan",
+    "Ecuador": "David Mathie",
+    "Germany": "Matt Gutteridge",
+    "Panama": "Ella Flynn",
+    "Saudi Arabia": "Zulfi Heydon",
+    "Senegal": "Nina Byrd",
+    "Morocco": "Conor McMahon",
+    "Türkiye": "Mike Tapp",
+    "Netherlands": "Jake Fraser",
+    "Portugal": "Katja Stein",
+    "Tunisia": "Navya Lobo",
+    "Czechia": "Daniel Hughes",
+    "Paraguay": "Morgan Hicks",
+    "Colombia": "Tom Mills",
+    "England": "Ursula McNicol",
+    "Norway": "John Latham",
+    "Qatar": "Amanda Meyer",
+    "South Africa": "Joey Fitzmaurice",
+    "IR Iran": "Saty Kaur",
+    "Congo DR": "Stephen Frank",
+    "Curaçao": "Natasha Lovel",
+    "Canada": "Anand Knox",
+    "Ghana": "Daisy O'Connell",
+    "Brazil": "Jonathan Allinson",
+    "Scotland": "Sophie Thornton",
+    "Sweden": "Alex Jessop-Emmins",
+    "Côte d'Ivoire": "Callum Owen",
+    "Jordan": "Bhavini Bhagvan",
+    "Austria": "Joe Kelly",
+    "Korea Republic": "Alex Osborne",
+    "Belgium": "Hannah Ruschen",
+    "Bosnia and Herzegovina": "Catherine Glover",
+    "Japan": "Jennifer Gunning",
+    "USA": "Jonny Heywood",
+    "Switzerland": "Josh Williams",
+    "Argentina": "Keir Cozens",
+    "France": "Phoebe Bluestone",
+    "Mexico": "Charlotte Mulhern",
+    "New Zealand": "Elliott Mansfield",
+    "Uzbekistan": "Michael Headley",
+    "Uruguay": "Jacob McAllister",
+    "Algeria": "Marta Torch",
+    "Haiti": "Edward Crowson",
+    "Croatia": "Lara Jarrett",
+    "Iraq": "Libby Russell",
+    "Cabo Verde": "Ben Moorman",
+    "Australia": "Carys Eaton",
+    "Spain": "Barney May"
+  },
+  "fixtures": [
+    {
+      "id": 1,
+      "date": "11 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "A",
+      "team1": "Mexico",
+      "team2": "South Africa",
+      "venue": "Mexico City Stadium"
+    },
+    {
+      "id": 2,
+      "date": "12 Jun",
+      "time": "02:00",
+      "stage": "Group",
+      "group": "A",
+      "team1": "Korea Republic",
+      "team2": "Czechia",
+      "venue": "Estadio Guadalajara"
+    },
+    {
+      "id": 3,
+      "date": "12 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "B",
+      "team1": "Canada",
+      "team2": "Bosnia and Herzegovina",
+      "venue": "Toronto Stadium"
+    },
+    {
+      "id": 4,
+      "date": "13 Jun",
+      "time": "02:00",
+      "stage": "Group",
+      "group": "B",
+      "team1": "Qatar",
+      "team2": "Switzerland",
+      "venue": "San Francisco Bay Area Stadium"
+    },
+    {
+      "id": 5,
+      "date": "13 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "C",
+      "team1": "Brazil",
+      "team2": "Morocco",
+      "venue": "New York New Jersey Stadium"
+    },
+    {
+      "id": 6,
+      "date": "13 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "D",
+      "team1": "USA",
+      "team2": "Paraguay",
+      "venue": "Los Angeles Stadium"
+    },
+    {
+      "id": 7,
+      "date": "14 Jun",
+      "time": "02:00",
+      "stage": "Group",
+      "group": "C",
+      "team1": "Haiti",
+      "team2": "Scotland",
+      "venue": "Boston Stadium"
+    },
+    {
+      "id": 8,
+      "date": "14 Jun",
+      "time": "05:00",
+      "stage": "Group",
+      "group": "D",
+      "team1": "Australia",
+      "team2": "Türkiye",
+      "venue": "BC Place Vancouver"
+    },
+    {
+      "id": 9,
+      "date": "14 Jun",
+      "time": "18:00",
+      "stage": "Group",
+      "group": "E",
+      "team1": "Germany",
+      "team2": "Curaçao",
+      "venue": "Houston Stadium"
+    },
+    {
+      "id": 10,
+      "date": "14 Jun",
+      "time": "21:00",
+      "stage": "Group",
+      "group": "F",
+      "team1": "Netherlands",
+      "team2": "Japan",
+      "venue": "Dallas Stadium"
+    },
+    {
+      "id": 11,
+      "date": "15 Jun",
+      "time": "00:00",
+      "stage": "Group",
+      "group": "E",
+      "team1": "Côte d'Ivoire",
+      "team2": "Ecuador",
+      "venue": "Philadelphia Stadium"
+    },
+    {
+      "id": 12,
+      "date": "15 Jun",
+      "time": "03:00",
+      "stage": "Group",
+      "group": "F",
+      "team1": "Sweden",
+      "team2": "Tunisia",
+      "venue": "Estadio Monterrey"
+    },
+    {
+      "id": 13,
+      "date": "15 Jun",
+      "time": "17:00",
+      "stage": "Group",
+      "group": "H",
+      "team1": "Spain",
+      "team2": "Cabo Verde",
+      "venue": "Atlanta Stadium"
+    },
+    {
+      "id": 14,
+      "date": "15 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "G",
+      "team1": "Belgium",
+      "team2": "Egypt",
+      "venue": "Seattle Stadium"
+    },
+    {
+      "id": 15,
+      "date": "15 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "H",
+      "team1": "Saudi Arabia",
+      "team2": "Uruguay",
+      "venue": "Miami Stadium"
+    },
+    {
+      "id": 16,
+      "date": "16 Jun",
+      "time": "02:00",
+      "stage": "Group",
+      "group": "G",
+      "team1": "IR Iran",
+      "team2": "New Zealand",
+      "venue": "Los Angeles Stadium"
+    },
+    {
+      "id": 17,
+      "date": "16 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "I",
+      "team1": "France",
+      "team2": "Senegal",
+      "venue": "New York New Jersey Stadium"
+    },
+    {
+      "id": 18,
+      "date": "16 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "I",
+      "team1": "Iraq",
+      "team2": "Norway",
+      "venue": "Boston Stadium"
+    },
+    {
+      "id": 19,
+      "date": "17 Jun",
+      "time": "02:00",
+      "stage": "Group",
+      "group": "J",
+      "team1": "Argentina",
+      "team2": "Algeria",
+      "venue": "Kansas City Stadium"
+    },
+    {
+      "id": 20,
+      "date": "17 Jun",
+      "time": "05:00",
+      "stage": "Group",
+      "group": "J",
+      "team1": "Austria",
+      "team2": "Jordan",
+      "venue": "San Francisco Bay Area Stadium"
+    },
+    {
+      "id": 21,
+      "date": "17 Jun",
+      "time": "18:00",
+      "stage": "Group",
+      "group": "K",
+      "team1": "Portugal",
+      "team2": "Congo DR",
+      "venue": "Houston Stadium"
+    },
+    {
+      "id": 22,
+      "date": "17 Jun",
+      "time": "21:00",
+      "stage": "Group",
+      "group": "L",
+      "team1": "England",
+      "team2": "Croatia",
+      "venue": "Dallas Stadium"
+    },
+    {
+      "id": 23,
+      "date": "18 Jun",
+      "time": "00:00",
+      "stage": "Group",
+      "group": "L",
+      "team1": "Ghana",
+      "team2": "Panama",
+      "venue": "Toronto Stadium"
+    },
+    {
+      "id": 24,
+      "date": "18 Jun",
+      "time": "03:00",
+      "stage": "Group",
+      "group": "K",
+      "team1": "Uzbekistan",
+      "team2": "Colombia",
+      "venue": "Mexico City Stadium"
+    },
+    {
+      "id": 25,
+      "date": "18 Jun",
+      "time": "17:00",
+      "stage": "Group",
+      "group": "A",
+      "team1": "Czechia",
+      "team2": "South Africa",
+      "venue": "Atlanta Stadium"
+    },
+    {
+      "id": 26,
+      "date": "18 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "B",
+      "team1": "Switzerland",
+      "team2": "Bosnia and Herzegovina",
+      "venue": "Los Angeles Stadium"
+    },
+    {
+      "id": 27,
+      "date": "18 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "B",
+      "team1": "Canada",
+      "team2": "Qatar",
+      "venue": "BC Place Vancouver"
+    },
+    {
+      "id": 28,
+      "date": "19 Jun",
+      "time": "02:00",
+      "stage": "Group",
+      "group": "A",
+      "team1": "Mexico",
+      "team2": "Korea Republic",
+      "venue": "Estadio Guadalajara"
+    },
+    {
+      "id": 29,
+      "date": "19 Jun",
+      "time": "17:00",
+      "stage": "Group",
+      "group": "C",
+      "team1": "Brazil",
+      "team2": "Haiti",
+      "venue": "Philadelphia Stadium"
+    },
+    {
+      "id": 30,
+      "date": "19 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "D",
+      "team1": "USA",
+      "team2": "Australia",
+      "venue": "Seattle Stadium"
+    },
+    {
+      "id": 31,
+      "date": "19 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "C",
+      "team1": "Scotland",
+      "team2": "Morocco",
+      "venue": "Boston Stadium"
+    },
+    {
+      "id": 32,
+      "date": "20 Jun",
+      "time": "02:00",
+      "stage": "Group",
+      "group": "D",
+      "team1": "Türkiye",
+      "team2": "Paraguay",
+      "venue": "San Francisco Bay Area Stadium"
+    },
+    {
+      "id": 33,
+      "date": "20 Jun",
+      "time": "18:00",
+      "stage": "Group",
+      "group": "F",
+      "team1": "Netherlands",
+      "team2": "Sweden",
+      "venue": "Houston Stadium"
+    },
+    {
+      "id": 34,
+      "date": "20 Jun",
+      "time": "21:00",
+      "stage": "Group",
+      "group": "E",
+      "team1": "Germany",
+      "team2": "Côte d'Ivoire",
+      "venue": "Toronto Stadium"
+    },
+    {
+      "id": 35,
+      "date": "21 Jun",
+      "time": "00:00",
+      "stage": "Group",
+      "group": "E",
+      "team1": "Ecuador",
+      "team2": "Curaçao",
+      "venue": "Kansas City Stadium"
+    },
+    {
+      "id": 36,
+      "date": "21 Jun",
+      "time": "03:00",
+      "stage": "Group",
+      "group": "F",
+      "team1": "Tunisia",
+      "team2": "Japan",
+      "venue": "Estadio Monterrey"
+    },
+    {
+      "id": 37,
+      "date": "21 Jun",
+      "time": "17:00",
+      "stage": "Group",
+      "group": "H",
+      "team1": "Spain",
+      "team2": "Saudi Arabia",
+      "venue": "Atlanta Stadium"
+    },
+    {
+      "id": 38,
+      "date": "21 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "G",
+      "team1": "Belgium",
+      "team2": "IR Iran",
+      "venue": "Los Angeles Stadium"
+    },
+    {
+      "id": 39,
+      "date": "21 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "H",
+      "team1": "Uruguay",
+      "team2": "Cabo Verde",
+      "venue": "Miami Stadium"
+    },
+    {
+      "id": 40,
+      "date": "22 Jun",
+      "time": "02:00",
+      "stage": "Group",
+      "group": "G",
+      "team1": "New Zealand",
+      "team2": "Egypt",
+      "venue": "BC Place Vancouver"
+    },
+    {
+      "id": 41,
+      "date": "22 Jun",
+      "time": "17:00",
+      "stage": "Group",
+      "group": "I",
+      "team1": "Norway",
+      "team2": "Senegal",
+      "venue": "New York New Jersey Stadium"
+    },
+    {
+      "id": 42,
+      "date": "22 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "I",
+      "team1": "France",
+      "team2": "Iraq",
+      "venue": "Philadelphia Stadium"
+    },
+    {
+      "id": 43,
+      "date": "22 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "J",
+      "team1": "Argentina",
+      "team2": "Austria",
+      "venue": "Dallas Stadium"
+    },
+    {
+      "id": 44,
+      "date": "23 Jun",
+      "time": "02:00",
+      "stage": "Group",
+      "group": "J",
+      "team1": "Jordan",
+      "team2": "Algeria",
+      "venue": "San Francisco Bay Area Stadium"
+    },
+    {
+      "id": 45,
+      "date": "23 Jun",
+      "time": "17:00",
+      "stage": "Group",
+      "group": "L",
+      "team1": "England",
+      "team2": "Ghana",
+      "venue": "Boston Stadium"
+    },
+    {
+      "id": 46,
+      "date": "23 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "L",
+      "team1": "Panama",
+      "team2": "Croatia",
+      "venue": "Toronto Stadium"
+    },
+    {
+      "id": 47,
+      "date": "23 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "K",
+      "team1": "Portugal",
+      "team2": "Uzbekistan",
+      "venue": "Houston Stadium"
+    },
+    {
+      "id": 48,
+      "date": "24 Jun",
+      "time": "02:00",
+      "stage": "Group",
+      "group": "K",
+      "team1": "Colombia",
+      "team2": "Congo DR",
+      "venue": "Estadio Guadalajara"
+    },
+    {
+      "id": 49,
+      "date": "24 Jun",
+      "time": "17:00",
+      "stage": "Group",
+      "group": "C",
+      "team1": "Scotland",
+      "team2": "Brazil",
+      "venue": "Miami Stadium"
+    },
+    {
+      "id": 50,
+      "date": "24 Jun",
+      "time": "17:00",
+      "stage": "Group",
+      "group": "C",
+      "team1": "Morocco",
+      "team2": "Haiti",
+      "venue": "Atlanta Stadium"
+    },
+    {
+      "id": 51,
+      "date": "24 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "B",
+      "team1": "Switzerland",
+      "team2": "Canada",
+      "venue": "BC Place Vancouver"
+    },
+    {
+      "id": 52,
+      "date": "24 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "B",
+      "team1": "Bosnia and Herzegovina",
+      "team2": "Qatar",
+      "venue": "Seattle Stadium"
+    },
+    {
+      "id": 53,
+      "date": "24 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "A",
+      "team1": "Czechia",
+      "team2": "Mexico",
+      "venue": "Mexico City Stadium"
+    },
+    {
+      "id": 54,
+      "date": "24 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "A",
+      "team1": "South Africa",
+      "team2": "Korea Republic",
+      "venue": "Estadio Monterrey"
+    },
+    {
+      "id": 55,
+      "date": "25 Jun",
+      "time": "17:00",
+      "stage": "Group",
+      "group": "E",
+      "team1": "Curaçao",
+      "team2": "Côte d'Ivoire",
+      "venue": "Philadelphia Stadium"
+    },
+    {
+      "id": 56,
+      "date": "25 Jun",
+      "time": "17:00",
+      "stage": "Group",
+      "group": "E",
+      "team1": "Ecuador",
+      "team2": "Germany",
+      "venue": "New York New Jersey Stadium"
+    },
+    {
+      "id": 57,
+      "date": "25 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "F",
+      "team1": "Japan",
+      "team2": "Sweden",
+      "venue": "Dallas Stadium"
+    },
+    {
+      "id": 58,
+      "date": "25 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "F",
+      "team1": "Tunisia",
+      "team2": "Netherlands",
+      "venue": "Kansas City Stadium"
+    },
+    {
+      "id": 59,
+      "date": "25 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "D",
+      "team1": "Türkiye",
+      "team2": "USA",
+      "venue": "Los Angeles Stadium"
+    },
+    {
+      "id": 60,
+      "date": "25 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "D",
+      "team1": "Paraguay",
+      "team2": "Australia",
+      "venue": "San Francisco Bay Area Stadium"
+    },
+    {
+      "id": 61,
+      "date": "26 Jun",
+      "time": "17:00",
+      "stage": "Group",
+      "group": "I",
+      "team1": "Norway",
+      "team2": "France",
+      "venue": "Boston Stadium"
+    },
+    {
+      "id": 62,
+      "date": "26 Jun",
+      "time": "17:00",
+      "stage": "Group",
+      "group": "I",
+      "team1": "Senegal",
+      "team2": "Iraq",
+      "venue": "Toronto Stadium"
+    },
+    {
+      "id": 63,
+      "date": "26 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "G",
+      "team1": "Egypt",
+      "team2": "IR Iran",
+      "venue": "Seattle Stadium"
+    },
+    {
+      "id": 64,
+      "date": "26 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "G",
+      "team1": "New Zealand",
+      "team2": "Belgium",
+      "venue": "BC Place Vancouver"
+    },
+    {
+      "id": 65,
+      "date": "26 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "H",
+      "team1": "Cabo Verde",
+      "team2": "Saudi Arabia",
+      "venue": "Houston Stadium"
+    },
+    {
+      "id": 66,
+      "date": "26 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "H",
+      "team1": "Uruguay",
+      "team2": "Spain",
+      "venue": "Estadio Guadalajara"
+    },
+    {
+      "id": 67,
+      "date": "27 Jun",
+      "time": "17:00",
+      "stage": "Group",
+      "group": "L",
+      "team1": "Panama",
+      "team2": "England",
+      "venue": "New York New Jersey Stadium"
+    },
+    {
+      "id": 68,
+      "date": "27 Jun",
+      "time": "17:00",
+      "stage": "Group",
+      "group": "L",
+      "team1": "Croatia",
+      "team2": "Ghana",
+      "venue": "Philadelphia Stadium"
+    },
+    {
+      "id": 69,
+      "date": "27 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "J",
+      "team1": "Algeria",
+      "team2": "Austria",
+      "venue": "Kansas City Stadium"
+    },
+    {
+      "id": 70,
+      "date": "27 Jun",
+      "time": "20:00",
+      "stage": "Group",
+      "group": "J",
+      "team1": "Jordan",
+      "team2": "Argentina",
+      "venue": "Dallas Stadium"
+    },
+    {
+      "id": 71,
+      "date": "27 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "K",
+      "team1": "Colombia",
+      "team2": "Portugal",
+      "venue": "Miami Stadium"
+    },
+    {
+      "id": 72,
+      "date": "27 Jun",
+      "time": "23:00",
+      "stage": "Group",
+      "group": "K",
+      "team1": "Congo DR",
+      "team2": "Uzbekistan",
+      "venue": "Atlanta Stadium"
+    }
+  ],
+  "knockout": [
+    [
+      "28 Jun",
+      "Round of 32",
+      "Match 73",
+      "Group A runners-up",
+      "Group B runners-up",
+      "Los Angeles Stadium"
+    ],
+    [
+      "29 Jun",
+      "Round of 32",
+      "Match 74",
+      "Group E winners",
+      "A/B/C/D/F third place",
+      "Boston Stadium"
+    ],
+    [
+      "29 Jun",
+      "Round of 32",
+      "Match 75",
+      "Group F winners",
+      "Group C runners-up",
+      "Estadio Monterrey"
+    ],
+    [
+      "29 Jun",
+      "Round of 32",
+      "Match 76",
+      "Group C winners",
+      "Group F runners-up",
+      "Houston Stadium"
+    ],
+    [
+      "30 Jun",
+      "Round of 32",
+      "Match 77",
+      "Group I winners",
+      "C/D/F/G/H third place",
+      "New York New Jersey Stadium"
+    ],
+    [
+      "30 Jun",
+      "Round of 32",
+      "Match 78",
+      "Group E runners-up",
+      "Group I runners-up",
+      "Dallas Stadium"
+    ],
+    [
+      "30 Jun",
+      "Round of 32",
+      "Match 79",
+      "Group A winners",
+      "C/E/F/H/I third place",
+      "Mexico City Stadium"
+    ],
+    [
+      "1 Jul",
+      "Round of 32",
+      "Match 80",
+      "Group L winners",
+      "E/H/I/J/K third place",
+      "Atlanta Stadium"
+    ],
+    [
+      "1 Jul",
+      "Round of 32",
+      "Match 81",
+      "Group D winners",
+      "B/E/F/I/J third place",
+      "San Francisco Bay Area Stadium"
+    ],
+    [
+      "1 Jul",
+      "Round of 32",
+      "Match 82",
+      "Group G winners",
+      "A/E/H/I/J third place",
+      "Seattle Stadium"
+    ],
+    [
+      "2 Jul",
+      "Round of 32",
+      "Match 83",
+      "Group K runners-up",
+      "Group L runners-up",
+      "Toronto Stadium"
+    ],
+    [
+      "2 Jul",
+      "Round of 32",
+      "Match 84",
+      "Group H winners",
+      "Group J runners-up",
+      "Los Angeles Stadium"
+    ],
+    [
+      "2 Jul",
+      "Round of 32",
+      "Match 85",
+      "Group B winners",
+      "E/F/G/I/J third place",
+      "BC Place Vancouver"
+    ],
+    [
+      "3 Jul",
+      "Round of 32",
+      "Match 86",
+      "Group J winners",
+      "Group H runners-up",
+      "Miami Stadium"
+    ],
+    [
+      "3 Jul",
+      "Round of 32",
+      "Match 87",
+      "Group K winners",
+      "D/E/I/J/L third place",
+      "Kansas City Stadium"
+    ],
+    [
+      "3 Jul",
+      "Round of 32",
+      "Match 88",
+      "Group D runners-up",
+      "Group G runners-up",
+      "Dallas Stadium"
+    ],
+    [
+      "4 Jul",
+      "Round of 16",
+      "Match 89",
+      "Winner match 74",
+      "Winner match 77",
+      "Philadelphia Stadium"
+    ],
+    [
+      "4 Jul",
+      "Round of 16",
+      "Match 90",
+      "Winner match 73",
+      "Winner match 75",
+      "Houston Stadium"
+    ],
+    [
+      "5 Jul",
+      "Round of 16",
+      "Match 91",
+      "Winner match 76",
+      "Winner match 78",
+      "New York New Jersey Stadium"
+    ],
+    [
+      "5 Jul",
+      "Round of 16",
+      "Match 92",
+      "Winner match 79",
+      "Winner match 80",
+      "Mexico City Stadium"
+    ],
+    [
+      "6 Jul",
+      "Round of 16",
+      "Match 93",
+      "Winner match 83",
+      "Winner match 84",
+      "Dallas Stadium"
+    ],
+    [
+      "6 Jul",
+      "Round of 16",
+      "Match 94",
+      "Winner match 81",
+      "Winner match 82",
+      "Seattle Stadium"
+    ],
+    [
+      "7 Jul",
+      "Round of 16",
+      "Match 95",
+      "Winner match 86",
+      "Winner match 88",
+      "Atlanta Stadium"
+    ],
+    [
+      "7 Jul",
+      "Round of 16",
+      "Match 96",
+      "Winner match 85",
+      "Winner match 87",
+      "BC Place Vancouver"
+    ],
+    [
+      "9 Jul",
+      "Quarter-final",
+      "Match 97",
+      "Winner match 89",
+      "Winner match 90",
+      "Boston Stadium"
+    ],
+    [
+      "10 Jul",
+      "Quarter-final",
+      "Match 98",
+      "Winner match 93",
+      "Winner match 94",
+      "Los Angeles Stadium"
+    ],
+    [
+      "11 Jul",
+      "Quarter-final",
+      "Match 99",
+      "Winner match 91",
+      "Winner match 92",
+      "Miami Stadium"
+    ],
+    [
+      "11 Jul",
+      "Quarter-final",
+      "Match 100",
+      "Winner match 95",
+      "Winner match 96",
+      "Kansas City Stadium"
+    ],
+    [
+      "14 Jul",
+      "Semi-final",
+      "Match 101",
+      "Winner match 97",
+      "Winner match 98",
+      "Dallas Stadium"
+    ],
+    [
+      "15 Jul",
+      "Semi-final",
+      "Match 102",
+      "Winner match 99",
+      "Winner match 100",
+      "Atlanta Stadium"
+    ],
+    [
+      "18 Jul",
+      "Third-place play-off",
+      "Match 103",
+      "Runner-up match 101",
+      "Runner-up match 102",
+      "Miami Stadium"
+    ],
+    [
+      "19 Jul",
+      "Final",
+      "Match 104",
+      "Winner match 101",
+      "Winner match 102",
+      "New York New Jersey Stadium"
+    ]
+  ],
+  "defaultApi": "https://worldcup26.ir/get/games"
+};
+
+
+const FLAG_CODES = {
+  "Mexico":"mx",
+  "South Africa":"za",
+  "Korea Republic":"kr",
+  "Czechia":"cz",
+  "Canada":"ca",
+  "Bosnia and Herzegovina":"ba",
+  "Qatar":"qa",
+  "Switzerland":"ch",
+  "Brazil":"br",
+  "Morocco":"ma",
+  "Haiti":"ht",
+  "Scotland":"gb-sct",
+  "USA":"us",
+  "Paraguay":"py",
+  "Australia":"au",
+  "Türkiye":"tr",
+  "Germany":"de",
+  "Curaçao":"cw",
+  "Côte d'Ivoire":"ci",
+  "Ecuador":"ec",
+  "Netherlands":"nl",
+  "Japan":"jp",
+  "Sweden":"se",
+  "Tunisia":"tn",
+  "Belgium":"be",
+  "Egypt":"eg",
+  "IR Iran":"ir",
+  "New Zealand":"nz",
+  "Spain":"es",
+  "Cabo Verde":"cv",
+  "Saudi Arabia":"sa",
+  "Uruguay":"uy",
+  "France":"fr",
+  "Senegal":"sn",
+  "Iraq":"iq",
+  "Norway":"no",
+  "Argentina":"ar",
+  "Algeria":"dz",
+  "Austria":"at",
+  "Jordan":"jo",
+  "Portugal":"pt",
+  "Colombia":"co",
+  "Uzbekistan":"uz",
+  "Congo DR":"cd",
+  "England":"gb-eng",
+  "Croatia":"hr",
+  "Ghana":"gh",
+  "Panama":"pa"
+};
+
+function teamLabel(team) {
+  const code = FLAG_CODES[team];
+  const safeTeam = String(team).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  if (!code) return safeTeam;
+  return `<span class="flagTeam"><img class="flagIcon" src="https://flagcdn.com/24x18/${code}.png" srcset="https://flagcdn.com/48x36/${code}.png 2x" alt="" loading="lazy"> <span>${safeTeam}</span></span>`;
+}
+
+
+
+const LIVE_SCORE_ENDPOINTS = [
+  {
+    name: "WorldCup26 direct",
+    url: DATA.defaultApi
+  },
+  {
+    name: "WorldCup26 via allorigins",
+    url: "https://api.allorigins.win/raw?url=" + encodeURIComponent(DATA.defaultApi)
+  },
+  {
+    name: "WorldCup26 via corsproxy.io",
+    url: "https://corsproxy.io/?" + encodeURIComponent(DATA.defaultApi)
+  }
+];
+
+function endpointUrlWithCacheBust(url) {
+  const joiner = url.includes("?") ? "&" : "?";
+  return url + joiner + "_=" + Date.now();
+}
+
+const SCORES_VERSION = "2"; // bump this to wipe bad cached scores
+if (localStorage.getItem("wc2026_sweepstake_scores_version") !== SCORES_VERSION) {
+  localStorage.removeItem("wc2026_sweepstake_scores");
+  localStorage.removeItem("wc2026_fastest_goals");
+  localStorage.setItem("wc2026_sweepstake_scores_version", SCORES_VERSION);
+}
+let scores = JSON.parse(localStorage.getItem("wc2026_sweepstake_scores") || "{}");
+let cards = JSON.parse(localStorage.getItem("wc2026_sweepstake_cards") || "{}");
+let cardFeedStatus = localStorage.getItem("wc2026_sweepstake_card_status") || "No card data read from live feed yet.";
+let autoTimer = null;
+let currentView = "dashboard";
+
+function norm(s) {
+  return String(s || "").toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/&/g,"and")
+    .replace(/united states|u\.s\.a\.|usa/g,"usa")
+    .replace(/korea republic|south korea/g,"korea republic")
+    .replace(/turkiye|turkey/g,"turkiye")
+    .replace(/iran|ir iran/g,"ir iran")
+    .replace(/ivory coast|cote d'ivoire|côte d’ivoire/g,"cote d'ivoire")
+    .replace(/dr congo|congo dr|drc/g,"congo dr")
+    .replace(/cape verde|cabo verde/g,"cabo verde")
+    .replace(/[^a-z0-9]+/g," ").trim();
+}
+
+function owner(team) { return DATA.teamOwner[team] || ""; }
+function scoreFor(id) { return scores[id] || {}; }
+
+function showView(v) {
+  currentView = v;
+  for (const id of ["dashboardView","groupsView","fixturesView","ownersView","cardsView","knockoutView"]) if (document.getElementById(id)) document.getElementById(id).classList.add("hidden");
+  if (document.getElementById(v + "View")) document.getElementById(v + "View").classList.remove("hidden");
+  render();
+}
+
+function getFilter() { return norm(document.getElementById("search").value); }
+function matchesFilterText(...vals) {
+  const q = getFilter(); if (!q) return true;
+  return norm(vals.join(" ")).includes(q);
+}
+
+function standings() {
+  const table = {};
+  for (const [g, teams] of Object.entries(DATA.groups)) {
+    table[g] = teams.map(t => ({team:t, played:0, won:0, drawn:0, lost:0, gf:0, ga:0, gd:0, pts:0}));
+  }
+  const byTeam = Object.fromEntries(Object.values(table).flat().map(r => [r.team, r]));
+  for (const f of DATA.fixtures) {
+    const s = scoreFor(f.id);
+    if (s.score1 === undefined || s.score2 === undefined || String(s.status || "").toLowerCase() !== "finished") continue;
+    const a = byTeam[f.team1], b = byTeam[f.team2];
+    if (!a || !b) continue;
+    a.played++; b.played++;
+    a.gf += +s.score1; a.ga += +s.score2;
+    b.gf += +s.score2; b.ga += +s.score1;
+    if (+s.score1 > +s.score2) { a.won++; b.lost++; a.pts += 3; }
+    else if (+s.score1 < +s.score2) { b.won++; a.lost++; b.pts += 3; }
+    else { a.drawn++; b.drawn++; a.pts++; b.pts++; }
+  }
+  for (const g of Object.keys(table)) {
+    for (const r of table[g]) r.gd = r.gf - r.ga;
+    table[g].sort((a,b) => b.pts-a.pts || b.gd-a.gd || b.gf-a.gf || a.team.localeCompare(b.team));
+  }
+  return table;
+}
+
+function renderGroups() {
+  const st = standings();
+  let html = `<div class="grid">`;
+  for (const [g, rows] of Object.entries(st)) {
+    if (!matchesFilterText("Group " + g, ...rows.map(r => r.team), ...rows.map(r => owner(r.team)))) continue;
+    html += `<div class="card"><h2>Group ${g}</h2>`;
+    for (const r of rows) {
+      html += `<div class="team groupTeamCard"><div class="teamIdentity"><span class="teamName">${teamLabel(r.team)}</span><div class="owner">${owner(r.team)}</div></div><div class="teamRecord"><div class="record">${r.pts} pts</div><div class="record">${r.played} played, GD ${r.gd}</div></div></div>`;
+    }
+    html += `<table class="table"><tr><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr>`;
+    for (const r of rows) html += `<tr><td>${teamLabel(r.team)}</td><td>${r.played}</td><td>${r.won}</td><td>${r.drawn}</td><td>${r.lost}</td><td>${r.gd}</td><td><b>${r.pts}</b></td></tr>`;
+    html += `</table></div>`;
+  }
+  html += `</div>`;
+  document.getElementById("groupsView").innerHTML = html;
+}
+
+function renderFixtures() {
+  let html = `<div class="card"><h2>Fixtures and results</h2><p class="small">Times shown in UK time. Use Refresh live scores for automatic updates.</p>`;
+  for (const f of DATA.fixtures) {
+    const s = scoreFor(f.id);
+    if (!matchesFilterText(f.id, f.date, f.time, f.group, f.team1, f.team2, f.venue, owner(f.team1), owner(f.team2))) continue;
+    const score = (s.score1 !== undefined && s.score2 !== undefined) ? `${s.score1}–${s.score2}` : "v";
+    const status = statusLabelForDisplay(s.status || "scheduled");
+    const klass = status.includes("live") ? "live" : (status.includes("finished") || status.includes("full") ? "finished" : "");
+    html += `<div class="match" id="match-${f.id}">
+      <div class="matchMeta"><b>#${f.id}</b><div class="meta">${f.date} · ${f.time}</div><span class="status ${klass}">${status}</span></div>
+      <div class="fixtureTeam homeTeam"><div class="teamName">${teamLabel(f.team1)}</div><div class="ownerSmall">${owner(f.team1)}</div></div>
+      <div class="fixtureScore"><div class="score">${score}</div><div class="meta">Group ${f.group}</div></div>
+      <div class="fixtureTeam awayTeam"><div class="teamName">${teamLabel(f.team2)}</div><div class="ownerSmall">${owner(f.team2)}</div></div>
+      <div class="fixtureVenue meta">${f.venue}</div>
+    </div>`;
+  }
+  html += `</div>`;
+  document.getElementById("fixturesView").innerHTML = html;
+}
+
+function renderOwners() {
+  let html = `<div class="grid">`;
+  for (const [p, ts] of Object.entries(DATA.assignments)) {
+    const team = ts[0];
+    if (!team || !matchesFilterText(p, team)) continue;
+    const st = Object.values(standings()).flat().find(r => r.team === team);
+    const record = st && st.played > 0 ? `${st.pts} pts &middot; GD ${st.gd >= 0 ? '+' : ''}${st.gd}` : '';
+    html += `<div class="ownerBlock">
+      <div class="ownerTeamLabel">${teamLabel(team)}</div>
+      <div class="ownerName">${p}</div>
+      ${record ? `<div class="ownerRecord small">${record}</div>` : ''}
+    </div>`;
+  }
+  html += `</div>`;
+  document.getElementById("ownersView").innerHTML = html;
+}
+
+
+
+const HISTORIC_STRENGTH = {
+  "Argentina": 98, "Brazil": 97, "Germany": 95, "France": 94, "Spain": 90, "England": 88,
+  "Netherlands": 86, "Portugal": 84, "Uruguay": 82, "Croatia": 80, "Belgium": 78, "Switzerland": 72,
+  "Colombia": 71, "Morocco": 70, "Japan": 68, "USA": 67, "Mexico": 66, "Senegal": 65,
+  "Sweden": 64, "Austria": 63, "Ecuador": 62, "Türkiye": 62, "Korea Republic": 61, "Côte d'Ivoire": 60,
+  "Canada": 58, "Australia": 58, "Norway": 57, "Paraguay": 56, "Scotland": 55, "Egypt": 55,
+  "IR Iran": 54, "Algeria": 53, "Tunisia": 52, "Ghana": 52, "Qatar": 50, "Saudi Arabia": 49,
+  "South Africa": 48, "Panama": 47, "Uzbekistan": 46, "Jordan": 45, "Iraq": 45, "Congo DR": 44,
+  "Czechia": 43, "New Zealand": 42, "Bosnia and Herzegovina": 41, "Haiti": 40, "Cabo Verde": 39,
+  "Curaçao": 38
+};
+
+const CONDUCT_BASELINE = {
+  "Uruguay": 5.8, "Paraguay": 5.5, "Argentina": 5.1, "Türkiye": 5.0, "Côte d'Ivoire": 4.9,
+  "Colombia": 4.8, "Ghana": 4.7, "Saudi Arabia": 4.6, "Morocco": 4.5, "Tunisia": 4.5,
+  "Algeria": 4.4, "Congo DR": 4.4, "IR Iran": 4.3, "Panama": 4.3, "Mexico": 4.2,
+  "Croatia": 4.1, "Serbia": 4.1, "Switzerland": 4.0, "Ecuador": 4.0, "USA": 3.9,
+  "Scotland": 3.9, "Senegal": 3.8, "Australia": 3.8, "South Africa": 3.7, "Czechia": 3.7,
+  "Belgium": 3.6, "Portugal": 3.6, "Brazil": 3.5, "Germany": 3.4, "Spain": 3.3,
+  "France": 3.3, "England": 3.2, "Netherlands": 3.2, "Canada": 3.2, "Bosnia and Herzegovina": 3.2,
+  "Austria": 3.1, "Norway": 3.0, "Sweden": 3.0, "Japan": 2.8, "Korea Republic": 2.8,
+  "New Zealand": 2.7, "Qatar": 2.7, "Haiti": 2.7, "Iraq": 2.7, "Jordan": 2.7,
+  "Uzbekistan": 2.6, "Cabo Verde": 2.6, "Curaçao": 2.5
+};
+
+function seededNumber(seed) {
+  let h = 2166136261;
+  for (let i = 0; i < seed.length; i++) {
+    h ^= seed.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return (h >>> 0) / 4294967296;
+}
+
+function teamStrength(team) {
+  const base = HISTORIC_STRENGTH[team] || 45;
+  const rows = standings();
+  let played = 0, pts = 0, gd = 0, gf = 0;
+  for (const groupRows of Object.values(rows)) {
+    const r = groupRows.find(x => x.team === team);
+    if (r) { played = r.played; pts = r.pts; gd = r.gd; gf = r.gf; }
+  }
+  const performanceBoost = played ? ((pts / (played * 3)) - 0.5) * 14 + Math.max(-5, Math.min(5, gd * 1.5)) + Math.min(3, gf * 0.35) : 0;
+  return Math.max(20, Math.min(110, base + performanceBoost));
+}
+
+function winTeamProbabilities() {
+  const allTeams = Object.values(DATA.groups).flat();
+  const weights = {};
+  let total = 0;
+  for (const team of allTeams) {
+    const strength = teamStrength(team);
+    const weight = Math.pow(Math.max(1, strength - 25), 2.15);
+    weights[team] = weight;
+    total += weight;
+  }
+  return Object.fromEntries(allTeams.map(t => [t, weights[t] / total]));
+}
+
+function sortWorstRows(rows) {
+  return [...rows].sort((a,b) =>
+    a.pts - b.pts ||
+    a.gd - b.gd ||
+    a.gf - b.gf ||
+    conductScore(b.team) - conductScore(a.team) ||
+    seededNumber("coin-toss-" + a.team) - seededNumber("coin-toss-" + b.team)
+  );
+}
+
+function conductScore(team) {
+  const c = normaliseCardsForTeam(team);
+  return c.points;
+}
+
+function expectedGroupFinish(team) {
+  const rows = standings();
+  let record = null;
+  for (const groupRows of Object.values(rows)) {
+    const r = groupRows.find(x => x.team === team);
+    if (r) record = r;
+  }
+  if (!record) return {pts:0, gd:0, gf:0};
+  const remaining = DATA.fixtures.filter(f => (f.team1 === team || f.team2 === team) && !(scoreFor(f.id).score1 !== undefined && scoreFor(f.id).score2 !== undefined && String(scoreFor(f.id).status || "").toLowerCase() === "finished")).length;
+  const strength = teamStrength(team);
+  const expectedPointsPerRemaining = Math.max(0.25, Math.min(2.2, 0.25 + ((strength - 35) / 75) * 1.95));
+  const expectedGoalsPerRemaining = Math.max(0.35, Math.min(2.4, 0.35 + ((strength - 35) / 75) * 2.05));
+  const expectedGdPerRemaining = Math.max(-1.3, Math.min(1.3, ((strength - 58) / 28)));
+  return {
+    team,
+    pts: record.pts + remaining * expectedPointsPerRemaining,
+    gd: record.gd + remaining * expectedGdPerRemaining,
+    gf: record.gf + remaining * expectedGoalsPerRemaining,
+    currentPts: record.pts,
+    currentGd: record.gd,
+    currentGf: record.gf
+  };
+}
+
+function worstTeamProbabilities() {
+  const allTeams = Object.values(DATA.groups).flat();
+  const expected = allTeams.map(expectedGroupFinish);
+  const worstiness = {};
+  let total = 0;
+  for (const r of expected) {
+    const strengthPenalty = (100 - teamStrength(r.team)) * 0.7;
+    const groupPenalty = (9 - r.pts) * 12 + (-r.gd * 3) + (-r.gf * 1.2);
+    const conductTiePenalty = conductScore(r.team) * 0.15;
+    const weight = Math.max(0.1, strengthPenalty + groupPenalty + conductTiePenalty);
+    worstiness[r.team] = Math.pow(weight, 1.6);
+    total += worstiness[r.team];
+  }
+  return Object.fromEntries(allTeams.map(t => [t, worstiness[t] / total]));
+}
+
+function conductProbabilities() {
+  const allTeams = Object.values(DATA.groups).flat();
+  const weights = {};
+  let total = 0;
+  for (const team of allTeams) {
+    const current = conductScore(team);
+    const expected = CONDUCT_BASELINE[team] || 3.2;
+    const strength = Math.pow(1 + current * 2.4 + expected, 1.8);
+    weights[team] = strength;
+    total += strength;
+  }
+  return Object.fromEntries(allTeams.map(t => [t, weights[t] / total]));
+}
+
+// FASTEST_GOALS: auto-updated from live API events. Seeded with known data as fallback.
+const FASTEST_GOALS_SEED = {
+  "Mexico": { minute: 9, scorer: "Julián Quiñones", opponent: "South Africa" },
+  "Korea Republic": { minute: 67, scorer: "Hwang In-beom", opponent: "Czechia" },
+  "Czechia": { minute: 59, scorer: "Ladislav Krejčí", opponent: "Korea Republic" },
+};
+let FASTEST_GOALS = JSON.parse(localStorage.getItem("wc2026_fastest_goals") || "null") || {...FASTEST_GOALS_SEED};
+
+function currentTournamentFastestGoal() {
+  // Returns the overall fastest goal in the tournament { minute, team, scorer, opponent }
+  let best = null;
+  for (const [team, g] of Object.entries(FASTEST_GOALS)) {
+    if (g && (best === null || g.minute < best.minute)) {
+      best = { ...g, team };
+    }
+  }
+  return best; // null if no goals yet
+}
+
+// Fastest goal probability: P(this team scores a goal in minute M < currentRecord)
+// Model: each match has ~90 minutes. Goals follow a roughly uniform-ish distribution across the match,
+// but slightly front-loaded in real football (~55% of goals in second half, so first half is not dead).
+// P(team scores in first K minutes of a given match) ≈ K/90 * goalsPerGame
+// We want P(at least one goal in first (record-1) minutes across all remaining matches).
+// For simplicity: P(fastest goal ≤ K mins) ≈ 1 - (1 - K/90 * λ)^n  where λ = goals/game, n = remaining matches.
+// Then normalise across teams.
+function fastestGoalProbabilities() {
+  const allTeams = Object.values(DATA.groups).flat();
+  const best = currentTournamentFastestGoal();
+  // If no goals yet, target is minute 90 (anything counts)
+  const targetMinute = best ? best.minute - 1 : 90;
+
+  const weights = {};
+  let total = 0;
+  for (const team of allTeams) {
+    const strength = teamStrength(team);
+
+    // Count goals and games played
+    let gf = 0, played = 0;
+    for (const f of DATA.fixtures) {
+      const s = scoreFor(f.id);
+      if (String(s.status || '').toLowerCase() !== 'finished') continue;
+      if (f.team1 === team && s.score1 !== undefined) { gf += +s.score1; played++; }
+      if (f.team2 === team && s.score2 !== undefined) { gf += +s.score2; played++; }
+    }
+
+    // If team already holds the record, they can't beat themselves — weight = 0 (prize already won)
+    // But if the tournament continues they could set a new record in future matches;
+    // we still model their future probability so the "predicted" view is forward-looking.
+    const myBest = FASTEST_GOALS[team];
+    const alreadyHoldsRecord = best && myBest && myBest.minute === best.minute;
+
+    const goalsPerGame = played > 0 ? gf / played : Math.max(0.3, (strength - 35) / 55 * 1.8 + 0.5);
+
+    // Count remaining matches (group + estimated knockout progression)
+    const remainingGroup = DATA.fixtures.filter(f => {
+      const s = scoreFor(f.id);
+      const finished = s.score1 !== undefined && s.score2 !== undefined && String(s.status || '').toLowerCase() === 'finished';
+      return (f.team1 === team || f.team2 === team) && !finished &&
+             ['A','B','C','D','E','F','G','H','I','J','K','L'].includes(f.group);
+    }).length;
+    // Expected knockout matches based on strength
+    const koChance = Math.max(0.05, Math.min(0.95, (strength - 30) / 75));
+    const expectedKoMatches = koChance * 4; // expected value across R32/R16/QF/SF/F
+
+    const remainingMatches = remainingGroup + expectedKoMatches;
+
+    // P(score in first targetMinute mins of one match) - use slightly front-loaded model
+    // Early goals: real WC data shows ~40% of goals in first 45 mins
+    const earlyFraction = Math.min(1, (targetMinute / 90) * (targetMinute < 45 ? 0.85 : 1.0));
+    const pScoreEarly = Math.min(0.98, earlyFraction * goalsPerGame);
+
+    // P(at least one such goal across remaining matches)
+    const pAtLeastOne = alreadyHoldsRecord ? 0 : 1 - Math.pow(Math.max(0, 1 - pScoreEarly), remainingMatches);
+
+    weights[team] = Math.max(0, pAtLeastOne);
+    total += weights[team];
+  }
+
+  if (total === 0) {
+    // No team can beat the record (tournament over or record is 0), distribute evenly
+    return Object.fromEntries(allTeams.map(t => [t, 1 / allTeams.length]));
+  }
+  return Object.fromEntries(allTeams.map(t => [t, weights[t] / total]));
+}
+
+// Most goals conceded: based on expected goals against across the whole tournament.
+// Weaker teams, especially those facing tough opponents, are more likely to concede heavily.
+function mostConcededProbabilities() {
+  const allTeams = Object.values(DATA.groups).flat();
+  const weights = {};
+  let total = 0;
+  for (const team of allTeams) {
+    const strength = teamStrength(team);
+    let ga = 0, played = 0;
+    for (const f of DATA.fixtures) {
+      const s = scoreFor(f.id);
+      if (String(s.status || "").toLowerCase() !== "finished") continue;
+      if (f.team1 === team && s.score2 !== undefined) { ga += +s.score2; played++; }
+      if (f.team2 === team && s.score1 !== undefined) { ga += +s.score1; played++; }
+    }
+    const gaPerGame = played > 0 ? ga / played : Math.max(0.2, (100 - strength) / 60 * 2.2 + 0.3);
+    // Total expected goals against ≈ goals-per-game × expected matches (stronger teams play more)
+    const expectedMatches = Math.max(0.5, (strength - 20) / 80 * 5 + 2.5);
+    const expectedTotalGa = gaPerGame * expectedMatches;
+    const w = Math.pow(Math.max(0.01, expectedTotalGa), 1.9);
+    weights[team] = w;
+    total += w;
+  }
+  return Object.fromEntries(allTeams.map(t => [t, weights[t] / total]));
+}
+
+// Team that knocks England out: the team that beats or eliminates England in the knockout stage.
+// In the group stage England is in Group L. We look for any finished match where England lost.
+// If England has already been knocked out (group or knockout), award probability 1 to that team's owner.
+// Otherwise, distribute probability across likely opponents based on match schedule and strength.
+function knockEnglandOutProbabilities() {
+  const allTeams = Object.values(DATA.groups).flat();
+
+  // Check if England has already been eliminated by a finished loss/group exit
+  // Look for the most recent finished match England lost (knockout) or check group standings
+  let eliminatedBy = null;
+
+  // Check knockout fixtures first (group field won't be A-L for KO matches)
+  for (const f of DATA.fixtures) {
+    const s = scoreFor(f.id);
+    if (String(s.status || "").toLowerCase() !== "finished") continue;
+    const isKnockout = !["A","B","C","D","E","F","G","H","I","J","K","L"].includes(f.group);
+    if (!isKnockout) continue;
+    if (f.team1 === "England" && s.score1 !== undefined && s.score2 !== undefined) {
+      if (+s.score2 > +s.score1) eliminatedBy = f.team2;
+    }
+    if (f.team2 === "England" && s.score1 !== undefined && s.score2 !== undefined) {
+      if (+s.score1 > +s.score2) eliminatedBy = f.team1;
+    }
+  }
+
+  // Check if England was eliminated in the group stage (didn't qualify)
+  if (!eliminatedBy) {
+    const rows = standings();
+    const groupL = rows["L"];
+    if (groupL) {
+      const englandRow = groupL.find(r => r.team === "England");
+      const allGroupLPlayed = groupL.every(r => r.played >= 3);
+      if (allGroupLPlayed && englandRow) {
+        // Top 2 qualify; if England is 3rd or 4th, they're out via group stage
+        const englandRank = groupL.findIndex(r => r.team === "England");
+        if (englandRank >= 2) {
+          // England eliminated in groups — group elimination means no single team "knocked them out"
+          // Distribute evenly among their group opponents with slight weighting toward team above them
+          const others = groupL.filter(r => r.team !== "England");
+          const weights = {};
+          let tot = 0;
+          others.forEach((r, i) => { const w = Math.pow(2 - i * 0.4, 1.5); weights[r.team] = w; tot += w; });
+          return Object.fromEntries(allTeams.map(t => [t, (weights[t] || 0) / tot]));
+        }
+      }
+    }
+  }
+
+  // If we know exactly who knocked England out, give them 100%
+  if (eliminatedBy) {
+    return Object.fromEntries(allTeams.map(t => [t, t === eliminatedBy ? 1.0 : 0.0]));
+  }
+
+  // England still in the tournament — estimate likely knockout opponents.
+  // England is in Group L. Likely R32 opponent is a Group K runner-up or similar.
+  // Use strength-based probability: stronger non-England teams are more likely to face & beat England.
+  const englandStrength = teamStrength("England");
+  const weights = {};
+  let tot = 0;
+  for (const team of allTeams) {
+    if (team === "England") { weights[team] = 0; continue; }
+    const s = teamStrength(team);
+    // P(meet England in KO) ∝ own probability of qualifying × relative strength
+    const qualifyChance = Math.max(0.02, (s - 20) / 90);
+    // P(beat England | meeting England) uses strength differential
+    const beatChance = Math.max(0.05, Math.min(0.95, 0.5 + (s - englandStrength) / 120));
+    const w = Math.pow(qualifyChance * beatChance, 1.4);
+    weights[team] = w;
+    tot += w;
+  }
+  return Object.fromEntries(allTeams.map(t => [t, (weights[t] || 0) / tot]));
+}
+
+function participantPrizeProbabilities() {
+  const winP = winTeamProbabilities();
+  const worstP = worstTeamProbabilities();
+  const conductP = conductProbabilities();
+  const fastGoalP = fastestGoalProbabilities();
+  const concededP = mostConcededProbabilities();
+  const knockEnglandP = knockEnglandOutProbabilities();
+  return DATA.participants.map(person => {
+    const teams = DATA.assignments[person] || [];
+    const worldCup = teams.reduce((s,t) => s + (winP[t] || 0), 0);
+    const worst = teams.reduce((s,t) => s + (worstP[t] || 0), 0);
+    const conduct = teams.reduce((s,t) => s + (conductP[t] || 0), 0);
+    const fastGoal = teams.reduce((s,t) => s + (fastGoalP[t] || 0), 0);
+    const conceded = teams.reduce((s,t) => s + (concededP[t] || 0), 0);
+    const knockEngland = teams.reduce((s,t) => s + (knockEnglandP[t] || 0), 0);
+    const expectedPrize = worldCup * 200 + worst * 30 + conduct * 30 + fastGoal * 30 + conceded * 30 + knockEngland * 30;
+    return {person, teams, worldCup, worst, conduct, fastGoal, conceded, knockEngland, expectedPrize};
+  }).sort((a,b) => b.expectedPrize - a.expectedPrize);
+}
+
+function percent(x) {
+  return (x * 100).toFixed(x >= 0.1 ? 1 : 2) + "%";
+}
+
+function renderDashboard() {
+  const rows = participantPrizeProbabilities();
+  const q = getFilter();
+  const filtered = rows.filter(r => !q || matchesFilterText(r.person, ...r.teams));
+  let html = `<div class="card dashboardHero">
+    <h2>Prize probabilities</h2>
+    <p class="small">A live estimate for each sweepstake entry, combining historic team strength with current group results and card data already loaded into the page. These are modelled estimates, not betting odds.</p>
+    <div class="prizeGrid">
+      <div><b>Winner</b><span>£200 prize</span></div>
+      <div><b>Wooden Spoon</b><span>£30 prize · lowest group points, then GD, goals scored, conduct, coin toss</span></div>
+      <div><b>Dirty Play Award</b><span>£30 prize · yellow card 1, red card 2</span></div>
+      <div><b>One Minute Man</b><span>£30 prize · team that scores the earliest goal (by minute) in the tournament</span></div>
+      <div><b>The Sieve</b><span>£30 prize · team that concedes the most goals across the whole tournament</span></div>
+      <div><b>It's Not Coming Home</b><span>£30 prize · team that eliminates England from the knockout stage</span></div>
+    </div>
+  </div>`;
+
+  html += `<div class="card"><h2>Participant probability table</h2><div class="probTableWrap"><table class="probTable">
+    <thead><tr><th>Participant</th><th>Team</th><th>Winner</th><th>Wooden Spoon</th><th>Dirty Play Award</th><th>One Minute Man</th><th>The Sieve</th><th>It's Not Coming Home</th><th>Expected prize value</th></tr></thead><tbody>`;
+  for (const r of filtered) {
+    html += `<tr>
+      <td><b>${r.person}</b></td>
+      <td><span class="miniTeam">${teamLabel(r.teams[0] || "")}</span></td>
+      <td>${percent(r.worldCup)}</td>
+      <td>${percent(r.worst)}</td>
+      <td>${percent(r.conduct)}</td>
+      <td>${percent(r.fastGoal)}</td>
+      <td>${percent(r.conceded)}</td>
+      <td>${percent(r.knockEngland)}</td>
+      <td><b>£${r.expectedPrize.toFixed(2)}</b></td>
+    </tr>`;
+  }
+  html += `</tbody></table></div></div>`;
+
+  html += `<div class="grid dashboardLists">
+    ${renderPrizeList("Winner", rows, "worldCup", "£200")}
+    ${renderPrizeList("Wooden Spoon", rows, "worst", "£30", currentWoodenSpoonLeaderboard)}
+    ${renderPrizeList("Dirty Play Award", rows, "conduct", "£30", currentDirtyPlayLeaderboard)}
+    ${renderPrizeList("One Minute Man", rows, "fastGoal", "£30", currentOneMinuteManLeaderboard)}
+    ${renderPrizeList("The Sieve", rows, "conceded", "£30", currentSieveLeaderboard)}
+    ${renderPrizeList("It's Not Coming Home", rows, "knockEngland", "£30")}
+  </div>`;
+
+  html += `<div class="card"><h2>How the model works</h2>
+    <p class="small"><b>Winner:</b> each team starts with a historic-strength score based on past World Cup pedigree and broad footballing history. Current tournament performance then moves that score up or down using points, goal difference and goals scored.</p>
+    <p class="small"><b>Wooden Spoon:</b> estimates each team's likely final group record from current points, remaining matches and historic-strength score. The prize rule is reflected as: lowest points, then goal difference, goals scored, team conduct score and a deterministic coin-toss fallback.</p>
+    <p class="small"><b>Dirty Play Award:</b> combines current card points with a small pre-tournament conduct baseline. Card scoring is yellow card = 1, red card = 2.</p>
+    <p class="small"><b>One Minute Man:</b> awarded to whichever team scores the earliest goal (by minute) across the entire tournament. <b>Current leaderboard</b> shows the fastest goal actually recorded by each participant's teams so far. <b>Predicted</b> estimates each team's probability of scoring a goal earlier than the current tournament record in their remaining matches — based on attacking strength, goals-per-game rate, and number of matches still to play.</p>
+    <p class="small"><b>The Sieve:</b> estimates which team is most likely to concede the most goals across the entire tournament. Weaker teams concede at a higher rate; teams that advance further play more matches and thus have more opportunities to concede. Both factors are combined into a total expected goals-against figure.</p>
+    <p class="small"><b>It's Not Coming Home:</b> if England has already been eliminated, the eliminating team gets 100%. Otherwise, probability is spread across other teams weighted by their likelihood of meeting England in the knockout stage and their chance of beating England given their relative strengths. If England exit in the group stage, probability is shared among their group opponents.</p>
+  </div>`;
+
+  document.getElementById("dashboardView").innerHTML = html;
+}
+
+// Current leaderboard functions for the four toggleable prizes
+
+function currentWoodenSpoonLeaderboard(rows) {
+  const st = standings();
+  const byTeam = Object.fromEntries(Object.values(st).flat().map(r => [r.team, r]));
+  return [...rows].sort((a, b) => {
+    const sum = (person, fn) => (rows.find(r => r.person === person)?.teams || [])
+      .reduce((s, t) => s + fn(byTeam[t] || {pts:0,gd:0,gf:0}), 0);
+    return (sum(a.person, r => r.pts) - sum(b.person, r => r.pts)) ||
+           (sum(a.person, r => r.gd)  - sum(b.person, r => r.gd))  ||
+           (sum(a.person, r => r.gf)  - sum(b.person, r => r.gf));
+  }).map((r, i) => {
+    const t0 = r.teams[0] || '';
+    const sw = byTeam[t0];
+    const statLine = sw ? `${teamLabel(t0)}\u00a0${sw.pts}pts (GD ${sw.gd >= 0 ? '+' : ''}${sw.gd})` : teamLabel(t0);
+    return {rank: i + 1, person: r.person, teams: r.teams, statLine};
+  });
+}
+
+function currentDirtyPlayLeaderboard(rows) {
+  const pointsByTeam = Object.fromEntries(
+    Object.values(DATA.groups).flat().map(t => [t, normaliseCardsForTeam(t).points])
+  );
+  return [...rows].sort((a, b) =>
+    b.teams.reduce((s, t) => s + (pointsByTeam[t] || 0), 0) -
+    a.teams.reduce((s, t) => s + (pointsByTeam[t] || 0), 0)
+  ).map((r, i) => {
+    const t0 = r.teams[0] || '';
+    const statLine = `${teamLabel(t0)}\u00a0${normaliseCardsForTeam(t0).points}pts`;
+    return {rank: i + 1, person: r.person, teams: r.teams, statLine};
+  });
+}
+
+function currentOneMinuteManLeaderboard(rows) {
+  // Rank by the earliest (lowest-minute) goal any of a person's teams has scored.
+  // Teams that haven't scored yet are ranked last.
+  const bestMinute = team => {
+    const g = FASTEST_GOALS[team];
+    return g ? g.minute : Infinity;
+  };
+  const personBest = person => {
+    const teams = rows.find(r => r.person === person)?.teams || [];
+    return Math.min(...teams.map(bestMinute));
+  };
+  return [...rows].sort((a, b) => personBest(a.person) - personBest(b.person))
+    .map((r, i) => {
+      const t0 = r.teams[0] || '';
+    const gd = FASTEST_GOALS[t0];
+    let statLine;
+    if (gd && gd.minute) {
+      statLine = `${teamLabel(t0)} ${gd.minute}' – ${gd.scorer || 'unknown scorer'} vs ${gd.opponent || '?'}`;
+    } else {
+      const hasScored = DATA.fixtures.some(f => {
+        const s = scoreFor(f.id);
+        if (String(s.status || '').toLowerCase() !== 'finished') return false;
+        return (f.team1 === t0 && (s.score1 || 0) > 0) || (f.team2 === t0 && (s.score2 || 0) > 0);
+      });
+      statLine = hasScored ? `${teamLabel(t0)} scored (minute not in feed)` : `${teamLabel(t0)} no goal yet`;
+    }
+          return {rank: i + 1, person: r.person, teams: r.teams, statLine};
+    });
+}
+
+function currentSieveLeaderboard(rows) {
+  const gaByTeam = {};
+  for (const team of Object.values(DATA.groups).flat()) {
+    let ga = 0;
+    for (const f of DATA.fixtures) {
+      const s = scoreFor(f.id);
+      if (String(s.status || '').toLowerCase() !== 'finished') continue;
+      if (f.team1 === team && s.score2 !== undefined) ga += +s.score2;
+      if (f.team2 === team && s.score1 !== undefined) ga += +s.score1;
+    }
+    gaByTeam[team] = ga;
+  }
+  return [...rows].sort((a, b) =>
+    b.teams.reduce((s, t) => s + (gaByTeam[t] || 0), 0) -
+    a.teams.reduce((s, t) => s + (gaByTeam[t] || 0), 0)
+  ).map((r, i) => {
+    const t0 = r.teams[0] || '';
+    const statLine = `${teamLabel(t0)}\u00a0${gaByTeam[t0] || 0}\u00a0conceded`;
+    return {rank: i + 1, person: r.person, teams: r.teams, statLine};
+  });
+}
+
+const PRIZE_CURRENT_FN = {
+  worst:    currentWoodenSpoonLeaderboard,
+  conduct:  currentDirtyPlayLeaderboard,
+  fastGoal: currentOneMinuteManLeaderboard,
+  conceded: currentSieveLeaderboard,
+};
+const PRIZE_TITLE = {
+  worldCup:    'Winner',
+  worst:       'Wooden Spoon',
+  conduct:     'Dirty Play Award',
+  fastGoal:    'One Minute Man',
+  conceded:    'The Sieve',
+  knockEngland: "It's Not Coming Home",
+};
+const PRIZE_VALUE = {
+  worldCup: '\u00a3200', worst: '\u00a330', conduct: '\u00a330',
+  fastGoal: '\u00a330', conceded: '\u00a330', knockEngland: '\u00a330',
+};
+const prizeListMode = {};
+
+function setPrizeMode(key, mode) {
+  prizeListMode[key] = mode;
+  const cardId = 'prizeCard_' + key;
+  const el = document.getElementById(cardId);
+  if (!el) return;
+  const probRows = participantPrizeProbabilities();
+  const html = renderPrizeList(PRIZE_TITLE[key], probRows, key, PRIZE_VALUE[key], PRIZE_CURRENT_FN[key]);
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  el.replaceWith(tmp.firstElementChild);
+}
+
+function renderPrizeList(title, rows, key, prize, currentFn) {
+  const cardId = 'prizeCard_' + key;
+  const mode = prizeListMode[key] || 'prob';
+  const hasToggle = !!currentFn;
+
+  let bodyHtml = '';
+  if (!hasToggle || mode === 'prob') {
+    const sorted = [...rows].sort((a, b) => b[key] - a[key]);
+    sorted.forEach((r, i) => {
+      bodyHtml += `<div class="probRow">
+        <div class="rankNum">#${i + 1}</div>
+        <div><b>${r.person}</b><div class="small">${teamLabel(r.teams[0] || "")}</div></div>
+        <div class="probPct">${percent(r[key])}</div>
+      </div>`;
+    });
+  } else {
+    currentFn(rows).forEach(r => {
+      bodyHtml += `<div class="probRow">
+        <div class="rankNum">#${r.rank}</div>
+        <div><b>${r.person}</b><div class="small">${r.statLine}</div></div>
+      </div>`;
+    });
+  }
+
+  const toggleHtml = hasToggle ? `<div class="prizeToggle">
+      <button class="tab${mode === 'current' ? ' active' : ''}" onclick="setPrizeMode('${key}','current')">Current</button>
+      <button class="tab${mode === 'prob' ? ' active' : ''}" onclick="setPrizeMode('${key}','prob')">Predicted</button>
+    </div>` : '';
+
+  return `<div class="card prizeList" id="${cardId}">
+    <div class="prizeListHeader">
+      <div><h2>${title}</h2><p class="small">${prize} prize</p></div>
+      ${toggleHtml}
+    </div>
+    ${bodyHtml}
+  </div>`;
+}
+
+function asNumberOrZero(v) {
+  if (v === undefined || v === null || v === "") return 0;
+  if (Array.isArray(v)) return v.length;
+  const n = Number(v);
+  return Number.isFinite(n) ? n : 0;
+}
+
+function pickFirstNumber(obj, keys) {
+  if (!obj || typeof obj !== "object") return undefined;
+  for (const key of keys) {
+    if (obj[key] !== undefined && obj[key] !== null && obj[key] !== "") return obj[key];
+  }
+  return undefined;
+}
+
+function ensureCardTeam(teamName) {
+  const realTeam = Object.values(DATA.groups).flat().find(t => norm(t) === norm(teamName));
+  if (!realTeam) return null;
+  cards[realTeam] = cards[realTeam] || {yellow:0, secondYellow:0, straightRed:0};
+  return realTeam;
+}
+
+function setTeamCardTotals(teamName, yellow, secondYellow, straightRed) {
+  const realTeam = ensureCardTeam(teamName);
+  if (!realTeam) return false;
+  let changed = false;
+  if (yellow !== undefined) {
+    const v = asNumberOrZero(yellow);
+    if (Number(cards[realTeam].yellow || 0) !== v) changed = true;
+    cards[realTeam].yellow = v;
+  }
+  if (secondYellow !== undefined) {
+    const v = asNumberOrZero(secondYellow);
+    if (Number(cards[realTeam].secondYellow || 0) !== v) changed = true;
+    cards[realTeam].secondYellow = v;
+  }
+  if (straightRed !== undefined) {
+    const v = asNumberOrZero(straightRed);
+    if (Number(cards[realTeam].straightRed || 0) !== v) changed = true;
+    cards[realTeam].straightRed = v;
+  }
+  return changed;
+}
+
+function normaliseCardsForTeam(team) {
+  const c = cards[team] || {};
+  const yellow = Number(c.yellow || c.yellows || c.yellowCards || 0);
+  const secondYellow = Number(c.secondYellow || c.second_yellow || c.secondYellowRed || c.redAfterSecondYellow || 0);
+  const straightRed = Number(c.straightRed || c.straight_red || c.red || c.redCards || 0);
+  return {yellow, secondYellow, straightRed, points: yellow + (2 * straightRed)};
+}
+
+function cardLeaderboard() {
+  return Object.values(DATA.groups).flat().map(team => {
+    const c = normaliseCardsForTeam(team);
+    return {team, owner: owner(team), ...c};
+  }).sort((a,b) => b.points - a.points || b.straightRed - a.straightRed || b.yellow - a.yellow || a.team.localeCompare(b.team));
+}
+
+function renderCards() {
+  let rows = cardLeaderboard().filter(r => matchesFilterText(r.team, r.owner, r.yellow, r.secondYellow, r.straightRed, r.points));
+  let html = `<div class="card">
+      <h2>Team card leaderboard</h2>
+      <p class="small">Discipline score: yellow cards and red cards only. Yellow cards are worth 1 point and red cards are worth 2 points. Highest score is the most-carded team.</p><p class="small"><b>Card feed status:</b> ${cardFeedStatus}</p>`;
+  rows.forEach((r, idx) => {
+    html += `<div class="rankRow">
+      <div class="rankNum">#${idx + 1}</div>
+      <div><b>${teamLabel(r.team)}</b><div class="ownerSmall">${r.owner}</div></div>
+      <div class="cardCounts">Yellow ${r.yellow} · Red ${r.straightRed}</div>
+      <div class="disciplineScore">${r.points}</div>
+    </div>`;
+  });
+  html += `</div>`;
+  document.getElementById("cardsView").innerHTML = html;
+}
+
+function storeCards() {
+  localStorage.setItem("wc2026_sweepstake_cards", JSON.stringify(cards));
+}
+
+function absorbCardIncident(team, type) {
+  const realTeam = Object.values(DATA.groups).flat().find(t => norm(t) === norm(team));
+  if (!realTeam) return false;
+  cards[realTeam] = cards[realTeam] || {yellow:0, secondYellow:0, straightRed:0};
+  const t = norm(type);
+  if (t.includes("second") || t.includes("two yellow") || t.includes("yellow red") || t.includes("2nd")) {
+    cards[realTeam].secondYellow = Number(cards[realTeam].secondYellow || 0) + 1;
+  } else if (t.includes("straight") || t === "red" || t.includes("red card")) {
+    cards[realTeam].straightRed = Number(cards[realTeam].straightRed || 0) + 1;
+  } else if (t.includes("yellow") || t === "yc") {
+    cards[realTeam].yellow = Number(cards[realTeam].yellow || 0) + 1;
+  } else {
+    return false;
+  }
+  return true;
+}
+function extractCardsFromApiGame(g) {
+  let count = 0;
+
+  const homeName = g.team1 || g.home_team || g.homeTeam || g.home || g.home_name || g.homeTeamName || g.home_team_name_en || g.home_team_label || g?.teams?.home?.name || g?.home?.name;
+  const awayName = g.team2 || g.away_team || g.awayTeam || g.away || g.away_name || g.awayTeamName || g.away_team_name_en || g.away_team_label || g?.teams?.away?.name || g?.away?.name;
+
+  // Aggregate card fields commonly used by APIs.
+  const homeYellow = pickFirstNumber(g, ["home_yellow_cards","homeYellowCards","home_yellows","home_yellow","yellow_cards_home","home_cards_yellow","homeYellow","home_card_yellow"]);
+  const awayYellow = pickFirstNumber(g, ["away_yellow_cards","awayYellowCards","away_yellows","away_yellow","yellow_cards_away","away_cards_yellow","awayYellow","away_card_yellow"]);
+  const homeSecondYellow = pickFirstNumber(g, ["home_second_yellow_cards","homeSecondYellowCards","home_second_yellows","home_yellow_red_cards","homeYellowRedCards","second_yellow_cards_home","home_second_yellow","homeSecondYellow"]);
+  const awaySecondYellow = pickFirstNumber(g, ["away_second_yellow_cards","awaySecondYellowCards","away_second_yellows","away_yellow_red_cards","awayYellowRedCards","second_yellow_cards_away","away_second_yellow","awaySecondYellow"]);
+  const homeRed = pickFirstNumber(g, ["home_red_cards","homeRedCards","home_reds","home_red","red_cards_home","home_cards_red","homeRed","home_card_red"]);
+  const awayRed = pickFirstNumber(g, ["away_red_cards","awayRedCards","away_reds","away_red","red_cards_away","away_cards_red","awayRed","away_card_red"]);
+
+  if (homeName && (homeYellow !== undefined || homeSecondYellow !== undefined || homeRed !== undefined)) {
+    if (setTeamCardTotals(homeName, homeYellow, homeSecondYellow, homeRed)) count++;
+  }
+  if (awayName && (awayYellow !== undefined || awaySecondYellow !== undefined || awayRed !== undefined)) {
+    if (setTeamCardTotals(awayName, awayYellow, awaySecondYellow, awayRed)) count++;
+  }
+
+  // Nested aggregate patterns.
+  const teamStats = [
+    [homeName, g.homeCards || g.cards_home || g.home_cards || g?.statistics?.home || g?.stats?.home || g?.cards?.home || g?.home?.cards],
+    [awayName, g.awayCards || g.cards_away || g.away_cards || g?.statistics?.away || g?.stats?.away || g?.cards?.away || g?.away?.cards]
+  ];
+
+  for (const [team, stat] of teamStats) {
+    if (!team || !stat || typeof stat !== "object") continue;
+    const yellow = pickFirstNumber(stat, ["yellow", "yellows", "yellowCards", "yellow_cards", "yc"]);
+    const secondYellow = pickFirstNumber(stat, ["secondYellow", "second_yellow", "secondYellowRed", "yellowRed", "yellow_red", "second_yellow_cards"]);
+    const straightRed = pickFirstNumber(stat, ["straightRed", "straight_red", "red", "reds", "redCards", "red_cards", "rc"]);
+    if (yellow !== undefined || secondYellow !== undefined || straightRed !== undefined) {
+      if (setTeamCardTotals(team, yellow, secondYellow, straightRed)) count++;
+    }
+  }
+
+  // Incident/event arrays. These increment because events are usually one row per card.
+  const incidentArrays = [
+    g.incidents, g.events, g.cards, g.bookings, g.timeline, g.match_events, g.matchEvents, g?.statistics?.cards
+  ].filter(Array.isArray);
+
+  for (const arr of incidentArrays) {
+    for (const ev of arr) {
+      const type = ev.type || ev.card || ev.detail || ev.description || ev.kind || ev.event_type || ev.card_type || "";
+      const team = ev.team || ev.teamName || ev.side || ev?.team?.name || ev?.team_name || ev.country || ev.participant || "";
+      if (team && absorbCardIncident(team, type)) count++;
+    }
+  }
+
+  return count;
+}
+function storeFastestGoals() {
+  localStorage.setItem("wc2026_fastest_goals", JSON.stringify(FASTEST_GOALS));
+}
+
+// Extract earliest goal minutes from an API game object.
+// Returns the number of FASTEST_GOALS records updated.
+function extractGoalsFromApiGame(g, team1Name, team2Name) {
+  if (!team1Name && !team2Name) return 0;
+  let updated = 0;
+
+  // Helper: record a goal for a team if it's earlier than their current best
+  function recordGoal(teamName, minute, scorer) {
+    if (!teamName || minute === undefined || minute === null) return;
+    const min = parseInt(minute, 10);
+    if (!Number.isFinite(min) || min <= 0) return;
+
+    // Resolve to canonical team name in DATA
+    const canonical = Object.values(DATA.groups).flat().find(t => norm(t) === norm(teamName));
+    if (!canonical) return;
+
+    if (!FASTEST_GOALS[canonical] || min < FASTEST_GOALS[canonical].minute) {
+      const opponent = canonical === team1Name ? team2Name : team1Name;
+      FASTEST_GOALS[canonical] = { minute: min, scorer: scorer || "Unknown", opponent: opponent || "" };
+      updated++;
+    }
+  }
+
+  // Strategy 1: events/incidents array (richest — has type, minute, team, player)
+  const eventArrays = [g.events, g.incidents, g.timeline, g.match_events, g.matchEvents, g.goals].filter(Array.isArray);
+  for (const arr of eventArrays) {
+    for (const ev of arr) {
+      const type = String(ev.type || ev.event_type || ev.kind || ev.detail || "").toLowerCase();
+      // Only count normal goals (not own goals — those don't belong to the scoring team for this award)
+      const isGoal = type.includes("goal") && !type.includes("own") && !type.includes("missed") && !type.includes("saved") && !type.includes("penalty miss");
+      if (!isGoal) continue;
+
+      const minute = ev.minute || ev.time || ev.elapsed || ev.min || ev.match_minute;
+      const scorer = ev.player || ev.player_name || ev.name || ev.scorer || ev.participant || "";
+      // Team identification from event
+      const evTeam = ev.team || ev?.team?.name || ev.team_name || ev.teamName || ev.side || ev.country || "";
+      // If we know which team, use it; otherwise guess from home/away flag
+      if (evTeam) {
+        recordGoal(evTeam, minute, scorer);
+      } else if (ev.home === true || ev.side === "home" || ev.homeAway === "home") {
+        recordGoal(team1Name, minute, scorer);
+      } else if (ev.home === false || ev.side === "away" || ev.homeAway === "away") {
+        recordGoal(team2Name, minute, scorer);
+      }
+    }
+  }
+
+  // Strategy 2: structured goals arrays (goals1/goals2 — openfootball style)
+  const goals1 = g.goals1 || g.home_goals || g.homeGoals || g.goalsHome;
+  const goals2 = g.goals2 || g.away_goals || g.awayGoals || g.goalsAway;
+  if (Array.isArray(goals1)) {
+    for (const gev of goals1) {
+      recordGoal(team1Name, gev.minute || gev.min || gev.time, gev.name || gev.player || gev.scorer);
+    }
+  }
+  if (Array.isArray(goals2)) {
+    for (const gev of goals2) {
+      recordGoal(team2Name, gev.minute || gev.min || gev.time, gev.name || gev.player || gev.scorer);
+    }
+  }
+
+  return updated;
+}
+
+function openCardsManual() {
+  document.getElementById("cardsJson").value = JSON.stringify(cards, null, 2);
+  document.getElementById("cardsDialog").classList.remove("hidden");
+}
+function closeCardsManual() { document.getElementById("cardsDialog").classList.add("hidden"); }
+function applyManualCards() {
+  try {
+    const parsed = JSON.parse(document.getElementById("cardsJson").value || "{}");
+    cards = parsed;
+    storeCards();
+    render();
+    closeCardsManual();
+  } catch(e) { alert("That JSON is not valid: " + e.message); }
+}
+function downloadDisciplineState() {
+  const blob = new Blob([JSON.stringify({cards, teamLeaderboard: cardLeaderboard()}, null, 2)], {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "world-cup-2026-sweepstake-cards.json";
+  a.click();
+}
+
+function renderKnockout() {
+  let html = `<div class="grid">`;
+  const stages = [...new Set(DATA.knockout.map(k => k[1]))];
+  for (const stage of stages) {
+    html += `<div class="card"><h2>${stage}</h2>`;
+    for (const k of DATA.knockout.filter(x => x[1] === stage)) {
+      if (!matchesFilterText(...k)) continue;
+      html += `<div class="team"><div><b>${k[2]}</b><div class="meta">${k[0]} · ${k[5]}</div><div>${k[3]} v ${k[4]}</div></div></div>`;
+    }
+    html += `</div>`;
+  }
+  html += `</div>`;
+  document.getElementById("knockoutView").innerHTML = html;
+}
+
+function render() {
+  renderDashboard();
+  renderGroups();
+  renderFixtures();
+  renderOwners();
+  renderCards();
+  renderKnockout();
+}
+
+function storeScores() {
+  localStorage.setItem("wc2026_sweepstake_scores", JSON.stringify(scores));
+}
+
+function mapApiGame(g) {
+  const candidates1 = [
+    g.team1, g.home_team, g.homeTeam, g.home, g.teamA, g.home_name, g.homeTeamName,
+    g.home_team_name_en, g.home_team_label,
+    g?.teams?.home?.name, g?.home?.name
+  ];
+  const candidates2 = [
+    g.team2, g.away_team, g.awayTeam, g.away, g.teamB, g.away_name, g.awayTeamName,
+    g.away_team_name_en, g.away_team_label,
+    g?.teams?.away?.name, g?.away?.name
+  ];
+
+  const t1 = candidates1.find(x => x !== undefined && x !== null && String(x).trim() && String(x).trim() !== "0");
+  const t2 = candidates2.find(x => x !== undefined && x !== null && String(x).trim() && String(x).trim() !== "0");
+
+  const s1 = g.score1 ?? g.home_score ?? g.homeScore ?? g.goals_home ?? g?.goals?.home ?? g?.score?.home ?? g?.score?.fullTime?.home;
+  const s2 = g.score2 ?? g.away_score ?? g.awayScore ?? g.goals_away ?? g?.goals?.away ?? g?.score?.away ?? g?.score?.fullTime?.away;
+
+  const finishedRaw = String(g.finished ?? g.is_finished ?? g.isFinished ?? "").toLowerCase();
+  const elapsedRaw = String(g.time_elapsed ?? g.elapsed ?? g.minute ?? g.status ?? g.match_status ?? g.state ?? g.fixture?.status?.short ?? g.fixture?.status?.long ?? "").toLowerCase();
+
+  let status = "scheduled";
+  if (finishedRaw === "true" || finishedRaw === "1" || elapsedRaw.includes("finished") || elapsedRaw === "ft" || elapsedRaw === "fulltime") {
+    status = "finished";
+  } else if (
+    elapsedRaw &&
+    elapsedRaw !== "notstarted" &&
+    elapsedRaw !== "not started" &&
+    elapsedRaw !== "scheduled" &&
+    elapsedRaw !== "upcoming" &&
+    elapsedRaw !== "false"
+  ) {
+    status = elapsedRaw.includes("half") ? "half-time" : "live";
+  }
+
+  const id = g.id ?? g.match_id ?? g.matchId ?? g.game_id ?? g._id;
+  return { id, t1, t2, score1:s1, score2:s2, status, raw:g };
+}
+
+
+function getGamesArray(raw) {
+  if (Array.isArray(raw)) return raw;
+  if (Array.isArray(raw.games)) return raw.games;
+  if (Array.isArray(raw.data)) return raw.data;
+  if (Array.isArray(raw.matches)) return raw.matches;
+  if (Array.isArray(raw.results)) return raw.results;
+  if (raw.game) return [raw.game];
+  return [];
+}
+
+function numericScoreValue(v) {
+  if (v === undefined || v === null) return undefined;
+  const s = String(v).trim().toLowerCase();
+  if (!s || s === "null" || s === "undefined" || s === "-") return undefined;
+  const n = Number(s);
+  return Number.isFinite(n) ? n : undefined;
+}
+
+function statusLabelForDisplay(status) {
+  const s = String(status || "scheduled").toLowerCase();
+  if (s === "notstarted" || s === "not started" || s === "upcoming") return "scheduled";
+  return s;
+}
+
+
+async function refreshCardsJsonFeed() {
+  try {
+    const res = await fetch("cards.json?_=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) {
+      cardFeedStatus = "No cards.json feed found yet. Live scores update automatically, but cards need the GitHub Action/API-Football feed.";
+      localStorage.setItem("wc2026_sweepstake_card_status", cardFeedStatus);
+      return 0;
+    }
+
+    const data = await res.json();
+    const incoming = data.cards || data;
+
+    let changed = 0;
+    for (const [team, value] of Object.entries(incoming)) {
+      const realTeam = ensureCardTeam(team);
+      if (!realTeam) continue;
+
+      const before = JSON.stringify(cards[realTeam] || {});
+      cards[realTeam] = {
+        yellow: asNumberOrZero(value.yellow ?? value.yellows ?? value.yellowCards),
+        secondYellow: asNumberOrZero(value.secondYellow ?? value.second_yellow ?? value.secondYellowRed ?? value.yellowRed),
+        straightRed: asNumberOrZero(value.straightRed ?? value.straight_red ?? value.red ?? value.redCards)
+      };
+      if (JSON.stringify(cards[realTeam]) !== before) changed++;
+    }
+
+    const source = data.source ? ` Source: ${data.source}.` : "";
+    const updatedAt = data.updatedAt ? ` Updated: ${data.updatedAt}.` : "";
+    cardFeedStatus = `Read card totals for ${Object.keys(incoming).length} team(s) from cards.json.${source}${updatedAt}`;
+    localStorage.setItem("wc2026_sweepstake_card_status", cardFeedStatus);
+    storeCards();
+    return changed;
+  } catch (e) {
+    cardFeedStatus = "Tried to read cards.json, but it was not valid JSON or could not be loaded: " + e.message;
+    localStorage.setItem("wc2026_sweepstake_card_status", cardFeedStatus);
+    return 0;
+  }
+}
+
+async function refreshLive() {
+  document.getElementById("lastUpdate").textContent = "Fetching live scores...";
+  const errors = [];
+  let lastGamesCount = 0;
+
+  for (const endpoint of LIVE_SCORE_ENDPOINTS) {
+    try {
+      const res = await fetch(endpointUrlWithCacheBust(endpoint.url), {
+        cache: "no-store",
+        headers: { "Accept": "application/json,text/plain,*/*" }
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+
+      const text = await res.text();
+      let raw;
+      try {
+        raw = JSON.parse(text);
+      } catch (jsonError) {
+        const trimmed = text.trim();
+        const firstJson = trimmed.indexOf("{");
+        const firstArray = trimmed.indexOf("[");
+        const start = firstArray >= 0 && (firstArray < firstJson || firstJson < 0) ? firstArray : firstJson;
+        if (start < 0) throw new Error("Response was not JSON");
+        raw = JSON.parse(trimmed.slice(start));
+      }
+
+      const games = getGamesArray(raw);
+      lastGamesCount = games.length;
+      if (!games.length) throw new Error("No games found in API response");
+
+      let updated = 0;
+      let statusesRead = 0;
+      let cardsUpdated = 0;
+      const unmatchedSamples = [];
+
+      for (const g of games) {
+        cardsUpdated += extractCardsFromApiGame(g);
+        const m = mapApiGame(g);
+        if (!m) continue;
+
+        let f = null;
+        // Match by team names only — the API's numeric IDs are its own scheme
+        // and do not correspond to the IDs in DATA.fixtures, so ID-only matching
+        // assigns scores to the wrong games.
+        if (m.t1 && m.t2) {
+          f = DATA.fixtures.find(x =>
+            (norm(x.team1) === norm(m.t1) && norm(x.team2) === norm(m.t2)) ||
+            (norm(x.team1) === norm(m.t2) && norm(x.team2) === norm(m.t1))
+          );
+        }
+
+        if (!f) {
+          if (unmatchedSamples.length < 3 && (m.t1 || m.t2 || m.id)) unmatchedSamples.push(`${m.id || "?"}: ${m.t1 || "?"} v ${m.t2 || "?"}`);
+          continue;
+        }
+
+        let score1 = numericScoreValue(m.score1);
+        let score2 = numericScoreValue(m.score2);
+
+        if (m.t1 && m.t2 && norm(f.team1) === norm(m.t2) && norm(f.team2) === norm(m.t1)) {
+          const temp = score1;
+          score1 = score2;
+          score2 = temp;
+        }
+
+        const next = { ...(scores[f.id] || {}), status: statusLabelForDisplay(m.status) };
+
+        if (score1 !== undefined && score2 !== undefined) {
+          next.score1 = score1;
+          next.score2 = score2;
+          updated++;
+        } else {
+          statusesRead++;
+        }
+
+        scores[f.id] = next;
+
+        // Extract earliest goal minutes for the One Minute Man prize
+        extractGoalsFromApiGame(g, f.team1, f.team2);
+      }
+
+      cardFeedStatus = cardsUpdated
+        ? `Read ${cardsUpdated} card update(s) from the live feed at ${new Date().toLocaleTimeString()}.`
+        : `Live score feed connected, but no card fields/incidents were found in ${games.length} match record(s). The free WorldCup26 API may not currently provide card data.`;
+      localStorage.setItem("wc2026_sweepstake_card_status", cardFeedStatus);
+
+      await refreshCardsJsonFeed();
+      storeScores();
+      storeCards();
+      storeFastestGoals();
+      render();
+
+      const goalsUpdated = Object.keys(FASTEST_GOALS).length - Object.keys(FASTEST_GOALS_SEED).length;
+      let msg = `${new Date().toLocaleString()} via ${endpoint.name}. ${updated} scores updated, ${statusesRead} statuses read, ${cardsUpdated} card update(s), ${Object.keys(FASTEST_GOALS).length} team(s) with fastest goal data from ${games.length} API matches.`;
+      if (updated === 0) msg += " No score changes were found in the API response yet.";
+      if (unmatchedSamples.length) msg += " Unmatched examples: " + unmatchedSamples.join("; ");
+      document.getElementById("lastUpdate").textContent = msg;
+      return;
+    } catch (e) {
+      errors.push(`${endpoint.name}: ${e.message}`);
+    }
+  }
+
+  const errMsg = `Live score refresh failed (tried ${LIVE_SCORE_ENDPOINTS.length} routes: ${errors.join(" | ")}). Scores shown are from last successful refresh or manual entry.`;
+  document.getElementById("lastUpdate").textContent = errMsg;
+  console.warn("refreshLive failed:", errors);
+}
+
+
+
+function toggleAuto() {
+  if (autoTimer) {
+    clearInterval(autoTimer); autoTimer = null;
+    if (document.getElementById("autoLabel")) document.getElementById("autoLabel").textContent = "Auto refresh: off";
+  } else {
+    refreshLive();
+    autoTimer = setInterval(refreshLive, 60000);
+    if (document.getElementById("autoLabel")) document.getElementById("autoLabel").textContent = "Auto refresh: every 60 sec";
+  }
+}
+function openManual() {
+  document.getElementById("manualJson").value = JSON.stringify(scores, null, 2);
+  document.getElementById("manualDialog").classList.remove("hidden");
+}
+function closeManual() { document.getElementById("manualDialog").classList.add("hidden"); }
+function applyManual() {
+  try {
+    const parsed = JSON.parse(document.getElementById("manualJson").value || "{}");
+    scores = parsed;
+    storeScores();
+    render();
+    closeManual();
+  } catch(e) { alert("That JSON is not valid: " + e.message); }
+}
+function downloadState() {
+  const blob = new Blob([JSON.stringify({scores, assignments: DATA.assignments}, null, 2)], {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "world-cup-2026-sweepstake-state.json";
+  a.click();
+}
+
+// Render immediately with whatever scores are already in localStorage —
+// the page is fully usable without the live fetch succeeding.
+render();
+
+function startAutoRefreshOnLoad() {
+  // Attempt live refresh in the background; render() has already run so
+  // the UI is visible regardless of whether this succeeds or fails.
+  refreshLive();
+  if (!autoTimer) {
+    autoTimer = setInterval(refreshLive, 60000);
+    const label = document.getElementById("autoLabel");
+    if (label) label.textContent = "Auto refresh: every 60 sec";
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", startAutoRefreshOnLoad);
+} else {
+  startAutoRefreshOnLoad();
+}
+
+</script>
+</body>
+</html>
