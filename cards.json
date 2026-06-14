@@ -1,15 +1,23 @@
 {
   "source": "ESPN FIFA World Cup discipline stats",
-  "updatedAt": "2026-06-12T00:00:00.000Z",
+  "updatedAt": "2026-06-14T16:26:10.414Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
-  "caveat": "ESPN exposes YC and RC totals. Yellow cards are worth 1 point and red cards are worth 3 points. Initial package includes a seed from ESPN's visible discipline table; GitHub Actions will try to refresh it.",
+  "caveat": "ESPN exposes YC and RC totals. Yellow cards are worth 1 point and red cards are worth 3 points. Warning: no ESPN rows were parsed on the latest run, so previous card totals were preserved.",
   "diagnostics": {
-    "rowsMapped": 4,
+    "updatedAt": "2026-06-14T16:26:10.414Z",
+    "rowsMapped": 0,
     "nonZeroRows": 3,
-    "note": "Initial seed: South Africa 2 YC 2 RC, Mexico 1 YC 1 RC, Korea Republic 1 YC 0 RC, Czechia 0 YC 0 RC."
+    "sourceUrlsTried": [
+      "https://www.espn.com/soccer/stats/_/league/FIFA.WORLD/view/discipline",
+      "https://www.espn.com/soccer/stats/_/league/FIFA.WORLD/view/discipline/season/2026",
+      "https://www.espn.com/soccer/stats/_/league/FIFA.WORLD/view/discipline/season/2026/sort/points",
+      "https://www.espn.co.uk/football/stats/_/league/FIFA.WORLD/view/discipline/season/2026"
+    ],
+    "lastError": null,
+    "warning": "No ESPN discipline rows were parsed. Previous cards.json values were preserved."
   },
   "cards": {
     "Mexico": {
