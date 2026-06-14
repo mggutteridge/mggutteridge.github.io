@@ -1,13 +1,13 @@
 {
   "source": "ESPN FIFA World Cup discipline stats",
-  "updatedAt": "2026-06-14T19:22:08.646Z",
+  "updatedAt": "2026-06-14T20:42:14.362Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "ESPN exposes YC and RC totals. Yellow cards are worth 1 point and red cards are worth 3 points. Warning: no ESPN rows were parsed on the latest run, so previous card totals were preserved.",
   "diagnostics": {
-    "updatedAt": "2026-06-14T19:22:08.646Z",
+    "updatedAt": "2026-06-14T20:42:14.362Z",
     "rowsMapped": 0,
     "nonZeroRows": 13,
     "sourceUrlsTried": [
