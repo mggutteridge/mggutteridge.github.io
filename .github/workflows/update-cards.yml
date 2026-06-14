@@ -1,0 +1,38 @@
+name: Update World Cup card data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  update-cards:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Update cards.json from ESPN discipline table
+        run: node scripts/update-cards.mjs
+
+      - name: Commit updated card data
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add cards.json
+          if git diff --cached --quiet; then
+            echo "No card data changes to commit"
+          else
+            git commit -m "Update World Cup card data"
+            git push
+          fi
