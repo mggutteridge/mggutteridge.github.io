@@ -3,9 +3,9 @@
   "updatedAt": "2026-06-14T19:12:34.921Z",
   "scoring": {
     "yellow": 1,
-    "red": 3
+    "red": 2
   },
-  "caveat": "ESPN exposes YC and RC totals. Yellow cards are worth 1 point and red cards are worth 3 points. Warning: no ESPN rows were parsed on the latest run, so previous card totals were preserved.",
+  "caveat": "ESPN exposes YC and RC totals. Yellow cards are worth 1 point and red cards are worth 2 points. Warning: no ESPN rows were parsed on the latest run, so previous card totals were preserved.",
   "diagnostics": {
     "updatedAt": "2026-06-14T19:12:34.921Z",
     "rowsMapped": 0,
