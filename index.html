@@ -2461,13 +2461,75 @@ function conductProbabilities() {
   return Object.fromEntries(allTeams.map(t => [t, weights[t] / total]));
 }
 
-// FASTEST_GOALS: auto-updated from live API events. Seeded with known data as fallback.
-const FASTEST_GOALS_SEED = {
-  "Mexico": { minute: 9, scorer: "Julián Quiñones", opponent: "South Africa" },
-  "Korea Republic": { minute: 67, scorer: "Hwang In-beom", opponent: "Czechia" },
-  "Czechia": { minute: 59, scorer: "Ladislav Krejčí", opponent: "Korea Republic" },
+// FASTEST_GOALS: populated by refreshFastestGoals() from openfootball worldcup.json.
+// Stored in localStorage between page loads.
+let FASTEST_GOALS = JSON.parse(localStorage.getItem("wc2026_fastest_goals") || "{}");
+
+// openfootball uses some different team names — map them to our canonical names
+const OFB_TEAM_MAP = {
+  "south korea":           "Korea Republic",
+  "czech republic":        "Czechia",
+  "ivory coast":           "Côte d'Ivoire",
+  "cote d'ivoire":         "Côte d'Ivoire",
+  "dr congo":              "Congo DR",
+  "dem. rep. congo":       "Congo DR",
+  "democratic republic of congo": "Congo DR",
+  "iran":                  "IR Iran",
+  "cape verde":            "Cabo Verde",
+  "turkey":                "Türkiye",
+  "curacao":               "Curaçao",
+  "united states":         "USA",
+  "bosnia":                "Bosnia and Herzegovina",
+  "bosnia & herzegovina":  "Bosnia and Herzegovina",
 };
-let FASTEST_GOALS = JSON.parse(localStorage.getItem("wc2026_fastest_goals") || "null") || {...FASTEST_GOALS_SEED};
+
+function ofbCanonical(name) {
+  if (!name) return null;
+  const key = name.toLowerCase().trim();
+  if (OFB_TEAM_MAP[key]) return OFB_TEAM_MAP[key];
+  return Object.values(DATA.groups).flat().find(t => norm(t) === norm(name)) || null;
+}
+
+async function refreshFastestGoals() {
+  const url = "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json";
+  let raw;
+  try {
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    raw = await res.json();
+  } catch(e) {
+    console.warn("openfootball fetch failed:", e.message);
+    return 0;
+  }
+
+  const matches = raw.matches || [];
+  let updated = 0;
+
+  for (const m of matches) {
+    const t1 = ofbCanonical(m.team1);
+    const t2 = ofbCanonical(m.team2);
+
+    // goals1 = home team goals, goals2 = away team goals
+    // Each element: { name: "Scorer Name", minute: "9" }
+    // We only need the FIRST element (earliest goal in the match for that team)
+    [[t1, m.goals1, m.team2], [t2, m.goals2, m.team1]].forEach(([team, goals, oppName]) => {
+      if (!team || !Array.isArray(goals) || goals.length === 0) return;
+      const first = goals[0];
+      const min = parseInt(first.minute, 10);
+      if (!Number.isFinite(min) || min <= 0) return;
+      if (!FASTEST_GOALS[team] || min < FASTEST_GOALS[team].minute) {
+        FASTEST_GOALS[team] = { minute: min, scorer: first.name || "", opponent: oppName || "" };
+        updated++;
+      }
+    });
+  }
+
+  if (updated > 0) {
+    localStorage.setItem("wc2026_fastest_goals", JSON.stringify(FASTEST_GOALS));
+    console.log("refreshFastestGoals: updated", updated, "records");
+  }
+  return updated;
+}
 
 function currentTournamentFastestGoal() {
   // Returns the overall fastest goal in the tournament { minute, team, scorer, opponent }
@@ -3028,74 +3090,6 @@ function extractCardsFromApiGame(g) {
 
   return count;
 }
-function storeFastestGoals() {
-  localStorage.setItem("wc2026_fastest_goals", JSON.stringify(FASTEST_GOALS));
-}
-
-// Extract earliest goal minutes from an API game object.
-// Returns the number of FASTEST_GOALS records updated.
-function extractGoalsFromApiGame(g, team1Name, team2Name) {
-  if (!team1Name && !team2Name) return 0;
-  let updated = 0;
-
-  // Helper: record a goal for a team if it's earlier than their current best
-  function recordGoal(teamName, minute, scorer) {
-    if (!teamName || minute === undefined || minute === null) return;
-    const min = parseInt(minute, 10);
-    if (!Number.isFinite(min) || min <= 0) return;
-
-    // Resolve to canonical team name in DATA
-    const canonical = Object.values(DATA.groups).flat().find(t => norm(t) === norm(teamName));
-    if (!canonical) return;
-
-    if (!FASTEST_GOALS[canonical] || min < FASTEST_GOALS[canonical].minute) {
-      const opponent = canonical === team1Name ? team2Name : team1Name;
-      FASTEST_GOALS[canonical] = { minute: min, scorer: scorer || "Unknown", opponent: opponent || "" };
-      updated++;
-    }
-  }
-
-  // Strategy 1: events/incidents array (richest — has type, minute, team, player)
-  const eventArrays = [g.events, g.incidents, g.timeline, g.match_events, g.matchEvents, g.goals].filter(Array.isArray);
-  for (const arr of eventArrays) {
-    for (const ev of arr) {
-      const type = String(ev.type || ev.event_type || ev.kind || ev.detail || "").toLowerCase();
-      // Only count normal goals (not own goals — those don't belong to the scoring team for this award)
-      const isGoal = type.includes("goal") && !type.includes("own") && !type.includes("missed") && !type.includes("saved") && !type.includes("penalty miss");
-      if (!isGoal) continue;
-
-      const minute = ev.minute || ev.time || ev.elapsed || ev.min || ev.match_minute;
-      const scorer = ev.player || ev.player_name || ev.name || ev.scorer || ev.participant || "";
-      // Team identification from event
-      const evTeam = ev.team || ev?.team?.name || ev.team_name || ev.teamName || ev.side || ev.country || "";
-      // If we know which team, use it; otherwise guess from home/away flag
-      if (evTeam) {
-        recordGoal(evTeam, minute, scorer);
-      } else if (ev.home === true || ev.side === "home" || ev.homeAway === "home") {
-        recordGoal(team1Name, minute, scorer);
-      } else if (ev.home === false || ev.side === "away" || ev.homeAway === "away") {
-        recordGoal(team2Name, minute, scorer);
-      }
-    }
-  }
-
-  // Strategy 2: structured goals arrays (goals1/goals2 — openfootball style)
-  const goals1 = g.goals1 || g.home_goals || g.homeGoals || g.goalsHome;
-  const goals2 = g.goals2 || g.away_goals || g.awayGoals || g.goalsAway;
-  if (Array.isArray(goals1)) {
-    for (const gev of goals1) {
-      recordGoal(team1Name, gev.minute || gev.min || gev.time, gev.name || gev.player || gev.scorer);
-    }
-  }
-  if (Array.isArray(goals2)) {
-    for (const gev of goals2) {
-      recordGoal(team2Name, gev.minute || gev.min || gev.time, gev.name || gev.player || gev.scorer);
-    }
-  }
-
-  return updated;
-}
-
 function openCardsManual() {
   document.getElementById("cardsJson").value = JSON.stringify(cards, null, 2);
   document.getElementById("cardsDialog").classList.remove("hidden");
@@ -3327,8 +3321,6 @@ async function refreshLive() {
 
         scores[f.id] = next;
 
-        // Extract earliest goal minutes for the One Minute Man prize
-        extractGoalsFromApiGame(g, f.team1, f.team2);
       }
 
       cardFeedStatus = cardsUpdated
@@ -3339,11 +3331,12 @@ async function refreshLive() {
       await refreshCardsJsonFeed();
       storeScores();
       storeCards();
-      storeFastestGoals();
+      // Fastest goals come from openfootball, refreshed separately below
       render();
+      // Refresh fastest goals from openfootball (separate source, runs in background)
+      refreshFastestGoals().then(n => { if (n > 0) render(); });
 
-      const goalsUpdated = Object.keys(FASTEST_GOALS).length - Object.keys(FASTEST_GOALS_SEED).length;
-      let msg = `${new Date().toLocaleString()} via ${endpoint.name}. ${updated} scores updated, ${statusesRead} statuses read, ${cardsUpdated} card update(s), ${Object.keys(FASTEST_GOALS).length} team(s) with fastest goal data from ${games.length} API matches.`;
+      let msg = `${new Date().toLocaleString()} via ${endpoint.name}. ${updated} scores updated, ${statusesRead} statuses read, ${cardsUpdated} card update(s) from ${games.length} API matches.`;
       if (updated === 0) msg += " No score changes were found in the API response yet.";
       if (unmatchedSamples.length) msg += " Unmatched examples: " + unmatchedSamples.join("; ");
       document.getElementById("lastUpdate").textContent = msg;
@@ -3395,6 +3388,7 @@ function downloadState() {
 // Render immediately with whatever scores are already in localStorage —
 // the page is fully usable without the live fetch succeeding.
 render();
+refreshFastestGoals().then(n => { if (n > 0) render(); });
 
 function startAutoRefreshOnLoad() {
   // Attempt live refresh in the background; render() has already run so
