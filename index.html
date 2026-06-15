@@ -2552,65 +2552,130 @@ function currentTournamentFastestGoal() {
 // We want P(at least one goal in first (record-1) minutes across all remaining matches).
 // For simplicity: P(fastest goal ≤ K mins) ≈ 1 - (1 - K/90 * λ)^n  where λ = goals/game, n = remaining matches.
 // Then normalise across teams.
+
 function fastestGoalProbabilities() {
   const allTeams = Object.values(DATA.groups).flat();
   const best = currentTournamentFastestGoal();
-  // If no goals yet, target is minute 90 (anything counts)
-  const targetMinute = best ? best.minute - 1 : 90;
 
-  const weights = {};
-  let total = 0;
+  // If there is already a tournament record, teams need to beat it.
+  // Example: if current fastest is 4', target is 1-3 minutes.
+  const targetMinute = best ? Math.max(0, best.minute - 1) : 90;
+
+  // Current leaders (handle ties on same minute just in case)
+  const leaders = best
+    ? allTeams.filter(team => FASTEST_GOALS[team] && FASTEST_GOALS[team].minute === best.minute)
+    : [];
+
+  const pBeatRecord = {};
+  let totalBeatWeight = 0;
+
   for (const team of allTeams) {
     const strength = teamStrength(team);
 
-    // Count goals and games played
+    // Current goals / games played
     let gf = 0, played = 0;
     for (const f of DATA.fixtures) {
       const s = scoreFor(f.id);
-      if (String(s.status || '').toLowerCase() !== 'finished') continue;
-      if (f.team1 === team && s.score1 !== undefined) { gf += +s.score1; played++; }
-      if (f.team2 === team && s.score2 !== undefined) { gf += +s.score2; played++; }
+      if (String(s.status || "").toLowerCase() !== "finished") continue;
+
+      if (f.team1 === team && s.score1 !== undefined) {
+        gf += +s.score1;
+        played++;
+      }
+      if (f.team2 === team && s.score2 !== undefined) {
+        gf += +s.score2;
+        played++;
+      }
     }
 
-    // If team already holds the record, they can't beat themselves — weight = 0 (prize already won)
-    // But if the tournament continues they could set a new record in future matches;
-    // we still model their future probability so the "predicted" view is forward-looking.
-    const myBest = FASTEST_GOALS[team];
-    const alreadyHoldsRecord = best && myBest && myBest.minute === best.minute;
+    const goalsPerGame = played > 0
+      ? gf / played
+      : Math.max(0.3, (strength - 35) / 55 * 1.8 + 0.5);
 
-    const goalsPerGame = played > 0 ? gf / played : Math.max(0.3, (strength - 35) / 55 * 1.8 + 0.5);
-
-    // Count remaining matches (group + estimated knockout progression)
+    // Remaining group matches
     const remainingGroup = DATA.fixtures.filter(f => {
       const s = scoreFor(f.id);
-      const finished = s.score1 !== undefined && s.score2 !== undefined && String(s.status || '').toLowerCase() === 'finished';
-      return (f.team1 === team || f.team2 === team) && !finished &&
-             ['A','B','C','D','E','F','G','H','I','J','K','L'].includes(f.group);
+      const finished =
+        s.score1 !== undefined &&
+        s.score2 !== undefined &&
+        String(s.status || "").toLowerCase() === "finished";
+
+      return (f.team1 === team || f.team2 === team) &&
+             !finished &&
+             ["A","B","C","D","E","F","G","H","I","J","K","L"].includes(f.group);
     }).length;
-    // Expected knockout matches based on strength
+
+    // Rough expected knockout matches from strength
     const koChance = Math.max(0.05, Math.min(0.95, (strength - 30) / 75));
-    const expectedKoMatches = koChance * 4; // expected value across R32/R16/QF/SF/F
+    const expectedKoMatches = koChance * 4;
 
     const remainingMatches = remainingGroup + expectedKoMatches;
 
-    // P(score in first targetMinute mins of one match) - use slightly front-loaded model
-    // Early goals: real WC data shows ~40% of goals in first 45 mins
-    const earlyFraction = Math.min(1, (targetMinute / 90) * (targetMinute < 45 ? 0.85 : 1.0));
-    const pScoreEarly = Math.min(0.98, earlyFraction * goalsPerGame);
+    let pBeat = 0;
 
-    // P(at least one such goal across remaining matches)
-    const pAtLeastOne = alreadyHoldsRecord ? 0 : 1 - Math.pow(Math.max(0, 1 - pScoreEarly), remainingMatches);
+    if (targetMinute > 0 && remainingMatches > 0) {
+      // Slightly front-loaded early-goal model
+      const earlyFraction = Math.min(
+        1,
+        (targetMinute / 90) * (targetMinute < 45 ? 0.85 : 1.0)
+      );
 
-    weights[team] = Math.max(0, pAtLeastOne);
-    total += weights[team];
+      const pScoreEarlyInOneMatch = Math.min(0.98, earlyFraction * goalsPerGame);
+
+      // Probability of at least one goal earlier than the current record
+      pBeat = 1 - Math.pow(Math.max(0, 1 - pScoreEarlyInOneMatch), remainingMatches);
+    }
+
+    pBeatRecord[team] = Math.max(0, Math.min(1, pBeat));
+    totalBeatWeight += pBeatRecord[team];
   }
 
-  if (total === 0) {
-    // No team can beat the record (tournament over or record is 0), distribute evenly
-    return Object.fromEntries(allTeams.map(t => [t, 1 / allTeams.length]));
+  // If no goal has been scored yet, this is just a pure "who scores earliest first" race
+  if (!best) {
+    if (totalBeatWeight === 0) {
+      return Object.fromEntries(allTeams.map(t => [t, 1 / allTeams.length]));
+    }
+    return Object.fromEntries(allTeams.map(t => [t, pBeatRecord[t] / totalBeatWeight]));
   }
-  return Object.fromEntries(allTeams.map(t => [t, weights[t] / total]));
+
+  // Probability that no NON-LEADER beats the current record
+  const nonLeaders = allTeams.filter(t => !leaders.includes(t));
+  const pNoOneElseBeatsRecord = nonLeaders.reduce(
+    (acc, team) => acc * (1 - pBeatRecord[team]),
+    1
+  );
+
+  // Remaining probability mass is the chance that somebody beats the current record
+  const beatMass = 1 - pNoOneElseBeatsRecord;
+
+  const probs = Object.fromEntries(allTeams.map(t => [t, 0]));
+
+  // Spread "somebody beats it" probability across teams in proportion to their beat chance
+  if (totalBeatWeight > 0 && beatMass > 0) {
+    for (const team of allTeams) {
+      probs[team] += beatMass * (pBeatRecord[team] / totalBeatWeight);
+    }
+  }
+
+  // Current leader(s) also get the residual probability that nobody else beats the record
+  if (leaders.length > 0) {
+    const share = pNoOneElseBeatsRecord / leaders.length;
+    for (const leader of leaders) {
+      probs[leader] += share;
+    }
+  }
+
+  // Normalise to make sure everything sums cleanly to 1
+  const sum = Object.values(probs).reduce((a, b) => a + b, 0);
+  if (sum > 0) {
+    for (const team of allTeams) probs[team] /= sum;
+  } else {
+    for (const team of allTeams) probs[team] = 1 / allTeams.length;
+  }
+
+  return probs;
 }
+
 
 // Most goals conceded: based on expected goals against across the whole tournament.
 // Weaker teams, especially those facing tough opponents, are more likely to concede heavily.
