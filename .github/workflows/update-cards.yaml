@@ -25,7 +25,7 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: Run scraper
-        run: python /.github/workflows/update_cards.py
+        run: python .github/workflows/update_cards.py
 
       - name: Commit updated cards.json
         run: |
