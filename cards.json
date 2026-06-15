@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-15T13:23:37.315Z",
+  "updatedAt": "2026-06-15T13:27:04.371Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-15T13:23:34.905Z",
+    "updatedAt": "2026-06-15T13:26:59.525Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -161,14 +161,6 @@
         "type": "yellow",
         "minute": "10'",
         "text": "Juan José Cáceres (Paraguay) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760417",
-        "sourceName": "keyEvents",
-        "team": "USA",
-        "type": "red",
-        "minute": "52'",
-        "text": "VAR Decision: Card Changed."
       },
       {
         "eventId": "760417",
@@ -356,7 +348,9 @@
       }
     ],
     "unmatchedCardEvents": [],
-    "warnings": [],
+    "warnings": [
+      "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
+    ],
     "rowsMapped": 17,
     "nonZeroRows": 17
   },
@@ -424,7 +418,7 @@
     "USA": {
       "yellow": 1,
       "secondYellow": 0,
-      "straightRed": 1
+      "straightRed": 0
     },
     "Paraguay": {
       "yellow": 5,
