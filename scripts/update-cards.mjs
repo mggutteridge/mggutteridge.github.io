@@ -293,8 +293,7 @@ function collectCardsFromSummary(summary, eventId, cards, diagnostics, lookup) {
   const seen = new Set();
 
   collectCardsFromArray(summary?.keyEvents, eventId, summary, cards, seen, diagnostics, "keyEvents", lookup);
-  collectCardsFromArray(summary?.commentary, eventId, summary, cards, seen, diagnostics, "commentary", lookup);
-  collectCardsFromArray(summary?.plays, eventId, summary, cards, seen, diagnostics, "plays", lookup);
+
 
   return seen.size;
 }
