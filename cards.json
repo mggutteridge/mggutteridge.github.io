@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-15T12:19:42.129Z",
+  "updatedAt": "2026-06-15T12:59:46.454Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-15T12:19:34.638Z",
+    "updatedAt": "2026-06-15T12:59:39.528Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -51,9 +51,9 @@
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260718&limit=300",
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260719&limit=300"
     ],
-    "scoreboardCallsSucceeded": 39,
-    "scoreboardCallsFailed": 1,
-    "eventsFound": 103,
+    "scoreboardCallsSucceeded": 40,
+    "scoreboardCallsFailed": 0,
+    "eventsFound": 104,
     "eventsChecked": 12,
     "summaryCallsSucceeded": 12,
     "summaryCallsFailed": 0,
@@ -107,67 +107,11 @@
         "text": "César Montes (Mexico) is shown the red card."
       },
       {
-        "eventId": "760415",
-        "sourceName": "commentary",
-        "team": "South Africa",
-        "type": "yellow",
-        "minute": "",
-        "text": "Teboho Mokoena (South Africa) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760415",
-        "sourceName": "commentary",
-        "team": "Mexico",
-        "type": "yellow",
-        "minute": "",
-        "text": "Brian Gutiérrez (Mexico) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760415",
-        "sourceName": "commentary",
-        "team": "South Africa",
-        "type": "red",
-        "minute": "",
-        "text": "Yaya Sithole (South Africa) is shown the red card."
-      },
-      {
-        "eventId": "760415",
-        "sourceName": "commentary",
-        "team": "South Africa",
-        "type": "yellow",
-        "minute": "",
-        "text": "Nkosinathi Sibisi (South Africa) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760415",
-        "sourceName": "commentary",
-        "team": "South Africa",
-        "type": "red",
-        "minute": "",
-        "text": "Themba Zwane (South Africa) is shown the red card for violent conduct."
-      },
-      {
-        "eventId": "760415",
-        "sourceName": "commentary",
-        "team": "Mexico",
-        "type": "red",
-        "minute": "",
-        "text": "César Montes (Mexico) is shown the red card."
-      },
-      {
         "eventId": "760414",
         "sourceName": "keyEvents",
         "team": "Korea Republic",
         "type": "yellow",
         "minute": "90'+6'",
-        "text": "Lee Gi-Hyuk (Korea Republic) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760414",
-        "sourceName": "commentary",
-        "team": "Korea Republic",
-        "type": "yellow",
-        "minute": "",
         "text": "Lee Gi-Hyuk (Korea Republic) is shown the yellow card for a bad foul."
       },
       {
@@ -209,22 +153,6 @@
         "type": "yellow",
         "minute": "90'+3'",
         "text": "Nikola Katic (Bosnia and Herzegovina) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760416",
-        "sourceName": "commentary",
-        "team": "Canada",
-        "type": "yellow",
-        "minute": "",
-        "text": "Alistair Johnston (Canada) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760416",
-        "sourceName": "commentary",
-        "team": "Canada",
-        "type": "yellow",
-        "minute": "",
-        "text": "Luc De Fougerolles (Canada) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760417",
@@ -283,54 +211,6 @@
         "text": "Júnior Alonso (Paraguay) is shown the yellow card for a bad foul."
       },
       {
-        "eventId": "760417",
-        "sourceName": "commentary",
-        "team": "Paraguay",
-        "type": "yellow",
-        "minute": "",
-        "text": "Juan José Cáceres (Paraguay) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760417",
-        "sourceName": "commentary",
-        "team": "Paraguay",
-        "type": "yellow",
-        "minute": "",
-        "text": "Miguel Almirón (Paraguay) is shown the yellow card."
-      },
-      {
-        "eventId": "760417",
-        "sourceName": "commentary",
-        "team": "USA",
-        "type": "yellow",
-        "minute": "",
-        "text": "Tyler Adams (USA) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760417",
-        "sourceName": "commentary",
-        "team": "Paraguay",
-        "type": "yellow",
-        "minute": "",
-        "text": "Diego Gómez (Paraguay) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760417",
-        "sourceName": "commentary",
-        "team": "Paraguay",
-        "type": "yellow",
-        "minute": "",
-        "text": "Álex Arce (Paraguay) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760417",
-        "sourceName": "commentary",
-        "team": "Paraguay",
-        "type": "yellow",
-        "minute": "",
-        "text": "Júnior Alonso (Paraguay) is shown the yellow card for a bad foul."
-      },
-      {
         "eventId": "760420",
         "sourceName": "keyEvents",
         "team": "Qatar",
@@ -355,30 +235,6 @@
         "text": "Denis Zakaria (Switzerland) is shown the yellow card for a bad foul."
       },
       {
-        "eventId": "760420",
-        "sourceName": "commentary",
-        "team": "Qatar",
-        "type": "yellow",
-        "minute": "",
-        "text": "Mahmoud Abunada (Qatar) is shown the yellow card."
-      },
-      {
-        "eventId": "760420",
-        "sourceName": "commentary",
-        "team": "Qatar",
-        "type": "yellow",
-        "minute": "",
-        "text": "Jassem Gaber (Qatar) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760420",
-        "sourceName": "commentary",
-        "team": "Switzerland",
-        "type": "yellow",
-        "minute": "",
-        "text": "Denis Zakaria (Switzerland) is shown the yellow card for a bad foul."
-      },
-      {
         "eventId": "760419",
         "sourceName": "keyEvents",
         "team": "Brazil",
@@ -392,22 +248,6 @@
         "team": "Brazil",
         "type": "yellow",
         "minute": "43'",
-        "text": "Roger Ibañez (Brazil) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760419",
-        "sourceName": "commentary",
-        "team": "Brazil",
-        "type": "yellow",
-        "minute": "",
-        "text": "Casemiro (Brazil) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760419",
-        "sourceName": "commentary",
-        "team": "Brazil",
-        "type": "yellow",
-        "minute": "",
         "text": "Roger Ibañez (Brazil) is shown the yellow card for a bad foul."
       },
       {
@@ -443,51 +283,11 @@
         "text": "Kenny McLean (Scotland) is shown the yellow card for a bad foul."
       },
       {
-        "eventId": "760418",
-        "sourceName": "commentary",
-        "team": "Haiti",
-        "type": "yellow",
-        "minute": "",
-        "text": "Jean-Ricner Bellegarde (Haiti) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760418",
-        "sourceName": "commentary",
-        "team": "Scotland",
-        "type": "yellow",
-        "minute": "",
-        "text": "Aaron Hickey (Scotland) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760418",
-        "sourceName": "commentary",
-        "team": "Scotland",
-        "type": "yellow",
-        "minute": "",
-        "text": "Findlay Curtis (Scotland) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760418",
-        "sourceName": "commentary",
-        "team": "Scotland",
-        "type": "yellow",
-        "minute": "",
-        "text": "Kenny McLean (Scotland) is shown the yellow card for a bad foul."
-      },
-      {
         "eventId": "760421",
         "sourceName": "keyEvents",
         "team": "Türkiye",
         "type": "yellow",
         "minute": "86'",
-        "text": "Yunus Akgün (Türkiye) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760421",
-        "sourceName": "commentary",
-        "team": "Türkiye",
-        "type": "yellow",
-        "minute": "",
         "text": "Yunus Akgün (Türkiye) is shown the yellow card for a bad foul."
       },
       {
@@ -512,30 +312,6 @@
         "team": "Netherlands",
         "type": "yellow",
         "minute": "90'+1'",
-        "text": "Micky van de Ven (Netherlands) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760425",
-        "sourceName": "commentary",
-        "team": "Netherlands",
-        "type": "yellow",
-        "minute": "",
-        "text": "Crysencio Summerville (Netherlands) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760425",
-        "sourceName": "commentary",
-        "team": "Netherlands",
-        "type": "yellow",
-        "minute": "",
-        "text": "Memphis Depay (Netherlands) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760425",
-        "sourceName": "commentary",
-        "team": "Netherlands",
-        "type": "yellow",
-        "minute": "",
         "text": "Micky van de Ven (Netherlands) is shown the yellow card for a bad foul."
       },
       {
@@ -571,93 +347,32 @@
         "text": "Jackson Porozo (Ecuador) is shown the yellow card for a bad foul."
       },
       {
-        "eventId": "760423",
-        "sourceName": "commentary",
-        "team": "Ecuador",
-        "type": "yellow",
-        "minute": "",
-        "text": "Jackson Porozo (Ecuador) is shown the yellow card for a bad foul."
-      },
-      {
         "eventId": "760424",
         "sourceName": "keyEvents",
         "team": "Tunisia",
         "type": "yellow",
         "minute": "54'",
         "text": "Rani Khedira (Tunisia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760424",
-        "sourceName": "commentary",
-        "team": "Tunisia",
-        "type": "yellow",
-        "minute": "",
-        "text": "Rani Khedira (Tunisia) is shown the yellow card for a bad foul."
       }
     ],
-    "unmatchedCardEvents": [
-      {
-        "eventId": "760416",
-        "sourceName": "commentary",
-        "rawTeam": null,
-        "text": "Ermedin Demirovic (Bosnia and Herzegovina) is shown the yellow card for a bad foul.",
-        "type": "yellow"
-      },
-      {
-        "eventId": "760416",
-        "sourceName": "commentary",
-        "rawTeam": null,
-        "text": "Jovo Lukic (Bosnia and Herzegovina) is shown the yellow card for a bad foul.",
-        "type": "yellow"
-      },
-      {
-        "eventId": "760416",
-        "sourceName": "commentary",
-        "rawTeam": null,
-        "text": "Nikola Katic (Bosnia and Herzegovina) is shown the yellow card for a bad foul.",
-        "type": "yellow"
-      },
-      {
-        "eventId": "760423",
-        "sourceName": "commentary",
-        "rawTeam": null,
-        "text": "Seko Fofana (Côte d'Ivoire) is shown the yellow card for a bad foul.",
-        "type": "yellow"
-      },
-      {
-        "eventId": "760423",
-        "sourceName": "commentary",
-        "rawTeam": null,
-        "text": "Franck Kessie (Côte d'Ivoire) is shown the yellow card for a bad foul.",
-        "type": "yellow"
-      },
-      {
-        "eventId": "760423",
-        "sourceName": "commentary",
-        "rawTeam": null,
-        "text": "Guéla Doué (Côte d'Ivoire) is shown the yellow card for a bad foul.",
-        "type": "yellow"
-      }
-    ],
-    "warnings": [
-      "Scoreboard fetch failed: https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260718&limit=300 :: HTTP 504 for https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260718&limit=300: {\"code\":3001,\"detail\":\"timeout error: timeout occurred waiting for core endpoint\"}"
-    ],
+    "unmatchedCardEvents": [],
+    "warnings": [],
     "rowsMapped": 17,
     "nonZeroRows": 17
   },
   "cards": {
     "Mexico": {
+      "yellow": 1,
+      "secondYellow": 0,
+      "straightRed": 1
+    },
+    "South Africa": {
       "yellow": 2,
       "secondYellow": 0,
       "straightRed": 2
     },
-    "South Africa": {
-      "yellow": 4,
-      "secondYellow": 0,
-      "straightRed": 4
-    },
     "Korea Republic": {
-      "yellow": 2,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -667,7 +382,7 @@
       "straightRed": 0
     },
     "Canada": {
-      "yellow": 4,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -677,17 +392,17 @@
       "straightRed": 0
     },
     "Qatar": {
-      "yellow": 4,
-      "secondYellow": 0,
-      "straightRed": 0
-    },
-    "Switzerland": {
       "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
+    "Switzerland": {
+      "yellow": 1,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
     "Brazil": {
-      "yellow": 4,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -697,22 +412,22 @@
       "straightRed": 0
     },
     "Haiti": {
-      "yellow": 2,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Scotland": {
-      "yellow": 6,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
     "USA": {
-      "yellow": 2,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 1
     },
     "Paraguay": {
-      "yellow": 10,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -722,7 +437,7 @@
       "straightRed": 0
     },
     "Türkiye": {
-      "yellow": 2,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -742,12 +457,12 @@
       "straightRed": 0
     },
     "Ecuador": {
-      "yellow": 2,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Netherlands": {
-      "yellow": 6,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -762,7 +477,7 @@
       "straightRed": 0
     },
     "Tunisia": {
-      "yellow": 2,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
