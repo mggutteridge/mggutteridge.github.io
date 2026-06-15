@@ -2300,7 +2300,9 @@ function renderFixtures() {
   for (const f of DATA.fixtures) {
     const s = scoreFor(f.id);
     if (!matchesFilterText(f.id, f.date, f.time, f.group, f.team1, f.team2, f.venue, owner(f.team1), owner(f.team2))) continue;
-    const score = (s.score1 !== undefined && s.score2 !== undefined) ? `${s.score1}–${s.score2}` : "v";
+    const statusRaw = String(s.status || "").toLowerCase();
+    const hasStarted = statusRaw === "live" || statusRaw === "finished" || statusRaw.includes("half");
+    const score = (hasStarted && s.score1 !== undefined && s.score2 !== undefined) ? `${s.score1}–${s.score2}` : "v";
     const status = statusLabelForDisplay(s.status || "scheduled");
     const klass = status.includes("live") ? "live" : (status.includes("finished") || status.includes("full") ? "finished" : "");
     html += `<div class="match" id="match-${f.id}">
