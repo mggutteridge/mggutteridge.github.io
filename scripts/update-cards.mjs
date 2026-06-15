@@ -76,6 +76,18 @@ function countNonZeroRows(cards) {
   ).length;
 }
 
+function isVarOverturnedCard(obj) {
+  const text = [
+    obj?.text,
+    obj?.shortText,
+    obj?.type?.text,
+    obj?.type?.description
+  ].filter(Boolean).join(" ").toLowerCase();
+
+  return text.includes("var decision: card changed");
+}
+
+
 async function fetchJson(url) {
   const res = await fetch(url, {
     redirect: "follow",
@@ -257,6 +269,18 @@ function collectCardsFromArray(arr, eventId, summary, cards, seen, diagnostics, 
 
     const type = cardTypeFromObject(obj);
     if (!type) continue;
+
+    
+    // ✅ NEW: skip VAR-overturned cards
+    if (isVarOverturnedCard(obj)) {
+      diagnostics.warnings.push(
+        `Skipped VAR-overturned card in ${eventId} (${sourceName}): ${
+          obj?.text || obj?.shortText || ""
+        }`
+      );
+      continue;
+    }
+
 
     const team = inferTeamFromEvent(obj, summary, lookup);
 
