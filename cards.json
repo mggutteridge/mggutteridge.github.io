@@ -3,9 +3,9 @@
   "updatedAt": "2026-06-15T07:00:52.943Z",
   "scoring": {
     "yellow": 1,
-    "red": 3
+    "red": 2
   },
-  "caveat": "ESPN exposes YC and RC totals. Yellow cards are worth 1 point and red cards are worth 3 points. Warning: no ESPN rows were parsed on the latest run, so previous card totals were preserved.",
+  "caveat": "ESPN exposes YC and RC totals. Yellow cards are worth 1 point and red cards are worth 2 points. Warning: no ESPN rows were parsed on the latest run, so previous card totals were preserved.",
   "diagnostics": {
     "updatedAt": "2026-06-15T07:00:52.943Z",
     "rowsMapped": 0,
@@ -66,7 +66,7 @@
       "straightRed": 0
     },
     "Morocco": {
-      "yellow": 1,
+      "yellow": 0,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -91,7 +91,7 @@
       "straightRed": 0
     },
     "Australia": {
-      "yellow": 1,
+      "yellow": 0,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -111,17 +111,17 @@
       "straightRed": 0
     },
     "Côte d'Ivoire": {
-      "yellow": 0,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Ecuador": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Netherlands": {
-      "yellow": 0,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -136,7 +136,7 @@
       "straightRed": 0
     },
     "Tunisia": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
