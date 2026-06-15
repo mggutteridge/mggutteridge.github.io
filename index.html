@@ -2231,8 +2231,9 @@ function norm(s) {
     .replace(/turkiye|turkey/g,"turkiye")
     .replace(/iran|ir iran/g,"ir iran")
     .replace(/ivory coast|cote d'ivoire|côte d’ivoire/g,"cote d'ivoire")
-    .replace(/dr congo|congo dr|drc/g,"congo dr")
+    .replace(/dr congo|congo dr|democratic republic of the congo|drc/g,"congo dr")
     .replace(/cape verde|cabo verde/g,"cabo verde")
+    .replace(/czech republic/g, "czechia")
     .replace(/[^a-z0-9]+/g," ").trim();
 }
 
