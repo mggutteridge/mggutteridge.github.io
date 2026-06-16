@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-16T13:22:23.566Z",
+  "updatedAt": "2026-06-16T14:06:08.932Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-16T13:22:18.859Z",
+    "updatedAt": "2026-06-16T14:06:05.919Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -109,7 +109,7 @@
       {
         "eventId": "760414",
         "sourceName": "keyEvents",
-        "team": "South Korea",
+        "team": "Korea Republic",
         "type": "yellow",
         "minute": "90'+6'",
         "text": "Lee Gi-Hyuk (Korea Republic) is shown the yellow card for a bad foul."
@@ -125,7 +125,7 @@
       {
         "eventId": "760416",
         "sourceName": "keyEvents",
-        "team": "Bosnia-Herzegovina",
+        "team": "Bosnia and Herzegovina",
         "type": "yellow",
         "minute": "45'",
         "text": "Ermedin Demirovic (Bosnia and Herzegovina) is shown the yellow card for a bad foul."
@@ -133,7 +133,7 @@
       {
         "eventId": "760416",
         "sourceName": "keyEvents",
-        "team": "Bosnia-Herzegovina",
+        "team": "Bosnia and Herzegovina",
         "type": "yellow",
         "minute": "45'+1'",
         "text": "Jovo Lukic (Bosnia and Herzegovina) is shown the yellow card for a bad foul."
@@ -149,7 +149,7 @@
       {
         "eventId": "760416",
         "sourceName": "keyEvents",
-        "team": "Bosnia-Herzegovina",
+        "team": "Bosnia and Herzegovina",
         "type": "yellow",
         "minute": "90'+3'",
         "text": "Nikola Katic (Bosnia and Herzegovina) is shown the yellow card for a bad foul."
@@ -173,7 +173,7 @@
       {
         "eventId": "760417",
         "sourceName": "keyEvents",
-        "team": "United States",
+        "team": "USA",
         "type": "yellow",
         "minute": "59'",
         "text": "Tyler Adams (USA) is shown the yellow card for a bad foul."
@@ -309,7 +309,7 @@
       {
         "eventId": "760423",
         "sourceName": "keyEvents",
-        "team": "Ivory Coast",
+        "team": "Côte d'Ivoire",
         "type": "yellow",
         "minute": "28'",
         "text": "Seko Fofana (Côte d'Ivoire) is shown the yellow card for a bad foul."
@@ -317,7 +317,7 @@
       {
         "eventId": "760423",
         "sourceName": "keyEvents",
-        "team": "Ivory Coast",
+        "team": "Côte d'Ivoire",
         "type": "yellow",
         "minute": "38'",
         "text": "Franck Kessie (Côte d'Ivoire) is shown the yellow card for a bad foul."
@@ -325,7 +325,7 @@
       {
         "eventId": "760423",
         "sourceName": "keyEvents",
-        "team": "Ivory Coast",
+        "team": "Côte d'Ivoire",
         "type": "yellow",
         "minute": "40'",
         "text": "Guéla Doué (Côte d'Ivoire) is shown the yellow card for a bad foul."
@@ -345,104 +345,106 @@
         "type": "yellow",
         "minute": "54'",
         "text": "Rani Khedira (Tunisia) is shown the yellow card for a bad foul."
-      }
-    ],
-    "unmatchedCardEvents": [
-      {
-        "eventId": "760428",
-        "sourceName": "keyEvents",
-        "rawTeam": "Cape Verde",
-        "text": "Sidny Cabral (Cabo Verde) is shown the yellow card for a bad foul.",
-        "type": "yellow"
       },
       {
         "eventId": "760428",
         "sourceName": "keyEvents",
-        "rawTeam": "Spain",
-        "text": "Pedri (Spain) is shown the yellow card for a bad foul.",
-        "type": "yellow"
+        "team": "Cabo Verde",
+        "type": "yellow",
+        "minute": "16'",
+        "text": "Sidny Cabral (Cabo Verde) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760428",
+        "sourceName": "keyEvents",
+        "team": "Spain",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Pedri (Spain) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760426",
         "sourceName": "keyEvents",
-        "rawTeam": "Egypt",
-        "text": "Marwan Attia (Egypt) is shown the yellow card for a bad foul.",
-        "type": "yellow"
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "13'",
+        "text": "Marwan Attia (Egypt) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760426",
         "sourceName": "keyEvents",
-        "rawTeam": "Belgium",
-        "text": "Timothy Castagne (Belgium) is shown the yellow card for a bad foul.",
-        "type": "yellow"
+        "team": "Belgium",
+        "type": "yellow",
+        "minute": "14'",
+        "text": "Timothy Castagne (Belgium) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760426",
         "sourceName": "keyEvents",
-        "rawTeam": "Egypt",
-        "text": "Ahmed Fatouh (Egypt) is shown the yellow card for a bad foul.",
-        "type": "yellow"
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "34'",
+        "text": "Ahmed Fatouh (Egypt) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760426",
         "sourceName": "keyEvents",
-        "rawTeam": "Belgium",
-        "text": "Maxim De Cuyper (Belgium) is shown the yellow card for a bad foul.",
-        "type": "yellow"
+        "team": "Belgium",
+        "type": "yellow",
+        "minute": "75'",
+        "text": "Maxim De Cuyper (Belgium) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760429",
         "sourceName": "keyEvents",
-        "rawTeam": "Saudi Arabia",
-        "text": "Abdulelah Al Amri (Saudi Arabia) is shown the yellow card for a bad foul.",
-        "type": "yellow"
+        "team": "Saudi Arabia",
+        "type": "yellow",
+        "minute": "44'",
+        "text": "Abdulelah Al Amri (Saudi Arabia) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760427",
         "sourceName": "keyEvents",
-        "rawTeam": "Iran",
-        "text": "Ehsan Hajisafi (IR Iran) is shown the yellow card for a bad foul.",
-        "type": "yellow"
+        "team": "IR Iran",
+        "type": "yellow",
+        "minute": "89'",
+        "text": "Ehsan Hajisafi (IR Iran) is shown the yellow card for a bad foul."
       }
     ],
+    "unmatchedCardEvents": [],
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 17,
-    "nonZeroRows": 17
+    "rowsMapped": 23,
+    "nonZeroRows": 23
   },
   "cards": {
-    "South Africa": {
-      "yellow": 2,
-      "secondYellow": 0,
-      "straightRed": 2
-    },
-    "Paraguay": {
-      "yellow": 5,
-      "secondYellow": 0,
-      "straightRed": 0
-    },
     "Mexico": {
       "yellow": 1,
       "secondYellow": 0,
       "straightRed": 1
     },
-    "Ivory Coast": {
-      "yellow": 3,
+    "South Africa": {
+      "yellow": 2,
+      "secondYellow": 0,
+      "straightRed": 2
+    },
+    "Korea Republic": {
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
-    "Scotland": {
-      "yellow": 3,
+    "Czechia": {
+      "yellow": 0,
       "secondYellow": 0,
       "straightRed": 0
     },
-    "Bosnia-Herzegovina": {
-      "yellow": 3,
+    "Canada": {
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
-    "Netherlands": {
+    "Bosnia and Herzegovina": {
       "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
@@ -452,8 +454,8 @@
       "secondYellow": 0,
       "straightRed": 0
     },
-    "Canada": {
-      "yellow": 2,
+    "Switzerland": {
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -462,48 +464,28 @@
       "secondYellow": 0,
       "straightRed": 0
     },
+    "Morocco": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
     "Haiti": {
       "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
-    "United States": {
+    "Scotland": {
+      "yellow": 3,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "USA": {
       "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
-    "Tunisia": {
-      "yellow": 1,
-      "secondYellow": 0,
-      "straightRed": 0
-    },
-    "Switzerland": {
-      "yellow": 1,
-      "secondYellow": 0,
-      "straightRed": 0
-    },
-    "Türkiye": {
-      "yellow": 1,
-      "secondYellow": 0,
-      "straightRed": 0
-    },
-    "South Korea": {
-      "yellow": 1,
-      "secondYellow": 0,
-      "straightRed": 0
-    },
-    "Ecuador": {
-      "yellow": 1,
-      "secondYellow": 0,
-      "straightRed": 0
-    },
-    "Curaçao": {
-      "yellow": 0,
-      "secondYellow": 0,
-      "straightRed": 0
-    },
-    "Morocco": {
-      "yellow": 0,
+    "Paraguay": {
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -512,12 +494,37 @@
       "secondYellow": 0,
       "straightRed": 0
     },
-    "Japan": {
-      "yellow": 0,
+    "Türkiye": {
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Germany": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Curaçao": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Côte d'Ivoire": {
+      "yellow": 3,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Ecuador": {
+      "yellow": 1,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Netherlands": {
+      "yellow": 3,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Japan": {
       "yellow": 0,
       "secondYellow": 0,
       "straightRed": 0
@@ -527,7 +534,147 @@
       "secondYellow": 0,
       "straightRed": 0
     },
-    "Czechia": {
+    "Tunisia": {
+      "yellow": 1,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Belgium": {
+      "yellow": 2,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Egypt": {
+      "yellow": 2,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "IR Iran": {
+      "yellow": 1,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "New Zealand": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Spain": {
+      "yellow": 1,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Cabo Verde": {
+      "yellow": 1,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Saudi Arabia": {
+      "yellow": 1,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Uruguay": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "France": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Senegal": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Iraq": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Norway": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Argentina": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Algeria": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Austria": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Jordan": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Portugal": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Colombia": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Uzbekistan": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Congo DR": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "England": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Croatia": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Ghana": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Panama": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Ivory Coast": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Bosnia-Herzegovina": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "United States": {
+      "yellow": 0,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "South Korea": {
       "yellow": 0,
       "secondYellow": 0,
       "straightRed": 0
