@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-16T22:28:47.565Z",
+  "updatedAt": "2026-06-16T23:57:29.724Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-16T22:28:42.454Z",
+    "updatedAt": "2026-06-16T23:57:27.007Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,6 +58,14 @@
     "summaryCallsSucceeded": 18,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760430",
+        "sourceName": "keyEvents",
+        "team": "Iraq",
+        "type": "yellow",
+        "minute": "86'",
+        "text": "Zaid Tahseen (Iraq) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -415,8 +423,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 23,
-    "nonZeroRows": 23
+    "rowsMapped": 24,
+    "nonZeroRows": 24
   },
   "cards": {
     "Mexico": {
@@ -590,7 +598,7 @@
       "straightRed": 0
     },
     "Iraq": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
