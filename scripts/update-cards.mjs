@@ -47,7 +47,7 @@ function makeLookup(teams) {
   const lookup = new Map();
   for (const team of teams) lookup.set(norm(team), team);
   for (const [alias, team] of ALIASES) {
-    if (teams.includes(team)) lookup.set(norm(alias), team);
+    lookup.set(norm(alias), team);
   }
   return lookup;
 }
@@ -323,7 +323,7 @@ function collectCardsFromSummary(summary, eventId, cards, diagnostics, lookup) {
 }
 
 const existing = await readExistingJson();
-const teams = Object.keys(existing.cards || {}).length ? Object.keys(existing.cards) : FALLBACK_TEAMS;
+const teams = Array.from(new Set([...FALLBACK_TEAMS,  ...Object.keys(existing.cards || {})]));
 const lookup = makeLookup(teams);
 
 const diagnostics = {
