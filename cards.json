@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-17T04:16:35.653Z",
+  "updatedAt": "2026-06-17T09:15:03.237Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-17T04:16:31.806Z",
+    "updatedAt": "2026-06-17T09:15:01.073Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -59,12 +59,12 @@
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
-        "eventId": "760430",
+        "eventId": "760431",
         "sourceName": "keyEvents",
-        "team": "Iraq",
+        "team": "Austria",
         "type": "yellow",
-        "minute": "86'",
-        "text": "Zaid Tahseen (Iraq) is shown the yellow card for a bad foul."
+        "minute": "77'",
+        "text": "Marcel Sabitzer (Austria) is shown the yellow card."
       },
       {
         "eventId": "760415",
@@ -417,14 +417,22 @@
         "type": "yellow",
         "minute": "89'",
         "text": "Ehsan Hajisafi (IR Iran) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760430",
+        "sourceName": "keyEvents",
+        "team": "Iraq",
+        "type": "yellow",
+        "minute": "86'",
+        "text": "Zaid Tahseen (Iraq) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 24,
-    "nonZeroRows": 24
+    "rowsMapped": 25,
+    "nonZeroRows": 25
   },
   "cards": {
     "Mexico": {
@@ -618,7 +626,7 @@
       "straightRed": 0
     },
     "Austria": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
