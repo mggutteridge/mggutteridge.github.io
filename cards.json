@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-17T16:40:30.236Z",
+  "updatedAt": "2026-06-17T19:12:32.287Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-17T16:40:26.635Z",
+    "updatedAt": "2026-06-17T19:12:27.007Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 20,
-    "summaryCallsSucceeded": 20,
+    "eventsChecked": 21,
+    "summaryCallsSucceeded": 21,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -65,6 +65,38 @@
         "type": "yellow",
         "minute": "77'",
         "text": "Marcel Sabitzer (Austria) is shown the yellow card."
+      },
+      {
+        "eventId": "760435",
+        "sourceName": "keyEvents",
+        "team": "Portugal",
+        "type": "yellow",
+        "minute": "13'",
+        "text": "Bernardo Silva (Portugal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760435",
+        "sourceName": "keyEvents",
+        "team": "Congo DR",
+        "type": "yellow",
+        "minute": "32'",
+        "text": "Chancel Mbemba (Congo DR) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760435",
+        "sourceName": "keyEvents",
+        "team": "Portugal",
+        "type": "yellow",
+        "minute": "88'",
+        "text": "Nélson Semedo (Portugal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760435",
+        "sourceName": "keyEvents",
+        "team": "Portugal",
+        "type": "yellow",
+        "minute": "90'+2'",
+        "text": "Tomás Araújo (Portugal) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -431,8 +463,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 25,
-    "nonZeroRows": 25
+    "rowsMapped": 27,
+    "nonZeroRows": 27
   },
   "cards": {
     "Mexico": {
@@ -636,7 +668,7 @@
       "straightRed": 0
     },
     "Portugal": {
-      "yellow": 0,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -651,7 +683,7 @@
       "straightRed": 0
     },
     "Congo DR": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
