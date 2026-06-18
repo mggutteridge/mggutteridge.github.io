@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-17T22:55:17.027Z",
+  "updatedAt": "2026-06-18T00:13:33.368Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-17T22:55:13.523Z",
+    "updatedAt": "2026-06-18T00:13:25.138Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 22,
-    "summaryCallsSucceeded": 22,
+    "eventsChecked": 23,
+    "summaryCallsSucceeded": 23,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -97,6 +97,14 @@
         "type": "yellow",
         "minute": "90'+2'",
         "text": "Tomás Araújo (Portugal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760434",
+        "sourceName": "keyEvents",
+        "team": "Ghana",
+        "type": "yellow",
+        "minute": "16'",
+        "text": "Caleb Yirenkyi (Ghana) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -463,8 +471,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 27,
-    "nonZeroRows": 27
+    "rowsMapped": 28,
+    "nonZeroRows": 28
   },
   "cards": {
     "Mexico": {
@@ -698,7 +706,7 @@
       "straightRed": 0
     },
     "Ghana": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
