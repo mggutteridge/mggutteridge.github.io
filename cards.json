@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-18T05:03:56.369Z",
+  "updatedAt": "2026-06-18T09:23:48.572Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-18T05:03:47.992Z",
+    "updatedAt": "2026-06-18T09:23:38.628Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,86 +58,6 @@
     "summaryCallsSucceeded": 24,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760431",
-        "sourceName": "keyEvents",
-        "team": "Austria",
-        "type": "yellow",
-        "minute": "77'",
-        "text": "Marcel Sabitzer (Austria) is shown the yellow card."
-      },
-      {
-        "eventId": "760435",
-        "sourceName": "keyEvents",
-        "team": "Portugal",
-        "type": "yellow",
-        "minute": "13'",
-        "text": "Bernardo Silva (Portugal) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760435",
-        "sourceName": "keyEvents",
-        "team": "Congo DR",
-        "type": "yellow",
-        "minute": "32'",
-        "text": "Chancel Mbemba (Congo DR) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760435",
-        "sourceName": "keyEvents",
-        "team": "Portugal",
-        "type": "yellow",
-        "minute": "88'",
-        "text": "Nélson Semedo (Portugal) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760435",
-        "sourceName": "keyEvents",
-        "team": "Portugal",
-        "type": "yellow",
-        "minute": "90'+2'",
-        "text": "Tomás Araújo (Portugal) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760434",
-        "sourceName": "keyEvents",
-        "team": "Ghana",
-        "type": "yellow",
-        "minute": "16'",
-        "text": "Caleb Yirenkyi (Ghana) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760434",
-        "sourceName": "keyEvents",
-        "team": "Panama",
-        "type": "yellow",
-        "minute": "72'",
-        "text": "César Blackman (Panama) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760434",
-        "sourceName": "keyEvents",
-        "team": "Panama",
-        "type": "yellow",
-        "minute": "90'+9'",
-        "text": "Carlos Harvey (Panama) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760436",
-        "sourceName": "keyEvents",
-        "team": "Colombia",
-        "type": "yellow",
-        "minute": "7'",
-        "text": "Johan Mojica (Colombia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760436",
-        "sourceName": "keyEvents",
-        "team": "Uzbekistan",
-        "type": "yellow",
-        "minute": "34'",
-        "text": "Abdukodir Khusanov (Uzbekistan) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -497,6 +417,86 @@
         "type": "yellow",
         "minute": "86'",
         "text": "Zaid Tahseen (Iraq) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760431",
+        "sourceName": "keyEvents",
+        "team": "Austria",
+        "type": "yellow",
+        "minute": "77'",
+        "text": "Marcel Sabitzer (Austria) is shown the yellow card."
+      },
+      {
+        "eventId": "760435",
+        "sourceName": "keyEvents",
+        "team": "Portugal",
+        "type": "yellow",
+        "minute": "13'",
+        "text": "Bernardo Silva (Portugal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760435",
+        "sourceName": "keyEvents",
+        "team": "Congo DR",
+        "type": "yellow",
+        "minute": "32'",
+        "text": "Chancel Mbemba (Congo DR) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760435",
+        "sourceName": "keyEvents",
+        "team": "Portugal",
+        "type": "yellow",
+        "minute": "88'",
+        "text": "Nélson Semedo (Portugal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760435",
+        "sourceName": "keyEvents",
+        "team": "Portugal",
+        "type": "yellow",
+        "minute": "90'+2'",
+        "text": "Tomás Araújo (Portugal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760434",
+        "sourceName": "keyEvents",
+        "team": "Ghana",
+        "type": "yellow",
+        "minute": "16'",
+        "text": "Caleb Yirenkyi (Ghana) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760434",
+        "sourceName": "keyEvents",
+        "team": "Panama",
+        "type": "yellow",
+        "minute": "72'",
+        "text": "César Blackman (Panama) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760434",
+        "sourceName": "keyEvents",
+        "team": "Panama",
+        "type": "yellow",
+        "minute": "90'+9'",
+        "text": "Carlos Harvey (Panama) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760436",
+        "sourceName": "keyEvents",
+        "team": "Colombia",
+        "type": "yellow",
+        "minute": "7'",
+        "text": "Johan Mojica (Colombia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760436",
+        "sourceName": "keyEvents",
+        "team": "Uzbekistan",
+        "type": "yellow",
+        "minute": "34'",
+        "text": "Abdukodir Khusanov (Uzbekistan) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
