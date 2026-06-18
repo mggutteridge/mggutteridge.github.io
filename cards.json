@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-18T21:09:43.817Z",
+  "updatedAt": "2026-06-18T23:04:15.326Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-18T21:09:34.096Z",
+    "updatedAt": "2026-06-18T23:04:04.855Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 26,
-    "summaryCallsSucceeded": 26,
+    "eventsChecked": 27,
+    "summaryCallsSucceeded": 27,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -113,6 +113,22 @@
         "type": "red",
         "minute": "80'",
         "text": "Tarik Muharemovic (Bosnia and Herzegovina) is shown the red card."
+      },
+      {
+        "eventId": "760440",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "9'",
+        "text": "Derek Cornelius (Canada) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760440",
+        "sourceName": "keyEvents",
+        "team": "Qatar",
+        "type": "red",
+        "minute": "33'",
+        "text": "Homam El Amin (Qatar) is shown the red card."
       },
       {
         "eventId": "760415",
@@ -584,7 +600,7 @@
       "straightRed": 0
     },
     "Canada": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -596,7 +612,7 @@
     "Qatar": {
       "yellow": 2,
       "secondYellow": 0,
-      "straightRed": 0
+      "straightRed": 1
     },
     "Switzerland": {
       "yellow": 2,
