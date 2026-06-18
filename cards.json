@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-18T16:04:02.258Z",
+  "updatedAt": "2026-06-18T18:36:06.969Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-18T16:03:58.760Z",
+    "updatedAt": "2026-06-18T18:36:02.185Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,6 +58,30 @@
     "summaryCallsSucceeded": 25,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760438",
+        "sourceName": "keyEvents",
+        "team": "South Africa",
+        "type": "yellow",
+        "minute": "33'",
+        "text": "Teboho Mokoena (South Africa) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760438",
+        "sourceName": "keyEvents",
+        "team": "South Africa",
+        "type": "yellow",
+        "minute": "40'",
+        "text": "Thalente Mbatha (South Africa) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760438",
+        "sourceName": "keyEvents",
+        "team": "Czechia",
+        "type": "yellow",
+        "minute": "75'",
+        "text": "Ladislav Krejcí (Czechia) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -503,8 +527,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 31,
-    "nonZeroRows": 31
+    "rowsMapped": 32,
+    "nonZeroRows": 32
   },
   "cards": {
     "Mexico": {
@@ -513,7 +537,7 @@
       "straightRed": 1
     },
     "South Africa": {
-      "yellow": 2,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 2
     },
@@ -523,7 +547,7 @@
       "straightRed": 0
     },
     "Czechia": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
