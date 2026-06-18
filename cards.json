@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-18T00:13:33.368Z",
+  "updatedAt": "2026-06-18T05:03:56.369Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-18T00:13:25.138Z",
+    "updatedAt": "2026-06-18T05:03:47.992Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 23,
-    "summaryCallsSucceeded": 23,
+    "eventsChecked": 24,
+    "summaryCallsSucceeded": 24,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -105,6 +105,38 @@
         "type": "yellow",
         "minute": "16'",
         "text": "Caleb Yirenkyi (Ghana) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760434",
+        "sourceName": "keyEvents",
+        "team": "Panama",
+        "type": "yellow",
+        "minute": "72'",
+        "text": "César Blackman (Panama) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760434",
+        "sourceName": "keyEvents",
+        "team": "Panama",
+        "type": "yellow",
+        "minute": "90'+9'",
+        "text": "Carlos Harvey (Panama) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760436",
+        "sourceName": "keyEvents",
+        "team": "Colombia",
+        "type": "yellow",
+        "minute": "7'",
+        "text": "Johan Mojica (Colombia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760436",
+        "sourceName": "keyEvents",
+        "team": "Uzbekistan",
+        "type": "yellow",
+        "minute": "34'",
+        "text": "Abdukodir Khusanov (Uzbekistan) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -471,8 +503,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 28,
-    "nonZeroRows": 28
+    "rowsMapped": 31,
+    "nonZeroRows": 31
   },
   "cards": {
     "Mexico": {
@@ -681,12 +713,12 @@
       "straightRed": 0
     },
     "Colombia": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Uzbekistan": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -711,7 +743,7 @@
       "straightRed": 0
     },
     "Panama": {
-      "yellow": 0,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     }
