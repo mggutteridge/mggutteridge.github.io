@@ -2436,10 +2436,36 @@ function expectedGroupFinish(team) {
 
 function worstTeamProbabilities() {
   const allTeams = Object.values(DATA.groups).flat();
+
+  // Work out each team's current points and remaining group games
+  const rows = standings();
+  const byTeam = Object.fromEntries(Object.values(rows).flat().map(r => [r.team, r]));
+  const remaining = team => DATA.fixtures.filter(f =>
+    (f.team1 === team || f.team2 === team) &&
+    !(scoreFor(f.id).score1 !== undefined && scoreFor(f.id).score2 !== undefined &&
+      String(scoreFor(f.id).status || '').toLowerCase() === 'finished')
+  ).length;
+
+  // Maximum points a team could still reach = current pts + 3 × games left
+  const maxPossible = team => (byTeam[team]?.pts || 0) + remaining(team) * 3;
+
+  // The wooden spoon goes to the worst team in the group stage.
+  // A team cannot win the wooden spoon if their CURRENT points already exceed
+  // the MAXIMUM POSSIBLE points of any other team — i.e. they are mathematically
+  // guaranteed to finish above the true worst team.
+  // Threshold: lowest max-possible-points across all teams.
+  const lowestMaxPossible = Math.min(...allTeams.map(maxPossible));
+
   const expected = allTeams.map(expectedGroupFinish);
   const worstiness = {};
   let total = 0;
   for (const r of expected) {
+    const currentPts = byTeam[r.team]?.pts || 0;
+    // Eliminated from wooden spoon contention if already above the floor
+    if (currentPts > lowestMaxPossible) {
+      worstiness[r.team] = 0;
+      continue;
+    }
     const strengthPenalty = (100 - teamStrength(r.team)) * 0.7;
     const groupPenalty = (9 - r.pts) * 12 + (-r.gd * 3) + (-r.gf * 1.2);
     const conductTiePenalty = conductScore(r.team) * 0.15;
@@ -2447,7 +2473,7 @@ function worstTeamProbabilities() {
     worstiness[r.team] = Math.pow(weight, 1.6);
     total += worstiness[r.team];
   }
-  return Object.fromEntries(allTeams.map(t => [t, worstiness[t] / total]));
+  return Object.fromEntries(allTeams.map(t => [t, total > 0 ? worstiness[t] / total : 0]));
 }
 
 function conductProbabilities() {
