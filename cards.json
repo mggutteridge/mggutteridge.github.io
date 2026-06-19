@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-18T23:04:15.326Z",
+  "updatedAt": "2026-06-19T01:50:38.292Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-18T23:04:04.855Z",
+    "updatedAt": "2026-06-19T01:50:34.103Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 27,
-    "summaryCallsSucceeded": 27,
+    "eventsChecked": 28,
+    "summaryCallsSucceeded": 28,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -129,6 +129,30 @@
         "type": "red",
         "minute": "33'",
         "text": "Homam El Amin (Qatar) is shown the red card."
+      },
+      {
+        "eventId": "760440",
+        "sourceName": "keyEvents",
+        "team": "Qatar",
+        "type": "red",
+        "minute": "53'",
+        "text": "Assim Madibo (Qatar) is shown the red card."
+      },
+      {
+        "eventId": "760440",
+        "sourceName": "keyEvents",
+        "team": "Qatar",
+        "type": "yellow",
+        "minute": "62'",
+        "text": "Ahmed Fathy (Qatar) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760441",
+        "sourceName": "keyEvents",
+        "team": "Korea Republic",
+        "type": "yellow",
+        "minute": "4'",
+        "text": "Lee Kang-In (Korea Republic) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -590,7 +614,7 @@
       "straightRed": 2
     },
     "Korea Republic": {
-      "yellow": 1,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -610,9 +634,9 @@
       "straightRed": 1
     },
     "Qatar": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
-      "straightRed": 1
+      "straightRed": 2
     },
     "Switzerland": {
       "yellow": 2,
