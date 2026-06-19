@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-19T18:24:22.657Z",
+  "updatedAt": "2026-06-19T20:12:31.214Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-19T18:24:12.567Z",
+    "updatedAt": "2026-06-19T20:12:27.297Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,10 +54,26 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 28,
-    "summaryCallsSucceeded": 28,
+    "eventsChecked": 29,
+    "summaryCallsSucceeded": 29,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760442",
+        "sourceName": "keyEvents",
+        "team": "Australia",
+        "type": "yellow",
+        "minute": "16'",
+        "text": "Jordan Bos (Australia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760442",
+        "sourceName": "keyEvents",
+        "team": "Australia",
+        "type": "yellow",
+        "minute": "32'",
+        "text": "Alessandro Circati (Australia) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -607,8 +623,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 32,
-    "nonZeroRows": 32
+    "rowsMapped": 33,
+    "nonZeroRows": 33
   },
   "cards": {
     "Mexico": {
@@ -682,7 +698,7 @@
       "straightRed": 0
     },
     "Australia": {
-      "yellow": 0,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
