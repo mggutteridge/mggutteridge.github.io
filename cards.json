@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-19T21:35:23.601Z",
+  "updatedAt": "2026-06-19T22:33:40.395Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-19T21:35:15.701Z",
+    "updatedAt": "2026-06-19T22:33:38.366Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 29,
-    "summaryCallsSucceeded": 29,
+    "eventsChecked": 30,
+    "summaryCallsSucceeded": 30,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -113,6 +113,14 @@
         "type": "yellow",
         "minute": "90'+3'",
         "text": "Chris Richards (USA) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760445",
+        "sourceName": "keyEvents",
+        "team": "Morocco",
+        "type": "yellow",
+        "minute": "23'",
+        "text": "Issa Diop (Morocco) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -663,8 +671,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 33,
-    "nonZeroRows": 33
+    "rowsMapped": 34,
+    "nonZeroRows": 34
   },
   "cards": {
     "Mexico": {
@@ -713,7 +721,7 @@
       "straightRed": 0
     },
     "Morocco": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
