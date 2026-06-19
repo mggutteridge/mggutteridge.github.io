@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-19T01:50:38.292Z",
+  "updatedAt": "2026-06-19T06:53:11.217Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-19T01:50:34.103Z",
+    "updatedAt": "2026-06-19T06:53:09.153Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -153,6 +153,14 @@
         "type": "yellow",
         "minute": "4'",
         "text": "Lee Kang-In (Korea Republic) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760441",
+        "sourceName": "keyEvents",
+        "team": "Korea Republic",
+        "type": "yellow",
+        "minute": "58'",
+        "text": "Paik Seung-Ho (Korea Republic) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -614,7 +622,7 @@
       "straightRed": 2
     },
     "Korea Republic": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
