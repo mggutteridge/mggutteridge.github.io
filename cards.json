@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-19T20:12:31.214Z",
+  "updatedAt": "2026-06-19T21:35:23.601Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-19T20:12:27.297Z",
+    "updatedAt": "2026-06-19T21:35:15.701Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -73,6 +73,46 @@
         "type": "yellow",
         "minute": "32'",
         "text": "Alessandro Circati (Australia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760442",
+        "sourceName": "keyEvents",
+        "team": "USA",
+        "type": "yellow",
+        "minute": "56'",
+        "text": "Antonee Robinson (USA) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760442",
+        "sourceName": "keyEvents",
+        "team": "Australia",
+        "type": "yellow",
+        "minute": "88'",
+        "text": "Harry Souttar (Australia) is shown the yellow card."
+      },
+      {
+        "eventId": "760442",
+        "sourceName": "keyEvents",
+        "team": "USA",
+        "type": "yellow",
+        "minute": "89'",
+        "text": "Folarin Balogun (USA) is shown the yellow card."
+      },
+      {
+        "eventId": "760442",
+        "sourceName": "keyEvents",
+        "team": "Australia",
+        "type": "yellow",
+        "minute": "89'",
+        "text": "Jacob Italiano (Australia) is shown the yellow card."
+      },
+      {
+        "eventId": "760442",
+        "sourceName": "keyEvents",
+        "team": "USA",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Chris Richards (USA) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -688,7 +728,7 @@
       "straightRed": 0
     },
     "USA": {
-      "yellow": 1,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -698,7 +738,7 @@
       "straightRed": 0
     },
     "Australia": {
-      "yellow": 2,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 0
     },
