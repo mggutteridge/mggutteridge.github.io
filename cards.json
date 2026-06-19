@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-19T06:53:11.217Z",
+  "updatedAt": "2026-06-19T11:13:45.099Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-19T06:53:09.153Z",
+    "updatedAt": "2026-06-19T11:13:34.989Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,110 +58,6 @@
     "summaryCallsSucceeded": 28,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760438",
-        "sourceName": "keyEvents",
-        "team": "South Africa",
-        "type": "yellow",
-        "minute": "33'",
-        "text": "Teboho Mokoena (South Africa) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760438",
-        "sourceName": "keyEvents",
-        "team": "South Africa",
-        "type": "yellow",
-        "minute": "40'",
-        "text": "Thalente Mbatha (South Africa) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760438",
-        "sourceName": "keyEvents",
-        "team": "Czechia",
-        "type": "yellow",
-        "minute": "75'",
-        "text": "Ladislav Krejcí (Czechia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760439",
-        "sourceName": "keyEvents",
-        "team": "Bosnia and Herzegovina",
-        "type": "yellow",
-        "minute": "59'",
-        "text": "Amar Dedic (Bosnia and Herzegovina) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760439",
-        "sourceName": "keyEvents",
-        "team": "Bosnia and Herzegovina",
-        "type": "yellow",
-        "minute": "61'",
-        "text": "Edin Dzeko (Bosnia and Herzegovina) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760439",
-        "sourceName": "keyEvents",
-        "team": "Switzerland",
-        "type": "yellow",
-        "minute": "65'",
-        "text": "Nico Elvedi (Switzerland) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760439",
-        "sourceName": "keyEvents",
-        "team": "Bosnia and Herzegovina",
-        "type": "red",
-        "minute": "80'",
-        "text": "Tarik Muharemovic (Bosnia and Herzegovina) is shown the red card."
-      },
-      {
-        "eventId": "760440",
-        "sourceName": "keyEvents",
-        "team": "Canada",
-        "type": "yellow",
-        "minute": "9'",
-        "text": "Derek Cornelius (Canada) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760440",
-        "sourceName": "keyEvents",
-        "team": "Qatar",
-        "type": "red",
-        "minute": "33'",
-        "text": "Homam El Amin (Qatar) is shown the red card."
-      },
-      {
-        "eventId": "760440",
-        "sourceName": "keyEvents",
-        "team": "Qatar",
-        "type": "red",
-        "minute": "53'",
-        "text": "Assim Madibo (Qatar) is shown the red card."
-      },
-      {
-        "eventId": "760440",
-        "sourceName": "keyEvents",
-        "team": "Qatar",
-        "type": "yellow",
-        "minute": "62'",
-        "text": "Ahmed Fathy (Qatar) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760441",
-        "sourceName": "keyEvents",
-        "team": "Korea Republic",
-        "type": "yellow",
-        "minute": "4'",
-        "text": "Lee Kang-In (Korea Republic) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760441",
-        "sourceName": "keyEvents",
-        "team": "Korea Republic",
-        "type": "yellow",
-        "minute": "58'",
-        "text": "Paik Seung-Ho (Korea Republic) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -601,6 +497,110 @@
         "type": "yellow",
         "minute": "34'",
         "text": "Abdukodir Khusanov (Uzbekistan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760438",
+        "sourceName": "keyEvents",
+        "team": "South Africa",
+        "type": "yellow",
+        "minute": "33'",
+        "text": "Teboho Mokoena (South Africa) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760438",
+        "sourceName": "keyEvents",
+        "team": "South Africa",
+        "type": "yellow",
+        "minute": "40'",
+        "text": "Thalente Mbatha (South Africa) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760438",
+        "sourceName": "keyEvents",
+        "team": "Czechia",
+        "type": "yellow",
+        "minute": "75'",
+        "text": "Ladislav Krejcí (Czechia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760439",
+        "sourceName": "keyEvents",
+        "team": "Bosnia and Herzegovina",
+        "type": "yellow",
+        "minute": "59'",
+        "text": "Amar Dedic (Bosnia and Herzegovina) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760439",
+        "sourceName": "keyEvents",
+        "team": "Bosnia and Herzegovina",
+        "type": "yellow",
+        "minute": "61'",
+        "text": "Edin Dzeko (Bosnia and Herzegovina) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760439",
+        "sourceName": "keyEvents",
+        "team": "Switzerland",
+        "type": "yellow",
+        "minute": "65'",
+        "text": "Nico Elvedi (Switzerland) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760439",
+        "sourceName": "keyEvents",
+        "team": "Bosnia and Herzegovina",
+        "type": "red",
+        "minute": "80'",
+        "text": "Tarik Muharemovic (Bosnia and Herzegovina) is shown the red card."
+      },
+      {
+        "eventId": "760440",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "9'",
+        "text": "Derek Cornelius (Canada) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760440",
+        "sourceName": "keyEvents",
+        "team": "Qatar",
+        "type": "red",
+        "minute": "33'",
+        "text": "Homam El Amin (Qatar) is shown the red card."
+      },
+      {
+        "eventId": "760440",
+        "sourceName": "keyEvents",
+        "team": "Qatar",
+        "type": "red",
+        "minute": "53'",
+        "text": "Assim Madibo (Qatar) is shown the red card."
+      },
+      {
+        "eventId": "760440",
+        "sourceName": "keyEvents",
+        "team": "Qatar",
+        "type": "yellow",
+        "minute": "62'",
+        "text": "Ahmed Fathy (Qatar) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760441",
+        "sourceName": "keyEvents",
+        "team": "Korea Republic",
+        "type": "yellow",
+        "minute": "4'",
+        "text": "Lee Kang-In (Korea Republic) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760441",
+        "sourceName": "keyEvents",
+        "team": "Korea Republic",
+        "type": "yellow",
+        "minute": "58'",
+        "text": "Paik Seung-Ho (Korea Republic) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
