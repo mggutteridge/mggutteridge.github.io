@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-20T01:52:57.055Z",
+  "updatedAt": "2026-06-20T06:09:47.850Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-20T01:52:53.435Z",
+    "updatedAt": "2026-06-20T06:09:46.017Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 31,
-    "summaryCallsSucceeded": 31,
+    "eventsChecked": 32,
+    "summaryCallsSucceeded": 32,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -145,6 +145,46 @@
         "type": "yellow",
         "minute": "45'+4'",
         "text": "Frantzdy Pierrot (Haiti) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760444",
+        "sourceName": "keyEvents",
+        "team": "Brazil",
+        "type": "yellow",
+        "minute": "65'",
+        "text": "Douglas Santos (Brazil) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760444",
+        "sourceName": "keyEvents",
+        "team": "Haiti",
+        "type": "yellow",
+        "minute": "72'",
+        "text": "Danley Jean Jacques (Haiti) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760443",
+        "sourceName": "keyEvents",
+        "team": "Paraguay",
+        "type": "yellow",
+        "minute": "4'",
+        "text": "Matías Galarza (Paraguay) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760443",
+        "sourceName": "keyEvents",
+        "team": "Paraguay",
+        "type": "red",
+        "minute": "45'+3'",
+        "text": "Miguel Almirón (Paraguay) is shown the red card."
+      },
+      {
+        "eventId": "760443",
+        "sourceName": "keyEvents",
+        "team": "Türkiye",
+        "type": "yellow",
+        "minute": "71'",
+        "text": "Eren Elmali (Türkiye) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -740,7 +780,7 @@
       "straightRed": 0
     },
     "Brazil": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -750,7 +790,7 @@
       "straightRed": 0
     },
     "Haiti": {
-      "yellow": 3,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -765,9 +805,9 @@
       "straightRed": 0
     },
     "Paraguay": {
-      "yellow": 5,
+      "yellow": 6,
       "secondYellow": 0,
-      "straightRed": 0
+      "straightRed": 1
     },
     "Australia": {
       "yellow": 4,
@@ -775,7 +815,7 @@
       "straightRed": 0
     },
     "Türkiye": {
-      "yellow": 1,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
