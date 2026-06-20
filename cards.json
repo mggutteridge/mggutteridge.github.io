@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-19T23:43:38.210Z",
+  "updatedAt": "2026-06-20T01:52:57.055Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-19T23:43:35.631Z",
+    "updatedAt": "2026-06-20T01:52:53.435Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 30,
-    "summaryCallsSucceeded": 30,
+    "eventsChecked": 31,
+    "summaryCallsSucceeded": 31,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -129,6 +129,22 @@
         "type": "yellow",
         "minute": "65'",
         "text": "Andy Robertson (Scotland) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760444",
+        "sourceName": "keyEvents",
+        "team": "Haiti",
+        "type": "yellow",
+        "minute": "4'",
+        "text": "Carlens Arcus (Haiti) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760444",
+        "sourceName": "keyEvents",
+        "team": "Haiti",
+        "type": "yellow",
+        "minute": "45'+4'",
+        "text": "Frantzdy Pierrot (Haiti) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -734,7 +750,7 @@
       "straightRed": 0
     },
     "Haiti": {
-      "yellow": 1,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
