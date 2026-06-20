@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-20T06:09:47.850Z",
+  "updatedAt": "2026-06-20T09:37:30.082Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-20T06:09:46.017Z",
+    "updatedAt": "2026-06-20T09:37:26.675Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,134 +58,6 @@
     "summaryCallsSucceeded": 32,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760442",
-        "sourceName": "keyEvents",
-        "team": "Australia",
-        "type": "yellow",
-        "minute": "16'",
-        "text": "Jordan Bos (Australia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760442",
-        "sourceName": "keyEvents",
-        "team": "Australia",
-        "type": "yellow",
-        "minute": "32'",
-        "text": "Alessandro Circati (Australia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760442",
-        "sourceName": "keyEvents",
-        "team": "USA",
-        "type": "yellow",
-        "minute": "56'",
-        "text": "Antonee Robinson (USA) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760442",
-        "sourceName": "keyEvents",
-        "team": "Australia",
-        "type": "yellow",
-        "minute": "88'",
-        "text": "Harry Souttar (Australia) is shown the yellow card."
-      },
-      {
-        "eventId": "760442",
-        "sourceName": "keyEvents",
-        "team": "USA",
-        "type": "yellow",
-        "minute": "89'",
-        "text": "Folarin Balogun (USA) is shown the yellow card."
-      },
-      {
-        "eventId": "760442",
-        "sourceName": "keyEvents",
-        "team": "Australia",
-        "type": "yellow",
-        "minute": "89'",
-        "text": "Jacob Italiano (Australia) is shown the yellow card."
-      },
-      {
-        "eventId": "760442",
-        "sourceName": "keyEvents",
-        "team": "USA",
-        "type": "yellow",
-        "minute": "90'+3'",
-        "text": "Chris Richards (USA) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760445",
-        "sourceName": "keyEvents",
-        "team": "Morocco",
-        "type": "yellow",
-        "minute": "23'",
-        "text": "Issa Diop (Morocco) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760445",
-        "sourceName": "keyEvents",
-        "team": "Scotland",
-        "type": "yellow",
-        "minute": "65'",
-        "text": "Andy Robertson (Scotland) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760444",
-        "sourceName": "keyEvents",
-        "team": "Haiti",
-        "type": "yellow",
-        "minute": "4'",
-        "text": "Carlens Arcus (Haiti) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760444",
-        "sourceName": "keyEvents",
-        "team": "Haiti",
-        "type": "yellow",
-        "minute": "45'+4'",
-        "text": "Frantzdy Pierrot (Haiti) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760444",
-        "sourceName": "keyEvents",
-        "team": "Brazil",
-        "type": "yellow",
-        "minute": "65'",
-        "text": "Douglas Santos (Brazil) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760444",
-        "sourceName": "keyEvents",
-        "team": "Haiti",
-        "type": "yellow",
-        "minute": "72'",
-        "text": "Danley Jean Jacques (Haiti) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760443",
-        "sourceName": "keyEvents",
-        "team": "Paraguay",
-        "type": "yellow",
-        "minute": "4'",
-        "text": "Matías Galarza (Paraguay) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760443",
-        "sourceName": "keyEvents",
-        "team": "Paraguay",
-        "type": "red",
-        "minute": "45'+3'",
-        "text": "Miguel Almirón (Paraguay) is shown the red card."
-      },
-      {
-        "eventId": "760443",
-        "sourceName": "keyEvents",
-        "team": "Türkiye",
-        "type": "yellow",
-        "minute": "71'",
-        "text": "Eren Elmali (Türkiye) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -729,6 +601,134 @@
         "type": "yellow",
         "minute": "58'",
         "text": "Paik Seung-Ho (Korea Republic) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760442",
+        "sourceName": "keyEvents",
+        "team": "Australia",
+        "type": "yellow",
+        "minute": "16'",
+        "text": "Jordan Bos (Australia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760442",
+        "sourceName": "keyEvents",
+        "team": "Australia",
+        "type": "yellow",
+        "minute": "32'",
+        "text": "Alessandro Circati (Australia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760442",
+        "sourceName": "keyEvents",
+        "team": "USA",
+        "type": "yellow",
+        "minute": "56'",
+        "text": "Antonee Robinson (USA) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760442",
+        "sourceName": "keyEvents",
+        "team": "Australia",
+        "type": "yellow",
+        "minute": "88'",
+        "text": "Harry Souttar (Australia) is shown the yellow card."
+      },
+      {
+        "eventId": "760442",
+        "sourceName": "keyEvents",
+        "team": "USA",
+        "type": "yellow",
+        "minute": "89'",
+        "text": "Folarin Balogun (USA) is shown the yellow card."
+      },
+      {
+        "eventId": "760442",
+        "sourceName": "keyEvents",
+        "team": "Australia",
+        "type": "yellow",
+        "minute": "89'",
+        "text": "Jacob Italiano (Australia) is shown the yellow card."
+      },
+      {
+        "eventId": "760442",
+        "sourceName": "keyEvents",
+        "team": "USA",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Chris Richards (USA) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760445",
+        "sourceName": "keyEvents",
+        "team": "Morocco",
+        "type": "yellow",
+        "minute": "23'",
+        "text": "Issa Diop (Morocco) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760445",
+        "sourceName": "keyEvents",
+        "team": "Scotland",
+        "type": "yellow",
+        "minute": "65'",
+        "text": "Andy Robertson (Scotland) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760444",
+        "sourceName": "keyEvents",
+        "team": "Haiti",
+        "type": "yellow",
+        "minute": "4'",
+        "text": "Carlens Arcus (Haiti) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760444",
+        "sourceName": "keyEvents",
+        "team": "Haiti",
+        "type": "yellow",
+        "minute": "45'+4'",
+        "text": "Frantzdy Pierrot (Haiti) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760444",
+        "sourceName": "keyEvents",
+        "team": "Brazil",
+        "type": "yellow",
+        "minute": "65'",
+        "text": "Douglas Santos (Brazil) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760444",
+        "sourceName": "keyEvents",
+        "team": "Haiti",
+        "type": "yellow",
+        "minute": "72'",
+        "text": "Danley Jean Jacques (Haiti) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760443",
+        "sourceName": "keyEvents",
+        "team": "Paraguay",
+        "type": "yellow",
+        "minute": "4'",
+        "text": "Matías Galarza (Paraguay) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760443",
+        "sourceName": "keyEvents",
+        "team": "Paraguay",
+        "type": "red",
+        "minute": "45'+3'",
+        "text": "Miguel Almirón (Paraguay) is shown the red card."
+      },
+      {
+        "eventId": "760443",
+        "sourceName": "keyEvents",
+        "team": "Türkiye",
+        "type": "yellow",
+        "minute": "71'",
+        "text": "Eren Elmali (Türkiye) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
