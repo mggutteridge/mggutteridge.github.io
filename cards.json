@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-20T18:03:02.909Z",
+  "updatedAt": "2026-06-20T19:50:55.975Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-20T18:02:57.378Z",
+    "updatedAt": "2026-06-20T19:50:51.730Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,6 +58,30 @@
     "summaryCallsSucceeded": 33,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760447",
+        "sourceName": "keyEvents",
+        "team": "Sweden",
+        "type": "yellow",
+        "minute": "53'",
+        "text": "Gabriel Gudmundsson (Sweden) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760447",
+        "sourceName": "keyEvents",
+        "team": "Sweden",
+        "type": "yellow",
+        "minute": "75'",
+        "text": "Yasin Ayari (Sweden) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760447",
+        "sourceName": "keyEvents",
+        "team": "Sweden",
+        "type": "yellow",
+        "minute": "80'",
+        "text": "Lucas Bergvall (Sweden) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -735,8 +759,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 34,
-    "nonZeroRows": 34
+    "rowsMapped": 35,
+    "nonZeroRows": 35
   },
   "cards": {
     "Mexico": {
@@ -850,7 +874,7 @@
       "straightRed": 0
     },
     "Sweden": {
-      "yellow": 0,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
