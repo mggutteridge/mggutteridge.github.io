@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-21T14:56:13.938Z",
+  "updatedAt": "2026-06-21T16:44:03.851Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-21T14:56:09.984Z",
+    "updatedAt": "2026-06-21T16:43:53.760Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,10 +54,18 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 36,
-    "summaryCallsSucceeded": 36,
+    "eventsChecked": 37,
+    "summaryCallsSucceeded": 37,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760453",
+        "sourceName": "keyEvents",
+        "team": "Saudi Arabia",
+        "type": "yellow",
+        "minute": "30'",
+        "text": "Salem Al Dawsari (Saudi Arabia) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -962,7 +970,7 @@
       "straightRed": 0
     },
     "Saudi Arabia": {
-      "yellow": 1,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
