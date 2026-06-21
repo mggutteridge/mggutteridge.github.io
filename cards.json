@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-21T20:01:29.962Z",
+  "updatedAt": "2026-06-21T21:24:20.455Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-21T20:01:24.414Z",
+    "updatedAt": "2026-06-21T21:24:13.530Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -89,6 +89,14 @@
         "type": "yellow",
         "minute": "33'",
         "text": "Saeid Ezatolahi (IR Iran) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760451",
+        "sourceName": "keyEvents",
+        "team": "Belgium",
+        "type": "red",
+        "minute": "66'",
+        "text": "Nathan Ngoy (Belgium) is shown the red card."
       },
       {
         "eventId": "760415",
@@ -966,7 +974,7 @@
     "Belgium": {
       "yellow": 3,
       "secondYellow": 0,
-      "straightRed": 0
+      "straightRed": 1
     },
     "Egypt": {
       "yellow": 2,
