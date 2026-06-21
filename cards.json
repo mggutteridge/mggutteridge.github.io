@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-21T22:41:07.382Z",
+  "updatedAt": "2026-06-21T23:57:28.797Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-21T22:41:04.327Z",
+    "updatedAt": "2026-06-21T23:57:25.577Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -113,6 +113,14 @@
         "type": "yellow",
         "minute": "20'",
         "text": "Rodrigo Bentancur (Uruguay) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760450",
+        "sourceName": "keyEvents",
+        "team": "Uruguay",
+        "type": "yellow",
+        "minute": "58'",
+        "text": "Mathías Olivera (Uruguay) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1023,7 +1031,7 @@
       "straightRed": 0
     },
     "Uruguay": {
-      "yellow": 1,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
