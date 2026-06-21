@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-21T21:24:20.455Z",
+  "updatedAt": "2026-06-21T22:41:07.382Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-21T21:24:13.530Z",
+    "updatedAt": "2026-06-21T22:41:04.327Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 38,
-    "summaryCallsSucceeded": 38,
+    "eventsChecked": 39,
+    "summaryCallsSucceeded": 39,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -97,6 +97,22 @@
         "type": "red",
         "minute": "66'",
         "text": "Nathan Ngoy (Belgium) is shown the red card."
+      },
+      {
+        "eventId": "760450",
+        "sourceName": "keyEvents",
+        "team": "Cabo Verde",
+        "type": "yellow",
+        "minute": "5'",
+        "text": "Sidny Cabral (Cabo Verde) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760450",
+        "sourceName": "keyEvents",
+        "team": "Uruguay",
+        "type": "yellow",
+        "minute": "20'",
+        "text": "Rodrigo Bentancur (Uruguay) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -847,8 +863,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 36,
-    "nonZeroRows": 36
+    "rowsMapped": 37,
+    "nonZeroRows": 37
   },
   "cards": {
     "Mexico": {
@@ -997,7 +1013,7 @@
       "straightRed": 0
     },
     "Cabo Verde": {
-      "yellow": 1,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -1007,7 +1023,7 @@
       "straightRed": 0
     },
     "Uruguay": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
