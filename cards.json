@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-20T23:37:36.608Z",
+  "updatedAt": "2026-06-21T02:03:27.583Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-20T23:37:32.345Z",
+    "updatedAt": "2026-06-21T02:03:24.697Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 34,
-    "summaryCallsSucceeded": 34,
+    "eventsChecked": 35,
+    "summaryCallsSucceeded": 35,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -81,6 +81,54 @@
         "type": "yellow",
         "minute": "80'",
         "text": "Lucas Bergvall (Sweden) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760446",
+        "sourceName": "keyEvents",
+        "team": "Ecuador",
+        "type": "yellow",
+        "minute": "38'",
+        "text": "Jordy Alcívar (Ecuador) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760446",
+        "sourceName": "keyEvents",
+        "team": "Curaçao",
+        "type": "yellow",
+        "minute": "39'",
+        "text": "Leandro Bacuna (Curaçao) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760446",
+        "sourceName": "keyEvents",
+        "team": "Curaçao",
+        "type": "yellow",
+        "minute": "53'",
+        "text": "Juninho Bacuna (Curaçao) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760446",
+        "sourceName": "keyEvents",
+        "team": "Curaçao",
+        "type": "yellow",
+        "minute": "56'",
+        "text": "Livano Comenencia (Curaçao) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760446",
+        "sourceName": "keyEvents",
+        "team": "Curaçao",
+        "type": "yellow",
+        "minute": "75'",
+        "text": "Juriën Gaari (Curaçao) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760446",
+        "sourceName": "keyEvents",
+        "team": "Curaçao",
+        "type": "yellow",
+        "minute": "90'+1'",
+        "text": "Gervane Kastaneer (Curaçao) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -759,8 +807,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 35,
-    "nonZeroRows": 35
+    "rowsMapped": 36,
+    "nonZeroRows": 36
   },
   "cards": {
     "Mexico": {
@@ -849,7 +897,7 @@
       "straightRed": 0
     },
     "Curaçao": {
-      "yellow": 0,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -859,7 +907,7 @@
       "straightRed": 0
     },
     "Ecuador": {
-      "yellow": 1,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
