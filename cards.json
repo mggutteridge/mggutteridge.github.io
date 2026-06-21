@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-21T16:44:03.851Z",
+  "updatedAt": "2026-06-21T18:10:17.186Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-21T16:43:53.760Z",
+    "updatedAt": "2026-06-21T18:10:13.435Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -65,6 +65,14 @@
         "type": "yellow",
         "minute": "30'",
         "text": "Salem Al Dawsari (Saudi Arabia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760453",
+        "sourceName": "keyEvents",
+        "team": "Saudi Arabia",
+        "type": "yellow",
+        "minute": "60'",
+        "text": "Mohamed Kanno (Saudi Arabia) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -970,7 +978,7 @@
       "straightRed": 0
     },
     "Saudi Arabia": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
