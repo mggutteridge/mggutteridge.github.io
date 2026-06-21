@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-21T18:10:17.186Z",
+  "updatedAt": "2026-06-21T20:01:29.962Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-21T18:10:13.435Z",
+    "updatedAt": "2026-06-21T20:01:24.414Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 37,
-    "summaryCallsSucceeded": 37,
+    "eventsChecked": 38,
+    "summaryCallsSucceeded": 38,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -73,6 +73,22 @@
         "type": "yellow",
         "minute": "60'",
         "text": "Mohamed Kanno (Saudi Arabia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760451",
+        "sourceName": "keyEvents",
+        "team": "Belgium",
+        "type": "yellow",
+        "minute": "3'",
+        "text": "Romelu Lukaku (Belgium) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760451",
+        "sourceName": "keyEvents",
+        "team": "IR Iran",
+        "type": "yellow",
+        "minute": "33'",
+        "text": "Saeid Ezatolahi (IR Iran) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -948,7 +964,7 @@
       "straightRed": 0
     },
     "Belgium": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -958,7 +974,7 @@
       "straightRed": 0
     },
     "IR Iran": {
-      "yellow": 1,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
