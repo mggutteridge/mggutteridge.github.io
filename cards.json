@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-22T18:57:48.012Z",
+  "updatedAt": "2026-06-22T21:32:04.870Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-22T18:57:45.423Z",
+    "updatedAt": "2026-06-22T21:31:59.578Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 41,
-    "summaryCallsSucceeded": 41,
+    "eventsChecked": 42,
+    "summaryCallsSucceeded": 42,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -88,7 +88,15 @@
         "team": "Argentina",
         "type": "yellow",
         "minute": "90'+2'",
-        "text": "Leandro Paredes (Argentina) Yellow Card at 90'+2'"
+        "text": "Leandro Paredes (Argentina) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760457",
+        "sourceName": "keyEvents",
+        "team": "Iraq",
+        "type": "yellow",
+        "minute": "6'",
+        "text": "Amir Al Ammari (Iraq) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1110,7 +1118,7 @@
       "straightRed": 0
     },
     "Iraq": {
-      "yellow": 1,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
