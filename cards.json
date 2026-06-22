@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-22T15:33:41.992Z",
+  "updatedAt": "2026-06-22T18:57:48.012Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-22T15:33:38.536Z",
+    "updatedAt": "2026-06-22T18:57:45.423Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,10 +54,42 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 40,
-    "summaryCallsSucceeded": 40,
+    "eventsChecked": 41,
+    "summaryCallsSucceeded": 41,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760456",
+        "sourceName": "keyEvents",
+        "team": "Austria",
+        "type": "yellow",
+        "minute": "40'",
+        "text": "Stefan Posch (Austria) is shown the yellow card."
+      },
+      {
+        "eventId": "760456",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "76'",
+        "text": "Facundo Medina (Argentina) is shown the yellow card."
+      },
+      {
+        "eventId": "760456",
+        "sourceName": "keyEvents",
+        "team": "Austria",
+        "type": "yellow",
+        "minute": "76'",
+        "text": "Konrad Laimer (Austria) is shown the yellow card."
+      },
+      {
+        "eventId": "760456",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "90'+2'",
+        "text": "Leandro Paredes (Argentina) Yellow Card at 90'+2'"
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -903,8 +935,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 38,
-    "nonZeroRows": 38
+    "rowsMapped": 39,
+    "nonZeroRows": 39
   },
   "cards": {
     "Mexico": {
@@ -1088,7 +1120,7 @@
       "straightRed": 0
     },
     "Argentina": {
-      "yellow": 0,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -1098,7 +1130,7 @@
       "straightRed": 0
     },
     "Austria": {
-      "yellow": 1,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
