@@ -2813,13 +2813,13 @@ function pEarlierThanRecord(team, targetSeconds) {
 // Most goals conceded: based on expected goals against across the whole tournament.
 // Weaker teams, especially those facing tough opponents, are more likely to concede heavily.
 
+
 function mostConcededProbabilities() {
   const allTeams = Object.values(DATA.groups).flat();
 
   const currentByTeam = {};
   const playedByTeam = {};
 
-  // Current goals conceded and matches played from finished fixtures
   for (const team of allTeams) {
     let ga = 0;
     let played = 0;
@@ -2845,6 +2845,16 @@ function mostConcededProbabilities() {
 
   const currentLeaderGa = Math.max(...allTeams.map(t => currentByTeam[t] || 0));
 
+  function baselineGaPerGame(team) {
+    const strength = teamStrength(team);
+
+    // Weaker teams should have a higher defensive baseline, but keep it bounded.
+    return Math.max(
+      0.45,
+      Math.min(2.8, ((100 - strength) / 60) * 2.0 + 0.55)
+    );
+  }
+
   const weights = {};
   let total = 0;
 
@@ -2853,9 +2863,16 @@ function mostConcededProbabilities() {
     const currentGa = currentByTeam[team] || 0;
     const played = playedByTeam[team] || 0;
 
+    const baselineGa = baselineGaPerGame(team);
+
+    // Shrink observed GA/game towards a baseline.
+    // This avoids overreacting to one freak result, especially for teams
+    // that have played only one match.
+    const PRIOR_GAMES = 2.5;
+
     const gaPerGame = played > 0
-      ? currentGa / played
-      : Math.max(0.2, (100 - strength) / 60 * 2.2 + 0.3);
+      ? (currentGa + PRIOR_GAMES * baselineGa) / (played + PRIOR_GAMES)
+      : baselineGa;
 
     const remainingGroup = DATA.fixtures.filter(f => {
       const s = scoreFor(f.id);
@@ -2869,16 +2886,16 @@ function mostConcededProbabilities() {
              ["A","B","C","D","E","F","G","H","I","J","K","L"].includes(f.group);
     }).length;
 
-    // Stronger teams may play more knockout matches, but do not let future
-    // opportunity dominate the current leaderboard too aggressively.
-    const koChance = Math.max(0.03, Math.min(0.9, (strength - 30) / 80));
-    const expectedKoMatches = koChance * 3.25;
+    // Stronger sides may play more knockout matches, but keep this softer
+    // than the old model so speculative deep runs don't dominate.
+    const koChance = Math.max(0.02, Math.min(0.75, (strength - 35) / 85));
+    const expectedKoMatches = koChance * 2.2;
 
-    const expectedRemainingMatches = remainingGroup + expectedKoMatches;
+    const expectedRemainingMatches =
+      remainingGroup + expectedKoMatches;
 
-    // Future goals conceded are uncertain, so discount the mean somewhat.
-    // This stops speculative deep runs swamping teams that have already shipped many goals.
-    const FUTURE_DISCOUNT = 0.65;
+    // Discount future because it is uncertain; current GA is real.
+    const FUTURE_DISCOUNT = 0.55;
 
     const expectedFutureGa =
       gaPerGame * expectedRemainingMatches * FUTURE_DISCOUNT;
@@ -2887,21 +2904,28 @@ function mostConcededProbabilities() {
       currentGa + expectedFutureGa;
 
     // Two-line variance approximation:
-    // future conceded goals are noisy, so give teams with matches remaining
-    // a modest upside for variance without letting it dominate current GA.
-    const futureVariance = Math.max(0.25, expectedFutureGa);
-    const contenderScore = expectedTotalGa + 0.55 * Math.sqrt(futureVariance);
+    // teams with future matches get some upside, but only modestly.
+    const futureVariance = Math.max(0.35, expectedFutureGa);
+    const varianceUpside = 0.35 * Math.sqrt(futureVariance);
 
-    // Penalise teams whose expected total still does not catch the current leader.
-    // This is the bit that stops a team being treated too generously
-    // merely because it may have more games left.
-    const shortfallToLeader = Math.max(0, currentLeaderGa - expectedTotalGa);
+    // Catch-up logic: if a team is behind the current leader, ask whether
+    // its expected future concessions plausibly close that gap.
+    const deficitToLeader = Math.max(0, currentLeaderGa - currentGa);
+    const unexplainedDeficit = Math.max(0, deficitToLeader - expectedFutureGa);
+
     const catchupPenalty = Math.exp(
-      -Math.pow(shortfallToLeader, 2) / (2 * (futureVariance + 1))
+      -Math.pow(unexplainedDeficit, 2) / (2 * (futureVariance + 1))
     );
 
+    const currentGaBoost =
+      Math.pow(1 + currentGa, 1.45);
+
+    const contenderScore =
+      expectedTotalGa + varianceUpside;
+
     const w =
-      Math.pow(Math.max(0.01, contenderScore), 1.55) *
+      Math.pow(Math.max(0.01, contenderScore), 1.15) *
+      currentGaBoost *
       catchupPenalty;
 
     weights[team] = w;
@@ -2916,6 +2940,7 @@ function mostConcededProbabilities() {
     allTeams.map(t => [t, weights[t] / total])
   );
 }
+
 
 
 // Team that knocks England out: the team that beats or eliminates England in the knockout stage.
