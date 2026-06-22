@@ -2713,18 +2713,44 @@ function fastestGoalProbabilities() {
     };
   }
 
-  function pEarlierThanRecord(team, targetSeconds) {
-    const { goalsPerGame, remainingMatches } = teamAttackProfile(team);
-    if (targetSeconds <= 0 || remainingMatches <= 0) return 0;
+  
+unction pEarlierThanRecord(team, targetSeconds) {
+  const { goalsPerGame, remainingMatches } = teamAttackProfile(team);
+  if (targetSeconds <= 0 || remainingMatches <= 0) return 0;
 
-    const earlyFraction = Math.max(0, Math.min(1, targetSeconds / (90 * 60)));
-    const earlyPenalty = targetSeconds < 15 * 60 ? 0.75 : 1.0;
+  const matchSeconds = 90 * 60;
+  const t = Math.max(0, Math.min(1, targetSeconds / matchSeconds));
 
-    const expectedEarlyGoals =
-      goalsPerGame * remainingMatches * earlyFraction * earlyPenalty;
+  /*
+    Very-early goals are much rarer than a flat 90-minute distribution implies.
+    Instead of assuming cumulative goal probability grows linearly with time,
+    use a convex curve:
 
-    return Math.max(0, Math.min(1, 1 - Math.exp(-expectedEarlyGoals)));
+      cumulative share ≈ t ^ EARLY_GOAL_EXPONENT
+
+    This is deliberately conservative for the first few minutes, while still
+    converging back towards the normal goals-per-game expectation later.
+  */
+  const EARLY_GOAL_EXPONENT = 1.45;
+
+  let earlyGoalShare = Math.pow(t, EARLY_GOAL_EXPONENT);
+
+  /*
+    For records after 15 minutes, avoid over-suppressing later goals.
+    Blend gradually back towards the linear model.
+  */
+  if (targetSeconds > 15 * 60) {
+    const linearShare = t;
+    const blend = Math.min(1, (targetSeconds - 15 * 60) / (30 * 60));
+    earlyGoalShare = earlyGoalShare * (1 - blend) + linearShare * blend;
   }
+
+  const expectedEarlyGoals =
+    goalsPerGame * remainingMatches * earlyGoalShare;
+
+  return Math.max(0, Math.min(1, 1 - Math.exp(-expectedEarlyGoals)));
+}
+
 
   if (!best) {
     const weights = {};
