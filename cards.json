@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-22T04:23:29.390Z",
+  "updatedAt": "2026-06-22T10:19:48.835Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-22T04:23:24.066Z",
+    "updatedAt": "2026-06-22T10:19:46.387Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,102 +58,6 @@
     "summaryCallsSucceeded": 40,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760453",
-        "sourceName": "keyEvents",
-        "team": "Saudi Arabia",
-        "type": "yellow",
-        "minute": "30'",
-        "text": "Salem Al Dawsari (Saudi Arabia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760453",
-        "sourceName": "keyEvents",
-        "team": "Saudi Arabia",
-        "type": "yellow",
-        "minute": "60'",
-        "text": "Mohamed Kanno (Saudi Arabia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760451",
-        "sourceName": "keyEvents",
-        "team": "Belgium",
-        "type": "yellow",
-        "minute": "3'",
-        "text": "Romelu Lukaku (Belgium) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760451",
-        "sourceName": "keyEvents",
-        "team": "IR Iran",
-        "type": "yellow",
-        "minute": "33'",
-        "text": "Saeid Ezatolahi (IR Iran) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760451",
-        "sourceName": "keyEvents",
-        "team": "Belgium",
-        "type": "red",
-        "minute": "66'",
-        "text": "Nathan Ngoy (Belgium) is shown the red card."
-      },
-      {
-        "eventId": "760450",
-        "sourceName": "keyEvents",
-        "team": "Cabo Verde",
-        "type": "yellow",
-        "minute": "5'",
-        "text": "Sidny Cabral (Cabo Verde) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760450",
-        "sourceName": "keyEvents",
-        "team": "Uruguay",
-        "type": "yellow",
-        "minute": "20'",
-        "text": "Rodrigo Bentancur (Uruguay) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760450",
-        "sourceName": "keyEvents",
-        "team": "Uruguay",
-        "type": "yellow",
-        "minute": "58'",
-        "text": "Mathías Olivera (Uruguay) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760450",
-        "sourceName": "keyEvents",
-        "team": "Cabo Verde",
-        "type": "yellow",
-        "minute": "90'+3'",
-        "text": "Diney Borges (Cabo Verde) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760452",
-        "sourceName": "keyEvents",
-        "team": "Egypt",
-        "type": "yellow",
-        "minute": "17'",
-        "text": "Mohanad Lasheen (Egypt) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760452",
-        "sourceName": "keyEvents",
-        "team": "New Zealand",
-        "type": "yellow",
-        "minute": "20'",
-        "text": "Sarpreet Singh (New Zealand) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760452",
-        "sourceName": "keyEvents",
-        "team": "New Zealand",
-        "type": "yellow",
-        "minute": "34'",
-        "text": "Callum McCowatt (New Zealand) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -897,6 +801,102 @@
         "type": "yellow",
         "minute": "90'+1'",
         "text": "Gervane Kastaneer (Curaçao) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760453",
+        "sourceName": "keyEvents",
+        "team": "Saudi Arabia",
+        "type": "yellow",
+        "minute": "30'",
+        "text": "Salem Al Dawsari (Saudi Arabia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760453",
+        "sourceName": "keyEvents",
+        "team": "Saudi Arabia",
+        "type": "yellow",
+        "minute": "60'",
+        "text": "Mohamed Kanno (Saudi Arabia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760451",
+        "sourceName": "keyEvents",
+        "team": "Belgium",
+        "type": "yellow",
+        "minute": "3'",
+        "text": "Romelu Lukaku (Belgium) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760451",
+        "sourceName": "keyEvents",
+        "team": "IR Iran",
+        "type": "yellow",
+        "minute": "33'",
+        "text": "Saeid Ezatolahi (IR Iran) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760451",
+        "sourceName": "keyEvents",
+        "team": "Belgium",
+        "type": "red",
+        "minute": "66'",
+        "text": "Nathan Ngoy (Belgium) is shown the red card."
+      },
+      {
+        "eventId": "760450",
+        "sourceName": "keyEvents",
+        "team": "Cabo Verde",
+        "type": "yellow",
+        "minute": "5'",
+        "text": "Sidny Cabral (Cabo Verde) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760450",
+        "sourceName": "keyEvents",
+        "team": "Uruguay",
+        "type": "yellow",
+        "minute": "20'",
+        "text": "Rodrigo Bentancur (Uruguay) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760450",
+        "sourceName": "keyEvents",
+        "team": "Uruguay",
+        "type": "yellow",
+        "minute": "58'",
+        "text": "Mathías Olivera (Uruguay) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760450",
+        "sourceName": "keyEvents",
+        "team": "Cabo Verde",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Diney Borges (Cabo Verde) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760452",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "17'",
+        "text": "Mohanad Lasheen (Egypt) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760452",
+        "sourceName": "keyEvents",
+        "team": "New Zealand",
+        "type": "yellow",
+        "minute": "20'",
+        "text": "Sarpreet Singh (New Zealand) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760452",
+        "sourceName": "keyEvents",
+        "team": "New Zealand",
+        "type": "yellow",
+        "minute": "34'",
+        "text": "Callum McCowatt (New Zealand) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
