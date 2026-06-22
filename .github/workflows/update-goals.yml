@@ -1,0 +1,36 @@
+name: Update fastest-goal candidates
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-goals:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Update goals.json from openfootball
+        run: python update_goals.py
+
+      - name: Commit changes if goals.json changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add goals.json
+          if git diff --cached --quiet; then
+            echo "No goals.json changes to commit"
+          else
+            git commit -m "Update fastest-goal candidates"
+            git push
+          fi
