@@ -190,7 +190,7 @@
       "candidates": [
         {
           "minute": 6,
-          "seconds": null,
+          "seconds": 8,
           "scorer": "Michal Sadílek",
           "opponent": "South Africa",
           "matchId": "3",
@@ -265,7 +265,7 @@
       "candidates": [
         {
           "minute": 6,
-          "seconds": null,
+          "seconds": 17,
           "scorer": "Felix Nmecha",
           "opponent": "Curaçao",
           "matchId": "25",
@@ -385,7 +385,7 @@
       "candidates": [
         {
           "minute": 2,
-          "seconds": null,
+          "seconds": 12,
           "scorer": "Ismael Saibari",
           "opponent": "Scotland",
           "matchId": "15",
@@ -445,7 +445,7 @@
       "candidates": [
         {
           "minute": 2,
-          "seconds": null,
+          "seconds": 4,
           "scorer": "Matías Galarza",
           "opponent": "Türkiye",
           "matchId": "22",
@@ -460,7 +460,7 @@
       "candidates": [
         {
           "minute": 6,
-          "seconds": null,
+          "seconds": 33,
           "scorer": "João Neves",
           "opponent": "Congo DR",
           "matchId": "61",
