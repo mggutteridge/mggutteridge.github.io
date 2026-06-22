@@ -2812,29 +2812,111 @@ function pEarlierThanRecord(team, targetSeconds) {
 
 // Most goals conceded: based on expected goals against across the whole tournament.
 // Weaker teams, especially those facing tough opponents, are more likely to concede heavily.
+
 function mostConcededProbabilities() {
   const allTeams = Object.values(DATA.groups).flat();
-  const weights = {};
-  let total = 0;
+
+  const currentByTeam = {};
+  const playedByTeam = {};
+
+  // Current goals conceded and matches played from finished fixtures
   for (const team of allTeams) {
-    const strength = teamStrength(team);
-    let ga = 0, played = 0;
+    let ga = 0;
+    let played = 0;
+
     for (const f of DATA.fixtures) {
       const s = scoreFor(f.id);
       if (String(s.status || "").toLowerCase() !== "finished") continue;
-      if (f.team1 === team && s.score2 !== undefined) { ga += +s.score2; played++; }
-      if (f.team2 === team && s.score1 !== undefined) { ga += +s.score1; played++; }
+
+      if (f.team1 === team && s.score2 !== undefined) {
+        ga += +s.score2;
+        played++;
+      }
+
+      if (f.team2 === team && s.score1 !== undefined) {
+        ga += +s.score1;
+        played++;
+      }
     }
-    const gaPerGame = played > 0 ? ga / played : Math.max(0.2, (100 - strength) / 60 * 2.2 + 0.3);
-    // Total expected goals against ≈ goals-per-game × expected matches (stronger teams play more)
-    const expectedMatches = Math.max(0.5, (strength - 20) / 80 * 5 + 2.5);
-    const expectedTotalGa = gaPerGame * expectedMatches;
-    const w = Math.pow(Math.max(0.01, expectedTotalGa), 1.9);
+
+    currentByTeam[team] = ga;
+    playedByTeam[team] = played;
+  }
+
+  const currentLeaderGa = Math.max(...allTeams.map(t => currentByTeam[t] || 0));
+
+  const weights = {};
+  let total = 0;
+
+  for (const team of allTeams) {
+    const strength = teamStrength(team);
+    const currentGa = currentByTeam[team] || 0;
+    const played = playedByTeam[team] || 0;
+
+    const gaPerGame = played > 0
+      ? currentGa / played
+      : Math.max(0.2, (100 - strength) / 60 * 2.2 + 0.3);
+
+    const remainingGroup = DATA.fixtures.filter(f => {
+      const s = scoreFor(f.id);
+      const finished =
+        s.score1 !== undefined &&
+        s.score2 !== undefined &&
+        String(s.status || "").toLowerCase() === "finished";
+
+      return (f.team1 === team || f.team2 === team) &&
+             !finished &&
+             ["A","B","C","D","E","F","G","H","I","J","K","L"].includes(f.group);
+    }).length;
+
+    // Stronger teams may play more knockout matches, but do not let future
+    // opportunity dominate the current leaderboard too aggressively.
+    const koChance = Math.max(0.03, Math.min(0.9, (strength - 30) / 80));
+    const expectedKoMatches = koChance * 3.25;
+
+    const expectedRemainingMatches = remainingGroup + expectedKoMatches;
+
+    // Future goals conceded are uncertain, so discount the mean somewhat.
+    // This stops speculative deep runs swamping teams that have already shipped many goals.
+    const FUTURE_DISCOUNT = 0.65;
+
+    const expectedFutureGa =
+      gaPerGame * expectedRemainingMatches * FUTURE_DISCOUNT;
+
+    const expectedTotalGa =
+      currentGa + expectedFutureGa;
+
+    // Two-line variance approximation:
+    // future conceded goals are noisy, so give teams with matches remaining
+    // a modest upside for variance without letting it dominate current GA.
+    const futureVariance = Math.max(0.25, expectedFutureGa);
+    const contenderScore = expectedTotalGa + 0.55 * Math.sqrt(futureVariance);
+
+    // Penalise teams whose expected total still does not catch the current leader.
+    // This is the bit that stops a team being treated too generously
+    // merely because it may have more games left.
+    const shortfallToLeader = Math.max(0, currentLeaderGa - expectedTotalGa);
+    const catchupPenalty = Math.exp(
+      -Math.pow(shortfallToLeader, 2) / (2 * (futureVariance + 1))
+    );
+
+    const w =
+      Math.pow(Math.max(0.01, contenderScore), 1.55) *
+      catchupPenalty;
+
     weights[team] = w;
     total += w;
   }
-  return Object.fromEntries(allTeams.map(t => [t, weights[t] / total]));
+
+  if (total <= 0) {
+    return Object.fromEntries(allTeams.map(t => [t, 1 / allTeams.length]));
+  }
+
+  return Object.fromEntries(
+    allTeams.map(t => [t, weights[t] / total])
+  );
 }
+
 
 // Team that knocks England out: the team that beats or eliminates England in the knockout stage.
 // In the group stage England is in Group L. We look for any finished match where England lost.
