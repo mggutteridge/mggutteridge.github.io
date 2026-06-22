@@ -2606,12 +2606,20 @@ function goalSortSeconds(g) {
   return (minute * 60) + (Number.isFinite(seconds) ? Math.max(0, Math.min(59, seconds)) : 59);
 }
 
+
 function formatGoalClock(g) {
   if (!g || !Number.isFinite(Number(g.minute))) return "";
-  if (g.seconds === undefined || g.seconds === null || g.seconds === "") return `${g.minute}'`;
+
+  // Adjust minute display: API minute is 1‑indexed, clock is 0‑indexed
+  const displayMinute = Math.max(0, Number(g.minute) - 1);
+
+  if (g.seconds === undefined || g.seconds === null || g.seconds === "")
+    return `${displayMinute}'`;
+
   const sec = String(Math.max(0, Math.min(59, Number(g.seconds)))).padStart(2, "0");
-  return `${g.minute}:${sec}`;
+  return `${displayMinute}:${sec}`;
 }
+
 
 function selectedGoalForRecord(record) {
   if (!record || !Array.isArray(record.candidates) || !record.candidates.length) return null;
