@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-21T23:57:28.797Z",
+  "updatedAt": "2026-06-22T04:23:29.390Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-21T23:57:25.577Z",
+    "updatedAt": "2026-06-22T04:23:24.066Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 39,
-    "summaryCallsSucceeded": 39,
+    "eventsChecked": 40,
+    "summaryCallsSucceeded": 40,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -121,6 +121,38 @@
         "type": "yellow",
         "minute": "58'",
         "text": "Mathías Olivera (Uruguay) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760450",
+        "sourceName": "keyEvents",
+        "team": "Cabo Verde",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Diney Borges (Cabo Verde) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760452",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "17'",
+        "text": "Mohanad Lasheen (Egypt) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760452",
+        "sourceName": "keyEvents",
+        "team": "New Zealand",
+        "type": "yellow",
+        "minute": "20'",
+        "text": "Sarpreet Singh (New Zealand) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760452",
+        "sourceName": "keyEvents",
+        "team": "New Zealand",
+        "type": "yellow",
+        "minute": "34'",
+        "text": "Callum McCowatt (New Zealand) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -871,8 +903,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 37,
-    "nonZeroRows": 37
+    "rowsMapped": 38,
+    "nonZeroRows": 38
   },
   "cards": {
     "Mexico": {
@@ -1001,7 +1033,7 @@
       "straightRed": 1
     },
     "Egypt": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -1011,7 +1043,7 @@
       "straightRed": 0
     },
     "New Zealand": {
-      "yellow": 0,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -1021,7 +1053,7 @@
       "straightRed": 0
     },
     "Cabo Verde": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
