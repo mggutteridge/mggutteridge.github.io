@@ -2519,58 +2519,126 @@ function ofbCanonical(name) {
   return Object.values(DATA.groups).flat().find(t => norm(t) === norm(name)) || null;
 }
 
-async function refreshFastestGoals() {
-  const url = "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json";
-  let raw;
-  try {
-    const res = await fetch(url, { cache: "no-store" });
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    raw = await res.json();
-  } catch(e) {
-    console.warn("openfootball fetch failed:", e.message);
-    return 0;
-  }
-
-  const matches = raw.matches || [];
-  let updated = 0;
-
-  for (const m of matches) {
-    const t1 = ofbCanonical(m.team1);
-    const t2 = ofbCanonical(m.team2);
-
-    // goals1 = home team goals, goals2 = away team goals
-    // Each element: { name: "Scorer Name", minute: "9" }
-    // We only need the FIRST element (earliest goal in the match for that team)
-    [[t1, m.goals1, m.team2], [t2, m.goals2, m.team1]].forEach(([team, goals, oppName]) => {
-      if (!team || !Array.isArray(goals) || goals.length === 0) return;
-      const first = goals[0];
-      const min = parseInt(first.minute, 10);
-      if (!Number.isFinite(min) || min <= 0) return;
-      if (!FASTEST_GOALS[team] || min < FASTEST_GOALS[team].minute) {
-        FASTEST_GOALS[team] = { minute: min, scorer: first.name || "", opponent: oppName || "" };
-        updated++;
-      }
-    });
-  }
-
-  if (updated > 0) {
-    localStorage.setItem("wc2026_fastest_goals", JSON.stringify(FASTEST_GOALS));
-    console.log("refreshFastestGoals: updated", updated, "records");
-  }
-  return updated;
+function normaliseGoalCandidate(candidate, inheritedMinute) {
+  if (!candidate || typeof candidate !== "object") return null;
+  const minute = parseInt(candidate.minute ?? inheritedMinute, 10);
+  if (!Number.isFinite(minute) || minute <= 0) return null;
+  const secondsRaw = candidate.seconds;
+  const seconds = (secondsRaw === undefined || secondsRaw === null || secondsRaw === "")
+    ? null
+    : parseInt(secondsRaw, 10);
+  return {
+    minute,
+    seconds: Number.isFinite(seconds) && seconds >= 0 && seconds <= 59 ? seconds : null,
+    scorer: candidate.scorer || "",
+    opponent: candidate.opponent || "",
+    matchId: candidate.matchId || candidate.match_id || "",
+    date: candidate.date || "",
+    sourceIndex: candidate.sourceIndex ?? candidate.source_index ?? null
+  };
 }
 
+function normaliseGoalRecord(value) {
+  // Preferred shape:
+  // { minute: 6, candidates: [{ scorer, seconds, ... }, ...], selectedCandidateId: "..." }
+  // Backwards-compatible shape:
+  // { minute, seconds, scorer, opponent, matchId, date }
+  if (!value || typeof value !== "object") return null;
+  const candidatesRaw = Array.isArray(value.candidates) ? value.candidates : [value];
+  const candidates = [];
+  for (const c of candidatesRaw) {
+    const normalised = normaliseGoalCandidate(c, value.minute);
+    if (normalised) candidates.push(normalised);
+  }
+  if (!candidates.length) return null;
+  const fastestMinute = Math.min(...candidates.map(c => c.minute));
+  const fastestCandidates = candidates.filter(c => c.minute === fastestMinute);
+  return {
+    minute: fastestMinute,
+    candidates: fastestCandidates,
+    selectedCandidateId: value.selectedCandidateId || value.selectedCandidate || value.winnerId || null
+  };
+}
+
+function goalCandidateId(c) {
+  return [c.minute, c.scorer, c.opponent, c.matchId, c.sourceIndex ?? ""].map(x => String(x || "").toLowerCase().trim()).join("|");
+}
+
+async function refreshFastestGoals() {
+  // Read the repo-maintained goals.json file. The GitHub Action updates this
+  // from openfootball and preserves manually entered `seconds` values for each
+  // same-minute candidate goal.
+  try {
+    const res = await fetch("goals.json?_=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) {
+      fastestGoalFeedStatus = "No goals.json feed found yet.";
+      return 0;
+    }
+    const data = await res.json();
+    const incoming = data.goals || data;
+    const next = {};
+    for (const [teamName, value] of Object.entries(incoming || {})) {
+      const realTeam = ofbCanonical(teamName) || Object.values(DATA.groups).flat().find(t => norm(t) === norm(teamName));
+      const record = normaliseGoalRecord(value);
+      if (!realTeam || !record) continue;
+      next[realTeam] = record;
+    }
+    const before = JSON.stringify(FASTEST_GOALS);
+    FASTEST_GOALS = next;
+    const source = data.source ? ` Source: ${data.source}.` : "";
+    const updatedAt = data.updatedAt ? ` Updated: ${data.updatedAt}.` : "";
+    const teamCount = Object.keys(FASTEST_GOALS).length;
+    const candidateCount = Object.values(FASTEST_GOALS).reduce((n, r) => n + (r.candidates?.length || 0), 0);
+    fastestGoalFeedStatus = `Read fastest-goal candidates for ${teamCount} team(s), ${candidateCount} candidate goal(s), from goals.json.${source}${updatedAt}`;
+    return JSON.stringify(FASTEST_GOALS) === before ? 0 : teamCount;
+  } catch (e) {
+    fastestGoalFeedStatus = "Tried to read goals.json, but it was not valid JSON or could not be loaded: " + e.message;
+    return 0;
+  }
+}
+
+function goalSortSeconds(g) {
+  if (!g || !Number.isFinite(Number(g.minute))) return Infinity;
+  const minute = Number(g.minute);
+  // Unknown seconds are treated as the end of the minute, so a manually verified
+  // 6:12 beats an unverified 6'. This is deliberately conservative.
+  const seconds = (g.seconds === undefined || g.seconds === null || g.seconds === "") ? 59 : Number(g.seconds);
+  return (minute * 60) + (Number.isFinite(seconds) ? Math.max(0, Math.min(59, seconds)) : 59);
+}
+
+function formatGoalClock(g) {
+  if (!g || !Number.isFinite(Number(g.minute))) return "";
+  if (g.seconds === undefined || g.seconds === null || g.seconds === "") return `${g.minute}'`;
+  const sec = String(Math.max(0, Math.min(59, Number(g.seconds)))).padStart(2, "0");
+  return `${g.minute}:${sec}`;
+}
+
+function selectedGoalForRecord(record) {
+  if (!record || !Array.isArray(record.candidates) || !record.candidates.length) return null;
+  if (record.selectedCandidateId) {
+    const explicit = record.candidates.find(c => goalCandidateId(c) === String(record.selectedCandidateId).toLowerCase().trim());
+    if (explicit) return explicit;
+  }
+  // Otherwise choose the candidate with the lowest minute+seconds. If all seconds
+  // are null this falls back to the first stable candidate in goals.json.
+  return [...record.candidates].sort((a, b) => goalSortSeconds(a) - goalSortSeconds(b))[0];
+}
+
+function selectedGoalForTeam(team) {
+  return selectedGoalForRecord(FASTEST_GOALS[team]);
+}
 function currentTournamentFastestGoal() {
-  // Returns the overall fastest goal in the tournament { minute, team, scorer, opponent }
+  // Returns the overall fastest selected goal in the tournament.
+  // Same-minute candidate goals can be manually separated using seconds in goals.json.
   let best = null;
-  for (const [team, g] of Object.entries(FASTEST_GOALS)) {
-    if (g && (best === null || g.minute < best.minute)) {
+  for (const [team, record] of Object.entries(FASTEST_GOALS)) {
+    const g = selectedGoalForRecord(record);
+    if (g && (best === null || goalSortSeconds(g) < goalSortSeconds(best))) {
       best = { ...g, team };
     }
   }
   return best; // null if no goals yet
 }
-
 // Fastest goal probability: P(this team scores a goal in minute M < currentRecord)
 // Model: each match has ~90 minutes. Goals follow a roughly uniform-ish distribution across the match,
 // but slightly front-loaded in real football (~55% of goals in second half, so first half is not dead).
@@ -2915,11 +2983,11 @@ function currentDirtyPlayLeaderboard(rows) {
 }
 
 function currentOneMinuteManLeaderboard(rows) {
-  // Rank by the earliest (lowest-minute) goal any of a person's teams has scored.
+  // Rank by the earliest selected goal any of a person's teams has scored.
   // Teams that haven't scored yet are ranked last.
   const bestMinute = team => {
-    const g = FASTEST_GOALS[team];
-    return g ? g.minute : Infinity;
+    const g = selectedGoalForTeam(team);
+    return g ? goalSortSeconds(g) : Infinity;
   };
   const personBest = person => {
     const teams = rows.find(r => r.person === person)?.teams || [];
@@ -2928,19 +2996,21 @@ function currentOneMinuteManLeaderboard(rows) {
   return [...rows].sort((a, b) => personBest(a.person) - personBest(b.person))
     .map((r, i) => {
       const t0 = r.teams[0] || '';
-    const gd = FASTEST_GOALS[t0];
-    let statLine;
-    if (gd && gd.minute) {
-      statLine = `${teamLabel(t0)} ${gd.minute}' – ${gd.scorer || 'unknown scorer'} vs ${gd.opponent || '?'}`;
-    } else {
-      const hasScored = DATA.fixtures.some(f => {
-        const s = scoreFor(f.id);
-        if (String(s.status || '').toLowerCase() !== 'finished') return false;
-        return (f.team1 === t0 && (s.score1 || 0) > 0) || (f.team2 === t0 && (s.score2 || 0) > 0);
-      });
-      statLine = hasScored ? `${teamLabel(t0)} scored (minute not in feed)` : `${teamLabel(t0)} no goal yet`;
-    }
-          return {rank: i + 1, person: r.person, teams: r.teams, statLine};
+      const record = FASTEST_GOALS[t0];
+      const gd = selectedGoalForRecord(record);
+      let statLine;
+      if (gd && gd.minute) {
+        const candidateNote = record && record.candidates && record.candidates.length > 1 ? ` · ${record.candidates.length} same-minute candidates` : '';
+        statLine = `${teamLabel(t0)} ${formatGoalClock(gd)} – ${gd.scorer || 'unknown scorer'} vs ${gd.opponent || '?'}${candidateNote}`;
+      } else {
+        const hasScored = DATA.fixtures.some(f => {
+          const s = scoreFor(f.id);
+          if (String(s.status || '').toLowerCase() !== 'finished') return false;
+          return (f.team1 === t0 && (s.score1 || 0) > 0) || (f.team2 === t0 && (s.score2 || 0) > 0);
+        });
+        statLine = hasScored ? `${teamLabel(t0)} scored (minute not in feed)` : `${teamLabel(t0)} no goal yet`;
+      }
+      return {rank: i + 1, person: r.person, teams: r.teams, statLine};
     });
 }
 
