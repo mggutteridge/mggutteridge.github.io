@@ -2714,7 +2714,7 @@ function fastestGoalProbabilities() {
   }
 
   
-unction pEarlierThanRecord(team, targetSeconds) {
+function pEarlierThanRecord(team, targetSeconds) {
   const { goalsPerGame, remainingMatches } = teamAttackProfile(team);
   if (targetSeconds <= 0 || remainingMatches <= 0) return 0;
 
