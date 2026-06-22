@@ -2610,15 +2610,20 @@ function goalSortSeconds(g) {
 function formatGoalClock(g) {
   if (!g || !Number.isFinite(Number(g.minute))) return "";
 
-  // Adjust minute display: API minute is 1‑indexed, clock is 0‑indexed
-  const displayMinute = Math.max(0, Number(g.minute) - 1);
+  const minute = Number(g.minute);
 
-  if (g.seconds === undefined || g.seconds === null || g.seconds === "")
-    return `${displayMinute}'`;
+  // If no seconds, keep original display
+  if (g.seconds === undefined || g.seconds === null || g.seconds === "") {
+    return `${minute}'`;
+  }
 
+  // Calculate 0-indexed display minute for clock
+  const displayMinute = Math.max(0, minute - 1);
   const sec = String(Math.max(0, Math.min(59, Number(g.seconds)))).padStart(2, "0");
-  return `${displayMinute}:${sec}`;
+
+  return `${minute}' <span class="small">(${displayMinute}:${sec})</span>`;
 }
+
 
 
 function selectedGoalForRecord(record) {
