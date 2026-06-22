@@ -2434,46 +2434,161 @@ function expectedGroupFinish(team) {
   };
 }
 
+
 function worstTeamProbabilities() {
   const allTeams = Object.values(DATA.groups).flat();
+  const SIMS = 3000;
 
-  // Work out each team's current points and remaining group games
-  const rows = standings();
-  const byTeam = Object.fromEntries(Object.values(rows).flat().map(r => [r.team, r]));
-  const remaining = team => DATA.fixtures.filter(f =>
-    (f.team1 === team || f.team2 === team) &&
-    !(scoreFor(f.id).score1 !== undefined && scoreFor(f.id).score2 !== undefined &&
-      String(scoreFor(f.id).status || '').toLowerCase() === 'finished')
-  ).length;
-
-  // Maximum points a team could still reach = current pts + 3 × games left
-  const maxPossible = team => (byTeam[team]?.pts || 0) + remaining(team) * 3;
-
-  // The wooden spoon goes to the worst team in the group stage.
-  // A team cannot win the wooden spoon if their CURRENT points already exceed
-  // the MAXIMUM POSSIBLE points of any other team — i.e. they are mathematically
-  // guaranteed to finish above the true worst team.
-  // Threshold: lowest max-possible-points across all teams.
-  const lowestMaxPossible = Math.min(...allTeams.map(maxPossible));
-
-  const expected = allTeams.map(expectedGroupFinish);
-  const worstiness = {};
-  let total = 0;
-  for (const r of expected) {
-    const currentPts = byTeam[r.team]?.pts || 0;
-    // Eliminated from wooden spoon contention if already above the floor
-    if (currentPts > lowestMaxPossible) {
-      worstiness[r.team] = 0;
-      continue;
-    }
-    const strengthPenalty = (100 - teamStrength(r.team)) * 0.7;
-    const groupPenalty = (9 - r.pts) * 12 + (-r.gd * 3) + (-r.gf * 1.2);
-    const conductTiePenalty = conductScore(r.team) * 0.15;
-    const weight = Math.max(0.1, strengthPenalty + groupPenalty + conductTiePenalty);
-    worstiness[r.team] = Math.pow(weight, 1.6);
-    total += worstiness[r.team];
+  function isFinishedScore(f) {
+    const s = scoreFor(f.id);
+    return (
+      s.score1 !== undefined &&
+      s.score2 !== undefined &&
+      String(s.status || "").toLowerCase() === "finished"
+    );
   }
-  return Object.fromEntries(allTeams.map(t => [t, total > 0 ? worstiness[t] / total : 0]));
+
+  function makeRng(seedText) {
+    let h = 2166136261;
+    for (let i = 0; i < seedText.length; i++) {
+      h ^= seedText.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+
+    let state = h >>> 0;
+
+    return function rng() {
+      state += 0x6D2B79F5;
+      let t = state;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function poisson(lambda, rng) {
+    lambda = Math.max(0.05, Math.min(5.5, lambda));
+
+    const L = Math.exp(-lambda);
+    let k = 0;
+    let p = 1;
+
+    do {
+      k++;
+      p *= rng();
+    } while (p > L);
+
+    return k - 1;
+  }
+
+  function expectedGoalsFor(team, opponent) {
+    const s = teamStrength(team);
+    const o = teamStrength(opponent);
+
+    // Base attacking expectation.
+    // Stronger teams score more; weaker teams score less.
+    const attack = 1.05 + ((s - 55) / 55) * 0.75;
+
+    // Opponent defensive vulnerability.
+    // Weaker opponents concede more.
+    const opponentVulnerability = 1.0 + ((60 - o) / 70);
+
+    return Math.max(
+      0.25,
+      Math.min(3.2, attack * opponentVulnerability)
+    );
+  }
+
+  function updateRow(row, gf, ga) {
+    row.played++;
+    row.gf += gf;
+    row.ga += ga;
+    row.gd = row.gf - row.ga;
+
+    if (gf > ga) {
+      row.won++;
+      row.pts += 3;
+    } else if (gf < ga) {
+      row.lost++;
+    } else {
+      row.drawn++;
+      row.pts += 1;
+    }
+  }
+
+  function cloneCurrentRows() {
+    const current = standings();
+    const byTeam = {};
+
+    for (const rows of Object.values(current)) {
+      for (const r of rows) {
+        byTeam[r.team] = {
+          team: r.team,
+          played: r.played,
+          won: r.won,
+          drawn: r.drawn,
+          lost: r.lost,
+          gf: r.gf,
+          ga: r.ga,
+          gd: r.gd,
+          pts: r.pts
+        };
+      }
+    }
+
+    return byTeam;
+  }
+
+  function woodenSpoonWinner(byTeam, simIndex) {
+    return [...allTeams].sort((a, b) => {
+      const ra = byTeam[a];
+      const rb = byTeam[b];
+
+      return (
+        ra.pts - rb.pts ||
+        ra.gd - rb.gd ||
+        ra.gf - rb.gf ||
+        conductScore(rb.team) - conductScore(ra.team) ||
+        seededNumber("wooden-spoon-tiebreak-" + simIndex + "-" + a) -
+          seededNumber("wooden-spoon-tiebreak-" + simIndex + "-" + b)
+      );
+    })[0];
+  }
+
+  const remainingFixtures = DATA.fixtures.filter(f =>
+    ["A","B","C","D","E","F","G","H","I","J","K","L"].includes(f.group) &&
+    !isFinishedScore(f)
+  );
+
+  const counts = Object.fromEntries(allTeams.map(t => [t, 0]));
+
+  for (let sim = 0; sim < SIMS; sim++) {
+    const rng = makeRng("wooden-spoon-sim-" + sim);
+    const byTeam = cloneCurrentRows();
+
+    for (const f of remainingFixtures) {
+      const row1 = byTeam[f.team1];
+      const row2 = byTeam[f.team2];
+
+      if (!row1 || !row2) continue;
+
+      const lambda1 = expectedGoalsFor(f.team1, f.team2);
+      const lambda2 = expectedGoalsFor(f.team2, f.team1);
+
+      const g1 = poisson(lambda1, rng);
+      const g2 = poisson(lambda2, rng);
+
+      updateRow(row1, g1, g2);
+      updateRow(row2, g2, g1);
+    }
+
+    const winner = woodenSpoonWinner(byTeam, sim);
+    counts[winner]++;
+  }
+
+  return Object.fromEntries(
+    allTeams.map(team => [team, counts[team] / SIMS])
+  );
 }
 
 function conductProbabilities() {
