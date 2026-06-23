@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-23T04:33:14.861Z",
+  "updatedAt": "2026-06-23T08:05:31.881Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-23T04:33:06.099Z",
+    "updatedAt": "2026-06-23T08:05:27.934Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,62 +58,6 @@
     "summaryCallsSucceeded": 44,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760456",
-        "sourceName": "keyEvents",
-        "team": "Austria",
-        "type": "yellow",
-        "minute": "40'",
-        "text": "Stefan Posch (Austria) is shown the yellow card."
-      },
-      {
-        "eventId": "760456",
-        "sourceName": "keyEvents",
-        "team": "Argentina",
-        "type": "yellow",
-        "minute": "76'",
-        "text": "Facundo Medina (Argentina) is shown the yellow card."
-      },
-      {
-        "eventId": "760456",
-        "sourceName": "keyEvents",
-        "team": "Austria",
-        "type": "yellow",
-        "minute": "76'",
-        "text": "Konrad Laimer (Austria) is shown the yellow card."
-      },
-      {
-        "eventId": "760456",
-        "sourceName": "keyEvents",
-        "team": "Argentina",
-        "type": "yellow",
-        "minute": "90'+2'",
-        "text": "Leandro Paredes (Argentina) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760457",
-        "sourceName": "keyEvents",
-        "team": "Iraq",
-        "type": "yellow",
-        "minute": "6'",
-        "text": "Amir Al Ammari (Iraq) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760455",
-        "sourceName": "keyEvents",
-        "team": "Algeria",
-        "type": "yellow",
-        "minute": "44'",
-        "text": "Ramiz Zerrouki (Algeria) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760455",
-        "sourceName": "keyEvents",
-        "team": "Jordan",
-        "type": "yellow",
-        "minute": "64'",
-        "text": "Husam Abu Dahab (Jordan) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -953,6 +897,62 @@
         "type": "yellow",
         "minute": "34'",
         "text": "Callum McCowatt (New Zealand) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760456",
+        "sourceName": "keyEvents",
+        "team": "Austria",
+        "type": "yellow",
+        "minute": "40'",
+        "text": "Stefan Posch (Austria) is shown the yellow card."
+      },
+      {
+        "eventId": "760456",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "76'",
+        "text": "Facundo Medina (Argentina) is shown the yellow card."
+      },
+      {
+        "eventId": "760456",
+        "sourceName": "keyEvents",
+        "team": "Austria",
+        "type": "yellow",
+        "minute": "76'",
+        "text": "Konrad Laimer (Austria) is shown the yellow card."
+      },
+      {
+        "eventId": "760456",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "90'+2'",
+        "text": "Leandro Paredes (Argentina) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760457",
+        "sourceName": "keyEvents",
+        "team": "Iraq",
+        "type": "yellow",
+        "minute": "6'",
+        "text": "Amir Al Ammari (Iraq) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760455",
+        "sourceName": "keyEvents",
+        "team": "Algeria",
+        "type": "yellow",
+        "minute": "44'",
+        "text": "Ramiz Zerrouki (Algeria) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760455",
+        "sourceName": "keyEvents",
+        "team": "Jordan",
+        "type": "yellow",
+        "minute": "64'",
+        "text": "Husam Abu Dahab (Jordan) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
