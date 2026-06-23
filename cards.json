@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-23T20:28:43.927Z",
+  "updatedAt": "2026-06-23T21:58:23.513Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-23T20:28:40.365Z",
+    "updatedAt": "2026-06-23T21:58:16.184Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -73,6 +73,22 @@
         "type": "yellow",
         "minute": "68'",
         "text": "Renato Veiga (Portugal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760458",
+        "sourceName": "keyEvents",
+        "team": "England",
+        "type": "yellow",
+        "minute": "41'",
+        "text": "Declan Rice (England) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760458",
+        "sourceName": "keyEvents",
+        "team": "Ghana",
+        "type": "yellow",
+        "minute": "60'",
+        "text": "Iñaki Williams (Ghana) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -975,8 +991,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 41,
-    "nonZeroRows": 41
+    "rowsMapped": 42,
+    "nonZeroRows": 42
   },
   "cards": {
     "Mexico": {
@@ -1200,7 +1216,7 @@
       "straightRed": 0
     },
     "England": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -1210,7 +1226,7 @@
       "straightRed": 0
     },
     "Ghana": {
-      "yellow": 1,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
