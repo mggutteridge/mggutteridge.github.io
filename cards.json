@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-23T00:17:23.419Z",
+  "updatedAt": "2026-06-23T04:33:14.861Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-23T00:17:16.103Z",
+    "updatedAt": "2026-06-23T04:33:06.099Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 43,
-    "summaryCallsSucceeded": 43,
+    "eventsChecked": 44,
+    "summaryCallsSucceeded": 44,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -97,6 +97,22 @@
         "type": "yellow",
         "minute": "6'",
         "text": "Amir Al Ammari (Iraq) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760455",
+        "sourceName": "keyEvents",
+        "team": "Algeria",
+        "type": "yellow",
+        "minute": "44'",
+        "text": "Ramiz Zerrouki (Algeria) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760455",
+        "sourceName": "keyEvents",
+        "team": "Jordan",
+        "type": "yellow",
+        "minute": "64'",
+        "text": "Husam Abu Dahab (Jordan) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -943,8 +959,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 39,
-    "nonZeroRows": 39
+    "rowsMapped": 41,
+    "nonZeroRows": 41
   },
   "cards": {
     "Mexico": {
@@ -1133,7 +1149,7 @@
       "straightRed": 0
     },
     "Algeria": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -1143,7 +1159,7 @@
       "straightRed": 0
     },
     "Jordan": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
