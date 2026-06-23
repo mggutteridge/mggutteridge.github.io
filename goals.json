@@ -1,7 +1,7 @@
 {
   "source": "openfootball/worldcup.json 2026/worldcup.json",
   "sourceUrl": "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
-  "updatedAt": "2026-06-22T23:50:05+00:00",
+  "updatedAt": "2026-06-23T03:29:32+00:00",
   "note": "For each team, candidates contains every goal in that team's current fastest minute. Edit candidate seconds manually (0-59) to break same-minute ties. selectedCandidateId is optional; if omitted, dashboard chooses the lowest minute+seconds candidate.",
   "goals": {
     "Argentina": {
@@ -245,17 +245,17 @@
       ]
     },
     "France": {
-      "minute": 66,
+      "minute": 14,
       "selectedCandidateId": null,
       "candidates": [
         {
-          "minute": 66,
+          "minute": 14,
           "seconds": null,
           "scorer": "Kylian Mbappé",
-          "opponent": "Senegal",
-          "matchId": "49",
-          "date": "2026-06-16",
-          "sourceIndex": "49:home:0"
+          "opponent": "Iraq",
+          "matchId": "51",
+          "date": "2026-06-22",
+          "sourceIndex": "51:home:0"
         }
       ]
     },
@@ -515,17 +515,17 @@
       ]
     },
     "Senegal": {
-      "minute": 90,
+      "minute": 53,
       "selectedCandidateId": null,
       "candidates": [
         {
-          "minute": 90,
+          "minute": 53,
           "seconds": null,
-          "scorer": "Ibrahim Mbaye",
-          "opponent": "France",
-          "matchId": "49",
-          "date": "2026-06-16",
-          "sourceIndex": "49:away:0"
+          "scorer": "Ismaïla Sarr",
+          "opponent": "Norway",
+          "matchId": "52",
+          "date": "2026-06-22",
+          "sourceIndex": "52:away:0"
         }
       ]
     },
