@@ -1,7 +1,7 @@
 {
   "source": "openfootball/worldcup.json 2026/worldcup.json",
   "sourceUrl": "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
-  "updatedAt": "2026-06-24T20:56:07+00:00",
+  "updatedAt": "2026-06-24T22:19:06+00:00",
   "note": "For each team, candidates contains every goal in that team's current fastest minute. Edit candidate seconds manually (0-59) to break same-minute ties. selectedCandidateId is optional; if omitted, dashboard chooses the lowest minute+seconds candidate.",
   "goals": {
     "Algeria": {
@@ -494,17 +494,17 @@
       ]
     },
     "Qatar": {
-      "minute": 90,
+      "minute": 42,
       "selectedCandidateId": null,
       "candidates": [
         {
-          "minute": 90,
+          "minute": 42,
           "seconds": null,
-          "scorer": "Miro Muheim",
-          "opponent": "Switzerland",
-          "matchId": "8",
-          "date": "2026-06-13",
-          "sourceIndex": "8:home:0"
+          "scorer": "Hassan Al-Haydos",
+          "opponent": "Bosnia and Herzegovina",
+          "matchId": "12",
+          "date": "2026-06-24",
+          "sourceIndex": "12:away:0"
         }
       ]
     },
