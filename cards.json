@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-24T04:35:28.076Z",
+  "updatedAt": "2026-06-24T08:01:01.875Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-24T04:35:15.233Z",
+    "updatedAt": "2026-06-24T08:00:59.385Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,78 +58,6 @@
     "summaryCallsSucceeded": 48,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760461",
-        "sourceName": "keyEvents",
-        "team": "Uzbekistan",
-        "type": "yellow",
-        "minute": "14'",
-        "text": "Odiljon Khamrobekov (Uzbekistan) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760461",
-        "sourceName": "keyEvents",
-        "team": "Portugal",
-        "type": "yellow",
-        "minute": "68'",
-        "text": "Renato Veiga (Portugal) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760458",
-        "sourceName": "keyEvents",
-        "team": "England",
-        "type": "yellow",
-        "minute": "41'",
-        "text": "Declan Rice (England) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760458",
-        "sourceName": "keyEvents",
-        "team": "Ghana",
-        "type": "yellow",
-        "minute": "60'",
-        "text": "Iñaki Williams (Ghana) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760460",
-        "sourceName": "keyEvents",
-        "team": "Panama",
-        "type": "yellow",
-        "minute": "61'",
-        "text": "Yoel Bárcenas (Panama) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760460",
-        "sourceName": "keyEvents",
-        "team": "Croatia",
-        "type": "yellow",
-        "minute": "90'+2'",
-        "text": "Petar Sucic (Croatia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760459",
-        "sourceName": "keyEvents",
-        "team": "Colombia",
-        "type": "yellow",
-        "minute": "56'",
-        "text": "Jhon Lucumí (Colombia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760459",
-        "sourceName": "keyEvents",
-        "team": "Congo DR",
-        "type": "yellow",
-        "minute": "90'+3'",
-        "text": "Charles Pickel (Congo DR) is shown the yellow card."
-      },
-      {
-        "eventId": "760459",
-        "sourceName": "keyEvents",
-        "team": "Colombia",
-        "type": "yellow",
-        "minute": "90'+4'",
-        "text": "Jefferson Lerma (Colombia) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1025,6 +953,78 @@
         "type": "yellow",
         "minute": "64'",
         "text": "Husam Abu Dahab (Jordan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760461",
+        "sourceName": "keyEvents",
+        "team": "Uzbekistan",
+        "type": "yellow",
+        "minute": "14'",
+        "text": "Odiljon Khamrobekov (Uzbekistan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760461",
+        "sourceName": "keyEvents",
+        "team": "Portugal",
+        "type": "yellow",
+        "minute": "68'",
+        "text": "Renato Veiga (Portugal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760458",
+        "sourceName": "keyEvents",
+        "team": "England",
+        "type": "yellow",
+        "minute": "41'",
+        "text": "Declan Rice (England) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760458",
+        "sourceName": "keyEvents",
+        "team": "Ghana",
+        "type": "yellow",
+        "minute": "60'",
+        "text": "Iñaki Williams (Ghana) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760460",
+        "sourceName": "keyEvents",
+        "team": "Panama",
+        "type": "yellow",
+        "minute": "61'",
+        "text": "Yoel Bárcenas (Panama) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760460",
+        "sourceName": "keyEvents",
+        "team": "Croatia",
+        "type": "yellow",
+        "minute": "90'+2'",
+        "text": "Petar Sucic (Croatia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760459",
+        "sourceName": "keyEvents",
+        "team": "Colombia",
+        "type": "yellow",
+        "minute": "56'",
+        "text": "Jhon Lucumí (Colombia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760459",
+        "sourceName": "keyEvents",
+        "team": "Congo DR",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Charles Pickel (Congo DR) is shown the yellow card."
+      },
+      {
+        "eventId": "760459",
+        "sourceName": "keyEvents",
+        "team": "Colombia",
+        "type": "yellow",
+        "minute": "90'+4'",
+        "text": "Jefferson Lerma (Colombia) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
