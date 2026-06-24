@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-24T00:11:21.103Z",
+  "updatedAt": "2026-06-24T04:35:28.076Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-24T00:11:17.609Z",
+    "updatedAt": "2026-06-24T04:35:15.233Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 47,
-    "summaryCallsSucceeded": 47,
+    "eventsChecked": 48,
+    "summaryCallsSucceeded": 48,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -89,6 +89,46 @@
         "type": "yellow",
         "minute": "60'",
         "text": "Iñaki Williams (Ghana) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760460",
+        "sourceName": "keyEvents",
+        "team": "Panama",
+        "type": "yellow",
+        "minute": "61'",
+        "text": "Yoel Bárcenas (Panama) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760460",
+        "sourceName": "keyEvents",
+        "team": "Croatia",
+        "type": "yellow",
+        "minute": "90'+2'",
+        "text": "Petar Sucic (Croatia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760459",
+        "sourceName": "keyEvents",
+        "team": "Colombia",
+        "type": "yellow",
+        "minute": "56'",
+        "text": "Jhon Lucumí (Colombia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760459",
+        "sourceName": "keyEvents",
+        "team": "Congo DR",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Charles Pickel (Congo DR) is shown the yellow card."
+      },
+      {
+        "eventId": "760459",
+        "sourceName": "keyEvents",
+        "team": "Colombia",
+        "type": "yellow",
+        "minute": "90'+4'",
+        "text": "Jefferson Lerma (Colombia) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -991,8 +1031,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 42,
-    "nonZeroRows": 42
+    "rowsMapped": 43,
+    "nonZeroRows": 43
   },
   "cards": {
     "Mexico": {
@@ -1201,7 +1241,7 @@
       "straightRed": 0
     },
     "Colombia": {
-      "yellow": 1,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -1211,7 +1251,7 @@
       "straightRed": 0
     },
     "Congo DR": {
-      "yellow": 1,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -1221,7 +1261,7 @@
       "straightRed": 0
     },
     "Croatia": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -1231,7 +1271,7 @@
       "straightRed": 0
     },
     "Panama": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     }
