@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-24T20:59:04.675Z",
+  "updatedAt": "2026-06-24T22:22:42.424Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-24T20:58:59.906Z",
+    "updatedAt": "2026-06-24T22:22:38.302Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 50,
-    "summaryCallsSucceeded": 50,
+    "eventsChecked": 52,
+    "summaryCallsSucceeded": 52,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
