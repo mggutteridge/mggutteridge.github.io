@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-24T19:15:04.404Z",
+  "updatedAt": "2026-06-24T20:59:04.675Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-24T19:15:00.576Z",
+    "updatedAt": "2026-06-24T20:58:59.906Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,6 +58,46 @@
     "summaryCallsSucceeded": 50,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760462",
+        "sourceName": "keyEvents",
+        "team": "Qatar",
+        "type": "yellow",
+        "minute": "78'",
+        "text": "Ahmed Fathy (Qatar) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760462",
+        "sourceName": "keyEvents",
+        "team": "Bosnia and Herzegovina",
+        "type": "yellow",
+        "minute": "82'",
+        "text": "Ermin Mahmic (Bosnia and Herzegovina) is shown the yellow card for excessive celebration."
+      },
+      {
+        "eventId": "760463",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "32'",
+        "text": "Cyle Larin (Canada) is shown the yellow card."
+      },
+      {
+        "eventId": "760463",
+        "sourceName": "keyEvents",
+        "team": "Switzerland",
+        "type": "yellow",
+        "minute": "32'",
+        "text": "Granit Xhaka (Switzerland) is shown the yellow card."
+      },
+      {
+        "eventId": "760463",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "87'",
+        "text": "Liam Millar (Canada) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1056,22 +1096,22 @@
       "straightRed": 0
     },
     "Canada": {
-      "yellow": 3,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Bosnia and Herzegovina": {
-      "yellow": 5,
+      "yellow": 6,
       "secondYellow": 0,
       "straightRed": 1
     },
     "Qatar": {
-      "yellow": 3,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 2
     },
     "Switzerland": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
