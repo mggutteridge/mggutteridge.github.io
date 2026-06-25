@@ -841,6 +841,32 @@ code {
   margin-top:6px;
 }
 
+
+/* Horizontal knockout bracket */
+.knockoutIntro { margin-bottom:18px; }
+.knockoutBracketShell { position:relative; overflow:auto; padding:8px 0 22px; isolation:isolate; }
+.knockoutConnectorSvg { position:absolute; top:0; left:0; pointer-events:none; overflow:visible; z-index:0; }
+.knockoutConnectorPath { fill:none; stroke:var(--oit-teal); stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; opacity:.55; }
+.knockoutConnectorPath.runnerUpConnector { stroke:var(--oit-purple); stroke-dasharray:6 5; opacity:.50; }
+.knockoutBracket { position:relative; z-index:1; display:flex; align-items:flex-start; gap:30px; min-width:max-content; padding:4px 30px 8px 4px; }
+.bracketColumn { flex:0 0 310px; }
+.bracketTitle { position:sticky; top:0; z-index:2; margin:0 0 12px; padding:8px 10px; background:var(--oit-dark-teal); color:var(--white); border-bottom:5px solid var(--oit-yellow); font-family:var(--title-font); font-weight:400; font-size:22px; line-height:1; box-shadow:var(--shadow); }
+.bracketTrack { position:relative; }
+.bracketMatch { background:var(--panel); border:1px solid var(--line); border-left:6px solid var(--oit-teal); box-shadow:var(--shadow); padding:11px; min-height:154px; }
+.bracketColumn:nth-child(2n) .bracketMatch { border-left-color:var(--oit-purple); }
+.bracketColumn:nth-child(3n) .bracketMatch { border-left-color:var(--oit-blue); }
+.bracketMatch .match { display:grid; grid-template-columns:1fr; grid-template-areas:"meta" "home" "score" "away" "venue"; gap:7px; padding:0; border-bottom:0; }
+.bracketMatch .matchMeta, .bracketMatch .fixtureTeam, .bracketMatch .fixtureScore, .bracketMatch .fixtureVenue { text-align:center; }
+.bracketMatch .fixtureTeam { background:var(--panel-soft); border:1px solid #eee7e3; padding:8px 7px; }
+.bracketMatch .teamName { display:block; font-size:14px; }
+.bracketMatch .ownerSmall { margin-top:3px; }
+.bracketMatch .score { font-size:21px; min-width:68px; padding:4px 9px; }
+.bracketMatch .status { margin-top:3px; }
+.bracketMatch .fixtureVenue { padding-top:2px; }
+.bracketPlaceholder { color:var(--muted); font-weight:700; }
+@media (max-width:900px) { .bracketColumn { flex-basis:280px; } .knockoutBracket { gap:22px; } }
+@media print { .knockoutBracketShell { overflow:visible; } .knockoutConnectorSvg { display:none; } .knockoutBracket { flex-wrap:wrap; min-width:0; } .bracketColumn { flex:1 1 280px; } .bracketMatch { margin-top:12px !important; } }
+
 @media print {
   header {
     position:static;
@@ -3558,19 +3584,180 @@ function downloadDisciplineState() {
   a.click();
 }
 
-function renderKnockout() {
-  let html = `<div class="grid">`;
-  const stages = [...new Set(DATA.knockout.map(k => k[1]))];
-  for (const stage of stages) {
-    html += `<div class="card"><h2>${stage}</h2>`;
-    for (const k of DATA.knockout.filter(x => x[1] === stage)) {
-      if (!matchesFilterText(...k)) continue;
-      html += `<div class="team"><div><b>${k[2]}</b><div class="meta">${k[0]} · ${k[5]}</div><div>${k[3]} v ${k[4]}</div></div></div>`;
+function parseMatchNumber(label) {
+  const m = String(label || "").match(/(\d+)/);
+  return m ? Number(m[1]) : null;
+}
+const KNOCKOUT_LOCAL_KICKOFFS = {
+  73: { kickoff: "2026-06-28T12:00:00-07:00", timezone: "America/Los_Angeles" },
+  74: { kickoff: "2026-06-29T16:30:00-04:00", timezone: "America/New_York" },
+  75: { kickoff: "2026-06-29T19:00:00-06:00", timezone: "America/Monterrey" },
+  76: { kickoff: "2026-06-29T12:00:00-05:00", timezone: "America/Chicago" },
+  77: { kickoff: "2026-06-30T17:00:00-04:00", timezone: "America/New_York" },
+  78: { kickoff: "2026-06-30T12:00:00-05:00", timezone: "America/Chicago" },
+  79: { kickoff: "2026-06-30T19:00:00-06:00", timezone: "America/Mexico_City" },
+  80: { kickoff: "2026-07-01T12:00:00-04:00", timezone: "America/New_York" },
+  81: { kickoff: "2026-07-01T17:00:00-07:00", timezone: "America/Los_Angeles" },
+  82: { kickoff: "2026-07-01T13:00:00-07:00", timezone: "America/Los_Angeles" },
+  83: { kickoff: "2026-07-02T19:00:00-04:00", timezone: "America/Toronto" },
+  84: { kickoff: "2026-07-02T12:00:00-07:00", timezone: "America/Los_Angeles" },
+  85: { kickoff: "2026-07-02T20:00:00-07:00", timezone: "America/Vancouver" },
+  86: { kickoff: "2026-07-03T18:00:00-04:00", timezone: "America/New_York" },
+  87: { kickoff: "2026-07-03T20:30:00-05:00", timezone: "America/Chicago" },
+  88: { kickoff: "2026-07-03T13:00:00-05:00", timezone: "America/Chicago" },
+  89: { kickoff: "2026-07-04T17:00:00-04:00", timezone: "America/New_York" },
+  90: { kickoff: "2026-07-04T12:00:00-05:00", timezone: "America/Chicago" },
+  91: { kickoff: "2026-07-05T16:00:00-04:00", timezone: "America/New_York" },
+  92: { kickoff: "2026-07-05T18:00:00-06:00", timezone: "America/Mexico_City" },
+  93: { kickoff: "2026-07-06T14:00:00-05:00", timezone: "America/Chicago" },
+  94: { kickoff: "2026-07-06T17:00:00-07:00", timezone: "America/Los_Angeles" },
+  95: { kickoff: "2026-07-07T12:00:00-04:00", timezone: "America/New_York" },
+  96: { kickoff: "2026-07-07T13:00:00-07:00", timezone: "America/Vancouver" },
+  97: { kickoff: "2026-07-09T16:00:00-04:00", timezone: "America/New_York" },
+  98: { kickoff: "2026-07-10T12:00:00-07:00", timezone: "America/Los_Angeles" },
+  99: { kickoff: "2026-07-11T17:00:00-04:00", timezone: "America/New_York" },
+  100: { kickoff: "2026-07-11T20:00:00-05:00", timezone: "America/Chicago" },
+  101: { kickoff: "2026-07-14T14:00:00-05:00", timezone: "America/Chicago" },
+  102: { kickoff: "2026-07-15T15:00:00-04:00", timezone: "America/New_York" },
+  103: { kickoff: "2026-07-18T17:00:00-04:00", timezone: "America/New_York" },
+  104: { kickoff: "2026-07-19T15:00:00-04:00", timezone: "America/New_York" }
+};
+const KNOCKOUT_DISPLAY_ORDER = {
+  74:1, 77:2, 73:3, 75:4, 83:5, 84:6, 81:7, 82:8, 76:9, 78:10, 79:11, 80:12, 86:13, 88:14, 85:15, 87:16,
+  89:101, 90:102, 93:103, 94:104, 91:105, 92:106, 95:107, 96:108,
+  97:201, 98:202, 99:203, 100:204, 101:301, 102:302, 103:401, 104:501
+};
+const BRACKET_MATCH_HEIGHT = 154;
+const BRACKET_MATCH_GAP = 18;
+function knockoutDisplaySort(a, b) { return (KNOCKOUT_DISPLAY_ORDER[a.id] || a.id || 0) - (KNOCKOUT_DISPLAY_ORDER[b.id] || b.id || 0); }
+function groupStageFullyResolved() {
+  return DATA.fixtures.every(f => {
+    const s = scoreFor(f.id);
+    return s && s.score1 !== undefined && s.score2 !== undefined && String(s.status || "").toLowerCase() === "finished";
+  });
+}
+function isFinishedScore(s) { return s && s.score1 !== undefined && s.score2 !== undefined && String(s.status || "").toLowerCase() === "finished"; }
+function compareTableRows(a, b) { return b.pts-a.pts || b.gd-a.gd || b.gf-a.gf || conductScore(a.team)-conductScore(b.team) || a.team.localeCompare(b.team); }
+function thirdPlaceRanking() { const st = standings(); return Object.entries(st).map(([group, rows]) => ({ group, ...rows[2] })).filter(r => r && r.team).sort(compareTableRows); }
+function thirdPlaceSlotAssignments() {
+  const thirds = thirdPlaceRanking().slice(0, 8);
+  const used = new Set();
+  const assignments = {};
+  const r32ThirdSlots = DATA.knockout.filter(k => String(k[1]).toLowerCase() === "round of 32" && /third place/i.test(k[3] + " " + k[4])).map(k => [parseMatchNumber(k[2]), k[3], k[4]]);
+  for (const [matchId, slot1, slot2] of r32ThirdSlots) {
+    for (const slot of [slot1, slot2]) {
+      if (!/third place/i.test(slot)) continue;
+      const eligible = String(slot).split(" third place")[0].split("/").map(x => x.trim()).filter(Boolean);
+      const chosen = thirds.find(r => eligible.includes(r.group) && !used.has(r.group));
+      if (chosen) { used.add(chosen.group); assignments[`${matchId}:${slot}`] = chosen; }
     }
-    html += `</div>`;
   }
-  html += `</div>`;
-  document.getElementById("knockoutView").innerHTML = html;
+  return assignments;
+}
+function winnerFromFinishedFixture(f) {
+  const s = scoreFor(f.id); if (!isFinishedScore(s)) return null;
+  const score1 = Number(s.score1), score2 = Number(s.score2);
+  if (score1 > score2) return f.team1; if (score2 > score1) return f.team2;
+  const pens1 = numericScoreValue(s.penalty1), pens2 = numericScoreValue(s.penalty2);
+  if (pens1 !== undefined && pens2 !== undefined) { if (pens1 > pens2) return f.team1; if (pens2 > pens1) return f.team2; }
+  return null;
+}
+function loserFromFinishedFixture(f) { const winner = winnerFromFinishedFixture(f); if (!winner) return null; return winner === f.team1 ? f.team2 : f.team1; }
+function resolvedSlot(slot, context) {
+  const text = String(slot || "");
+  let m = text.match(/^Group ([A-L]) winners$/i); if (m) return standings()[m[1]]?.[0]?.team || text;
+  m = text.match(/^Group ([A-L]) runners-up$/i); if (m) return standings()[m[1]]?.[1]?.team || text;
+  m = text.match(/^([A-L](?:\/[A-L])*) third place$/i);
+  if (m) { if (!groupStageFullyResolved()) return text; const row = context.thirdAssignments[`${context.matchId}:${text}`]; return row?.team || text; }
+  m = text.match(/^Winner match (\d+)$/i); if (m) { const previous = context.byId[Number(m[1])]; return previous ? (winnerFromFinishedFixture(previous) || text) : text; }
+  m = text.match(/^Runner-up match (\d+)$/i); if (m) { const previous = context.byId[Number(m[1])]; return previous ? (loserFromFinishedFixture(previous) || text) : text; }
+  return text;
+}
+function buildKnockoutFixtures() {
+  const byId = {}; const thirdAssignments = thirdPlaceSlotAssignments(); const fixtures = [];
+  for (const k of DATA.knockout) {
+    const id = parseMatchNumber(k[2]); const context = { byId, thirdAssignments, matchId: id };
+    const timing = KNOCKOUT_LOCAL_KICKOFFS[id] || { kickoff: "", timezone: "" };
+    const f = { id, kickoff: timing.kickoff, timezone: timing.timezone, kickoffLabel: timing.kickoff ? formatUKFixtureTime(timing.kickoff) : k[0], venueKickoffLabel: timing.kickoff ? formatVenueFixtureTime(timing.kickoff, timing.timezone) : k[0], dateLabel: k[0], stage: k[1], group: "Knockout", team1: resolvedSlot(k[3], context), team2: resolvedSlot(k[4], context), placeholder1: k[3], placeholder2: k[4], venue: k[5] };
+    byId[id] = f; fixtures.push(f);
+  }
+  return fixtures;
+}
+function allScoreFixtures() { return [...DATA.fixtures, ...buildKnockoutFixtures()]; }
+function knockoutScoreDisplay(f, s) {
+  const statusRaw = String(s.status || "").toLowerCase(); const hasStarted = statusRaw === "live" || statusRaw === "finished" || statusRaw.includes("half");
+  if (!(hasStarted && s.score1 !== undefined && s.score2 !== undefined)) return "v";
+  let score = `${s.score1}–${s.score2}`; const p1 = numericScoreValue(s.penalty1), p2 = numericScoreValue(s.penalty2);
+  if (p1 !== undefined && p2 !== undefined) score += ` (${p1}–${p2} pens)`; return score;
+}
+function knockoutTeamDisplay(team, placeholder) {
+  const isResolved = Object.values(DATA.groups).flat().some(t => t === team);
+  if (!isResolved) return `<span class="teamName bracketPlaceholder">${team}</span><div class="ownerSmall">${placeholder}</div>`;
+  return `<div class="teamName">${teamLabel(team)}</div><div class="ownerSmall">${owner(team)}</div>`;
+}
+function knockoutStageClass(stage) { return String(stage || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+function knockoutFeederLinks() {
+  const links = [];
+  for (const k of DATA.knockout) {
+    const to = parseMatchNumber(k[2]);
+    for (const slot of [k[3], k[4]]) {
+      let m = String(slot || "").match(/^(Winner|Runner-up) match (\d+)$/i);
+      if (m) links.push({ from: Number(m[2]), to, type: m[1].toLowerCase().startsWith("runner") ? "runner-up" : "winner" });
+    }
+  }
+  return links;
+}
+function computedBracketTops(fixtures) {
+  const tops = {};
+  const r32 = fixtures.filter(f => f.stage === "Round of 32").sort(knockoutDisplaySort);
+  r32.forEach((f, i) => { tops[f.id] = i * (BRACKET_MATCH_HEIGHT + BRACKET_MATCH_GAP); });
+  const links = knockoutFeederLinks();
+  for (const f of fixtures.filter(f => f.stage !== "Round of 32").sort(knockoutDisplaySort)) {
+    const feeders = links.filter(l => l.to === f.id && tops[l.from] !== undefined).sort((a,b) => (tops[a.from] || 0) - (tops[b.from] || 0));
+    if (feeders.length) {
+      const centres = feeders.map(l => tops[l.from] + BRACKET_MATCH_HEIGHT / 2);
+      tops[f.id] = centres.reduce((a,b) => a + b, 0) / centres.length - BRACKET_MATCH_HEIGHT / 2;
+    } else {
+      tops[f.id] = 0;
+    }
+  }
+  return tops;
+}
+function drawKnockoutConnectors() {
+  const shell = document.getElementById("knockoutBracketShell"), bracket = document.getElementById("knockoutBracket"), svg = document.getElementById("knockoutConnectors"); if (!shell || !bracket || !svg) return;
+  const shellBox = shell.getBoundingClientRect(); const width = Math.max(bracket.scrollWidth + 64, shell.clientWidth); const height = Math.max(bracket.scrollHeight + 32, shell.clientHeight);
+  svg.setAttribute("width", width); svg.setAttribute("height", height); svg.setAttribute("viewBox", `0 0 ${width} ${height}`); svg.style.width = width + "px"; svg.style.height = height + "px"; svg.innerHTML = "";
+  for (const link of knockoutFeederLinks()) {
+    const fromEl = shell.querySelector(`[data-match-id="${link.from}"]`), toEl = shell.querySelector(`[data-match-id="${link.to}"]`); if (!fromEl || !toEl) continue;
+    const a = fromEl.getBoundingClientRect(), b = toEl.getBoundingClientRect(); const scrollLeft = shell.scrollLeft, scrollTop = shell.scrollTop;
+    const x1 = a.right - shellBox.left + scrollLeft, y1 = a.top + a.height / 2 - shellBox.top + scrollTop, x2 = b.left - shellBox.left + scrollLeft, y2 = b.top + b.height / 2 - shellBox.top + scrollTop;
+    const midX = x1 + Math.max(28, (x2 - x1) / 2); const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", `M ${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2} ${y2}`); path.setAttribute("class", "knockoutConnectorPath" + (link.type === "runner-up" ? " runnerUpConnector" : "")); svg.appendChild(path);
+  }
+}
+function scheduleKnockoutConnectorDraw() { const draw = () => drawKnockoutConnectors(); if (typeof requestAnimationFrame === "function") requestAnimationFrame(() => requestAnimationFrame(draw)); else setTimeout(draw, 0); }
+function renderKnockout() {
+  let html = `<div class="card knockoutIntro"><h2>Knockout fixtures and results</h2><p class="small">Teams are resolved from the live group tables and then from winners/runner-up slots as knockout results arrive. Third-place slots stay as placeholders until the group stage is fully complete. Kick-offs are stored as local venue times and displayed in UK time, matching the Fixtures tab. Lines show how winners progress; dashed purple lines show the semi-final runners-up feeding into the third-place play-off.</p></div>`;
+  html += `<div class="knockoutBracketShell" id="knockoutBracketShell"><svg class="knockoutConnectorSvg" id="knockoutConnectors" aria-hidden="true"></svg><div class="knockoutBracket" id="knockoutBracket">`;
+  const fixtures = buildKnockoutFixtures(); const stages = [...new Set(fixtures.map(k => k.stage))]; const tops = computedBracketTops(fixtures);
+  for (const stage of stages) {
+    html += `<div class="bracketColumn ${knockoutStageClass(stage)}" data-stage="${stage}"><h3 class="bracketTitle">${stage}</h3><div class="bracketTrack">`;
+    let previousBottom = 0;
+    for (const f of fixtures.filter(x => x.stage === stage).sort(knockoutDisplaySort)) {
+      const top = Math.max(0, tops[f.id] || 0); const marginTop = Math.max(0, top - previousBottom); previousBottom = top + BRACKET_MATCH_HEIGHT;
+      const s = scoreFor(f.id); const status = statusLabelForDisplay(s.status || "scheduled"); const klass = status.includes("live") ? "live" : (status.includes("finished") || status.includes("full") ? "finished" : "");
+      if (!matchesFilterText(f.id, f.kickoffLabel, f.venueKickoffLabel, f.stage, f.team1, f.team2, f.placeholder1, f.placeholder2, f.venue, owner(f.team1), owner(f.team2))) continue;
+      html += `<div class="bracketMatch" data-match-id="${f.id}" style="margin-top:${marginTop}px"><div class="match" id="match-${f.id}">
+          <div class="matchMeta"><b>#${f.id}</b><div class="meta">${f.kickoffLabel}</div><span class="status ${klass}">${status}</span></div>
+          <div class="fixtureTeam homeTeam">${knockoutTeamDisplay(f.team1, f.placeholder1)}</div>
+          <div class="fixtureScore"><div class="score">${knockoutScoreDisplay(f, s)}</div></div>
+          <div class="fixtureTeam awayTeam">${knockoutTeamDisplay(f.team2, f.placeholder2)}</div>
+          <div class="fixtureVenue meta">${f.venue}</div>
+        </div></div>`;
+    }
+    html += `</div></div>`;
+  }
+  html += `</div></div>`; document.getElementById("knockoutView").innerHTML = html; scheduleKnockoutConnectorDraw();
 }
 
 function render() {
@@ -3622,7 +3809,9 @@ function mapApiGame(g) {
   }
 
   const id = g.id ?? g.match_id ?? g.matchId ?? g.game_id ?? g._id;
-  return { id, t1, t2, score1:s1, score2:s2, status, raw:g };
+  const p1 = g.penalty1 ?? g.home_penalty ?? g.homePenalty ?? g.penalties_home ?? g.penaltiesHome ?? g?.score?.penalty?.home ?? g?.score?.penalties?.home ?? g?.penalties?.home;
+  const p2 = g.penalty2 ?? g.away_penalty ?? g.awayPenalty ?? g.penalties_away ?? g.penaltiesAway ?? g?.score?.penalty?.away ?? g?.score?.penalties?.away ?? g?.penalties?.away;
+  return { id, t1, t2, score1:s1, score2:s2, penalty1:p1, penalty2:p2, status, raw:g };
 }
 
 
@@ -3735,7 +3924,7 @@ async function refreshLive() {
         // and do not correspond to the IDs in DATA.fixtures, so ID-only matching
         // assigns scores to the wrong games.
         if (m.t1 && m.t2) {
-          f = DATA.fixtures.find(x =>
+          f = allScoreFixtures().find(x =>
             (norm(x.team1) === norm(m.t1) && norm(x.team2) === norm(m.t2)) ||
             (norm(x.team1) === norm(m.t2) && norm(x.team2) === norm(m.t1))
           );
@@ -3760,6 +3949,17 @@ async function refreshLive() {
         if (score1 !== undefined && score2 !== undefined) {
           next.score1 = score1;
           next.score2 = score2;
+          const penalty1 = numericScoreValue(m.penalty1);
+          const penalty2 = numericScoreValue(m.penalty2);
+          if (penalty1 !== undefined && penalty2 !== undefined) {
+            if (m.t1 && m.t2 && norm(f.team1) === norm(m.t2) && norm(f.team2) === norm(m.t1)) {
+              next.penalty1 = penalty2;
+              next.penalty2 = penalty1;
+            } else {
+              next.penalty1 = penalty1;
+              next.penalty2 = penalty2;
+            }
+          }
           updated++;
         } else {
           statusesRead++;
@@ -3846,6 +4046,8 @@ function startAutoRefreshOnLoad() {
     if (label) label.textContent = "Auto refresh: every 60 sec";
   }
 }
+
+window.addEventListener("resize", () => { if (currentView === "knockout") scheduleKnockoutConnectorDraw(); });
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", startAutoRefreshOnLoad);
