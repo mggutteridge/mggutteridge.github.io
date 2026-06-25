@@ -1,7 +1,7 @@
 {
   "source": "openfootball/worldcup.json 2026/worldcup.json",
   "sourceUrl": "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
-  "updatedAt": "2026-06-25T21:11:07+00:00",
+  "updatedAt": "2026-06-25T22:46:43+00:00",
   "note": "For each team, candidates contains every goal in that team's current fastest minute. Edit candidate seconds manually (0-59) to break same-minute ties. selectedCandidateId is optional; if omitted, dashboard chooses the lowest minute+seconds candidate.",
   "goals": {
     "Algeria": {
@@ -215,17 +215,32 @@
       ]
     },
     "Côte d'Ivoire": {
-      "minute": 30,
+      "minute": 7,
       "selectedCandidateId": null,
       "candidates": [
         {
-          "minute": 30,
+          "minute": 7,
           "seconds": null,
-          "scorer": "Franck Kessié",
+          "scorer": "Nicolas Pépé",
+          "opponent": "Curaçao",
+          "matchId": "29",
+          "date": "2026-06-25",
+          "sourceIndex": "29:away:0"
+        }
+      ]
+    },
+    "Ecuador": {
+      "minute": 9,
+      "selectedCandidateId": null,
+      "candidates": [
+        {
+          "minute": 9,
+          "seconds": null,
+          "scorer": "Nilson Angulo",
           "opponent": "Germany",
-          "matchId": "27",
-          "date": "2026-06-20",
-          "sourceIndex": "27:away:0"
+          "matchId": "30",
+          "date": "2026-06-25",
+          "sourceIndex": "30:home:0"
         }
       ]
     },
@@ -275,17 +290,17 @@
       ]
     },
     "Germany": {
-      "minute": 6,
+      "minute": 2,
       "selectedCandidateId": null,
       "candidates": [
         {
-          "minute": 6,
-          "seconds": 17,
-          "scorer": "Felix Nmecha",
-          "opponent": "Curaçao",
-          "matchId": "25",
-          "date": "2026-06-14",
-          "sourceIndex": "25:home:0"
+          "minute": 2,
+          "seconds": null,
+          "scorer": "Leroy Sané",
+          "opponent": "Ecuador",
+          "matchId": "30",
+          "date": "2026-06-25",
+          "sourceIndex": "30:away:0"
         }
       ]
     },
