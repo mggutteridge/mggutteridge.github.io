@@ -940,7 +940,7 @@ code {
 </main>
 
 <footer>
-  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team. v1.1
+  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team. v1.2
 </footer>
 
   </div>
@@ -3704,10 +3704,39 @@ function knockoutCache() {
     const loser = loserFromFinishedFixture(f);
     if (loser && isActualTeamName(loser)) eliminated.add(loser);
   }
-  if (groupStageFullyResolved()) {
-    const r32Teams = new Set(fixtures.filter(f => f.stage === "Round of 32").flatMap(f => [f.team1, f.team2]).filter(isActualTeamName));
-    for (const team of allTournamentTeams()) if (!r32Teams.has(team)) eliminated.add(team);
+  
+// Group-stage eliminations.
+// A team finishing 4th in a completed group is definitely out immediately.
+// A team finishing 3rd is only definitely out once all groups are complete,
+// because best-third-place qualification depends on other groups.
+const st = standings();
+
+for (const [group, rows] of Object.entries(st)) {
+  const groupFixtures = DATA.fixtures.filter(f => f.group === group);
+  const groupComplete = groupFixtures.every(f => isFinishedScore(scoreFor(f.id)));
+
+  if (!groupComplete) continue;
+
+  // 4th place is definitely eliminated as soon as the group is complete.
+  const fourth = rows[3]?.team;
+  if (fourth) eliminated.add(fourth);
+}
+
+// Once the whole group stage is complete, eliminate everyone who did not
+// make the Round of 32.
+if (groupStageFullyResolved()) {
+  const r32Teams = new Set(
+    fixtures
+      .filter(f => f.stage === "Round of 32")
+      .flatMap(f => [f.team1, f.team2])
+      .filter(isActualTeamName)
+  );
+
+  for (const team of allTournamentTeams()) {
+    if (!r32Teams.has(team)) eliminated.add(team);
   }
+}
+
   _knockoutCache = { eliminated };
   return _knockoutCache;
 }
