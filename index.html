@@ -3737,7 +3737,7 @@ function drawKnockoutConnectors() {
 }
 function scheduleKnockoutConnectorDraw() { const draw = () => drawKnockoutConnectors(); if (typeof requestAnimationFrame === "function") requestAnimationFrame(() => requestAnimationFrame(draw)); else setTimeout(draw, 0); }
 function renderKnockout() {
-  let html = `<div class="card knockoutIntro"><h2>Knockout fixtures and results</h2><p class="small">Teams are resolved from the live group tables and then from winners/runner-up slots as knockout results arrive. Third-place slots stay as placeholders until the group stage is fully complete. Kick-offs are stored as local venue times and displayed in UK time, matching the Fixtures tab. Lines show how winners progress; dashed purple lines show the semi-final runners-up feeding into the third-place play-off.</p></div>`;
+  let html = `<div class="card knockoutIntro"><h2>Knockout</h2></div>`;
   html += `<div class="knockoutBracketShell" id="knockoutBracketShell"><svg class="knockoutConnectorSvg" id="knockoutConnectors" aria-hidden="true"></svg><div class="knockoutBracket" id="knockoutBracket">`;
   const fixtures = buildKnockoutFixtures(); const stages = [...new Set(fixtures.map(k => k.stage))]; const tops = computedBracketTops(fixtures);
   for (const stage of stages) {
