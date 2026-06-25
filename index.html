@@ -3179,12 +3179,15 @@ function knockEnglandOutProbabilities() {
 }
 
 function participantPrizeProbabilities() {
-  const winP = winTeamProbabilities();
+  const { eliminated } = knockoutCache();
+  const leaders = prizeLeaderCache();
+
+  const winP = applyEliminationRule(winTeamProbabilities(), eliminated, []);
   const worstP = worstTeamProbabilities();
-  const conductP = conductProbabilities();
-  const fastGoalP = fastestGoalProbabilities();
-  const concededP = mostConcededProbabilities();
-  const knockEnglandP = knockEnglandOutProbabilities();
+  const conductP = applyEliminationRule(conductProbabilities(), eliminated, leaders.conduct);
+  const fastGoalP = applyEliminationRule(fastestGoalProbabilities(), eliminated, leaders.fastest);
+  const concededP = applyEliminationRule(mostConcededProbabilities(), eliminated, leaders.sieve);
+  const knockEnglandP = applyEliminationRule(knockEnglandOutProbabilities(), eliminated, leaders.england);
   return DATA.participants.map(person => {
     const teams = DATA.assignments[person] || [];
     const worldCup = teams.reduce((s,t) => s + (winP[t] || 0), 0);
@@ -3326,7 +3329,7 @@ function currentSieveLeaderboard(rows) {
   const gaByTeam = {};
   for (const team of Object.values(DATA.groups).flat()) {
     let ga = 0;
-    for (const f of DATA.fixtures) {
+    for (const f of allScoreFixtures()) {
       const s = scoreFor(f.id);
       if (String(s.status || '').toLowerCase() !== 'finished') continue;
       if (f.team1 === team && s.score2 !== undefined) ga += +s.score2;
@@ -3629,7 +3632,12 @@ const KNOCKOUT_DISPLAY_ORDER = {
 };
 const BRACKET_MATCH_HEIGHT = 154;
 const BRACKET_MATCH_GAP = 18;
+let _builtKnockoutFixturesCache = null;
+let _knockoutCache = null;
+function invalidateDerivedCaches() { _builtKnockoutFixturesCache = null; _knockoutCache = null; }
 function knockoutDisplaySort(a, b) { return (KNOCKOUT_DISPLAY_ORDER[a.id] || a.id || 0) - (KNOCKOUT_DISPLAY_ORDER[b.id] || b.id || 0); }
+function allTournamentTeams() { return Object.values(DATA.groups).flat(); }
+function isActualTeamName(team) { return allTournamentTeams().includes(team); }
 function groupStageFullyResolved() {
   return DATA.fixtures.every(f => {
     const s = scoreFor(f.id);
@@ -3674,6 +3682,7 @@ function resolvedSlot(slot, context) {
   return text;
 }
 function buildKnockoutFixtures() {
+  if (_builtKnockoutFixturesCache) return _builtKnockoutFixturesCache;
   const byId = {}; const thirdAssignments = thirdPlaceSlotAssignments(); const fixtures = [];
   for (const k of DATA.knockout) {
     const id = parseMatchNumber(k[2]); const context = { byId, thirdAssignments, matchId: id };
@@ -3681,9 +3690,67 @@ function buildKnockoutFixtures() {
     const f = { id, kickoff: timing.kickoff, timezone: timing.timezone, kickoffLabel: timing.kickoff ? formatUKFixtureTime(timing.kickoff) : k[0], venueKickoffLabel: timing.kickoff ? formatVenueFixtureTime(timing.kickoff, timing.timezone) : k[0], dateLabel: k[0], stage: k[1], group: "Knockout", team1: resolvedSlot(k[3], context), team2: resolvedSlot(k[4], context), placeholder1: k[3], placeholder2: k[4], venue: k[5] };
     byId[id] = f; fixtures.push(f);
   }
+  _builtKnockoutFixturesCache = fixtures;
   return fixtures;
 }
 function allScoreFixtures() { return [...DATA.fixtures, ...buildKnockoutFixtures()]; }
+function finishedKnockoutFixtures() { return buildKnockoutFixtures().filter(f => isFinishedScore(scoreFor(f.id))); }
+function knockoutCache() {
+  if (_knockoutCache) return _knockoutCache;
+  const fixtures = buildKnockoutFixtures();
+  const eliminated = new Set();
+  for (const f of fixtures) {
+    if (!isFinishedScore(scoreFor(f.id))) continue;
+    const loser = loserFromFinishedFixture(f);
+    if (loser && isActualTeamName(loser)) eliminated.add(loser);
+  }
+  if (groupStageFullyResolved()) {
+    const r32Teams = new Set(fixtures.filter(f => f.stage === "Round of 32").flatMap(f => [f.team1, f.team2]).filter(isActualTeamName));
+    for (const team of allTournamentTeams()) if (!r32Teams.has(team)) eliminated.add(team);
+  }
+  _knockoutCache = { eliminated };
+  return _knockoutCache;
+}
+function applyEliminationRule(probMap, eliminatedSet, leaderTeams) {
+  const leaders = new Set((leaderTeams || []).filter(isActualTeamName));
+  const out = {}; let total = 0;
+  for (const team of allTournamentTeams()) {
+    let p = Number(probMap[team]) || 0;
+    if (eliminatedSet.has(team) && !leaders.has(team)) p = 0;
+    out[team] = p; total += p;
+  }
+  if (total > 0) for (const t in out) out[t] /= total;
+  return out;
+}
+function currentConductLeaderTeams() {
+  const teams = allTournamentTeams(); const max = Math.max(...teams.map(t => conductScore(t)));
+  return max > 0 ? teams.filter(t => conductScore(t) === max) : [];
+}
+function currentFastestGoalLeaderTeams() {
+  const best = currentTournamentFastestGoal(); if (!best) return [];
+  const target = goalSortSeconds(best);
+  return allTournamentTeams().filter(team => { const g = selectedGoalForTeam(team); return g && goalSortSeconds(g) === target; });
+}
+function currentSieveLeaderTeams() {
+  const teams = allTournamentTeams(); const gaByTeam = Object.fromEntries(teams.map(t => [t, 0]));
+  for (const f of allScoreFixtures()) {
+    const s = scoreFor(f.id); if (!isFinishedScore(s)) continue;
+    if (isActualTeamName(f.team1) && s.score2 !== undefined) gaByTeam[f.team1] += +s.score2;
+    if (isActualTeamName(f.team2) && s.score1 !== undefined) gaByTeam[f.team2] += +s.score1;
+  }
+  const max = Math.max(...teams.map(t => gaByTeam[t] || 0));
+  return max > 0 ? teams.filter(t => (gaByTeam[t] || 0) === max) : [];
+}
+function currentKnockEnglandOutLeaderTeams() {
+  for (const f of finishedKnockoutFixtures()) {
+    if (f.team1 === "England" && loserFromFinishedFixture(f) === "England" && isActualTeamName(f.team2)) return [f.team2];
+    if (f.team2 === "England" && loserFromFinishedFixture(f) === "England" && isActualTeamName(f.team1)) return [f.team1];
+  }
+  return [];
+}
+function prizeLeaderCache() {
+  return { conduct: currentConductLeaderTeams(), fastest: currentFastestGoalLeaderTeams(), sieve: currentSieveLeaderTeams(), england: currentKnockEnglandOutLeaderTeams() };
+}
 function knockoutScoreDisplay(f, s) {
   const statusRaw = String(s.status || "").toLowerCase(); const hasStarted = statusRaw === "live" || statusRaw === "finished" || statusRaw.includes("half");
   if (!(hasStarted && s.score1 !== undefined && s.score2 !== undefined)) return "v";
@@ -3691,7 +3758,7 @@ function knockoutScoreDisplay(f, s) {
   if (p1 !== undefined && p2 !== undefined) score += ` (${p1}–${p2} pens)`; return score;
 }
 function knockoutTeamDisplay(team, placeholder) {
-  const isResolved = Object.values(DATA.groups).flat().some(t => t === team);
+  const isResolved = isActualTeamName(team);
   if (!isResolved) return `<span class="teamName bracketPlaceholder">${team}</span><div class="ownerSmall">${placeholder}</div>`;
   return `<div class="teamName">${teamLabel(team)}</div><div class="ownerSmall">${owner(team)}</div>`;
 }
@@ -3714,12 +3781,8 @@ function computedBracketTops(fixtures) {
   const links = knockoutFeederLinks();
   for (const f of fixtures.filter(f => f.stage !== "Round of 32").sort(knockoutDisplaySort)) {
     const feeders = links.filter(l => l.to === f.id && tops[l.from] !== undefined).sort((a,b) => (tops[a.from] || 0) - (tops[b.from] || 0));
-    if (feeders.length) {
-      const centres = feeders.map(l => tops[l.from] + BRACKET_MATCH_HEIGHT / 2);
-      tops[f.id] = centres.reduce((a,b) => a + b, 0) / centres.length - BRACKET_MATCH_HEIGHT / 2;
-    } else {
-      tops[f.id] = 0;
-    }
+    if (feeders.length) { const centres = feeders.map(l => tops[l.from] + BRACKET_MATCH_HEIGHT / 2); tops[f.id] = centres.reduce((a,b) => a + b, 0) / centres.length - BRACKET_MATCH_HEIGHT / 2; }
+    else tops[f.id] = 0;
   }
   return tops;
 }
@@ -3737,7 +3800,7 @@ function drawKnockoutConnectors() {
 }
 function scheduleKnockoutConnectorDraw() { const draw = () => drawKnockoutConnectors(); if (typeof requestAnimationFrame === "function") requestAnimationFrame(() => requestAnimationFrame(draw)); else setTimeout(draw, 0); }
 function renderKnockout() {
-  let html = `<div class="card knockoutIntro"><h2>Knockout</h2></div>`;
+  let html = `<div class="card knockoutIntro"><h2>Knockout fixtures and results</h2><p class="small">Teams are resolved from the live group tables and then from winners/runner-up slots as knockout results arrive. Third-place slots stay as placeholders until the group stage is fully complete. Kick-offs are stored as local venue times and displayed in UK time, matching the Fixtures tab. Lines show how winners progress; dashed purple lines show the semi-final runners-up feeding into the third-place play-off.</p></div>`;
   html += `<div class="knockoutBracketShell" id="knockoutBracketShell"><svg class="knockoutConnectorSvg" id="knockoutConnectors" aria-hidden="true"></svg><div class="knockoutBracket" id="knockoutBracket">`;
   const fixtures = buildKnockoutFixtures(); const stages = [...new Set(fixtures.map(k => k.stage))]; const tops = computedBracketTops(fixtures);
   for (const stage of stages) {
@@ -3770,6 +3833,7 @@ function render() {
 }
 
 function storeScores() {
+  invalidateDerivedCaches();
   localStorage.setItem("wc2026_sweepstake_scores", JSON.stringify(scores));
 }
 
@@ -3913,6 +3977,7 @@ async function refreshLive() {
       let statusesRead = 0;
       let cardsUpdated = 0;
       const unmatchedSamples = [];
+      const scoreFixturesForMatching = allScoreFixtures();
 
       for (const g of games) {
         cardsUpdated += extractCardsFromApiGame(g);
@@ -3924,7 +3989,7 @@ async function refreshLive() {
         // and do not correspond to the IDs in DATA.fixtures, so ID-only matching
         // assigns scores to the wrong games.
         if (m.t1 && m.t2) {
-          f = allScoreFixtures().find(x =>
+          f = scoreFixturesForMatching.find(x =>
             (norm(x.team1) === norm(m.t1) && norm(x.team2) === norm(m.t2)) ||
             (norm(x.team1) === norm(m.t2) && norm(x.team2) === norm(m.t1))
           );
