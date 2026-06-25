@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-25T05:49:38.865Z",
+  "updatedAt": "2026-06-25T08:41:33.733Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-25T05:49:28.272Z",
+    "updatedAt": "2026-06-25T08:41:31.423Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,118 +58,6 @@
     "summaryCallsSucceeded": 54,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760462",
-        "sourceName": "keyEvents",
-        "team": "Qatar",
-        "type": "yellow",
-        "minute": "78'",
-        "text": "Ahmed Fathy (Qatar) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760462",
-        "sourceName": "keyEvents",
-        "team": "Bosnia and Herzegovina",
-        "type": "yellow",
-        "minute": "82'",
-        "text": "Ermin Mahmic (Bosnia and Herzegovina) is shown the yellow card for excessive celebration."
-      },
-      {
-        "eventId": "760463",
-        "sourceName": "keyEvents",
-        "team": "Canada",
-        "type": "yellow",
-        "minute": "32'",
-        "text": "Cyle Larin (Canada) is shown the yellow card."
-      },
-      {
-        "eventId": "760463",
-        "sourceName": "keyEvents",
-        "team": "Switzerland",
-        "type": "yellow",
-        "minute": "32'",
-        "text": "Granit Xhaka (Switzerland) is shown the yellow card."
-      },
-      {
-        "eventId": "760463",
-        "sourceName": "keyEvents",
-        "team": "Canada",
-        "type": "yellow",
-        "minute": "87'",
-        "text": "Liam Millar (Canada) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760464",
-        "sourceName": "keyEvents",
-        "team": "Haiti",
-        "type": "yellow",
-        "minute": "79'",
-        "text": "Johny Placide (Haiti) is shown the yellow card."
-      },
-      {
-        "eventId": "760464",
-        "sourceName": "keyEvents",
-        "team": "Haiti",
-        "type": "yellow",
-        "minute": "80'",
-        "text": "Duckens Nazon (Haiti) is shown the yellow card."
-      },
-      {
-        "eventId": "760464",
-        "sourceName": "keyEvents",
-        "team": "Haiti",
-        "type": "yellow",
-        "minute": "90'+3'",
-        "text": "Josué Casimir (Haiti) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760465",
-        "sourceName": "keyEvents",
-        "team": "Brazil",
-        "type": "yellow",
-        "minute": "62'",
-        "text": "Danilo (Brazil) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760465",
-        "sourceName": "keyEvents",
-        "team": "Brazil",
-        "type": "yellow",
-        "minute": "82'",
-        "text": "Fabinho (Brazil) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760465",
-        "sourceName": "keyEvents",
-        "team": "Scotland",
-        "type": "yellow",
-        "minute": "89'",
-        "text": "Ryan Christie (Scotland) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760467",
-        "sourceName": "keyEvents",
-        "team": "Mexico",
-        "type": "yellow",
-        "minute": "64'",
-        "text": "Edson Álvarez (Mexico) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760466",
-        "sourceName": "keyEvents",
-        "team": "South Africa",
-        "type": "yellow",
-        "minute": "73'",
-        "text": "Aubrey Modiba (South Africa) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760466",
-        "sourceName": "keyEvents",
-        "team": "Korea Republic",
-        "type": "yellow",
-        "minute": "79'",
-        "text": "Cho Gue-Sung (Korea Republic) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1137,6 +1025,118 @@
         "type": "yellow",
         "minute": "90'+4'",
         "text": "Jefferson Lerma (Colombia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760462",
+        "sourceName": "keyEvents",
+        "team": "Qatar",
+        "type": "yellow",
+        "minute": "78'",
+        "text": "Ahmed Fathy (Qatar) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760462",
+        "sourceName": "keyEvents",
+        "team": "Bosnia and Herzegovina",
+        "type": "yellow",
+        "minute": "82'",
+        "text": "Ermin Mahmic (Bosnia and Herzegovina) is shown the yellow card for excessive celebration."
+      },
+      {
+        "eventId": "760463",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "32'",
+        "text": "Cyle Larin (Canada) is shown the yellow card."
+      },
+      {
+        "eventId": "760463",
+        "sourceName": "keyEvents",
+        "team": "Switzerland",
+        "type": "yellow",
+        "minute": "32'",
+        "text": "Granit Xhaka (Switzerland) is shown the yellow card."
+      },
+      {
+        "eventId": "760463",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "87'",
+        "text": "Liam Millar (Canada) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760464",
+        "sourceName": "keyEvents",
+        "team": "Haiti",
+        "type": "yellow",
+        "minute": "79'",
+        "text": "Johny Placide (Haiti) is shown the yellow card."
+      },
+      {
+        "eventId": "760464",
+        "sourceName": "keyEvents",
+        "team": "Haiti",
+        "type": "yellow",
+        "minute": "80'",
+        "text": "Duckens Nazon (Haiti) is shown the yellow card."
+      },
+      {
+        "eventId": "760464",
+        "sourceName": "keyEvents",
+        "team": "Haiti",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Josué Casimir (Haiti) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760465",
+        "sourceName": "keyEvents",
+        "team": "Brazil",
+        "type": "yellow",
+        "minute": "62'",
+        "text": "Danilo (Brazil) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760465",
+        "sourceName": "keyEvents",
+        "team": "Brazil",
+        "type": "yellow",
+        "minute": "82'",
+        "text": "Fabinho (Brazil) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760465",
+        "sourceName": "keyEvents",
+        "team": "Scotland",
+        "type": "yellow",
+        "minute": "89'",
+        "text": "Ryan Christie (Scotland) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760467",
+        "sourceName": "keyEvents",
+        "team": "Mexico",
+        "type": "yellow",
+        "minute": "64'",
+        "text": "Edson Álvarez (Mexico) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760466",
+        "sourceName": "keyEvents",
+        "team": "South Africa",
+        "type": "yellow",
+        "minute": "73'",
+        "text": "Aubrey Modiba (South Africa) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760466",
+        "sourceName": "keyEvents",
+        "team": "Korea Republic",
+        "type": "yellow",
+        "minute": "79'",
+        "text": "Cho Gue-Sung (Korea Republic) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
