@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-25T01:36:19.409Z",
+  "updatedAt": "2026-06-25T05:49:38.865Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-25T01:36:09.628Z",
+    "updatedAt": "2026-06-25T05:49:28.272Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -145,6 +145,30 @@
         "type": "yellow",
         "minute": "89'",
         "text": "Ryan Christie (Scotland) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760467",
+        "sourceName": "keyEvents",
+        "team": "Mexico",
+        "type": "yellow",
+        "minute": "64'",
+        "text": "Edson Álvarez (Mexico) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760466",
+        "sourceName": "keyEvents",
+        "team": "South Africa",
+        "type": "yellow",
+        "minute": "73'",
+        "text": "Aubrey Modiba (South Africa) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760466",
+        "sourceName": "keyEvents",
+        "team": "Korea Republic",
+        "type": "yellow",
+        "minute": "79'",
+        "text": "Cho Gue-Sung (Korea Republic) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1124,17 +1148,17 @@
   },
   "cards": {
     "Mexico": {
-      "yellow": 1,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 1
     },
     "South Africa": {
-      "yellow": 4,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 2
     },
     "Korea Republic": {
-      "yellow": 3,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 0
     },
