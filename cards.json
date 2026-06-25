@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-25T20:27:07.665Z",
+  "updatedAt": "2026-06-25T22:03:01.168Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-25T20:26:57.369Z",
+    "updatedAt": "2026-06-25T22:02:50.772Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,6 +58,62 @@
     "summaryCallsSucceeded": 56,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760473",
+        "sourceName": "keyEvents",
+        "team": "Côte d'Ivoire",
+        "type": "yellow",
+        "minute": "35'",
+        "text": "Nicolas Pépé (Côte d'Ivoire) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760473",
+        "sourceName": "keyEvents",
+        "team": "Curaçao",
+        "type": "yellow",
+        "minute": "75'",
+        "text": "Juninho Bacuna (Curaçao) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760473",
+        "sourceName": "keyEvents",
+        "team": "Curaçao",
+        "type": "yellow",
+        "minute": "83'",
+        "text": "Gervane Kastaneer (Curaçao) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760468",
+        "sourceName": "keyEvents",
+        "team": "Ecuador",
+        "type": "yellow",
+        "minute": "43'",
+        "text": "Piero Hincapié (Ecuador) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760468",
+        "sourceName": "keyEvents",
+        "team": "Germany",
+        "type": "yellow",
+        "minute": "44'",
+        "text": "Aleksandar Pavlovic (Germany) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760468",
+        "sourceName": "keyEvents",
+        "team": "Ecuador",
+        "type": "yellow",
+        "minute": "50'",
+        "text": "Alan Franco (Ecuador) is shown the yellow card."
+      },
+      {
+        "eventId": "760468",
+        "sourceName": "keyEvents",
+        "team": "Ecuador",
+        "type": "yellow",
+        "minute": "89'",
+        "text": "Gonzalo Plata (Ecuador) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1143,8 +1199,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 43,
-    "nonZeroRows": 43
+    "rowsMapped": 44,
+    "nonZeroRows": 44
   },
   "cards": {
     "Mexico": {
@@ -1228,22 +1284,22 @@
       "straightRed": 0
     },
     "Germany": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Curaçao": {
-      "yellow": 5,
+      "yellow": 7,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Côte d'Ivoire": {
-      "yellow": 3,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Ecuador": {
-      "yellow": 2,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
