@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-24T23:38:22.994Z",
+  "updatedAt": "2026-06-25T01:36:19.409Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-24T23:38:11.315Z",
+    "updatedAt": "2026-06-25T01:36:09.628Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 52,
-    "summaryCallsSucceeded": 52,
+    "eventsChecked": 54,
+    "summaryCallsSucceeded": 54,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -99,12 +99,52 @@
         "text": "Liam Millar (Canada) is shown the yellow card for a bad foul."
       },
       {
+        "eventId": "760464",
+        "sourceName": "keyEvents",
+        "team": "Haiti",
+        "type": "yellow",
+        "minute": "79'",
+        "text": "Johny Placide (Haiti) is shown the yellow card."
+      },
+      {
+        "eventId": "760464",
+        "sourceName": "keyEvents",
+        "team": "Haiti",
+        "type": "yellow",
+        "minute": "80'",
+        "text": "Duckens Nazon (Haiti) is shown the yellow card."
+      },
+      {
+        "eventId": "760464",
+        "sourceName": "keyEvents",
+        "team": "Haiti",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Josué Casimir (Haiti) is shown the yellow card for a bad foul."
+      },
+      {
         "eventId": "760465",
         "sourceName": "keyEvents",
         "team": "Brazil",
         "type": "yellow",
         "minute": "62'",
         "text": "Danilo (Brazil) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760465",
+        "sourceName": "keyEvents",
+        "team": "Brazil",
+        "type": "yellow",
+        "minute": "82'",
+        "text": "Fabinho (Brazil) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760465",
+        "sourceName": "keyEvents",
+        "team": "Scotland",
+        "type": "yellow",
+        "minute": "89'",
+        "text": "Ryan Christie (Scotland) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1124,7 +1164,7 @@
       "straightRed": 0
     },
     "Brazil": {
-      "yellow": 4,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -1134,12 +1174,12 @@
       "straightRed": 0
     },
     "Haiti": {
-      "yellow": 4,
+      "yellow": 7,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Scotland": {
-      "yellow": 4,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
