@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-26T20:11:58.082Z",
+  "updatedAt": "2026-06-26T21:40:29.767Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-26T20:11:47.647Z",
+    "updatedAt": "2026-06-26T21:40:26.619Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -67,6 +67,14 @@
         "text": "Patrick Berg (Norway) is shown the yellow card for a bad foul."
       },
       {
+        "eventId": "760475",
+        "sourceName": "keyEvents",
+        "team": "France",
+        "type": "yellow",
+        "minute": "74'",
+        "text": "Aurélien Tchouaméni (France) is shown the yellow card for a bad foul."
+      },
+      {
         "eventId": "760474",
         "sourceName": "keyEvents",
         "team": "Iraq",
@@ -81,6 +89,30 @@
         "type": "yellow",
         "minute": "18'",
         "text": "Abdoulaye Seck (Senegal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760474",
+        "sourceName": "keyEvents",
+        "team": "Iraq",
+        "type": "yellow",
+        "minute": "75'",
+        "text": "Amir Al Ammari (Iraq) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760474",
+        "sourceName": "keyEvents",
+        "team": "Senegal",
+        "type": "yellow",
+        "minute": "81'",
+        "text": "Pape Gueye (Senegal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760474",
+        "sourceName": "keyEvents",
+        "team": "Iraq",
+        "type": "yellow",
+        "minute": "90'",
+        "text": "Merchas Doski (Iraq) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1271,8 +1303,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 47,
-    "nonZeroRows": 47
+    "rowsMapped": 48,
+    "nonZeroRows": 48
   },
   "cards": {
     "Mexico": {
@@ -1436,17 +1468,17 @@
       "straightRed": 0
     },
     "France": {
-      "yellow": 0,
-      "secondYellow": 0,
-      "straightRed": 0
-    },
-    "Senegal": {
       "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
-    "Iraq": {
+    "Senegal": {
       "yellow": 2,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Iraq": {
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 1
     },
