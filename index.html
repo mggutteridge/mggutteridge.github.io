@@ -940,7 +940,7 @@ code {
 </main>
 
 <footer>
-  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team. v1.3
+  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team. v1.4
 </footer>
 
   </div>
@@ -2533,9 +2533,9 @@ function worstTeamProbabilities() {
     ).length;
   }
 
-  // --- NEW LOGIC START ---
-
   function woodenSpoonCompare(a, b) {
+    // Negative means a is worse than b under the Wooden Spoon rules.
+    // Stops before pure coin-toss logic.
     return (
       a.pts - b.pts ||
       a.gd - b.gd ||
@@ -2551,7 +2551,8 @@ function worstTeamProbabilities() {
   function isImpossibleWoodenSpoonCandidate(team, record, remainingByTeam) {
     const candidateRemaining = remainingByTeam[team] || 0;
 
-    // (A) Completed teams cannot beat worse completed teams
+    // Rule A: if all games are complete, a team cannot win Wooden Spoon
+    // if another completed team is already strictly worse.
     if (candidateRemaining === 0) {
       for (const other of allTeams) {
         if (other === team) continue;
@@ -2564,7 +2565,8 @@ function worstTeamProbabilities() {
       }
     }
 
-    // (B) Cannot finish bottom if already above someone's max possible points
+    // Rule B: if this team already has more points than another team can
+    // possibly finish with, it cannot finish bottom overall.
     for (const other of allTeams) {
       if (other === team) continue;
 
@@ -2582,18 +2584,103 @@ function worstTeamProbabilities() {
     return false;
   }
 
-  // --- NEW LOGIC END ---
-
   function baselinePointsPerGame(team) {
     const strength = teamStrength(team);
+
+    // Weak teams trend towards low points per match; strong teams higher.
+    // Bounded so the model doesn't become absurd at either end.
     return Math.max(
       0.15,
       Math.min(2.15, 0.25 + ((strength - 35) / 75) * 1.9)
     );
   }
 
+  function expectedGdPerRemainingMatch(team) {
+    const strength = teamStrength(team);
+
+    // Strong teams trend positive, weak teams negative.
+    // Kept deliberately conservative: we only want to estimate the chance
+    // of a required GD collapse, not invent huge blowouts too freely.
+    return Math.max(
+      -2.25,
+      Math.min(1.25, (strength - 58) / 26)
+    );
+  }
+
+  // Error-function approximation for normal CDF.
+  // Avoids relying on Math.erf, which is not universally available.
+  function erfApprox(x) {
+    const sign = x < 0 ? -1 : 1;
+    x = Math.abs(x);
+
+    const a1 = 0.254829592;
+    const a2 = -0.284496736;
+    const a3 = 1.421413741;
+    const a4 = -1.453152027;
+    const a5 = 1.061405429;
+    const p = 0.3275911;
+
+    const t = 1 / (1 + p * x);
+    const y =
+      1 -
+      (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) *
+      t *
+      Math.exp(-x * x);
+
+    return sign * y;
+  }
+
+  function normalCdf(x) {
+    return 0.5 * (1 + erfApprox(x / Math.SQRT2));
+  }
+
+  function gdCatchupProbability(team, record, remaining, currentWorstGdBenchmark) {
+    // If the team has no remaining matches, its GD is fixed.
+    if (remaining === 0) {
+      return record.gd <= currentWorstGdBenchmark ? 1 : 0;
+    }
+
+    // The team needs its final GD to be at least as bad as the current benchmark.
+    // Example:
+    // Tunisia fixed at -10.
+    // Uzbekistan currently -7 needs delta <= -3.
+    // Panama currently -2 needs delta <= -8.
+    const requiredGdDelta = currentWorstGdBenchmark - record.gd;
+
+    const meanDelta =
+      expectedGdPerRemainingMatch(team) * remaining;
+
+    // One-match football GD swings are not normally distributed in reality,
+    // but this works as a lightweight tail-risk estimate.
+    // 1.45 makes 3-goal defeats possible but not automatic;
+    // 8-goal defeats become vanishingly unlikely.
+    const GD_STD_DEV_PER_MATCH = 1.45;
+    const sd = Math.max(
+      0.35,
+      Math.sqrt(remaining) * GD_STD_DEV_PER_MATCH
+    );
+
+    const z = (requiredGdDelta - meanDelta) / sd;
+
+    return Math.max(0, Math.min(1, normalCdf(z)));
+  }
+
   const remainingByTeam = Object.fromEntries(
     allTeams.map(team => [team, remainingGroupMatches(team)])
+  );
+
+  // Use the current lowest-points cohort as the GD benchmark.
+  // This avoids comparing a 0-point Wooden Spoon candidate against some
+  // higher-points team that happens to have a very poor GD.
+  const minCurrentPts = Math.min(
+    ...allTeams.map(t => (byTeam[t]?.pts ?? 0))
+  );
+
+  const currentWorstGdBenchmark = Math.min(
+    ...allTeams
+      .map(t => byTeam[t])
+      .filter(r => r && r.pts === minCurrentPts)
+      .map(r => r.gd)
   );
 
   const impossible = new Set();
@@ -2615,7 +2702,6 @@ function worstTeamProbabilities() {
 
     const remaining = remainingByTeam[team] || 0;
 
-    // --- NEW FILTER ---
     if (isImpossibleWoodenSpoonCandidate(team, r, remainingByTeam)) {
       impossible.add(team);
       weights[team] = 0;
@@ -2624,7 +2710,10 @@ function worstTeamProbabilities() {
 
     const baselinePpg = baselinePointsPerGame(team);
 
+    // Shrink observed points-per-game towards baseline.
+    // This avoids overreacting to one freak result but still rewards/penalises current reality.
     const PRIOR_GAMES = 2.0;
+
     const observedPpg = r.played > 0
       ? r.pts / r.played
       : baselinePpg;
@@ -2633,42 +2722,67 @@ function worstTeamProbabilities() {
       (r.played * observedPpg + PRIOR_GAMES * baselinePpg) /
       (r.played + PRIOR_GAMES);
 
-    const expectedFuturePts = expectedPpg * remaining;
-    const expectedFinalPts = r.pts + expectedFuturePts;
+    const expectedFuturePts =
+      expectedPpg * remaining;
 
+    const expectedFinalPts =
+      r.pts + expectedFuturePts;
+
+    // Future points have variance. A team on 0 with games left can still stay low,
+    // but points already won remain sticky.
     const futureVariance = Math.max(0.15, expectedFuturePts * 0.75);
     const downsideVariance = Math.sqrt(futureVariance);
 
     const pessimisticFinalPts =
       Math.max(0, expectedFinalPts - 0.55 * downsideVariance);
 
+    // Main Wooden Spoon score: fewer points is much worse.
     const pointsScore =
       Math.pow(Math.max(0.05, 5.2 - pessimisticFinalPts), 2.15);
 
+    // Current points should be sticky: already having points is a real disadvantage
+    // in the Wooden Spoon race compared with being on zero.
     const currentPtsPenalty =
       Math.pow(1 + r.pts, 1.55);
 
-    const gdScore =
-      Math.pow(Math.max(0.25, 6 - r.gd), 1.15);
+    // New GD catch-up logic:
+    // this is the key fix. It estimates the chance that a team with a better
+    // current GD can actually fall to the current worst-GD benchmark.
+    const gdCatchupProb = gdCatchupProbability(
+      team,
+      r,
+      remaining,
+      currentWorstGdBenchmark
+    );
 
+    // Keep a very small floor only for teams that are not impossible overall,
+    // so the model can still recognise uncertainty — but avoid giving meaningful
+    // weight to absurd cases like needing an 8-goal defeat.
+    const gdCatchupWeight =
+      Math.max(0.005, gdCatchupProb);
+
+    // Fewer goals scored matter if points and GD are close.
+    // This is now secondary to the actual probability of catching the GD benchmark.
     const gfScore =
-      Math.pow(Math.max(0.25, 4 - r.gf), 0.75);
+      Math.pow(Math.max(0.25, 4 - r.gf), 0.55);
 
+    // Conduct is a late tie-break in your prize rules. Keep it modest.
     const conductTieScore =
       1 + conductScore(team) * 0.035;
 
+    // Completed teams retain their actual fixed position; teams with runway
+    // need to earn probability through realistic points/GD paths.
     const noRunwayPenalty =
-      remaining === 0 ? 0.75 : 1.0;
+      remaining === 0 ? 1.0 : 0.95;
 
     const w =
       pointsScore *
-      gdScore *
+      gdCatchupWeight *
       gfScore *
       conductTieScore *
       noRunwayPenalty /
       currentPtsPenalty;
 
-    // NOTE: removed 0.0001 floor
     weights[team] = w;
     total += w;
   }
