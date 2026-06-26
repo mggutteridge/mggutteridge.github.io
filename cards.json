@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-26T18:13:59.725Z",
+  "updatedAt": "2026-06-26T20:11:58.082Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-26T18:13:52.525Z",
+    "updatedAt": "2026-06-26T20:11:47.647Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,10 +54,34 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 60,
-    "summaryCallsSucceeded": 60,
+    "eventsChecked": 62,
+    "summaryCallsSucceeded": 62,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760475",
+        "sourceName": "keyEvents",
+        "team": "Norway",
+        "type": "yellow",
+        "minute": "10'",
+        "text": "Patrick Berg (Norway) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760474",
+        "sourceName": "keyEvents",
+        "team": "Iraq",
+        "type": "red",
+        "minute": "13'",
+        "text": "Rebin Sulaka (Iraq) is shown the red card."
+      },
+      {
+        "eventId": "760474",
+        "sourceName": "keyEvents",
+        "team": "Senegal",
+        "type": "yellow",
+        "minute": "18'",
+        "text": "Abdoulaye Seck (Senegal) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1247,8 +1271,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 45,
-    "nonZeroRows": 45
+    "rowsMapped": 47,
+    "nonZeroRows": 47
   },
   "cards": {
     "Mexico": {
@@ -1417,17 +1441,17 @@
       "straightRed": 0
     },
     "Senegal": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Iraq": {
       "yellow": 2,
       "secondYellow": 0,
-      "straightRed": 0
+      "straightRed": 1
     },
     "Norway": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
