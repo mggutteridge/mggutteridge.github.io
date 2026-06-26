@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-26T01:51:54.370Z",
+  "updatedAt": "2026-06-26T05:57:27.247Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-26T01:51:39.404Z",
+    "updatedAt": "2026-06-26T05:57:24.467Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 58,
-    "summaryCallsSucceeded": 58,
+    "eventsChecked": 60,
+    "summaryCallsSucceeded": 60,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -137,6 +137,30 @@
         "type": "yellow",
         "minute": "85'",
         "text": "Viktor Gyökeres (Sweden) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760469",
+        "sourceName": "keyEvents",
+        "team": "Australia",
+        "type": "yellow",
+        "minute": "46'",
+        "text": "Jackson Irvine (Australia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760469",
+        "sourceName": "keyEvents",
+        "team": "Paraguay",
+        "type": "yellow",
+        "minute": "77'",
+        "text": "Diego Gómez (Paraguay) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760470",
+        "sourceName": "keyEvents",
+        "team": "USA",
+        "type": "yellow",
+        "minute": "19'",
+        "text": "Sebastian Berhalter (USA) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1288,17 +1312,17 @@
       "straightRed": 0
     },
     "USA": {
-      "yellow": 4,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Paraguay": {
-      "yellow": 6,
+      "yellow": 7,
       "secondYellow": 0,
       "straightRed": 1
     },
     "Australia": {
-      "yellow": 4,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
