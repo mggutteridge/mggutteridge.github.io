@@ -295,7 +295,7 @@
       "candidates": [
         {
           "minute": 2,
-          "seconds": null,
+          "seconds": 49,
           "scorer": "Leroy Sané",
           "opponent": "Ecuador",
           "matchId": "30",
@@ -370,7 +370,7 @@
       "candidates": [
         {
           "minute": 4,
-          "seconds": null,
+          "seconds": 28,
           "scorer": "Daichi Kamada",
           "opponent": "Tunisia",
           "matchId": "34",
@@ -445,7 +445,7 @@
       "candidates": [
         {
           "minute": 3,
-          "seconds": null,
+          "seconds": 21,
           "scorer": "Ellyes Skhiri",
           "opponent": "Tunisia",
           "matchId": "36",
@@ -679,7 +679,7 @@
       "candidates": [
         {
           "minute": 3,
-          "seconds": null,
+          "seconds": 15,
           "scorer": "Auston Trusty",
           "opponent": "Türkiye",
           "matchId": "23",
