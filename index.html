@@ -940,7 +940,7 @@ code {
 </main>
 
 <footer>
-  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team. v1.4
+  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team. v1.5
 </footer>
 
   </div>
@@ -3537,7 +3537,8 @@ const PRIZE_VALUE = {
   fastGoal: '\u00a330', conceded: '\u00a330', knockEngland: '\u00a330',
 };
 const prizeListMode = {};
-
+const prizeShowZeros = {};
+  
 function setPrizeMode(key, mode) {
   prizeListMode[key] = mode;
   const cardId = 'prizeCard_' + key;
@@ -3550,14 +3551,47 @@ function setPrizeMode(key, mode) {
   el.replaceWith(tmp.firstElementChild);
 }
 
+
+function togglePrizeZeros(key) {
+  prizeShowZeros[key] = !prizeShowZeros[key];
+
+  const cardId = 'prizeCard_' + key;
+  const el = document.getElementById(cardId);
+  if (!el) return;
+
+  const probRows = participantPrizeProbabilities();
+
+  const html = renderPrizeList(
+    PRIZE_TITLE[key],
+    probRows,
+    key,
+    PRIZE_VALUE[key],
+    PRIZE_CURRENT_FN[key]
+  );
+
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  el.replaceWith(tmp.firstElementChild);
+}
+  
+
+
 function renderPrizeList(title, rows, key, prize, currentFn) {
   const cardId = 'prizeCard_' + key;
   const mode = prizeListMode[key] || 'prob';
   const hasToggle = !!currentFn;
 
+  const showZeros = prizeShowZeros[key] === true;
+
   let bodyHtml = '';
+
   if (!hasToggle || mode === 'prob') {
-    const sorted = [...rows].sort((a, b) => b[key] - a[key]);
+    let sorted = [...rows].sort((a, b) => b[key] - a[key]);
+
+    if (!showZeros) {
+      sorted = sorted.filter(r => r[key] > 0);
+    }
+
     sorted.forEach((r, i) => {
       bodyHtml += `<div class="probRow">
         <div class="rankNum">#${i + 1}</div>
@@ -3565,8 +3599,20 @@ function renderPrizeList(title, rows, key, prize, currentFn) {
         <div class="probPct">${percent(r[key])}</div>
       </div>`;
     });
+
   } else {
-    currentFn(rows).forEach(r => {
+
+    const currentRows = currentFn(rows);
+
+    const filteredRows = showZeros
+      ? currentRows
+      : currentRows
+          .filter(r => {
+            const p = rows.find(x => x.person === r.person);
+            return p && p[key] > 0;
+          });
+
+    filteredRows.forEach(r => {
       bodyHtml += `<div class="probRow">
         <div class="rankNum">#${r.rank}</div>
         <div><b>${r.person}</b><div class="small">${r.statLine}</div></div>
@@ -3574,10 +3620,17 @@ function renderPrizeList(title, rows, key, prize, currentFn) {
     });
   }
 
-  const toggleHtml = hasToggle ? `<div class="prizeToggle">
-      <button class="tab${mode === 'current' ? ' active' : ''}" onclick="setPrizeMode('${key}','current')">Current</button>
-      <button class="tab${mode === 'prob' ? ' active' : ''}" onclick="setPrizeMode('${key}','prob')">Predicted</button>
-    </div>` : '';
+  const toggleHtml = `
+    <div class="prizeToggle">
+      ${hasToggle ? `
+        <button class="tab${mode === 'current' ? ' active' : ''}" onclick="setPrizeMode('${key}','current')">Current</button>
+        <button class="tab${mode === 'prob' ? ' active' : ''}" onclick="setPrizeMode('${key}','prob')">Predicted</button>
+      ` : ''}
+      <button class="tab" onclick="togglePrizeZeros('${key}')">
+        ${showZeros ? 'Hide 0%' : 'Show 0%'}
+      </button>
+    </div>
+  `;
 
   return `<div class="card prizeList" id="${cardId}">
     <div class="prizeListHeader">
@@ -3587,6 +3640,7 @@ function renderPrizeList(title, rows, key, prize, currentFn) {
     ${bodyHtml}
   </div>`;
 }
+
 
 function asNumberOrZero(v) {
   if (v === undefined || v === null || v === "") return 0;
