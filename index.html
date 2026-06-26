@@ -2507,10 +2507,11 @@ function expectedGroupFinish(team) {
 
 
 
+
 function worstTeamProbabilities() {
   const allTeams = Object.values(DATA.groups).flat();
-
   const currentRows = standings();
+
   const byTeam = Object.fromEntries(
     Object.values(currentRows).flat().map(r => [r.team, r])
   );
@@ -2532,17 +2533,70 @@ function worstTeamProbabilities() {
     ).length;
   }
 
+  // --- NEW LOGIC START ---
+
+  function woodenSpoonCompare(a, b) {
+    return (
+      a.pts - b.pts ||
+      a.gd - b.gd ||
+      a.gf - b.gf ||
+      conductScore(b.team) - conductScore(a.team)
+    );
+  }
+
+  function maxPossibleGroupPoints(record, remaining) {
+    return (record?.pts || 0) + remaining * 3;
+  }
+
+  function isImpossibleWoodenSpoonCandidate(team, record, remainingByTeam) {
+    const candidateRemaining = remainingByTeam[team] || 0;
+
+    // (A) Completed teams cannot beat worse completed teams
+    if (candidateRemaining === 0) {
+      for (const other of allTeams) {
+        if (other === team) continue;
+        if ((remainingByTeam[other] || 0) !== 0) continue;
+
+        const otherRecord = byTeam[other];
+        if (!otherRecord) continue;
+
+        if (woodenSpoonCompare(otherRecord, record) < 0) return true;
+      }
+    }
+
+    // (B) Cannot finish bottom if already above someone's max possible points
+    for (const other of allTeams) {
+      if (other === team) continue;
+
+      const otherRecord = byTeam[other];
+      if (!otherRecord) continue;
+
+      const otherMaxPts = maxPossibleGroupPoints(
+        otherRecord,
+        remainingByTeam[other] || 0
+      );
+
+      if (record.pts > otherMaxPts) return true;
+    }
+
+    return false;
+  }
+
+  // --- NEW LOGIC END ---
+
   function baselinePointsPerGame(team) {
     const strength = teamStrength(team);
-
-    // Weak teams trend towards low points per match; strong teams higher.
-    // Bounded so the model doesn't become absurd at either end.
     return Math.max(
       0.15,
       Math.min(2.15, 0.25 + ((strength - 35) / 75) * 1.9)
     );
   }
 
+  const remainingByTeam = Object.fromEntries(
+    allTeams.map(team => [team, remainingGroupMatches(team)])
+  );
+
+  const impossible = new Set();
   const weights = {};
   let total = 0;
 
@@ -2559,13 +2613,18 @@ function worstTeamProbabilities() {
       pts: 0
     };
 
-    const remaining = remainingGroupMatches(team);
+    const remaining = remainingByTeam[team] || 0;
+
+    // --- NEW FILTER ---
+    if (isImpossibleWoodenSpoonCandidate(team, r, remainingByTeam)) {
+      impossible.add(team);
+      weights[team] = 0;
+      continue;
+    }
+
     const baselinePpg = baselinePointsPerGame(team);
 
-    // Shrink observed points-per-game towards baseline.
-    // This avoids overreacting to one freak result but still rewards/penalises current reality.
     const PRIOR_GAMES = 2.0;
-
     const observedPpg = r.played > 0
       ? r.pts / r.played
       : baselinePpg;
@@ -2574,45 +2633,30 @@ function worstTeamProbabilities() {
       (r.played * observedPpg + PRIOR_GAMES * baselinePpg) /
       (r.played + PRIOR_GAMES);
 
-    const expectedFuturePts =
-      expectedPpg * remaining;
+    const expectedFuturePts = expectedPpg * remaining;
+    const expectedFinalPts = r.pts + expectedFuturePts;
 
-    const expectedFinalPts =
-      r.pts + expectedFuturePts;
-
-    // Future points have variance. A team on 0 with two difficult games left
-    // has a meaningful chance of staying very low; a team already on 1 cannot
-    // finish below 1, so current points still matter heavily.
     const futureVariance = Math.max(0.15, expectedFuturePts * 0.75);
     const downsideVariance = Math.sqrt(futureVariance);
 
-    // Lower is worse. This approximates a pessimistic-but-plausible points outcome.
     const pessimisticFinalPts =
       Math.max(0, expectedFinalPts - 0.55 * downsideVariance);
 
-    // Main wooden-spoon score: fewer points is much worse.
     const pointsScore =
       Math.pow(Math.max(0.05, 5.2 - pessimisticFinalPts), 2.15);
 
-    // Current points should be sticky: already having a point is a real disadvantage
-    // in the wooden-spoon race compared with being on zero.
     const currentPtsPenalty =
       Math.pow(1 + r.pts, 1.55);
 
-    // Tie-breakers: worse GD and fewer goals scored increase wooden-spoon risk.
     const gdScore =
       Math.pow(Math.max(0.25, 6 - r.gd), 1.15);
 
     const gfScore =
       Math.pow(Math.max(0.25, 4 - r.gf), 0.75);
 
-    // Conduct is the later tie-break in your prize rules. Higher conduct score
-    // makes a team worse in tie-break terms, but keep this modest.
     const conductTieScore =
       1 + conductScore(team) * 0.035;
 
-    // If a team has no remaining games and already has points, don't let the
-    // projection pretend they can deteriorate further on points.
     const noRunwayPenalty =
       remaining === 0 ? 0.75 : 1.0;
 
@@ -2624,18 +2668,31 @@ function worstTeamProbabilities() {
       noRunwayPenalty /
       currentPtsPenalty;
 
-    weights[team] = Math.max(0.0001, w);
-    total += weights[team];
+    // NOTE: removed 0.0001 floor
+    weights[team] = w;
+    total += w;
   }
 
   if (total <= 0) {
-    return Object.fromEntries(allTeams.map(t => [t, 1 / allTeams.length]));
+    const eligibleTeams = allTeams.filter(t => !impossible.has(t));
+    const fallbackTeams = eligibleTeams.length ? eligibleTeams : allTeams;
+
+    return Object.fromEntries(
+      allTeams.map(t => [
+        t,
+        fallbackTeams.includes(t) ? 1 / fallbackTeams.length : 0
+      ])
+    );
   }
 
   return Object.fromEntries(
-    allTeams.map(t => [t, weights[t] / total])
+    allTeams.map(t => [
+      t,
+      impossible.has(t) ? 0 : weights[t] / total
+    ])
   );
 }
+
 
 
 function conductProbabilities() {
