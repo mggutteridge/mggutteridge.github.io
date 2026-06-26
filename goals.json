@@ -1,7 +1,7 @@
 {
   "source": "openfootball/worldcup.json 2026/worldcup.json",
   "sourceUrl": "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
-  "updatedAt": "2026-06-26T21:05:54+00:00",
+  "updatedAt": "2026-06-26T22:35:58+00:00",
   "note": "For each team, candidates contains every goal in that team's current fastest minute. Edit candidate seconds manually (0-59) to break same-minute ties. selectedCandidateId is optional; if omitted, dashboard chooses the lowest minute+seconds candidate.",
   "goals": {
     "Algeria": {
@@ -569,17 +569,17 @@
       ]
     },
     "Senegal": {
-      "minute": 53,
+      "minute": 4,
       "selectedCandidateId": null,
       "candidates": [
         {
-          "minute": 53,
+          "minute": 4,
           "seconds": null,
-          "scorer": "Ismaïla Sarr",
-          "opponent": "Norway",
-          "matchId": "52",
-          "date": "2026-06-22",
-          "sourceIndex": "52:away:0"
+          "scorer": "Habib Diarra",
+          "opponent": "Iraq",
+          "matchId": "54",
+          "date": "2026-06-26",
+          "sourceIndex": "54:home:0"
         }
       ]
     },
