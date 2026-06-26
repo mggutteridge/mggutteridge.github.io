@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-25T23:39:10.942Z",
+  "updatedAt": "2026-06-26T01:51:54.370Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-25T23:39:03.028Z",
+    "updatedAt": "2026-06-26T01:51:39.404Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -121,6 +121,22 @@
         "type": "yellow",
         "minute": "32'",
         "text": "Isak Hien (Sweden) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760471",
+        "sourceName": "keyEvents",
+        "team": "Japan",
+        "type": "yellow",
+        "minute": "77'",
+        "text": "Shogo Taniguchi (Japan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760471",
+        "sourceName": "keyEvents",
+        "team": "Sweden",
+        "type": "yellow",
+        "minute": "85'",
+        "text": "Viktor Gyökeres (Sweden) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1207,8 +1223,8 @@
     "warnings": [
       "Skipped VAR-overturned card in 760417 (keyEvents): VAR Decision: Card Changed."
     ],
-    "rowsMapped": 44,
-    "nonZeroRows": 44
+    "rowsMapped": 45,
+    "nonZeroRows": 45
   },
   "cards": {
     "Mexico": {
@@ -1317,12 +1333,12 @@
       "straightRed": 0
     },
     "Japan": {
-      "yellow": 0,
+      "yellow": 1,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Sweden": {
-      "yellow": 4,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
