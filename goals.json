@@ -1,7 +1,7 @@
 {
   "source": "openfootball/worldcup.json 2026/worldcup.json",
   "sourceUrl": "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
-  "updatedAt": "2026-06-26T19:18:21+00:00",
+  "updatedAt": "2026-06-26T21:05:54+00:00",
   "note": "For each team, candidates contains every goal in that team's current fastest minute. Edit candidate seconds manually (0-59) to break same-minute ties. selectedCandidateId is optional; if omitted, dashboard chooses the lowest minute+seconds candidate.",
   "goals": {
     "Algeria": {
@@ -275,17 +275,17 @@
       ]
     },
     "France": {
-      "minute": 14,
+      "minute": 7,
       "selectedCandidateId": null,
       "candidates": [
         {
-          "minute": 14,
+          "minute": 7,
           "seconds": null,
-          "scorer": "Kylian Mbappé",
-          "opponent": "Iraq",
-          "matchId": "51",
-          "date": "2026-06-22",
-          "sourceIndex": "51:home:0"
+          "scorer": "Ousmane Dembélé",
+          "opponent": "Norway",
+          "matchId": "53",
+          "date": "2026-06-26",
+          "sourceIndex": "53:away:0"
         }
       ]
     },
@@ -470,17 +470,17 @@
       ]
     },
     "Norway": {
-      "minute": 29,
+      "minute": 21,
       "selectedCandidateId": null,
       "candidates": [
         {
-          "minute": 29,
+          "minute": 21,
           "seconds": null,
-          "scorer": "Erling Haaland",
-          "opponent": "Iraq",
-          "matchId": "50",
-          "date": "2026-06-16",
-          "sourceIndex": "50:away:0"
+          "scorer": "Thelo Aasgaard",
+          "opponent": "France",
+          "matchId": "53",
+          "date": "2026-06-26",
+          "sourceIndex": "53:home:0"
         }
       ]
     },
