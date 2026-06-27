@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-27T22:06:24.155Z",
+  "updatedAt": "2026-06-27T23:15:19.831Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-27T22:06:21.156Z",
+    "updatedAt": "2026-06-27T23:15:07.356Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,6 +58,46 @@
     "summaryCallsSucceeded": 68,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760480",
+        "sourceName": "keyEvents",
+        "team": "Croatia",
+        "type": "yellow",
+        "minute": "68'",
+        "text": "Ivan Perisic (Croatia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760480",
+        "sourceName": "keyEvents",
+        "team": "Ghana",
+        "type": "yellow",
+        "minute": "90'+4'",
+        "text": "Kojo Peprah Oppong (Ghana) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760485",
+        "sourceName": "keyEvents",
+        "team": "Panama",
+        "type": "yellow",
+        "minute": "53'",
+        "text": "José Fajardo (Panama) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760485",
+        "sourceName": "keyEvents",
+        "team": "England",
+        "type": "yellow",
+        "minute": "60'",
+        "text": "Jarell Quansah (England) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760485",
+        "sourceName": "keyEvents",
+        "team": "Panama",
+        "type": "yellow",
+        "minute": "84'",
+        "text": "Andrés Andrade (Panama) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1672,22 +1712,22 @@
       "straightRed": 0
     },
     "England": {
-      "yellow": 1,
-      "secondYellow": 0,
-      "straightRed": 0
-    },
-    "Croatia": {
-      "yellow": 1,
-      "secondYellow": 0,
-      "straightRed": 0
-    },
-    "Ghana": {
       "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
-    "Panama": {
+    "Croatia": {
+      "yellow": 2,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Ghana": {
       "yellow": 3,
+      "secondYellow": 0,
+      "straightRed": 0
+    },
+    "Panama": {
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     }
