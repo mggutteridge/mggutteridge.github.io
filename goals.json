@@ -1,7 +1,7 @@
 {
   "source": "openfootball/worldcup.json 2026/worldcup.json",
   "sourceUrl": "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
-  "updatedAt": "2026-06-27T03:21:52+00:00",
+  "updatedAt": "2026-06-27T06:41:50+00:00",
   "note": "For each team, candidates contains every goal in that team's current fastest minute. Edit candidate seconds manually (0-59) to break same-minute ties. selectedCandidateId is optional; if omitted, dashboard chooses the lowest minute+seconds candidate.",
   "goals": {
     "Algeria": {
@@ -65,17 +65,17 @@
       ]
     },
     "Belgium": {
-      "minute": 66,
+      "minute": 28,
       "selectedCandidateId": null,
       "candidates": [
         {
-          "minute": 66,
+          "minute": 28,
           "seconds": null,
-          "scorer": "Mohamed Hany",
-          "opponent": "Egypt",
-          "matchId": "37",
-          "date": "2026-06-15",
-          "sourceIndex": "37:home:0"
+          "scorer": "Leandro Trossard",
+          "opponent": "New Zealand",
+          "matchId": "42",
+          "date": "2026-06-26",
+          "sourceIndex": "42:away:0"
         }
       ]
     },
@@ -245,17 +245,17 @@
       ]
     },
     "Egypt": {
-      "minute": 19,
+      "minute": 5,
       "selectedCandidateId": null,
       "candidates": [
         {
-          "minute": 19,
+          "minute": 5,
           "seconds": null,
-          "scorer": "Emam Ashour",
-          "opponent": "Belgium",
-          "matchId": "37",
-          "date": "2026-06-15",
-          "sourceIndex": "37:away:0"
+          "scorer": "Mahmoud Saber",
+          "opponent": "IR Iran",
+          "matchId": "41",
+          "date": "2026-06-26",
+          "sourceIndex": "41:home:0"
         }
       ]
     },
@@ -335,17 +335,17 @@
       ]
     },
     "IR Iran": {
-      "minute": 32,
+      "minute": 14,
       "selectedCandidateId": null,
       "candidates": [
         {
-          "minute": 32,
+          "minute": 14,
           "seconds": null,
           "scorer": "Ramin Rezaeian",
-          "opponent": "New Zealand",
-          "matchId": "38",
-          "date": "2026-06-15",
-          "sourceIndex": "38:home:0"
+          "opponent": "Egypt",
+          "matchId": "41",
+          "date": "2026-06-26",
+          "sourceIndex": "41:away:0"
         }
       ]
     },
