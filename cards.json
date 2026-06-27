@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-27T05:40:18.701Z",
+  "updatedAt": "2026-06-27T08:16:17.472Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-27T05:40:16.297Z",
+    "updatedAt": "2026-06-27T08:16:06.936Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,206 +58,6 @@
     "summaryCallsSucceeded": 66,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760475",
-        "sourceName": "keyEvents",
-        "team": "Norway",
-        "type": "yellow",
-        "minute": "10'",
-        "text": "Patrick Berg (Norway) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760475",
-        "sourceName": "keyEvents",
-        "team": "France",
-        "type": "yellow",
-        "minute": "74'",
-        "text": "Aurélien Tchouaméni (France) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760474",
-        "sourceName": "keyEvents",
-        "team": "Iraq",
-        "type": "red",
-        "minute": "13'",
-        "text": "Rebin Sulaka (Iraq) is shown the red card."
-      },
-      {
-        "eventId": "760474",
-        "sourceName": "keyEvents",
-        "team": "Senegal",
-        "type": "yellow",
-        "minute": "18'",
-        "text": "Abdoulaye Seck (Senegal) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760474",
-        "sourceName": "keyEvents",
-        "team": "Iraq",
-        "type": "yellow",
-        "minute": "75'",
-        "text": "Amir Al Ammari (Iraq) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760474",
-        "sourceName": "keyEvents",
-        "team": "Senegal",
-        "type": "yellow",
-        "minute": "81'",
-        "text": "Pape Gueye (Senegal) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760474",
-        "sourceName": "keyEvents",
-        "team": "Iraq",
-        "type": "yellow",
-        "minute": "90'",
-        "text": "Merchas Doski (Iraq) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760478",
-        "sourceName": "keyEvents",
-        "team": "Saudi Arabia",
-        "type": "yellow",
-        "minute": "4'",
-        "text": "Saud Abdulhamid (Saudi Arabia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760478",
-        "sourceName": "keyEvents",
-        "team": "Cabo Verde",
-        "type": "yellow",
-        "minute": "8'",
-        "text": "Wagner Pina (Cabo Verde) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760478",
-        "sourceName": "keyEvents",
-        "team": "Saudi Arabia",
-        "type": "yellow",
-        "minute": "67'",
-        "text": "Nasser Al Dawsari (Saudi Arabia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760478",
-        "sourceName": "keyEvents",
-        "team": "Saudi Arabia",
-        "type": "yellow",
-        "minute": "90'+3'",
-        "text": "Feras Al Brikan (Saudi Arabia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760479",
-        "sourceName": "keyEvents",
-        "team": "Spain",
-        "type": "yellow",
-        "minute": "46'",
-        "text": "Álex Baena (Spain) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760479",
-        "sourceName": "keyEvents",
-        "team": "Uruguay",
-        "type": "yellow",
-        "minute": "54'",
-        "text": "Juan Manuel Sanabria (Uruguay) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760479",
-        "sourceName": "keyEvents",
-        "team": "Uruguay",
-        "type": "yellow",
-        "minute": "58'",
-        "text": "Guillermo Varela (Uruguay) is shown the yellow card."
-      },
-      {
-        "eventId": "760479",
-        "sourceName": "keyEvents",
-        "team": "Uruguay",
-        "type": "yellow",
-        "minute": "90'+3'",
-        "text": "Nicolás de la Cruz (Uruguay) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760479",
-        "sourceName": "keyEvents",
-        "team": "Uruguay",
-        "type": "red",
-        "minute": "90'+5'",
-        "text": "Agustín Canobbio (Uruguay) is shown the red card."
-      },
-      {
-        "eventId": "760476",
-        "sourceName": "keyEvents",
-        "team": "IR Iran",
-        "type": "yellow",
-        "minute": "19'",
-        "text": "Hossein Kanani (IR Iran) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760476",
-        "sourceName": "keyEvents",
-        "team": "Egypt",
-        "type": "yellow",
-        "minute": "20'",
-        "text": "Mahmoud Saber (Egypt) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760476",
-        "sourceName": "keyEvents",
-        "team": "Egypt",
-        "type": "yellow",
-        "minute": "42'",
-        "text": "Yasser Ibrahim (Egypt) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760476",
-        "sourceName": "keyEvents",
-        "team": "IR Iran",
-        "type": "yellow",
-        "minute": "43'",
-        "text": "Ali Nemati (IR Iran) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760476",
-        "sourceName": "keyEvents",
-        "team": "IR Iran",
-        "type": "yellow",
-        "minute": "79'",
-        "text": "Saeid Ezatolahi (IR Iran) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760476",
-        "sourceName": "keyEvents",
-        "team": "Egypt",
-        "type": "yellow",
-        "minute": "90'+2'",
-        "text": "Mohanad Lasheen (Egypt) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760476",
-        "sourceName": "keyEvents",
-        "team": "IR Iran",
-        "type": "yellow",
-        "minute": "90'+4'",
-        "text": "Shoja Khalilzadeh (IR Iran) is shown the yellow card for excessive celebration."
-      },
-      {
-        "eventId": "760477",
-        "sourceName": "keyEvents",
-        "team": "New Zealand",
-        "type": "yellow",
-        "minute": "46'",
-        "text": "Marko Stamenic (New Zealand) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760477",
-        "sourceName": "keyEvents",
-        "team": "New Zealand",
-        "type": "yellow",
-        "minute": "56'",
-        "text": "Elijah Just (New Zealand) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1441,6 +1241,206 @@
         "type": "yellow",
         "minute": "19'",
         "text": "Sebastian Berhalter (USA) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760475",
+        "sourceName": "keyEvents",
+        "team": "Norway",
+        "type": "yellow",
+        "minute": "10'",
+        "text": "Patrick Berg (Norway) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760475",
+        "sourceName": "keyEvents",
+        "team": "France",
+        "type": "yellow",
+        "minute": "74'",
+        "text": "Aurélien Tchouaméni (France) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760474",
+        "sourceName": "keyEvents",
+        "team": "Iraq",
+        "type": "red",
+        "minute": "13'",
+        "text": "Rebin Sulaka (Iraq) is shown the red card."
+      },
+      {
+        "eventId": "760474",
+        "sourceName": "keyEvents",
+        "team": "Senegal",
+        "type": "yellow",
+        "minute": "18'",
+        "text": "Abdoulaye Seck (Senegal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760474",
+        "sourceName": "keyEvents",
+        "team": "Iraq",
+        "type": "yellow",
+        "minute": "75'",
+        "text": "Amir Al Ammari (Iraq) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760474",
+        "sourceName": "keyEvents",
+        "team": "Senegal",
+        "type": "yellow",
+        "minute": "81'",
+        "text": "Pape Gueye (Senegal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760474",
+        "sourceName": "keyEvents",
+        "team": "Iraq",
+        "type": "yellow",
+        "minute": "90'",
+        "text": "Merchas Doski (Iraq) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760478",
+        "sourceName": "keyEvents",
+        "team": "Saudi Arabia",
+        "type": "yellow",
+        "minute": "4'",
+        "text": "Saud Abdulhamid (Saudi Arabia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760478",
+        "sourceName": "keyEvents",
+        "team": "Cabo Verde",
+        "type": "yellow",
+        "minute": "8'",
+        "text": "Wagner Pina (Cabo Verde) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760478",
+        "sourceName": "keyEvents",
+        "team": "Saudi Arabia",
+        "type": "yellow",
+        "minute": "67'",
+        "text": "Nasser Al Dawsari (Saudi Arabia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760478",
+        "sourceName": "keyEvents",
+        "team": "Saudi Arabia",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Feras Al Brikan (Saudi Arabia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760479",
+        "sourceName": "keyEvents",
+        "team": "Spain",
+        "type": "yellow",
+        "minute": "46'",
+        "text": "Álex Baena (Spain) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760479",
+        "sourceName": "keyEvents",
+        "team": "Uruguay",
+        "type": "yellow",
+        "minute": "54'",
+        "text": "Juan Manuel Sanabria (Uruguay) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760479",
+        "sourceName": "keyEvents",
+        "team": "Uruguay",
+        "type": "yellow",
+        "minute": "58'",
+        "text": "Guillermo Varela (Uruguay) is shown the yellow card."
+      },
+      {
+        "eventId": "760479",
+        "sourceName": "keyEvents",
+        "team": "Uruguay",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Nicolás de la Cruz (Uruguay) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760479",
+        "sourceName": "keyEvents",
+        "team": "Uruguay",
+        "type": "red",
+        "minute": "90'+5'",
+        "text": "Agustín Canobbio (Uruguay) is shown the red card."
+      },
+      {
+        "eventId": "760476",
+        "sourceName": "keyEvents",
+        "team": "IR Iran",
+        "type": "yellow",
+        "minute": "19'",
+        "text": "Hossein Kanani (IR Iran) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760476",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "20'",
+        "text": "Mahmoud Saber (Egypt) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760476",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "42'",
+        "text": "Yasser Ibrahim (Egypt) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760476",
+        "sourceName": "keyEvents",
+        "team": "IR Iran",
+        "type": "yellow",
+        "minute": "43'",
+        "text": "Ali Nemati (IR Iran) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760476",
+        "sourceName": "keyEvents",
+        "team": "IR Iran",
+        "type": "yellow",
+        "minute": "79'",
+        "text": "Saeid Ezatolahi (IR Iran) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760476",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "90'+2'",
+        "text": "Mohanad Lasheen (Egypt) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760476",
+        "sourceName": "keyEvents",
+        "team": "IR Iran",
+        "type": "yellow",
+        "minute": "90'+4'",
+        "text": "Shoja Khalilzadeh (IR Iran) is shown the yellow card for excessive celebration."
+      },
+      {
+        "eventId": "760477",
+        "sourceName": "keyEvents",
+        "team": "New Zealand",
+        "type": "yellow",
+        "minute": "46'",
+        "text": "Marko Stamenic (New Zealand) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760477",
+        "sourceName": "keyEvents",
+        "team": "New Zealand",
+        "type": "yellow",
+        "minute": "56'",
+        "text": "Elijah Just (New Zealand) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
