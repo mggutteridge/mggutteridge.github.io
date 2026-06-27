@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-26T23:49:48.983Z",
+  "updatedAt": "2026-06-27T01:47:35.550Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-26T23:49:39.171Z",
+    "updatedAt": "2026-06-27T01:47:27.816Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 62,
-    "summaryCallsSucceeded": 62,
+    "eventsChecked": 64,
+    "summaryCallsSucceeded": 64,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -113,6 +113,54 @@
         "type": "yellow",
         "minute": "90'",
         "text": "Merchas Doski (Iraq) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760478",
+        "sourceName": "keyEvents",
+        "team": "Saudi Arabia",
+        "type": "yellow",
+        "minute": "4'",
+        "text": "Saud Abdulhamid (Saudi Arabia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760478",
+        "sourceName": "keyEvents",
+        "team": "Cabo Verde",
+        "type": "yellow",
+        "minute": "9'",
+        "text": "Wagner Pina (Cabo Verde) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760478",
+        "sourceName": "keyEvents",
+        "team": "Saudi Arabia",
+        "type": "yellow",
+        "minute": "67'",
+        "text": "Nasser Al Dawsari (Saudi Arabia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760479",
+        "sourceName": "keyEvents",
+        "team": "Spain",
+        "type": "yellow",
+        "minute": "46'",
+        "text": "Álex Baena (Spain) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760479",
+        "sourceName": "keyEvents",
+        "team": "Uruguay",
+        "type": "yellow",
+        "minute": "54'",
+        "text": "Juan Manuel Sanabria (Uruguay) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760479",
+        "sourceName": "keyEvents",
+        "team": "Uruguay",
+        "type": "yellow",
+        "minute": "58'",
+        "text": "Guillermo Varela (Uruguay) is shown the yellow card."
       },
       {
         "eventId": "760415",
@@ -1448,22 +1496,22 @@
       "straightRed": 0
     },
     "Spain": {
-      "yellow": 1,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Cabo Verde": {
-      "yellow": 3,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Saudi Arabia": {
-      "yellow": 3,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Uruguay": {
-      "yellow": 2,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 0
     },
