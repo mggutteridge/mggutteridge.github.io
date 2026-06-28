@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-28T00:16:30.215Z",
+  "updatedAt": "2026-06-28T04:55:26.617Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-28T00:16:22.395Z",
+    "updatedAt": "2026-06-28T04:55:19.540Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 70,
-    "summaryCallsSucceeded": 70,
+    "eventsChecked": 72,
+    "summaryCallsSucceeded": 72,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -99,6 +99,14 @@
         "text": "Andrés Andrade (Panama) is shown the yellow card for a bad foul."
       },
       {
+        "eventId": "760481",
+        "sourceName": "keyEvents",
+        "team": "Colombia",
+        "type": "yellow",
+        "minute": "86'",
+        "text": "Gustavo Puerta (Colombia) is shown the yellow card for a bad foul."
+      },
+      {
         "eventId": "760482",
         "sourceName": "keyEvents",
         "team": "Congo DR",
@@ -113,6 +121,62 @@
         "type": "yellow",
         "minute": "43'",
         "text": "Abdukodir Khusanov (Uzbekistan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760482",
+        "sourceName": "keyEvents",
+        "team": "Congo DR",
+        "type": "yellow",
+        "minute": "45'+5'",
+        "text": "Nathanaël Mbuku (Congo DR) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760482",
+        "sourceName": "keyEvents",
+        "team": "Uzbekistan",
+        "type": "yellow",
+        "minute": "48'",
+        "text": "Sherzod Nasrullaev (Uzbekistan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760482",
+        "sourceName": "keyEvents",
+        "team": "Congo DR",
+        "type": "yellow",
+        "minute": "62'",
+        "text": "Samuel Moutoussamy (Congo DR) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760484",
+        "sourceName": "keyEvents",
+        "team": "Austria",
+        "type": "yellow",
+        "minute": "11'",
+        "text": "Marko Arnautovic (Austria) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760483",
+        "sourceName": "keyEvents",
+        "team": "Jordan",
+        "type": "yellow",
+        "minute": "17'",
+        "text": "Mohannad Abu Taha (Jordan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760483",
+        "sourceName": "keyEvents",
+        "team": "Jordan",
+        "type": "yellow",
+        "minute": "64'",
+        "text": "Yazan Al Arab (Jordan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760483",
+        "sourceName": "keyEvents",
+        "team": "Jordan",
+        "type": "yellow",
+        "minute": "90'+4'",
+        "text": "Mohammad Abu Zraiq (Jordan) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1698,12 +1762,12 @@
       "straightRed": 0
     },
     "Austria": {
-      "yellow": 3,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Jordan": {
-      "yellow": 1,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -1713,17 +1777,17 @@
       "straightRed": 0
     },
     "Colombia": {
-      "yellow": 3,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Uzbekistan": {
-      "yellow": 3,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 0
     },
     "Congo DR": {
-      "yellow": 3,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
