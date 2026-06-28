@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-28T04:55:26.617Z",
+  "updatedAt": "2026-06-28T08:18:03.326Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-28T04:55:19.540Z",
+    "updatedAt": "2026-06-28T08:17:57.765Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,126 +58,6 @@
     "summaryCallsSucceeded": 72,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760480",
-        "sourceName": "keyEvents",
-        "team": "Croatia",
-        "type": "yellow",
-        "minute": "68'",
-        "text": "Ivan Perisic (Croatia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760480",
-        "sourceName": "keyEvents",
-        "team": "Ghana",
-        "type": "yellow",
-        "minute": "90'+4'",
-        "text": "Kojo Peprah Oppong (Ghana) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760485",
-        "sourceName": "keyEvents",
-        "team": "Panama",
-        "type": "yellow",
-        "minute": "53'",
-        "text": "José Fajardo (Panama) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760485",
-        "sourceName": "keyEvents",
-        "team": "England",
-        "type": "yellow",
-        "minute": "60'",
-        "text": "Jarell Quansah (England) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760485",
-        "sourceName": "keyEvents",
-        "team": "Panama",
-        "type": "yellow",
-        "minute": "84'",
-        "text": "Andrés Andrade (Panama) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760481",
-        "sourceName": "keyEvents",
-        "team": "Colombia",
-        "type": "yellow",
-        "minute": "86'",
-        "text": "Gustavo Puerta (Colombia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760482",
-        "sourceName": "keyEvents",
-        "team": "Congo DR",
-        "type": "yellow",
-        "minute": "21'",
-        "text": "Noah Sadiki (Congo DR) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760482",
-        "sourceName": "keyEvents",
-        "team": "Uzbekistan",
-        "type": "yellow",
-        "minute": "43'",
-        "text": "Abdukodir Khusanov (Uzbekistan) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760482",
-        "sourceName": "keyEvents",
-        "team": "Congo DR",
-        "type": "yellow",
-        "minute": "45'+5'",
-        "text": "Nathanaël Mbuku (Congo DR) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760482",
-        "sourceName": "keyEvents",
-        "team": "Uzbekistan",
-        "type": "yellow",
-        "minute": "48'",
-        "text": "Sherzod Nasrullaev (Uzbekistan) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760482",
-        "sourceName": "keyEvents",
-        "team": "Congo DR",
-        "type": "yellow",
-        "minute": "62'",
-        "text": "Samuel Moutoussamy (Congo DR) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760484",
-        "sourceName": "keyEvents",
-        "team": "Austria",
-        "type": "yellow",
-        "minute": "11'",
-        "text": "Marko Arnautovic (Austria) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760483",
-        "sourceName": "keyEvents",
-        "team": "Jordan",
-        "type": "yellow",
-        "minute": "17'",
-        "text": "Mohannad Abu Taha (Jordan) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760483",
-        "sourceName": "keyEvents",
-        "team": "Jordan",
-        "type": "yellow",
-        "minute": "64'",
-        "text": "Yazan Al Arab (Jordan) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760483",
-        "sourceName": "keyEvents",
-        "team": "Jordan",
-        "type": "yellow",
-        "minute": "90'+4'",
-        "text": "Mohammad Abu Zraiq (Jordan) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1561,6 +1441,126 @@
         "type": "yellow",
         "minute": "56'",
         "text": "Elijah Just (New Zealand) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760480",
+        "sourceName": "keyEvents",
+        "team": "Croatia",
+        "type": "yellow",
+        "minute": "68'",
+        "text": "Ivan Perisic (Croatia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760480",
+        "sourceName": "keyEvents",
+        "team": "Ghana",
+        "type": "yellow",
+        "minute": "90'+4'",
+        "text": "Kojo Peprah Oppong (Ghana) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760485",
+        "sourceName": "keyEvents",
+        "team": "Panama",
+        "type": "yellow",
+        "minute": "53'",
+        "text": "José Fajardo (Panama) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760485",
+        "sourceName": "keyEvents",
+        "team": "England",
+        "type": "yellow",
+        "minute": "60'",
+        "text": "Jarell Quansah (England) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760485",
+        "sourceName": "keyEvents",
+        "team": "Panama",
+        "type": "yellow",
+        "minute": "84'",
+        "text": "Andrés Andrade (Panama) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760481",
+        "sourceName": "keyEvents",
+        "team": "Colombia",
+        "type": "yellow",
+        "minute": "86'",
+        "text": "Gustavo Puerta (Colombia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760482",
+        "sourceName": "keyEvents",
+        "team": "Congo DR",
+        "type": "yellow",
+        "minute": "21'",
+        "text": "Noah Sadiki (Congo DR) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760482",
+        "sourceName": "keyEvents",
+        "team": "Uzbekistan",
+        "type": "yellow",
+        "minute": "43'",
+        "text": "Abdukodir Khusanov (Uzbekistan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760482",
+        "sourceName": "keyEvents",
+        "team": "Congo DR",
+        "type": "yellow",
+        "minute": "45'+5'",
+        "text": "Nathanaël Mbuku (Congo DR) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760482",
+        "sourceName": "keyEvents",
+        "team": "Uzbekistan",
+        "type": "yellow",
+        "minute": "48'",
+        "text": "Sherzod Nasrullaev (Uzbekistan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760482",
+        "sourceName": "keyEvents",
+        "team": "Congo DR",
+        "type": "yellow",
+        "minute": "62'",
+        "text": "Samuel Moutoussamy (Congo DR) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760484",
+        "sourceName": "keyEvents",
+        "team": "Austria",
+        "type": "yellow",
+        "minute": "11'",
+        "text": "Marko Arnautovic (Austria) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760483",
+        "sourceName": "keyEvents",
+        "team": "Jordan",
+        "type": "yellow",
+        "minute": "17'",
+        "text": "Mohannad Abu Taha (Jordan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760483",
+        "sourceName": "keyEvents",
+        "team": "Jordan",
+        "type": "yellow",
+        "minute": "64'",
+        "text": "Yazan Al Arab (Jordan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760483",
+        "sourceName": "keyEvents",
+        "team": "Jordan",
+        "type": "yellow",
+        "minute": "90'+4'",
+        "text": "Mohammad Abu Zraiq (Jordan) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
