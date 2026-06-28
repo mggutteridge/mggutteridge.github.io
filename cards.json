@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-28T20:20:36.449Z",
+  "updatedAt": "2026-06-28T21:33:02.576Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-28T20:20:28.049Z",
+    "updatedAt": "2026-06-28T21:32:58.338Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -65,6 +65,14 @@
         "type": "yellow",
         "minute": "54'",
         "text": "Nathan Saliba (Canada) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760486",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "67'",
+        "text": "Niko Sigur (Canada) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1600,7 +1608,7 @@
       "straightRed": 0
     },
     "Canada": {
-      "yellow": 6,
+      "yellow": 7,
       "secondYellow": 0,
       "straightRed": 0
     },
