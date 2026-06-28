@@ -1,7 +1,7 @@
 {
   "source": "openfootball/worldcup.json 2026/worldcup.json",
   "sourceUrl": "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
-  "updatedAt": "2026-06-27T23:01:24+00:00",
+  "updatedAt": "2026-06-28T00:14:14+00:00",
   "note": "For each team, candidates contains every goal in that team's current fastest minute. Edit candidate seconds manually (0-59) to break same-minute ties. selectedCandidateId is optional; if omitted, dashboard chooses the lowest minute+seconds candidate.",
   "goals": {
     "Algeria": {
@@ -170,17 +170,17 @@
       ]
     },
     "Croatia": {
-      "minute": 36,
+      "minute": 31,
       "selectedCandidateId": null,
       "candidates": [
         {
-          "minute": 36,
+          "minute": 31,
           "seconds": null,
-          "scorer": "Martin Baturina",
-          "opponent": "England",
-          "matchId": "67",
-          "date": "2026-06-17",
-          "sourceIndex": "67:away:0"
+          "scorer": "Petar Sucic",
+          "opponent": "Ghana",
+          "matchId": "72",
+          "date": "2026-06-27",
+          "sourceIndex": "72:home:0"
         }
       ]
     },
@@ -305,17 +305,17 @@
       ]
     },
     "Ghana": {
-      "minute": 90,
+      "minute": 73,
       "selectedCandidateId": null,
       "candidates": [
         {
-          "minute": 90,
+          "minute": 73,
           "seconds": null,
-          "scorer": "Caleb Yirenkyi",
-          "opponent": "Panama",
-          "matchId": "68",
-          "date": "2026-06-17",
-          "sourceIndex": "68:home:0"
+          "scorer": "Derrick Luckassen",
+          "opponent": "Croatia",
+          "matchId": "72",
+          "date": "2026-06-27",
+          "sourceIndex": "72:away:0"
         }
       ]
     },
