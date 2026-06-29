@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-29T17:56:12.867Z",
+  "updatedAt": "2026-06-29T19:54:22.090Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-29T17:56:08.095Z",
+    "updatedAt": "2026-06-29T19:54:16.521Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -81,6 +81,22 @@
         "type": "yellow",
         "minute": "45'",
         "text": "Daichi Kamada (Japan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760487",
+        "sourceName": "keyEvents",
+        "team": "Brazil",
+        "type": "yellow",
+        "minute": "48'",
+        "text": "Danilo (Brazil) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760487",
+        "sourceName": "keyEvents",
+        "team": "Japan",
+        "type": "yellow",
+        "minute": "84'",
+        "text": "Junnosuke Suzuki (Japan) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1652,7 +1668,7 @@
       "straightRed": 0
     },
     "Brazil": {
-      "yellow": 6,
+      "yellow": 7,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -1717,7 +1733,7 @@
       "straightRed": 0
     },
     "Japan": {
-      "yellow": 3,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 0
     },
