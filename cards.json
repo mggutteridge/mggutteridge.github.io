@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-29T06:48:40.152Z",
+  "updatedAt": "2026-06-29T11:50:19.914Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-29T06:48:37.695Z",
+    "updatedAt": "2026-06-29T11:50:17.096Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,22 +58,6 @@
     "summaryCallsSucceeded": 73,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760486",
-        "sourceName": "keyEvents",
-        "team": "Canada",
-        "type": "yellow",
-        "minute": "54'",
-        "text": "Nathan Saliba (Canada) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760486",
-        "sourceName": "keyEvents",
-        "team": "Canada",
-        "type": "yellow",
-        "minute": "67'",
-        "text": "Niko Sigur (Canada) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1577,6 +1561,22 @@
         "type": "yellow",
         "minute": "90'+4'",
         "text": "Mohammad Abu Zraiq (Jordan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760486",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "54'",
+        "text": "Nathan Saliba (Canada) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760486",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "67'",
+        "text": "Niko Sigur (Canada) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
