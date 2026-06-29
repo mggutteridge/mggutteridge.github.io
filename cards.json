@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-29T22:33:41.846Z",
+  "updatedAt": "2026-06-29T23:38:08.669Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-29T22:33:37.228Z",
+    "updatedAt": "2026-06-29T23:38:03.939Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -105,6 +105,30 @@
         "type": "yellow",
         "minute": "65'",
         "text": "Andrés Cubas (Paraguay) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760489",
+        "sourceName": "keyEvents",
+        "team": "Germany",
+        "type": "yellow",
+        "minute": "106'",
+        "text": "Kai Havertz (Germany) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760489",
+        "sourceName": "keyEvents",
+        "team": "Germany",
+        "type": "yellow",
+        "minute": "115'",
+        "text": "Jamal Musiala (Germany) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760489",
+        "sourceName": "keyEvents",
+        "team": "Paraguay",
+        "type": "yellow",
+        "minute": "117'",
+        "text": "Matías Galarza (Paraguay) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1701,7 +1725,7 @@
       "straightRed": 0
     },
     "Paraguay": {
-      "yellow": 8,
+      "yellow": 9,
       "secondYellow": 0,
       "straightRed": 1
     },
@@ -1716,7 +1740,7 @@
       "straightRed": 0
     },
     "Germany": {
-      "yellow": 1,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
