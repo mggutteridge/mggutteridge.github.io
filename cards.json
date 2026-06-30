@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-30T05:52:13.166Z",
+  "updatedAt": "2026-06-30T08:50:11.077Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-30T05:52:07.070Z",
+    "updatedAt": "2026-06-30T08:50:08.053Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,86 +58,6 @@
     "summaryCallsSucceeded": 76,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760487",
-        "sourceName": "keyEvents",
-        "team": "Japan",
-        "type": "yellow",
-        "minute": "12'",
-        "text": "Kaishu Sano (Japan) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760487",
-        "sourceName": "keyEvents",
-        "team": "Brazil",
-        "type": "yellow",
-        "minute": "14'",
-        "text": "Casemiro (Brazil) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760487",
-        "sourceName": "keyEvents",
-        "team": "Japan",
-        "type": "yellow",
-        "minute": "45'",
-        "text": "Daichi Kamada (Japan) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760487",
-        "sourceName": "keyEvents",
-        "team": "Brazil",
-        "type": "yellow",
-        "minute": "48'",
-        "text": "Danilo (Brazil) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760487",
-        "sourceName": "keyEvents",
-        "team": "Japan",
-        "type": "yellow",
-        "minute": "84'",
-        "text": "Junnosuke Suzuki (Japan) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760489",
-        "sourceName": "keyEvents",
-        "team": "Paraguay",
-        "type": "yellow",
-        "minute": "65'",
-        "text": "Andrés Cubas (Paraguay) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760489",
-        "sourceName": "keyEvents",
-        "team": "Germany",
-        "type": "yellow",
-        "minute": "106'",
-        "text": "Kai Havertz (Germany) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760489",
-        "sourceName": "keyEvents",
-        "team": "Germany",
-        "type": "yellow",
-        "minute": "115'",
-        "text": "Jamal Musiala (Germany) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760489",
-        "sourceName": "keyEvents",
-        "team": "Paraguay",
-        "type": "yellow",
-        "minute": "117'",
-        "text": "Matías Galarza (Paraguay) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760488",
-        "sourceName": "keyEvents",
-        "team": "Morocco",
-        "type": "yellow",
-        "minute": "47'",
-        "text": "Issa Diop (Morocco) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1657,6 +1577,86 @@
         "type": "yellow",
         "minute": "67'",
         "text": "Niko Sigur (Canada) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760487",
+        "sourceName": "keyEvents",
+        "team": "Japan",
+        "type": "yellow",
+        "minute": "12'",
+        "text": "Kaishu Sano (Japan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760487",
+        "sourceName": "keyEvents",
+        "team": "Brazil",
+        "type": "yellow",
+        "minute": "14'",
+        "text": "Casemiro (Brazil) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760487",
+        "sourceName": "keyEvents",
+        "team": "Japan",
+        "type": "yellow",
+        "minute": "45'",
+        "text": "Daichi Kamada (Japan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760487",
+        "sourceName": "keyEvents",
+        "team": "Brazil",
+        "type": "yellow",
+        "minute": "48'",
+        "text": "Danilo (Brazil) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760487",
+        "sourceName": "keyEvents",
+        "team": "Japan",
+        "type": "yellow",
+        "minute": "84'",
+        "text": "Junnosuke Suzuki (Japan) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760489",
+        "sourceName": "keyEvents",
+        "team": "Paraguay",
+        "type": "yellow",
+        "minute": "65'",
+        "text": "Andrés Cubas (Paraguay) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760489",
+        "sourceName": "keyEvents",
+        "team": "Germany",
+        "type": "yellow",
+        "minute": "106'",
+        "text": "Kai Havertz (Germany) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760489",
+        "sourceName": "keyEvents",
+        "team": "Germany",
+        "type": "yellow",
+        "minute": "115'",
+        "text": "Jamal Musiala (Germany) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760489",
+        "sourceName": "keyEvents",
+        "team": "Paraguay",
+        "type": "yellow",
+        "minute": "117'",
+        "text": "Matías Galarza (Paraguay) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760488",
+        "sourceName": "keyEvents",
+        "team": "Morocco",
+        "type": "yellow",
+        "minute": "47'",
+        "text": "Issa Diop (Morocco) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
