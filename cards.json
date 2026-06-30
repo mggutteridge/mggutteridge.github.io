@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-06-30T01:35:27.890Z",
+  "updatedAt": "2026-06-30T05:52:13.166Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-06-30T01:35:20.865Z",
+    "updatedAt": "2026-06-30T05:52:07.070Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -129,6 +129,14 @@
         "type": "yellow",
         "minute": "117'",
         "text": "Matías Galarza (Paraguay) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760488",
+        "sourceName": "keyEvents",
+        "team": "Morocco",
+        "type": "yellow",
+        "minute": "47'",
+        "text": "Issa Diop (Morocco) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1705,7 +1713,7 @@
       "straightRed": 0
     },
     "Morocco": {
-      "yellow": 1,
+      "yellow": 2,
       "secondYellow": 0,
       "straightRed": 0
     },
