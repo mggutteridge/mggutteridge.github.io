@@ -1,7 +1,7 @@
 {
   "source": "openfootball/worldcup.json 2026/worldcup.json",
   "sourceUrl": "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
-  "updatedAt": "2026-07-01T15:53:51+00:00",
+  "updatedAt": "2026-07-01T17:54:21+00:00",
   "note": "For each team, candidates contains every goal in that team's current fastest minute. Edit candidate seconds manually (0-59) to break same-minute ties. selectedCandidateId is optional; if omitted, dashboard chooses the lowest minute+seconds candidate.",
   "goals": {
     "Algeria": {
