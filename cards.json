@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-01T13:56:13.751Z",
+  "updatedAt": "2026-07-01T16:25:29.212Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-01T13:56:08.339Z",
+    "updatedAt": "2026-07-01T16:25:18.597Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,10 +54,18 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 79,
-    "summaryCallsSucceeded": 79,
+    "eventsChecked": 80,
+    "summaryCallsSucceeded": 80,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760495",
+        "sourceName": "keyEvents",
+        "team": "England",
+        "type": "yellow",
+        "minute": "19'",
+        "text": "Jude Bellingham (England) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1928,7 +1936,7 @@
       "straightRed": 0
     },
     "England": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
