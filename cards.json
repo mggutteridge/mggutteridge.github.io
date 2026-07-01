@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-01T20:21:16.465Z",
+  "updatedAt": "2026-07-01T21:54:30.970Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-01T20:21:05.677Z",
+    "updatedAt": "2026-07-01T21:54:25.097Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -73,6 +73,22 @@
         "type": "yellow",
         "minute": "28'",
         "text": "Noah Sadiki (Congo DR) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760493",
+        "sourceName": "keyEvents",
+        "team": "Belgium",
+        "type": "yellow",
+        "minute": "64'",
+        "text": "Brandon Mechele (Belgium) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760493",
+        "sourceName": "keyEvents",
+        "team": "Senegal",
+        "type": "yellow",
+        "minute": "67'",
+        "text": "Lamine Camara (Senegal) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1844,7 +1860,7 @@
       "straightRed": 0
     },
     "Belgium": {
-      "yellow": 3,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 1
     },
@@ -1889,7 +1905,7 @@
       "straightRed": 0
     },
     "Senegal": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
