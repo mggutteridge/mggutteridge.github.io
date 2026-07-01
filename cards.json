@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-01T04:56:31.491Z",
+  "updatedAt": "2026-07-01T08:48:44.986Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-01T04:56:19.888Z",
+    "updatedAt": "2026-07-01T08:48:34.320Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,46 +58,6 @@
     "summaryCallsSucceeded": 79,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760490",
-        "sourceName": "keyEvents",
-        "team": "Norway",
-        "type": "yellow",
-        "minute": "45'+1'",
-        "text": "Antonio Nusa (Norway) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760491",
-        "sourceName": "keyEvents",
-        "team": "Ecuador",
-        "type": "yellow",
-        "minute": "45'+1'",
-        "text": "Alan Franco (Ecuador) is shown the yellow card."
-      },
-      {
-        "eventId": "760491",
-        "sourceName": "keyEvents",
-        "team": "Ecuador",
-        "type": "yellow",
-        "minute": "90'+3'",
-        "text": "Kendry Páez (Ecuador) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760491",
-        "sourceName": "keyEvents",
-        "team": "Ecuador",
-        "type": "red",
-        "minute": "90'+5'",
-        "text": "Piero Hincapié (Ecuador) is shown the red card."
-      },
-      {
-        "eventId": "760491",
-        "sourceName": "keyEvents",
-        "team": "Ecuador",
-        "type": "yellow",
-        "minute": "90'+9'",
-        "text": "Moisés Caicedo (Ecuador) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1697,6 +1657,46 @@
         "type": "yellow",
         "minute": "47'",
         "text": "Issa Diop (Morocco) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760490",
+        "sourceName": "keyEvents",
+        "team": "Norway",
+        "type": "yellow",
+        "minute": "45'+1'",
+        "text": "Antonio Nusa (Norway) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760491",
+        "sourceName": "keyEvents",
+        "team": "Ecuador",
+        "type": "yellow",
+        "minute": "45'+1'",
+        "text": "Alan Franco (Ecuador) is shown the yellow card."
+      },
+      {
+        "eventId": "760491",
+        "sourceName": "keyEvents",
+        "team": "Ecuador",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Kendry Páez (Ecuador) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760491",
+        "sourceName": "keyEvents",
+        "team": "Ecuador",
+        "type": "red",
+        "minute": "90'+5'",
+        "text": "Piero Hincapié (Ecuador) is shown the red card."
+      },
+      {
+        "eventId": "760491",
+        "sourceName": "keyEvents",
+        "team": "Ecuador",
+        "type": "yellow",
+        "minute": "90'+9'",
+        "text": "Moisés Caicedo (Ecuador) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
