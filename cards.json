@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-02T04:34:12.437Z",
+  "updatedAt": "2026-07-02T07:53:02.782Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-02T04:34:08.786Z",
+    "updatedAt": "2026-07-02T07:52:53.205Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,54 +58,6 @@
     "summaryCallsSucceeded": 82,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760495",
-        "sourceName": "keyEvents",
-        "team": "England",
-        "type": "yellow",
-        "minute": "19'",
-        "text": "Jude Bellingham (England) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760495",
-        "sourceName": "keyEvents",
-        "team": "Congo DR",
-        "type": "yellow",
-        "minute": "28'",
-        "text": "Noah Sadiki (Congo DR) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760493",
-        "sourceName": "keyEvents",
-        "team": "Belgium",
-        "type": "yellow",
-        "minute": "64'",
-        "text": "Brandon Mechele (Belgium) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760493",
-        "sourceName": "keyEvents",
-        "team": "Senegal",
-        "type": "yellow",
-        "minute": "67'",
-        "text": "Lamine Camara (Senegal) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760494",
-        "sourceName": "keyEvents",
-        "team": "USA",
-        "type": "red",
-        "minute": "64'",
-        "text": "Folarin Balogun (USA) is shown the red card."
-      },
-      {
-        "eventId": "760494",
-        "sourceName": "keyEvents",
-        "team": "Bosnia and Herzegovina",
-        "type": "yellow",
-        "minute": "80'",
-        "text": "Stjepan Radeljic (Bosnia and Herzegovina) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1745,6 +1697,54 @@
         "type": "yellow",
         "minute": "90'+9'",
         "text": "Moisés Caicedo (Ecuador) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760495",
+        "sourceName": "keyEvents",
+        "team": "England",
+        "type": "yellow",
+        "minute": "19'",
+        "text": "Jude Bellingham (England) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760495",
+        "sourceName": "keyEvents",
+        "team": "Congo DR",
+        "type": "yellow",
+        "minute": "28'",
+        "text": "Noah Sadiki (Congo DR) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760493",
+        "sourceName": "keyEvents",
+        "team": "Belgium",
+        "type": "yellow",
+        "minute": "64'",
+        "text": "Brandon Mechele (Belgium) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760493",
+        "sourceName": "keyEvents",
+        "team": "Senegal",
+        "type": "yellow",
+        "minute": "67'",
+        "text": "Lamine Camara (Senegal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760494",
+        "sourceName": "keyEvents",
+        "team": "USA",
+        "type": "red",
+        "minute": "64'",
+        "text": "Folarin Balogun (USA) is shown the red card."
+      },
+      {
+        "eventId": "760494",
+        "sourceName": "keyEvents",
+        "team": "Bosnia and Herzegovina",
+        "type": "yellow",
+        "minute": "80'",
+        "text": "Stjepan Radeljic (Bosnia and Herzegovina) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
