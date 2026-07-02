@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-02T19:53:46.568Z",
+  "updatedAt": "2026-07-02T20:55:25.188Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-02T19:53:41.955Z",
+    "updatedAt": "2026-07-02T20:55:19.360Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,6 +58,14 @@
     "summaryCallsSucceeded": 83,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760497",
+        "sourceName": "keyEvents",
+        "team": "Austria",
+        "type": "yellow",
+        "minute": "83'",
+        "text": "Stefan Posch (Austria) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1946,7 +1954,7 @@
       "straightRed": 0
     },
     "Austria": {
-      "yellow": 4,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
