@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-02T22:03:24.631Z",
+  "updatedAt": "2026-07-02T23:18:50.158Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-02T22:03:18.670Z",
+    "updatedAt": "2026-07-02T23:18:37.453Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 83,
-    "summaryCallsSucceeded": 83,
+    "eventsChecked": 84,
+    "summaryCallsSucceeded": 84,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -65,6 +65,14 @@
         "type": "yellow",
         "minute": "83'",
         "text": "Stefan Posch (Austria) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760496",
+        "sourceName": "keyEvents",
+        "team": "Portugal",
+        "type": "yellow",
+        "minute": "17'",
+        "text": "Rúben Dias (Portugal) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1964,7 +1972,7 @@
       "straightRed": 0
     },
     "Portugal": {
-      "yellow": 4,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
