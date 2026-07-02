@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-02T00:18:46.969Z",
+  "updatedAt": "2026-07-02T04:34:12.437Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-02T00:18:41.755Z",
+    "updatedAt": "2026-07-02T04:34:08.786Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -89,6 +89,22 @@
         "type": "yellow",
         "minute": "67'",
         "text": "Lamine Camara (Senegal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760494",
+        "sourceName": "keyEvents",
+        "team": "USA",
+        "type": "red",
+        "minute": "64'",
+        "text": "Folarin Balogun (USA) is shown the red card."
+      },
+      {
+        "eventId": "760494",
+        "sourceName": "keyEvents",
+        "team": "Bosnia and Herzegovina",
+        "type": "yellow",
+        "minute": "80'",
+        "text": "Stjepan Radeljic (Bosnia and Herzegovina) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1765,7 +1781,7 @@
       "straightRed": 0
     },
     "Bosnia and Herzegovina": {
-      "yellow": 6,
+      "yellow": 7,
       "secondYellow": 0,
       "straightRed": 1
     },
@@ -1802,7 +1818,7 @@
     "USA": {
       "yellow": 5,
       "secondYellow": 0,
-      "straightRed": 0
+      "straightRed": 1
     },
     "Paraguay": {
       "yellow": 9,
