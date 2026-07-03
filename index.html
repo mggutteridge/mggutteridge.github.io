@@ -940,7 +940,7 @@ code {
 </main>
 
 <footer>
-  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team. v1.7
+  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team. v1.8
 </footer>
 
   </div>
@@ -3283,70 +3283,154 @@ function mostConcededProbabilities() {
 function knockEnglandOutProbabilities() {
   const allTeams = Object.values(DATA.groups).flat();
 
-  // Check if England has already been eliminated by a finished loss/group exit
-  // Look for the most recent finished match England lost (knockout) or check group standings
-  let eliminatedBy = null;
-
-  // Check knockout fixtures first (group field won't be A-L for KO matches)
-  for (const f of DATA.fixtures) {
-    const s = scoreFor(f.id);
-    if (String(s.status || "").toLowerCase() !== "finished") continue;
-    const isKnockout = !["A","B","C","D","E","F","G","H","I","J","K","L"].includes(f.group);
-    if (!isKnockout) continue;
-    if (f.team1 === "England" && s.score1 !== undefined && s.score2 !== undefined) {
-      if (+s.score2 > +s.score1) eliminatedBy = f.team2;
-    }
-    if (f.team2 === "England" && s.score1 !== undefined && s.score2 !== undefined) {
-      if (+s.score1 > +s.score2) eliminatedBy = f.team1;
+  // ── Case 1: England already knocked out ──────────────────────────────────
+  const koFixtures = buildKnockoutFixtures();
+  for (const f of koFixtures) {
+    if (!isFinishedScore(scoreFor(f.id))) continue;
+    const loser = loserFromFinishedFixture(f);
+    if (loser === "England") {
+      const winner = winnerFromFinishedFixture(f);
+      return Object.fromEntries(allTeams.map(t => [t, t === winner ? 1.0 : 0.0]));
     }
   }
 
-  // Check if England was eliminated in the group stage (didn't qualify)
-  if (!eliminatedBy) {
-    const rows = standings();
-    const groupL = rows["L"];
-    if (groupL) {
-      const englandRow = groupL.find(r => r.team === "England");
-      const allGroupLPlayed = groupL.every(r => r.played >= 3);
-      if (allGroupLPlayed && englandRow) {
-        // Top 2 qualify; if England is 3rd or 4th, they're out via group stage
-        const englandRank = groupL.findIndex(r => r.team === "England");
-        if (englandRank >= 2) {
-          // England eliminated in groups — group elimination means no single team "knocked them out"
-          // Distribute evenly among their group opponents with slight weighting toward team above them
-          const others = groupL.filter(r => r.team !== "England");
-          const weights = {};
-          let tot = 0;
-          others.forEach((r, i) => { const w = Math.pow(2 - i * 0.4, 1.5); weights[r.team] = w; tot += w; });
-          return Object.fromEntries(allTeams.map(t => [t, (weights[t] || 0) / tot]));
-        }
+  // ── Case 2: England eliminated in group stage ─────────────────────────────
+  const groupL = standings()["L"] || [];
+  if (groupL.every(r => r.played >= 3)) {
+    const englandRank = groupL.findIndex(r => r.team === "England");
+    if (englandRank >= 2) {
+      const others = groupL.filter(r => r.team !== "England");
+      let tot = 0;
+      const w = {};
+      others.forEach((r, i) => { w[r.team] = Math.pow(2 - i * 0.4, 1.5); tot += w[r.team]; });
+      return Object.fromEntries(allTeams.map(t => [t, (w[t] || 0) / tot]));
+    }
+  }
+
+  // ── Case 3: England still in — walk the bracket ───────────────────────────
+  //
+  // Pairwise win probability based on team strength
+  function pWin(a, b) {
+    if (!a || !b || a === b) return 0.5;
+    return Math.max(0.05, Math.min(0.95, 0.5 + (teamStrength(a) - teamStrength(b)) / 120));
+  }
+
+  // Compute a winner-probability distribution for a match, given distributions
+  // over who might be in each slot. Returns Map<team, P(team wins this match)>.
+  function matchWinnerDist(dist1, dist2) {
+    const out = new Map();
+    for (const [t1, p1] of dist1) {
+      for (const [t2, p2] of dist2) {
+        if (t1 === t2) continue;
+        const pw = pWin(t1, t2);
+        out.set(t1, (out.get(t1) || 0) + p1 * p2 * pw);
+        out.set(t2, (out.get(t2) || 0) + p1 * p2 * (1 - pw));
       }
     }
+    return out;
   }
 
-  // If we know exactly who knocked England out, give them 100%
-  if (eliminatedBy) {
-    return Object.fromEntries(allTeams.map(t => [t, t === eliminatedBy ? 1.0 : 0.0]));
+  // Build a winner-probability distribution for any match, recursively.
+  // Returns Map<team, P(team comes out of this match)>.
+  // Memoised by matchId.
+  const memo = new Map();
+  function winnerDist(matchId) {
+    if (memo.has(matchId)) return memo.get(matchId);
+
+    const f = koFixtures.find(f => f.id === matchId);
+    if (!f) return new Map();
+
+    // If already played, winner is certain
+    if (isFinishedScore(scoreFor(matchId))) {
+      const winner = winnerFromFinishedFixture(f);
+      const d = winner ? new Map([[winner, 1.0]]) : new Map();
+      memo.set(matchId, d); return d;
+    }
+
+    // Resolve each slot to a distribution
+    function slotDist(slotText, resolvedTeam) {
+      // If resolvedSlot() already gave us a real team name, it's certain
+      if (resolvedTeam && isActualTeamName(resolvedTeam) && resolvedTeam !== slotText) {
+        return new Map([[resolvedTeam, 1.0]]);
+      }
+      // "Winner match N" — recurse
+      const mW = slotText.match(/^Winner match (\d+)$/i);
+      if (mW) return winnerDist(Number(mW[1]));
+      // Anything else we can't resolve yet — empty distribution
+      return new Map();
+    }
+
+    const d1 = slotDist(f.placeholder1, f.team1);
+    const d2 = slotDist(f.placeholder2, f.team2);
+    const d  = matchWinnerDist(d1, d2);
+    memo.set(matchId, d);
+    return d;
   }
 
-  // England still in the tournament — estimate likely knockout opponents.
-  // England is in Group L. Likely R32 opponent is a Group K runner-up or similar.
-  // Use strength-based probability: stronger non-England teams are more likely to face & beat England.
-  const englandStrength = teamStrength("England");
-  const weights = {};
-  let tot = 0;
-  for (const team of allTeams) {
-    if (team === "England") { weights[team] = 0; continue; }
-    const s = teamStrength(team);
-    // P(meet England in KO) ∝ own probability of qualifying × relative strength
-    const qualifyChance = Math.max(0.02, (s - 20) / 90);
-    // P(beat England | meeting England) uses strength differential
-    const beatChance = Math.max(0.05, Math.min(0.95, 0.5 + (s - englandStrength) / 120));
-    const w = Math.pow(qualifyChance * beatChance, 1.4);
-    weights[team] = w;
-    tot += w;
+  // England's path through the bracket:
+  // M80 (R32) → M92 (R16) → M99 (QF) → M102 (SF) → M104 (Final)
+  // At each round, England's *opponent* comes from the OTHER slot.
+  const englandPath = [
+    { myMatch: 80,  opponentMatch: null  }, // R32: opponent is the other slot of M80 directly
+    { myMatch: 92,  opponentMatch: 79   }, // R16: opponent = winner of M79
+    { myMatch: 99,  opponentMatch: 91   }, // QF:  opponent = winner of M91
+    { myMatch: 102, opponentMatch: 100  }, // SF:  opponent = winner of M100
+    { myMatch: 104, opponentMatch: 101  }, // F:   opponent = winner of M101
+  ];
+
+  const prizeWeights = new Map(); // team -> P(they knock England out)
+  for (const t of allTeams) prizeWeights.set(t, 0);
+
+  // Track P(England has reached this round) as we walk forward
+  let pEnglandHere = 1.0;
+
+  for (const { myMatch, opponentMatch } of englandPath) {
+    const f = koFixtures.find(f => f.id === myMatch);
+    if (!f) break;
+
+    // Distribution over England's opponent in this match
+    let oppDist;
+    if (opponentMatch !== null && opponentMatch !== undefined) {
+      oppDist = winnerDist(opponentMatch);
+    } else {
+      // R32: England's opponent is the non-England slot in M80
+      const oppSlot     = f.placeholder1 === "Group L winners" ? f.placeholder2 : f.placeholder1;
+      const oppResolved = f.placeholder1 === "Group L winners" ? f.team2        : f.team1;
+      oppDist = (oppResolved && isActualTeamName(oppResolved) && oppResolved !== oppSlot)
+        ? new Map([[oppResolved, 1.0]])
+        : winnerDist(myMatch); // fallback — shouldn't normally be needed
+      // Remove England from the distribution if it snuck in
+      oppDist.delete("England");
+    }
+
+    if (isFinishedScore(scoreFor(myMatch))) {
+      // Match already played
+      const winner = winnerFromFinishedFixture(f);
+      if (winner !== "England") break; // England lost (handled in Case 1 above)
+      // England won — move to next round with certainty, don't add any weight
+      continue;
+    }
+
+    // Match not yet played: for each possible opponent, accumulate weight
+    for (const [opp, pOppHere] of oppDist) {
+      if (!opp || opp === "England") continue;
+      const pBeatEngland = 1 - pWin("England", opp);
+      prizeWeights.set(opp, prizeWeights.get(opp) + pEnglandHere * pOppHere * pBeatEngland);
+    }
+
+    // P(England wins this match) — needed to carry pEnglandHere forward
+    let pEngWinsThisMatch = 0;
+    for (const [opp, pOppHere] of oppDist) {
+      if (!opp || opp === "England") continue;
+      pEngWinsThisMatch += pOppHere * pWin("England", opp);
+    }
+    pEnglandHere *= pEngWinsThisMatch;
+    if (pEnglandHere < 1e-6) break; // England's path effectively over
   }
-  return Object.fromEntries(allTeams.map(t => [t, (weights[t] || 0) / tot]));
+
+  const tot = [...prizeWeights.values()].reduce((a, b) => a + b, 0);
+  if (tot === 0) return Object.fromEntries(allTeams.map(t => [t, 0]));
+  return Object.fromEntries(allTeams.map(t => [t, (prizeWeights.get(t) || 0) / tot]));
 }
 
 function participantPrizeProbabilities() {
