@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-03T04:54:10.597Z",
+  "updatedAt": "2026-07-03T07:56:31.304Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-03T04:54:07.192Z",
+    "updatedAt": "2026-07-03T07:56:25.448Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,54 +58,6 @@
     "summaryCallsSucceeded": 85,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760497",
-        "sourceName": "keyEvents",
-        "team": "Austria",
-        "type": "yellow",
-        "minute": "83'",
-        "text": "Stefan Posch (Austria) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760496",
-        "sourceName": "keyEvents",
-        "team": "Portugal",
-        "type": "yellow",
-        "minute": "17'",
-        "text": "Rúben Dias (Portugal) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760496",
-        "sourceName": "keyEvents",
-        "team": "Croatia",
-        "type": "yellow",
-        "minute": "59'",
-        "text": "Luka Modric (Croatia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760496",
-        "sourceName": "keyEvents",
-        "team": "Croatia",
-        "type": "yellow",
-        "minute": "90'+8'",
-        "text": "Ivan Perisic (Croatia) is shown the yellow card."
-      },
-      {
-        "eventId": "760498",
-        "sourceName": "keyEvents",
-        "team": "Algeria",
-        "type": "yellow",
-        "minute": "36'",
-        "text": "Farès Chaïbi (Algeria) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760498",
-        "sourceName": "keyEvents",
-        "team": "Algeria",
-        "type": "yellow",
-        "minute": "72'",
-        "text": "Hicham Boudaoui (Algeria) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1793,6 +1745,54 @@
         "type": "yellow",
         "minute": "80'",
         "text": "Stjepan Radeljic (Bosnia and Herzegovina) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760497",
+        "sourceName": "keyEvents",
+        "team": "Austria",
+        "type": "yellow",
+        "minute": "83'",
+        "text": "Stefan Posch (Austria) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760496",
+        "sourceName": "keyEvents",
+        "team": "Portugal",
+        "type": "yellow",
+        "minute": "17'",
+        "text": "Rúben Dias (Portugal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760496",
+        "sourceName": "keyEvents",
+        "team": "Croatia",
+        "type": "yellow",
+        "minute": "59'",
+        "text": "Luka Modric (Croatia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760496",
+        "sourceName": "keyEvents",
+        "team": "Croatia",
+        "type": "yellow",
+        "minute": "90'+8'",
+        "text": "Ivan Perisic (Croatia) is shown the yellow card."
+      },
+      {
+        "eventId": "760498",
+        "sourceName": "keyEvents",
+        "team": "Algeria",
+        "type": "yellow",
+        "minute": "36'",
+        "text": "Farès Chaïbi (Algeria) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760498",
+        "sourceName": "keyEvents",
+        "team": "Algeria",
+        "type": "yellow",
+        "minute": "72'",
+        "text": "Hicham Boudaoui (Algeria) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
