@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-03T20:13:21.109Z",
+  "updatedAt": "2026-07-03T21:32:57.215Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-03T20:13:14.804Z",
+    "updatedAt": "2026-07-03T21:32:43.144Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,6 +58,22 @@
     "summaryCallsSucceeded": 86,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760499",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "105'",
+        "text": "Haissem Hassan (Egypt) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760499",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "120'",
+        "text": "Yasser Ibrahim (Egypt) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1929,7 +1945,7 @@
       "straightRed": 1
     },
     "Egypt": {
-      "yellow": 6,
+      "yellow": 8,
       "secondYellow": 0,
       "straightRed": 0
     },
