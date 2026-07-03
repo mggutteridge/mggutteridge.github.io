@@ -940,7 +940,7 @@ code {
 </main>
 
 <footer>
-  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team. v1.8
+  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team. v1.9
 </footer>
 
   </div>
@@ -2453,17 +2453,113 @@ function teamStrength(team) {
   return Math.max(20, Math.min(110, base + performanceBoost));
 }
 
+// ── Shared bracket-probability helpers ───────────────────────────────────────
+// These are used by both winTeamProbabilities and knockEnglandOutProbabilities.
+
+// Pairwise win probability from team strength, capped 5%–95%.
+function pWin(a, b) {
+  if (!a || !b || a === b) return 0.5;
+  return Math.max(0.05, Math.min(0.95, 0.5 + (teamStrength(a) - teamStrength(b)) / 120));
+}
+
+// Combine two slot distributions into a winner distribution for one match.
+function matchWinnerDist(dist1, dist2) {
+  const out = new Map();
+  for (const [t1, p1] of dist1) {
+    for (const [t2, p2] of dist2) {
+      if (t1 === t2) continue;
+      const pw = pWin(t1, t2);
+      out.set(t1, (out.get(t1) || 0) + p1 * p2 * pw);
+      out.set(t2, (out.get(t2) || 0) + p1 * p2 * (1 - pw));
+    }
+  }
+  return out;
+}
+
+// Return a winner-probability distribution for a knockout match, recursively.
+// Memoised per call-site via the `memo` Map passed in.
+function winnerDist(matchId, koFixtures, memo) {
+  if (memo.has(matchId)) return memo.get(matchId);
+  const f = koFixtures.find(f => f.id === matchId);
+  if (!f) return new Map();
+  if (isFinishedScore(scoreFor(matchId))) {
+    const winner = winnerFromFinishedFixture(f);
+    const d = winner ? new Map([[winner, 1.0]]) : new Map();
+    memo.set(matchId, d); return d;
+  }
+  function slotDist(slotText, resolvedTeam) {
+    if (resolvedTeam && isActualTeamName(resolvedTeam) && resolvedTeam !== slotText)
+      return new Map([[resolvedTeam, 1.0]]);
+    const mW = slotText.match(/^Winner match (\d+)$/i);
+    if (mW) return winnerDist(Number(mW[1]), koFixtures, memo);
+    return new Map();
+  }
+  const d = matchWinnerDist(
+    slotDist(f.placeholder1, f.team1),
+    slotDist(f.placeholder2, f.team2)
+  );
+  memo.set(matchId, d);
+  return d;
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 function winTeamProbabilities() {
   const allTeams = Object.values(DATA.groups).flat();
-  const weights = {};
-  let total = 0;
-  for (const team of allTeams) {
-    const strength = teamStrength(team);
-    const weight = Math.pow(Math.max(1, strength - 25), 2.15);
-    weights[team] = weight;
-    total += weight;
+
+  // During the group stage the bracket is unknown, so fall back to a
+  // strength-only prior — same formula as before.
+  const koFixtures = buildKnockoutFixtures();
+  const anyKoPlayed = koFixtures.some(f => isFinishedScore(scoreFor(f.id)));
+  const finalMatch  = koFixtures.find(f => f.stage === "Final");
+  const bracketKnown = finalMatch &&
+    isActualTeamName(finalMatch.team1) && isActualTeamName(finalMatch.team2);
+
+  // Use bracket walk once we're in the knockouts (even if the final teams
+  // aren't resolved yet — winnerDist handles partial brackets).
+  // Fall back to strength prior if no KO matches have been played yet.
+  if (!anyKoPlayed) {
+    const weights = {};
+    let total = 0;
+    for (const team of allTeams) {
+      const w = Math.pow(Math.max(1, teamStrength(team) - 25), 2.15);
+      weights[team] = w; total += w;
+    }
+    return Object.fromEntries(allTeams.map(t => [t, weights[t] / total]));
   }
-  return Object.fromEntries(allTeams.map(t => [t, weights[t] / total]));
+
+  // ── Bracket-aware path ────────────────────────────────────────────────────
+  // Find the Final and walk back through the bracket.
+  // P(team wins tournament) = P(team wins the Final)
+  //                         = sum over possible opponents O of
+  //                           P(team reaches Final) × P(O reaches Final) × P(team beats O)
+  //
+  // winnerDist(finalMatchId) already computes exactly this recursively.
+  if (!finalMatch) {
+    // Bracket not built yet — fall back
+    const weights = {};
+    let total = 0;
+    for (const team of allTeams) {
+      const w = Math.pow(Math.max(1, teamStrength(team) - 25), 2.15);
+      weights[team] = w; total += w;
+    }
+    return Object.fromEntries(allTeams.map(t => [t, weights[t] / total]));
+  }
+
+  const memo = new Map();
+  const dist = winnerDist(finalMatch.id, koFixtures, memo);
+
+  // dist is already a proper probability distribution — normalise just in
+  // case of floating-point drift, and zero out any eliminated teams.
+  let total = 0;
+  for (const [, p] of dist) total += p;
+  if (total === 0) {
+    // Fallback: nothing resolved
+    const w = {};
+    let t = 0;
+    for (const team of allTeams) { w[team] = Math.pow(Math.max(1, teamStrength(team) - 25), 2.15); t += w[team]; }
+    return Object.fromEntries(allTeams.map(team => [team, w[team] / t]));
+  }
+  return Object.fromEntries(allTeams.map(t => [t, (dist.get(t) || 0) / total]));
 }
 
 function sortWorstRows(rows) {
