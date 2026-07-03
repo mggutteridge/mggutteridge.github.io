@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-03T01:06:18.530Z",
+  "updatedAt": "2026-07-03T04:54:10.597Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-03T01:06:11.153Z",
+    "updatedAt": "2026-07-03T04:54:07.192Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 84,
-    "summaryCallsSucceeded": 84,
+    "eventsChecked": 85,
+    "summaryCallsSucceeded": 85,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -89,6 +89,22 @@
         "type": "yellow",
         "minute": "90'+8'",
         "text": "Ivan Perisic (Croatia) is shown the yellow card."
+      },
+      {
+        "eventId": "760498",
+        "sourceName": "keyEvents",
+        "team": "Algeria",
+        "type": "yellow",
+        "minute": "36'",
+        "text": "Farès Chaïbi (Algeria) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760498",
+        "sourceName": "keyEvents",
+        "team": "Algeria",
+        "type": "yellow",
+        "minute": "72'",
+        "text": "Hicham Boudaoui (Algeria) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1973,7 +1989,7 @@
       "straightRed": 0
     },
     "Algeria": {
-      "yellow": 1,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
