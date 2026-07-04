@@ -940,7 +940,7 @@ code {
 </main>
 
 <footer>
-  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team. v1.9
+  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team. v1.10
 </footer>
 
   </div>
@@ -3322,6 +3322,22 @@ function mostConcededProbabilities() {
 
     const expectedRemainingMatches =
       remainingGroup + expectedKoMatches;
+
+    // If a team has no remaining matches at all (eliminated, group stage complete),
+    // their final GA is fixed — use it directly with no projection.
+    // This ensures two eliminated teams with identical GA get identical weights,
+    // regardless of their strength or baseline differences.
+    if (expectedRemainingMatches < 0.01) {
+      const currentGaBoost = Math.pow(1 + currentGa, 1.45);
+      const deficitToLeader = Math.max(0, currentLeaderGa - currentGa);
+      const catchupPenalty = deficitToLeader === 0 ? 1 : Math.exp(
+        -Math.pow(deficitToLeader, 2) / 2
+      );
+      const w = Math.pow(Math.max(0.01, currentGa), 1.15) * currentGaBoost * catchupPenalty;
+      weights[team] = w;
+      total += w;
+      continue;
+    }
 
     // Discount future because it is uncertain; current GA is real.
     const FUTURE_DISCOUNT = 0.55;
