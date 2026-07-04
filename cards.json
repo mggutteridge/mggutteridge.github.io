@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-04T17:38:19.145Z",
+  "updatedAt": "2026-07-04T18:38:19.411Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-04T17:38:13.904Z",
+    "updatedAt": "2026-07-04T18:38:12.979Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -65,6 +65,62 @@
         "type": "yellow",
         "minute": "20'",
         "text": "Redouane Halhal (Morocco) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Morocco",
+        "type": "yellow",
+        "minute": "40'",
+        "text": "Achraf Hakimi (Morocco) is shown the yellow card."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "40'",
+        "text": "Richie Laryea (Canada) is shown the yellow card."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "43'",
+        "text": "Jonathan David (Canada) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Morocco",
+        "type": "yellow",
+        "minute": "45'",
+        "text": "Azzedine Ounahi (Morocco) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Morocco",
+        "type": "yellow",
+        "minute": "45'+6'",
+        "text": "Bilal El Khannouss (Morocco) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "49'",
+        "text": "Luc De Fougerolles (Canada) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "67'",
+        "text": "Cyle Larin (Canada) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -1904,7 +1960,7 @@
       "straightRed": 0
     },
     "Canada": {
-      "yellow": 7,
+      "yellow": 11,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -1929,7 +1985,7 @@
       "straightRed": 0
     },
     "Morocco": {
-      "yellow": 3,
+      "yellow": 6,
       "secondYellow": 0,
       "straightRed": 0
     },
