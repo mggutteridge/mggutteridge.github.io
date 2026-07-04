@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-04T16:34:10.630Z",
+  "updatedAt": "2026-07-04T17:38:19.145Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-04T16:34:05.583Z",
+    "updatedAt": "2026-07-04T17:38:13.904Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,10 +54,18 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 88,
-    "summaryCallsSucceeded": 88,
+    "eventsChecked": 89,
+    "summaryCallsSucceeded": 89,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Morocco",
+        "type": "yellow",
+        "minute": "20'",
+        "text": "Redouane Halhal (Morocco) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1921,7 +1929,7 @@
       "straightRed": 0
     },
     "Morocco": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
