@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-04T04:54:17.806Z",
+  "updatedAt": "2026-07-04T07:39:24.718Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-04T04:54:13.794Z",
+    "updatedAt": "2026-07-04T07:39:19.652Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,78 +58,6 @@
     "summaryCallsSucceeded": 88,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760499",
-        "sourceName": "keyEvents",
-        "team": "Egypt",
-        "type": "yellow",
-        "minute": "105'",
-        "text": "Haissem Hassan (Egypt) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760499",
-        "sourceName": "keyEvents",
-        "team": "Egypt",
-        "type": "yellow",
-        "minute": "120'",
-        "text": "Yasser Ibrahim (Egypt) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760500",
-        "sourceName": "keyEvents",
-        "team": "Cabo Verde",
-        "type": "yellow",
-        "minute": "68'",
-        "text": "Kevin Pina (Cabo Verde) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760500",
-        "sourceName": "keyEvents",
-        "team": "Argentina",
-        "type": "yellow",
-        "minute": "115'",
-        "text": "Gonzalo Montiel (Argentina) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760501",
-        "sourceName": "keyEvents",
-        "team": "Colombia",
-        "type": "yellow",
-        "minute": "12'",
-        "text": "Jhon Arias (Colombia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760501",
-        "sourceName": "keyEvents",
-        "team": "Ghana",
-        "type": "yellow",
-        "minute": "49'",
-        "text": "Caleb Yirenkyi (Ghana) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760501",
-        "sourceName": "keyEvents",
-        "team": "Ghana",
-        "type": "yellow",
-        "minute": "66'",
-        "text": "Abdul Fatawu (Ghana) is shown the yellow card."
-      },
-      {
-        "eventId": "760501",
-        "sourceName": "keyEvents",
-        "team": "Ghana",
-        "type": "yellow",
-        "minute": "76'",
-        "text": "Alidu Seidu (Ghana) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760501",
-        "sourceName": "keyEvents",
-        "team": "Colombia",
-        "type": "yellow",
-        "minute": "78'",
-        "text": "Richard Ríos (Colombia) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1865,6 +1793,78 @@
         "type": "yellow",
         "minute": "72'",
         "text": "Hicham Boudaoui (Algeria) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760499",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "105'",
+        "text": "Haissem Hassan (Egypt) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760499",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "120'",
+        "text": "Yasser Ibrahim (Egypt) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760500",
+        "sourceName": "keyEvents",
+        "team": "Cabo Verde",
+        "type": "yellow",
+        "minute": "68'",
+        "text": "Kevin Pina (Cabo Verde) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760500",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "115'",
+        "text": "Gonzalo Montiel (Argentina) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760501",
+        "sourceName": "keyEvents",
+        "team": "Colombia",
+        "type": "yellow",
+        "minute": "12'",
+        "text": "Jhon Arias (Colombia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760501",
+        "sourceName": "keyEvents",
+        "team": "Ghana",
+        "type": "yellow",
+        "minute": "49'",
+        "text": "Caleb Yirenkyi (Ghana) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760501",
+        "sourceName": "keyEvents",
+        "team": "Ghana",
+        "type": "yellow",
+        "minute": "66'",
+        "text": "Abdul Fatawu (Ghana) is shown the yellow card."
+      },
+      {
+        "eventId": "760501",
+        "sourceName": "keyEvents",
+        "team": "Ghana",
+        "type": "yellow",
+        "minute": "76'",
+        "text": "Alidu Seidu (Ghana) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760501",
+        "sourceName": "keyEvents",
+        "team": "Colombia",
+        "type": "yellow",
+        "minute": "78'",
+        "text": "Richard Ríos (Colombia) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
