@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-04T22:37:46.769Z",
+  "updatedAt": "2026-07-04T23:40:58.289Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-04T22:37:40.899Z",
+    "updatedAt": "2026-07-04T23:40:49.179Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -129,6 +129,22 @@
         "type": "yellow",
         "minute": "19'",
         "text": "Bradley Barcola (France) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760503",
+        "sourceName": "keyEvents",
+        "team": "France",
+        "type": "yellow",
+        "minute": "81'",
+        "text": "Manu Koné (France) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760503",
+        "sourceName": "keyEvents",
+        "team": "France",
+        "type": "yellow",
+        "minute": "90'+7'",
+        "text": "Michael Olise (France) is shown the yellow card."
       },
       {
         "eventId": "760415",
@@ -2108,7 +2124,7 @@
       "straightRed": 1
     },
     "France": {
-      "yellow": 2,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 0
     },
