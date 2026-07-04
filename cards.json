@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-03T23:40:53.474Z",
+  "updatedAt": "2026-07-04T01:15:52.790Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-03T23:40:46.851Z",
+    "updatedAt": "2026-07-04T01:15:44.743Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -81,6 +81,14 @@
         "type": "yellow",
         "minute": "68'",
         "text": "Kevin Pina (Cabo Verde) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760500",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "115'",
+        "text": "Gonzalo Montiel (Argentina) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -2008,7 +2016,7 @@
       "straightRed": 0
     },
     "Argentina": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
