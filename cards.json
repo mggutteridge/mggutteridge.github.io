@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-05T21:06:36.299Z",
+  "updatedAt": "2026-07-05T22:11:08.034Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-05T21:06:23.139Z",
+    "updatedAt": "2026-07-05T22:10:59.771Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,6 +58,14 @@
     "summaryCallsSucceeded": 91,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760504",
+        "sourceName": "keyEvents",
+        "team": "Brazil",
+        "type": "yellow",
+        "minute": "90'+6'",
+        "text": "Neymar (Brazil) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2004,7 +2012,7 @@
       "straightRed": 0
     },
     "Brazil": {
-      "yellow": 7,
+      "yellow": 8,
       "secondYellow": 0,
       "straightRed": 0
     },
