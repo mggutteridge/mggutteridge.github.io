@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-05T05:31:12.038Z",
+  "updatedAt": "2026-07-05T08:27:28.115Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-05T05:31:08.240Z",
+    "updatedAt": "2026-07-05T08:27:23.076Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,94 +58,6 @@
     "summaryCallsSucceeded": 90,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760502",
-        "sourceName": "keyEvents",
-        "team": "Morocco",
-        "type": "yellow",
-        "minute": "20'",
-        "text": "Redouane Halhal (Morocco) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760502",
-        "sourceName": "keyEvents",
-        "team": "Morocco",
-        "type": "yellow",
-        "minute": "40'",
-        "text": "Achraf Hakimi (Morocco) is shown the yellow card."
-      },
-      {
-        "eventId": "760502",
-        "sourceName": "keyEvents",
-        "team": "Canada",
-        "type": "yellow",
-        "minute": "40'",
-        "text": "Richie Laryea (Canada) is shown the yellow card."
-      },
-      {
-        "eventId": "760502",
-        "sourceName": "keyEvents",
-        "team": "Canada",
-        "type": "yellow",
-        "minute": "43'",
-        "text": "Jonathan David (Canada) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760502",
-        "sourceName": "keyEvents",
-        "team": "Morocco",
-        "type": "yellow",
-        "minute": "45'",
-        "text": "Azzedine Ounahi (Morocco) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760502",
-        "sourceName": "keyEvents",
-        "team": "Morocco",
-        "type": "yellow",
-        "minute": "45'+6'",
-        "text": "Bilal El Khannouss (Morocco) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760502",
-        "sourceName": "keyEvents",
-        "team": "Canada",
-        "type": "yellow",
-        "minute": "49'",
-        "text": "Luc De Fougerolles (Canada) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760502",
-        "sourceName": "keyEvents",
-        "team": "Canada",
-        "type": "yellow",
-        "minute": "67'",
-        "text": "Cyle Larin (Canada) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760503",
-        "sourceName": "keyEvents",
-        "team": "France",
-        "type": "yellow",
-        "minute": "19'",
-        "text": "Bradley Barcola (France) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760503",
-        "sourceName": "keyEvents",
-        "team": "France",
-        "type": "yellow",
-        "minute": "81'",
-        "text": "Manu Koné (France) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760503",
-        "sourceName": "keyEvents",
-        "team": "France",
-        "type": "yellow",
-        "minute": "90'+7'",
-        "text": "Michael Olise (France) is shown the yellow card."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -1953,6 +1865,94 @@
         "type": "yellow",
         "minute": "78'",
         "text": "Richard Ríos (Colombia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Morocco",
+        "type": "yellow",
+        "minute": "20'",
+        "text": "Redouane Halhal (Morocco) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Morocco",
+        "type": "yellow",
+        "minute": "40'",
+        "text": "Achraf Hakimi (Morocco) is shown the yellow card."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "40'",
+        "text": "Richie Laryea (Canada) is shown the yellow card."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "43'",
+        "text": "Jonathan David (Canada) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Morocco",
+        "type": "yellow",
+        "minute": "45'",
+        "text": "Azzedine Ounahi (Morocco) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Morocco",
+        "type": "yellow",
+        "minute": "45'+6'",
+        "text": "Bilal El Khannouss (Morocco) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "49'",
+        "text": "Luc De Fougerolles (Canada) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760502",
+        "sourceName": "keyEvents",
+        "team": "Canada",
+        "type": "yellow",
+        "minute": "67'",
+        "text": "Cyle Larin (Canada) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760503",
+        "sourceName": "keyEvents",
+        "team": "France",
+        "type": "yellow",
+        "minute": "19'",
+        "text": "Bradley Barcola (France) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760503",
+        "sourceName": "keyEvents",
+        "team": "France",
+        "type": "yellow",
+        "minute": "81'",
+        "text": "Manu Koné (France) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760503",
+        "sourceName": "keyEvents",
+        "team": "France",
+        "type": "yellow",
+        "minute": "90'+7'",
+        "text": "Michael Olise (France) is shown the yellow card."
       }
     ],
     "unmatchedCardEvents": [],
