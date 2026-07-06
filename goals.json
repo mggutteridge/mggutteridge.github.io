@@ -250,7 +250,7 @@
       "candidates": [
         {
           "minute": 5,
-          "seconds": null,
+          "seconds": 26,
           "scorer": "Mahmoud Saber",
           "opponent": "IR Iran",
           "matchId": "41",
@@ -574,7 +574,7 @@
       "candidates": [
         {
           "minute": 4,
-          "seconds": null,
+          "seconds": 22,
           "scorer": "Habib Diarra",
           "opponent": "Iraq",
           "matchId": "54",
