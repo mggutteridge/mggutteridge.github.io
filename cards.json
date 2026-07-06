@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-06T20:27:21.959Z",
+  "updatedAt": "2026-07-06T21:58:04.242Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-06T20:27:16.805Z",
+    "updatedAt": "2026-07-06T21:57:58.732Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,6 +58,30 @@
     "summaryCallsSucceeded": 93,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760506",
+        "sourceName": "keyEvents",
+        "team": "Portugal",
+        "type": "yellow",
+        "minute": "89'",
+        "text": "Bernardo Silva (Portugal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760506",
+        "sourceName": "keyEvents",
+        "team": "Portugal",
+        "type": "yellow",
+        "minute": "90'+4'",
+        "text": "Renato Veiga (Portugal) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760506",
+        "sourceName": "keyEvents",
+        "team": "Spain",
+        "type": "yellow",
+        "minute": "90'+8'",
+        "text": "Ferran Torres (Spain) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2168,7 +2192,7 @@
       "straightRed": 0
     },
     "Spain": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -2228,7 +2252,7 @@
       "straightRed": 0
     },
     "Portugal": {
-      "yellow": 5,
+      "yellow": 7,
       "secondYellow": 0,
       "straightRed": 0
     },
