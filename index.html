@@ -940,7 +940,7 @@ code {
 </main>
 
 <footer>
-  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team. v1.12
+  Fixture and tournament structure based on FIFA's published 2026 match schedule. Live scores are fetched from the WorldCup26 open-source API. Card totals are read from cards.json, which can be updated automatically by the included GitHub Action using API-Football. Credit to Alasdair de Costa, Open Innovation Team. v1.14
 </footer>
 
   </div>
@@ -2908,14 +2908,19 @@ function worstTeamProbabilities() {
 
 function conductProbabilities() {
   const allTeams = Object.values(DATA.groups).flat();
+  const { eliminated } = knockoutCache();
   const weights = {};
   let total = 0;
   for (const team of allTeams) {
     const current = conductScore(team);
-    const expected = CONDUCT_BASELINE[team] || 3.2;
-    const strength = Math.pow(1 + current * 2.4 + expected, 1.8);
-    weights[team] = strength;
-    total += strength;
+    // Eliminated teams have a fixed card total — weight on actual score only,
+    // bypassing the baseline prior so two teams with identical cards get
+    // identical weights regardless of their historical conduct baseline.
+    const w = eliminated.has(team)
+      ? Math.pow(1 + current * 2.4, 1.8)
+      : Math.pow(1 + current * 2.4 + (CONDUCT_BASELINE[team] || 3.2), 1.8);
+    weights[team] = w;
+    total += w;
   }
   return Object.fromEntries(allTeams.map(t => [t, weights[t] / total]));
 }
