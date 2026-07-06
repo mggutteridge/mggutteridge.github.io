@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-06T05:36:19.439Z",
+  "updatedAt": "2026-07-06T09:39:15.833Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-06T05:36:04.000Z",
+    "updatedAt": "2026-07-06T09:39:09.705Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,70 +58,6 @@
     "summaryCallsSucceeded": 92,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760504",
-        "sourceName": "keyEvents",
-        "team": "Brazil",
-        "type": "yellow",
-        "minute": "90'+6'",
-        "text": "Neymar (Brazil) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760505",
-        "sourceName": "keyEvents",
-        "team": "England",
-        "type": "yellow",
-        "minute": "1'",
-        "text": "Declan Rice (England) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760505",
-        "sourceName": "keyEvents",
-        "team": "England",
-        "type": "red",
-        "minute": "54'",
-        "text": "Jarell Quansah (England) is shown the red card."
-      },
-      {
-        "eventId": "760505",
-        "sourceName": "keyEvents",
-        "team": "England",
-        "type": "yellow",
-        "minute": "68'",
-        "text": "Marc Guéhi (England) is shown the yellow card."
-      },
-      {
-        "eventId": "760505",
-        "sourceName": "keyEvents",
-        "team": "Mexico",
-        "type": "yellow",
-        "minute": "71'",
-        "text": "Jorge Sánchez (Mexico) is shown the yellow card."
-      },
-      {
-        "eventId": "760505",
-        "sourceName": "keyEvents",
-        "team": "England",
-        "type": "yellow",
-        "minute": "72'",
-        "text": "Nico O'Reilly (England) is shown the yellow card."
-      },
-      {
-        "eventId": "760505",
-        "sourceName": "keyEvents",
-        "team": "Mexico",
-        "type": "yellow",
-        "minute": "90'+8'",
-        "text": "Johan Vásquez (Mexico) is shown the yellow card."
-      },
-      {
-        "eventId": "760505",
-        "sourceName": "keyEvents",
-        "team": "England",
-        "type": "yellow",
-        "minute": "90'+8'",
-        "text": "Jordan Henderson (England) is shown the yellow card."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2017,6 +1953,70 @@
         "type": "yellow",
         "minute": "90'+7'",
         "text": "Michael Olise (France) is shown the yellow card."
+      },
+      {
+        "eventId": "760504",
+        "sourceName": "keyEvents",
+        "team": "Brazil",
+        "type": "yellow",
+        "minute": "90'+6'",
+        "text": "Neymar (Brazil) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760505",
+        "sourceName": "keyEvents",
+        "team": "England",
+        "type": "yellow",
+        "minute": "1'",
+        "text": "Declan Rice (England) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760505",
+        "sourceName": "keyEvents",
+        "team": "England",
+        "type": "red",
+        "minute": "54'",
+        "text": "Jarell Quansah (England) is shown the red card."
+      },
+      {
+        "eventId": "760505",
+        "sourceName": "keyEvents",
+        "team": "England",
+        "type": "yellow",
+        "minute": "68'",
+        "text": "Marc Guéhi (England) is shown the yellow card."
+      },
+      {
+        "eventId": "760505",
+        "sourceName": "keyEvents",
+        "team": "Mexico",
+        "type": "yellow",
+        "minute": "71'",
+        "text": "Jorge Sánchez (Mexico) is shown the yellow card."
+      },
+      {
+        "eventId": "760505",
+        "sourceName": "keyEvents",
+        "team": "England",
+        "type": "yellow",
+        "minute": "72'",
+        "text": "Nico O'Reilly (England) is shown the yellow card."
+      },
+      {
+        "eventId": "760505",
+        "sourceName": "keyEvents",
+        "team": "Mexico",
+        "type": "yellow",
+        "minute": "90'+8'",
+        "text": "Johan Vásquez (Mexico) is shown the yellow card."
+      },
+      {
+        "eventId": "760505",
+        "sourceName": "keyEvents",
+        "team": "England",
+        "type": "yellow",
+        "minute": "90'+8'",
+        "text": "Jordan Henderson (England) is shown the yellow card."
       }
     ],
     "unmatchedCardEvents": [],
