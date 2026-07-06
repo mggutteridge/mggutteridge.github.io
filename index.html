@@ -2908,61 +2908,16 @@ function worstTeamProbabilities() {
 
 function conductProbabilities() {
   const allTeams = Object.values(DATA.groups).flat();
-  const { eliminated } = knockoutCache();
-
-  // Recalculate total cards for all teams
-  const pointsByTeam = Object.fromEntries(
-    allTeams.map(t => [t, normaliseCardsForTeam(t).points])
-  );
-
-  const maxPoints = Math.max(
-    ...allTeams.map(t => pointsByTeam[t] || 0)
-  );
-
-  // Teams currently tied for most cards
-  const leaderTeams = allTeams.filter(
-    t => (pointsByTeam[t] || 0) === maxPoints
-  );
-
-  // Of those leaders, which are already eliminated?
-  const lockedLeaders = leaderTeams.filter(
-    t => eliminated.has(t)
-  );
-
-  // If 2+ eliminated teams are tied at the top,
-  // they are guaranteed to finish tied.
-  if (lockedLeaders.length >= 2) {
-    const probs = {};
-
-    allTeams.forEach(team => {
-      probs[team] = lockedLeaders.includes(team)
-        ? 1 / lockedLeaders.length
-        : 0;
-    });
-
-    return probs;
-  }
-
-  // Otherwise use the standard weighted model
   const weights = {};
   let total = 0;
-
   for (const team of allTeams) {
-    const current = pointsByTeam[team];
+    const current = conductScore(team);
     const expected = CONDUCT_BASELINE[team] || 3.2;
-
-    const strength = Math.pow(
-      1 + current * 2.4 + expected,
-      1.8
-    );
-
+    const strength = Math.pow(1 + current * 2.4 + expected, 1.8);
     weights[team] = strength;
     total += strength;
   }
-
-  return Object.fromEntries(
-    allTeams.map(team => [team, weights[team] / total])
-  );
+  return Object.fromEntries(allTeams.map(t => [t, weights[t] / total]));
 }
 
 
