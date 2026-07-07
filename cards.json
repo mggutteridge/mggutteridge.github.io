@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-07T16:01:12.106Z",
+  "updatedAt": "2026-07-07T18:09:10.193Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-07T16:01:06.461Z",
+    "updatedAt": "2026-07-07T18:09:06.272Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,10 +54,42 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 94,
-    "summaryCallsSucceeded": 94,
+    "eventsChecked": 95,
+    "summaryCallsSucceeded": 95,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760509",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Mostafa Shobeir (Egypt) is shown the yellow card."
+      },
+      {
+        "eventId": "760509",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "90'+4'",
+        "text": "Hamdi Fathy (Egypt) is shown the yellow card."
+      },
+      {
+        "eventId": "760509",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "90'+8'",
+        "text": "Marwan Attia (Egypt) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760509",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "90'+12'",
+        "text": "Haissem Hassan (Egypt) is shown the yellow card."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2193,7 +2225,7 @@
       "straightRed": 1
     },
     "Egypt": {
-      "yellow": 8,
+      "yellow": 12,
       "secondYellow": 0,
       "straightRed": 0
     },
