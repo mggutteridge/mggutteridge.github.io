@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-07T20:12:13.133Z",
+  "updatedAt": "2026-07-07T21:41:16.799Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-07T20:12:06.563Z",
+    "updatedAt": "2026-07-07T21:41:08.802Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -89,6 +89,30 @@
         "type": "yellow",
         "minute": "90'+12'",
         "text": "Haissem Hassan (Egypt) is shown the yellow card."
+      },
+      {
+        "eventId": "760508",
+        "sourceName": "keyEvents",
+        "team": "Switzerland",
+        "type": "yellow",
+        "minute": "51'",
+        "text": "Granit Xhaka (Switzerland) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760508",
+        "sourceName": "keyEvents",
+        "team": "Switzerland",
+        "type": "yellow",
+        "minute": "59'",
+        "text": "Denis Zakaria (Switzerland) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760508",
+        "sourceName": "keyEvents",
+        "team": "Colombia",
+        "type": "yellow",
+        "minute": "60'",
+        "text": "Luis Suárez (Colombia) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -2135,7 +2159,7 @@
       "straightRed": 2
     },
     "Switzerland": {
-      "yellow": 3,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -2305,7 +2329,7 @@
       "straightRed": 0
     },
     "Colombia": {
-      "yellow": 6,
+      "yellow": 7,
       "secondYellow": 0,
       "straightRed": 0
     },
