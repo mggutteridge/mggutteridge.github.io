@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-07T21:41:16.799Z",
+  "updatedAt": "2026-07-07T23:37:59.074Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-07T21:41:08.802Z",
+    "updatedAt": "2026-07-07T23:37:41.821Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -113,6 +113,22 @@
         "type": "yellow",
         "minute": "60'",
         "text": "Luis Suárez (Colombia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760508",
+        "sourceName": "keyEvents",
+        "team": "Colombia",
+        "type": "yellow",
+        "minute": "95'",
+        "text": "Davinson Sánchez (Colombia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760508",
+        "sourceName": "keyEvents",
+        "team": "Switzerland",
+        "type": "yellow",
+        "minute": "105'",
+        "text": "Miro Muheim (Switzerland) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -2159,7 +2175,7 @@
       "straightRed": 2
     },
     "Switzerland": {
-      "yellow": 5,
+      "yellow": 6,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -2329,7 +2345,7 @@
       "straightRed": 0
     },
     "Colombia": {
-      "yellow": 7,
+      "yellow": 8,
       "secondYellow": 0,
       "straightRed": 0
     },
