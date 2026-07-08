@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-08T01:08:14.548Z",
+  "updatedAt": "2026-07-08T04:29:17.121Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-08T01:08:07.642Z",
+    "updatedAt": "2026-07-08T04:29:10.078Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,78 +58,6 @@
     "summaryCallsSucceeded": 96,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760509",
-        "sourceName": "keyEvents",
-        "team": "Egypt",
-        "type": "yellow",
-        "minute": "90'+3'",
-        "text": "Mostafa Shobeir (Egypt) is shown the yellow card."
-      },
-      {
-        "eventId": "760509",
-        "sourceName": "keyEvents",
-        "team": "Egypt",
-        "type": "yellow",
-        "minute": "90'+4'",
-        "text": "Hamdi Fathy (Egypt) is shown the yellow card."
-      },
-      {
-        "eventId": "760509",
-        "sourceName": "keyEvents",
-        "team": "Egypt",
-        "type": "yellow",
-        "minute": "90'+8'",
-        "text": "Marwan Attia (Egypt) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760509",
-        "sourceName": "keyEvents",
-        "team": "Egypt",
-        "type": "yellow",
-        "minute": "90'+12'",
-        "text": "Haissem Hassan (Egypt) is shown the yellow card."
-      },
-      {
-        "eventId": "760508",
-        "sourceName": "keyEvents",
-        "team": "Switzerland",
-        "type": "yellow",
-        "minute": "51'",
-        "text": "Granit Xhaka (Switzerland) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760508",
-        "sourceName": "keyEvents",
-        "team": "Switzerland",
-        "type": "yellow",
-        "minute": "59'",
-        "text": "Denis Zakaria (Switzerland) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760508",
-        "sourceName": "keyEvents",
-        "team": "Colombia",
-        "type": "yellow",
-        "minute": "60'",
-        "text": "Luis Suárez (Colombia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760508",
-        "sourceName": "keyEvents",
-        "team": "Colombia",
-        "type": "yellow",
-        "minute": "95'",
-        "text": "Davinson Sánchez (Colombia) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760508",
-        "sourceName": "keyEvents",
-        "team": "Switzerland",
-        "type": "yellow",
-        "minute": "105'",
-        "text": "Miro Muheim (Switzerland) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2129,6 +2057,78 @@
         "type": "yellow",
         "minute": "69'",
         "text": "Malik Tillman (USA) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760509",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Mostafa Shobeir (Egypt) is shown the yellow card."
+      },
+      {
+        "eventId": "760509",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "90'+4'",
+        "text": "Hamdi Fathy (Egypt) is shown the yellow card."
+      },
+      {
+        "eventId": "760509",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "90'+8'",
+        "text": "Marwan Attia (Egypt) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760509",
+        "sourceName": "keyEvents",
+        "team": "Egypt",
+        "type": "yellow",
+        "minute": "90'+12'",
+        "text": "Haissem Hassan (Egypt) is shown the yellow card."
+      },
+      {
+        "eventId": "760508",
+        "sourceName": "keyEvents",
+        "team": "Switzerland",
+        "type": "yellow",
+        "minute": "51'",
+        "text": "Granit Xhaka (Switzerland) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760508",
+        "sourceName": "keyEvents",
+        "team": "Switzerland",
+        "type": "yellow",
+        "minute": "59'",
+        "text": "Denis Zakaria (Switzerland) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760508",
+        "sourceName": "keyEvents",
+        "team": "Colombia",
+        "type": "yellow",
+        "minute": "60'",
+        "text": "Luis Suárez (Colombia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760508",
+        "sourceName": "keyEvents",
+        "team": "Colombia",
+        "type": "yellow",
+        "minute": "95'",
+        "text": "Davinson Sánchez (Colombia) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760508",
+        "sourceName": "keyEvents",
+        "team": "Switzerland",
+        "type": "yellow",
+        "minute": "105'",
+        "text": "Miro Muheim (Switzerland) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
