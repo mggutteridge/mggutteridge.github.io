@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-10T18:53:48.263Z",
+  "updatedAt": "2026-07-10T20:14:50.852Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-10T18:53:41.713Z",
+    "updatedAt": "2026-07-10T20:14:44.747Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,10 +54,18 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 97,
-    "summaryCallsSucceeded": 97,
+    "eventsChecked": 98,
+    "summaryCallsSucceeded": 98,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760511",
+        "sourceName": "keyEvents",
+        "team": "Spain",
+        "type": "yellow",
+        "minute": "43'",
+        "text": "Pau Cubarsí (Spain) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2288,7 +2296,7 @@
       "straightRed": 0
     },
     "Spain": {
-      "yellow": 3,
+      "yellow": 4,
       "secondYellow": 0,
       "straightRed": 0
     },
