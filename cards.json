@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-10T04:12:11.558Z",
+  "updatedAt": "2026-07-10T07:51:56.898Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-10T04:11:59.160Z",
+    "updatedAt": "2026-07-10T07:51:50.123Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,14 +58,6 @@
     "summaryCallsSucceeded": 97,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760510",
-        "sourceName": "keyEvents",
-        "team": "Morocco",
-        "type": "yellow",
-        "minute": "63'",
-        "text": "Issa Diop (Morocco) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2137,6 +2129,14 @@
         "type": "yellow",
         "minute": "105'",
         "text": "Miro Muheim (Switzerland) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760510",
+        "sourceName": "keyEvents",
+        "team": "Morocco",
+        "type": "yellow",
+        "minute": "63'",
+        "text": "Issa Diop (Morocco) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
