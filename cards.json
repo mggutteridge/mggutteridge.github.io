@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-11T06:32:33.819Z",
+  "updatedAt": "2026-07-11T08:22:31.843Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-11T06:32:20.734Z",
+    "updatedAt": "2026-07-11T08:22:23.543Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,38 +58,6 @@
     "summaryCallsSucceeded": 98,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760511",
-        "sourceName": "keyEvents",
-        "team": "Spain",
-        "type": "yellow",
-        "minute": "43'",
-        "text": "Pau Cubarsí (Spain) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760511",
-        "sourceName": "keyEvents",
-        "team": "Belgium",
-        "type": "yellow",
-        "minute": "85'",
-        "text": "Kevin De Bruyne (Belgium) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760511",
-        "sourceName": "keyEvents",
-        "team": "Spain",
-        "type": "yellow",
-        "minute": "90'+3'",
-        "text": "Aymeric Laporte (Spain) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760511",
-        "sourceName": "keyEvents",
-        "team": "Belgium",
-        "type": "yellow",
-        "minute": "90'+5'",
-        "text": "Axel Witsel (Belgium) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2169,6 +2137,38 @@
         "type": "yellow",
         "minute": "63'",
         "text": "Issa Diop (Morocco) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760511",
+        "sourceName": "keyEvents",
+        "team": "Spain",
+        "type": "yellow",
+        "minute": "43'",
+        "text": "Pau Cubarsí (Spain) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760511",
+        "sourceName": "keyEvents",
+        "team": "Belgium",
+        "type": "yellow",
+        "minute": "85'",
+        "text": "Kevin De Bruyne (Belgium) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760511",
+        "sourceName": "keyEvents",
+        "team": "Spain",
+        "type": "yellow",
+        "minute": "90'+3'",
+        "text": "Aymeric Laporte (Spain) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760511",
+        "sourceName": "keyEvents",
+        "team": "Belgium",
+        "type": "yellow",
+        "minute": "90'+5'",
+        "text": "Axel Witsel (Belgium) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
