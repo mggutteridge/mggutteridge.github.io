@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-11T23:08:02.288Z",
+  "updatedAt": "2026-07-12T00:08:03.403Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-11T23:07:49.479Z",
+    "updatedAt": "2026-07-12T00:07:44.442Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,6 +58,14 @@
     "summaryCallsSucceeded": 99,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760512",
+        "sourceName": "keyEvents",
+        "team": "Norway",
+        "type": "yellow",
+        "minute": "117'",
+        "text": "Kristoffer Ajer (Norway) is shown the yellow card."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2355,7 +2363,7 @@
       "straightRed": 1
     },
     "Norway": {
-      "yellow": 2,
+      "yellow": 3,
       "secondYellow": 0,
       "straightRed": 0
     },
