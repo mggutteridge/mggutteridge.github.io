@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-12T00:08:03.403Z",
+  "updatedAt": "2026-07-12T03:52:23.739Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-12T00:07:44.442Z",
+    "updatedAt": "2026-07-12T03:52:13.841Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,8 +54,8 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 99,
-    "summaryCallsSucceeded": 99,
+    "eventsChecked": 100,
+    "summaryCallsSucceeded": 100,
     "summaryCallsFailed": 0,
     "cardEvents": [
       {
@@ -65,6 +65,46 @@
         "type": "yellow",
         "minute": "117'",
         "text": "Kristoffer Ajer (Norway) is shown the yellow card."
+      },
+      {
+        "eventId": "760513",
+        "sourceName": "keyEvents",
+        "team": "Switzerland",
+        "type": "yellow",
+        "minute": "44'",
+        "text": "Breel Embolo (Switzerland) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760513",
+        "sourceName": "keyEvents",
+        "team": "Switzerland",
+        "type": "yellow",
+        "minute": "72'",
+        "text": "Second yellow card to Breel Embolo (Switzerland)."
+      },
+      {
+        "eventId": "760513",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "97'",
+        "text": "Thiago Almada (Argentina) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760513",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "98'",
+        "text": "Lautaro Martínez (Argentina) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760513",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "114'",
+        "text": "José Manuel López (Argentina) is shown the yellow card."
       },
       {
         "eventId": "760415",
@@ -2223,7 +2263,7 @@
       "straightRed": 2
     },
     "Switzerland": {
-      "yellow": 6,
+      "yellow": 8,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -2368,7 +2408,7 @@
       "straightRed": 0
     },
     "Argentina": {
-      "yellow": 3,
+      "yellow": 6,
       "secondYellow": 0,
       "straightRed": 0
     },
