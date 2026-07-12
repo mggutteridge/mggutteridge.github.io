@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-12T03:52:23.739Z",
+  "updatedAt": "2026-07-12T06:23:55.811Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-12T03:52:13.841Z",
+    "updatedAt": "2026-07-12T06:23:49.470Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,54 +58,6 @@
     "summaryCallsSucceeded": 100,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760512",
-        "sourceName": "keyEvents",
-        "team": "Norway",
-        "type": "yellow",
-        "minute": "117'",
-        "text": "Kristoffer Ajer (Norway) is shown the yellow card."
-      },
-      {
-        "eventId": "760513",
-        "sourceName": "keyEvents",
-        "team": "Switzerland",
-        "type": "yellow",
-        "minute": "44'",
-        "text": "Breel Embolo (Switzerland) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760513",
-        "sourceName": "keyEvents",
-        "team": "Switzerland",
-        "type": "yellow",
-        "minute": "72'",
-        "text": "Second yellow card to Breel Embolo (Switzerland)."
-      },
-      {
-        "eventId": "760513",
-        "sourceName": "keyEvents",
-        "team": "Argentina",
-        "type": "yellow",
-        "minute": "97'",
-        "text": "Thiago Almada (Argentina) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760513",
-        "sourceName": "keyEvents",
-        "team": "Argentina",
-        "type": "yellow",
-        "minute": "98'",
-        "text": "Lautaro Martínez (Argentina) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760513",
-        "sourceName": "keyEvents",
-        "team": "Argentina",
-        "type": "yellow",
-        "minute": "114'",
-        "text": "José Manuel López (Argentina) is shown the yellow card."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2217,6 +2169,54 @@
         "type": "yellow",
         "minute": "90'+5'",
         "text": "Axel Witsel (Belgium) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760512",
+        "sourceName": "keyEvents",
+        "team": "Norway",
+        "type": "yellow",
+        "minute": "117'",
+        "text": "Kristoffer Ajer (Norway) is shown the yellow card."
+      },
+      {
+        "eventId": "760513",
+        "sourceName": "keyEvents",
+        "team": "Switzerland",
+        "type": "yellow",
+        "minute": "44'",
+        "text": "Breel Embolo (Switzerland) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760513",
+        "sourceName": "keyEvents",
+        "team": "Switzerland",
+        "type": "yellow",
+        "minute": "72'",
+        "text": "Second yellow card to Breel Embolo (Switzerland)."
+      },
+      {
+        "eventId": "760513",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "97'",
+        "text": "Thiago Almada (Argentina) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760513",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "98'",
+        "text": "Lautaro Martínez (Argentina) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760513",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "114'",
+        "text": "José Manuel López (Argentina) is shown the yellow card."
       }
     ],
     "unmatchedCardEvents": [],
