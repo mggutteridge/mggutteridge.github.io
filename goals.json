@@ -1,7 +1,7 @@
 {
   "source": "openfootball/worldcup.json 2026/worldcup.json",
   "sourceUrl": "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
-  "updatedAt": "2026-07-12T01:04:53+00:00",
+  "updatedAt": "2026-07-12T04:38:31+00:00",
   "note": "For each team, candidates contains every goal in that team's current fastest minute. Edit candidate seconds manually (0-59) to break same-minute ties. selectedCandidateId is optional; if omitted, dashboard chooses the lowest minute+seconds candidate.",
   "goals": {
     "Algeria": {
@@ -20,17 +20,17 @@
       ]
     },
     "Argentina": {
-      "minute": 17,
+      "minute": 10,
       "selectedCandidateId": null,
       "candidates": [
         {
-          "minute": 17,
+          "minute": 10,
           "seconds": null,
-          "scorer": "Lionel Messi",
-          "opponent": "Algeria",
-          "matchId": "55",
-          "date": "2026-06-16",
-          "sourceIndex": "55:home:0"
+          "scorer": "Alexis Mac Allister",
+          "opponent": "Switzerland",
+          "matchId": 100,
+          "date": "2026-07-11",
+          "sourceIndex": "100:home:0"
         }
       ]
     },
