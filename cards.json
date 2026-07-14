@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-14T18:17:11.144Z",
+  "updatedAt": "2026-07-14T19:47:18.561Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-14T18:16:59.120Z",
+    "updatedAt": "2026-07-14T19:47:10.853Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -54,10 +54,26 @@
     "scoreboardCallsSucceeded": 40,
     "scoreboardCallsFailed": 0,
     "eventsFound": 104,
-    "eventsChecked": 100,
-    "summaryCallsSucceeded": 100,
+    "eventsChecked": 101,
+    "summaryCallsSucceeded": 101,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760514",
+        "sourceName": "keyEvents",
+        "team": "France",
+        "type": "yellow",
+        "minute": "9'",
+        "text": "Adrien Rabiot (France) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760514",
+        "sourceName": "keyEvents",
+        "team": "Spain",
+        "type": "yellow",
+        "minute": "31'",
+        "text": "Marc Cucurella (Spain) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2368,7 +2384,7 @@
       "straightRed": 0
     },
     "Spain": {
-      "yellow": 5,
+      "yellow": 6,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -2388,7 +2404,7 @@
       "straightRed": 1
     },
     "France": {
-      "yellow": 4,
+      "yellow": 5,
       "secondYellow": 0,
       "straightRed": 0
     },
