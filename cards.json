@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-14T20:45:32.677Z",
+  "updatedAt": "2026-07-14T21:40:33.985Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-14T20:45:18.241Z",
+    "updatedAt": "2026-07-14T21:40:26.500Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -73,6 +73,14 @@
         "type": "yellow",
         "minute": "31'",
         "text": "Marc Cucurella (Spain) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760514",
+        "sourceName": "keyEvents",
+        "team": "France",
+        "type": "yellow",
+        "minute": "86'",
+        "text": "Kylian Mbappé (France) is shown the yellow card for a bad foul."
       },
       {
         "eventId": "760415",
@@ -2404,7 +2412,7 @@
       "straightRed": 1
     },
     "France": {
-      "yellow": 5,
+      "yellow": 6,
       "secondYellow": 0,
       "straightRed": 0
     },
