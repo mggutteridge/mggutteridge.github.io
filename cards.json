@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-15T19:05:44.084Z",
+  "updatedAt": "2026-07-15T20:17:11.467Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-15T19:05:31.061Z",
+    "updatedAt": "2026-07-15T20:17:07.745Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,6 +58,30 @@
     "summaryCallsSucceeded": 102,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760515",
+        "sourceName": "keyEvents",
+        "team": "England",
+        "type": "yellow",
+        "minute": "37'",
+        "text": "Elliot Anderson (England) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760515",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "42'",
+        "text": "Lisandro Martínez (Argentina) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760515",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "51'",
+        "text": "Cristian Romero (Argentina) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2432,7 +2456,7 @@
       "straightRed": 0
     },
     "Argentina": {
-      "yellow": 6,
+      "yellow": 8,
       "secondYellow": 0,
       "straightRed": 0
     },
@@ -2472,7 +2496,7 @@
       "straightRed": 0
     },
     "England": {
-      "yellow": 7,
+      "yellow": 8,
       "secondYellow": 0,
       "straightRed": 1
     },
