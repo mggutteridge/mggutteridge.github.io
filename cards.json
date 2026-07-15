@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-15T06:07:12.469Z",
+  "updatedAt": "2026-07-15T08:32:48.181Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-15T06:06:58.250Z",
+    "updatedAt": "2026-07-15T08:32:32.517Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,30 +58,6 @@
     "summaryCallsSucceeded": 101,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760514",
-        "sourceName": "keyEvents",
-        "team": "France",
-        "type": "yellow",
-        "minute": "9'",
-        "text": "Adrien Rabiot (France) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760514",
-        "sourceName": "keyEvents",
-        "team": "Spain",
-        "type": "yellow",
-        "minute": "31'",
-        "text": "Marc Cucurella (Spain) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760514",
-        "sourceName": "keyEvents",
-        "team": "France",
-        "type": "yellow",
-        "minute": "86'",
-        "text": "Kylian Mbappé (France) is shown the yellow card for a bad foul."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2241,6 +2217,30 @@
         "type": "yellow",
         "minute": "114'",
         "text": "José Manuel López (Argentina) is shown the yellow card."
+      },
+      {
+        "eventId": "760514",
+        "sourceName": "keyEvents",
+        "team": "France",
+        "type": "yellow",
+        "minute": "9'",
+        "text": "Adrien Rabiot (France) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760514",
+        "sourceName": "keyEvents",
+        "team": "Spain",
+        "type": "yellow",
+        "minute": "31'",
+        "text": "Marc Cucurella (Spain) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760514",
+        "sourceName": "keyEvents",
+        "team": "France",
+        "type": "yellow",
+        "minute": "86'",
+        "text": "Kylian Mbappé (France) is shown the yellow card for a bad foul."
       }
     ],
     "unmatchedCardEvents": [],
