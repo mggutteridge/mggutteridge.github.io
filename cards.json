@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-15T20:17:11.467Z",
+  "updatedAt": "2026-07-15T21:17:44.911Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-15T20:17:07.745Z",
+    "updatedAt": "2026-07-15T21:17:32.234Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -81,6 +81,14 @@
         "type": "yellow",
         "minute": "51'",
         "text": "Cristian Romero (Argentina) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760515",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "90'+4'",
+        "text": "Rodrigo De Paul (Argentina) is shown the yellow card."
       },
       {
         "eventId": "760415",
@@ -2456,7 +2464,7 @@
       "straightRed": 0
     },
     "Argentina": {
-      "yellow": 8,
+      "yellow": 9,
       "secondYellow": 0,
       "straightRed": 0
     },
