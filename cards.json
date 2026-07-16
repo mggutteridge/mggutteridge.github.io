@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-16T03:35:56.450Z",
+  "updatedAt": "2026-07-16T06:01:46.730Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-16T03:35:51.733Z",
+    "updatedAt": "2026-07-16T06:01:39.351Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,38 +58,6 @@
     "summaryCallsSucceeded": 102,
     "summaryCallsFailed": 0,
     "cardEvents": [
-      {
-        "eventId": "760515",
-        "sourceName": "keyEvents",
-        "team": "England",
-        "type": "yellow",
-        "minute": "37'",
-        "text": "Elliot Anderson (England) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760515",
-        "sourceName": "keyEvents",
-        "team": "Argentina",
-        "type": "yellow",
-        "minute": "42'",
-        "text": "Lisandro Martínez (Argentina) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760515",
-        "sourceName": "keyEvents",
-        "team": "Argentina",
-        "type": "yellow",
-        "minute": "51'",
-        "text": "Cristian Romero (Argentina) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760515",
-        "sourceName": "keyEvents",
-        "team": "Argentina",
-        "type": "yellow",
-        "minute": "90'+4'",
-        "text": "Rodrigo De Paul (Argentina) is shown the yellow card."
-      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2273,6 +2241,38 @@
         "type": "yellow",
         "minute": "86'",
         "text": "Kylian Mbappé (France) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760515",
+        "sourceName": "keyEvents",
+        "team": "England",
+        "type": "yellow",
+        "minute": "37'",
+        "text": "Elliot Anderson (England) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760515",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "42'",
+        "text": "Lisandro Martínez (Argentina) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760515",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "51'",
+        "text": "Cristian Romero (Argentina) is shown the yellow card for a bad foul."
+      },
+      {
+        "eventId": "760515",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "90'+4'",
+        "text": "Rodrigo De Paul (Argentina) is shown the yellow card."
       }
     ],
     "unmatchedCardEvents": [],
