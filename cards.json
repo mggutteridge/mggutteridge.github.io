@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-19T19:22:45.438Z",
+  "updatedAt": "2026-07-19T20:13:27.313Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-19T19:22:37.616Z",
+    "updatedAt": "2026-07-19T20:13:19.664Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -58,6 +58,14 @@
     "summaryCallsSucceeded": 104,
     "summaryCallsFailed": 0,
     "cardEvents": [
+      {
+        "eventId": "760517",
+        "sourceName": "keyEvents",
+        "team": "Argentina",
+        "type": "yellow",
+        "minute": "41'",
+        "text": "Lisandro Martínez (Argentina) is shown the yellow card for a bad foul."
+      },
       {
         "eventId": "760415",
         "sourceName": "keyEvents",
@@ -2464,7 +2472,7 @@
       "straightRed": 0
     },
     "Argentina": {
-      "yellow": 9,
+      "yellow": 10,
       "secondYellow": 0,
       "straightRed": 0
     },
