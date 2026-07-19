@@ -1,13 +1,13 @@
 {
   "source": "ESPN match summaries",
-  "updatedAt": "2026-07-19T22:07:09.176Z",
+  "updatedAt": "2026-07-19T23:06:53.617Z",
   "scoring": {
     "yellow": 1,
     "red": 3
   },
   "caveat": "Cards are parsed from ESPN match-summary event data. Yellow cards are worth 1 point and red cards are worth 3 points.",
   "diagnostics": {
-    "updatedAt": "2026-07-19T22:07:03.660Z",
+    "updatedAt": "2026-07-19T23:06:48.142Z",
     "source": "ESPN site API scoreboard + match summaries",
     "scoreboardUrlsTried": [
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=300",
@@ -105,14 +105,6 @@
         "type": "yellow",
         "minute": "111'",
         "text": "Alexis Mac Allister (Argentina) is shown the yellow card for a bad foul."
-      },
-      {
-        "eventId": "760517",
-        "sourceName": "keyEvents",
-        "team": "Argentina",
-        "type": "red",
-        "minute": "120'+6'",
-        "text": "Leandro Paredes (Argentina) is shown the red card for violent conduct."
       },
       {
         "eventId": "760415",
@@ -2522,7 +2514,7 @@
     "Argentina": {
       "yellow": 15,
       "secondYellow": 0,
-      "straightRed": 1
+      "straightRed": 0
     },
     "Algeria": {
       "yellow": 3,
