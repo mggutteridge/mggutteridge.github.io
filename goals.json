@@ -265,7 +265,7 @@
       "candidates": [
         {
           "minute": 3,
-          "seconds": null,
+          "seconds": 15,
           "scorer": "Declan Rice",
           "opponent": "France",
           "matchId": 103,
