@@ -230,7 +230,7 @@
 <header>
   <p class="eyebrow">Sheen Lane · Mortlake, SW14</p>
   <h1>Mortlake Level Crossing</h1>
-  <p class="sub">Estimated from live train running data · not an official signal · v.0.2</p>
+  <p class="sub">Estimated from live train running data · not an official signal · v0.3</p>
 </header>
 
 <main>
@@ -378,7 +378,7 @@ async function fetchTrains(){
   }
   setupNoteEl.style.display = 'none';
   try{
-    const url = `${PROXY_BASE}/rtt/location?code=${encodeURIComponent(LOCATION_CODE)}&timeWindow=${QUERY_WINDOW_MIN}`;
+    const url = `${PROXY_BASE}/rtt/location?code=${encodeURIComponent(LOCATION_CODE)}&timeWindow=${QUERY_WINDOW_MIN}&detailed=true`;
     const res = await fetch(url);
 
     if (res.status === 204){
